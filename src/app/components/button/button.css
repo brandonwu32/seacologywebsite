@@ -1,0 +1,12 @@
+.yellow {
+    background-color: yellow;
+}
+.blue {
+    background-color: rgb(0, 149, 255);
+}
+.red{
+    background-color: red;
+}
+#small {
+    size: 2000px;
+}
