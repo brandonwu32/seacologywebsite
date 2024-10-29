@@ -9,7 +9,6 @@ export default function Button(props) {
         }
     };
 
-
     return (
         <div className="button"> 
             <button className={props.color} onClick={handleClick}  id={props.size}> 
