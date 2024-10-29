@@ -1,5 +1,5 @@
 'use client'
-import "./button.css"; 
+import "./Button.css"; 
 
 export default function Button(props) {
 

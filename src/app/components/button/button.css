@@ -1,13 +1,13 @@
 .yellow {
-    background-color: yellow;
+    background-color: #FDCD3B;
     color: white;
 }
 .blue {
-    background-color: rgb(0, 149, 255);
+    background-color: #02A0D4;
     color: white;
 }
 .red{
-    background-color: red;
+    background-color: #FF0000;
     color: white;
 }
 #small {

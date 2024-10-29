@@ -5,7 +5,8 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Button color = "yellow" size = "small" text = "close" /> 
-      <Button color = "blue" size = "log in" text = "enter" /> 
+      <Button color = "blue" size = "large" text = "enter" /> 
+      <Button color = "red" size = "small" text = "delete member" />
 
 
 
