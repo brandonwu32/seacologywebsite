@@ -4,7 +4,6 @@ import Bubble from "./components/bubble/bubble"
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Bubble heading = {"Step 1"} subtext = {"word"}></Bubble>
 
 
       <main className={styles.main}>
@@ -47,6 +46,8 @@ export default function Home() {
           >
             Read our docs
           </a>
+          <Bubble heading = {"Step 1"} subtext = {"word"}></Bubble>
+
         </div>
       </main>
       <footer className={styles.footer}>
