@@ -1,0 +1,258 @@
+
+/* Main wrapper styling */
+#wrapper {
+    position: fixed;
+    border: none;
+    display: flex;
+    float: left;
+    height: 100vh;
+    width: 30%;
+    background-color: #71c4d6;
+    z-index: 1;
+}
+
+#seacology-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    width: 9rem;
+    height: 6rem;
+}
+
+.img-with-text {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    height: auto; 
+    text-align: center;
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0 auto;
+}
+
+#navbar-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+#search-bar {
+    border-radius: 25px;
+    height: 2.5rem;
+    margin-left: -0.5rem;
+    background-color: #76D1FF;
+    color: #1F7191;
+    padding-left: 2.5rem;
+    width: 150px
+}
+
+#search-bar::placeholder {
+    color: #1F7191;
+    opacity: 1;
+    font-size: 1rem;
+   
+
+
+}
+
+#seacology-text {
+    color: #f6f6f6;
+}
+
+.search-container {
+    position: relative;
+    margin-left: 0rem; /* Adjust this margin as needed */
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 23%;
+}
+
+/* Navbar styling */
+.navbar {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar link styling */
+.navbar-link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #1F7191;
+    padding: 1.3rem 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Dropdown container */
+.dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #0178A1; /* Slightly darker blue */
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 90%;
+}
+
+/* Show dropdown on hover, push other navbar items down */
+.navbar-link:hover .dropdown {
+    display: flex;
+}
+
+/* Style dropdown links */
+.dropdown a {
+    color: #f6f6f6;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.dropdown a:hover {
+    text-decoration: underline;
+}
+
+/* Smooth transition for dropdown to avoid abrupt changes */
+.navbar-link {
+    transition: all 0.3s ease;
+}
+
+/* Dropdown indicator arrow styling */
+.navbar-link > a::before {
+    content: '';
+    border-top: 3px solid #FDCD3B; /* Top part of the chevron */
+    border-left: 3px solid #FDCD3B; /* Left part of the chevron */
+    width: 8px; /* Control width to shape the chevron */
+    height: 8px; /* Control height to shape the chevron */
+    transform: rotate(130deg); /* Rotate to create the chevron angle */
+    display: inline-block;
+    margin-right: 0.7rem; /* Space between arrow and text */
+    vertical-align: middle;
+    margin-left: -1.8rem;
+ 
+}
+
+/* Rotate the arrow when hovering over the link */
+.navbar-link:hover > a::before {
+    transform: rotate(230deg); 
+}
+
+
+/*
+.wrapper{
+display: flex;
+position: relative;
+}
+
+.wrapper .sidebar{
+width: 200px;
+height: 100%;
+background: #72C7F2;
+padding: 30px 0px;
+position: fixed;
+}
+
+.test {
+    display: flex;
+    flex-direction: row;
+    width: 8rem;
+    height: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper .sidebar h2{
+color: #fff;
+text-transform: uppercase;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+padding: 15px;
+border-bottom: 1px solid #bdb8d7;
+border-bottom: 1px solid rgba(0,0,0,0.05);
+border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.wrapper .sidebar ul li a{
+color: #bdb8d7;
+display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+    background-color: #72C7F2;
+}
+    
+.wrapper .sidebar ul li:hover a{
+color: #fff;
+}
+
+.wrapper .sidebar .social_media{
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+    display: block;
+    width: 40px;
+    background: #594f8d;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 5px;
+    color: #bdb8d7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+width: 100%;
+margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+padding: 20px;
+background: #fff;
+color: #717171;
+border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+margin: 20px;
+color: #717171;
+line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+margin-bottom: 20px;
+}
+
+@media (max-height: 500px){
+.social_media{
+    display: none !important;
+}
+}
+
+.arrow {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid yellow;
+
+} */
