@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Navbar/>
-      <main className={styles.main}>
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -22,8 +21,6 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
-
       </div>
-     
   );
 }
