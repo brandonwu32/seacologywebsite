@@ -11,11 +11,13 @@ export default function Navbar() {
             <div id="navbar-wrapper">
                 <div className="img-with-text">
                     <Image src={SeacologyLogo} id='seacology-logo'/>
-                    <h1 id="seacology-text">Seacology</h1>
                 </div>
                 <div className="navbar">
                     <div className="navbar-link">
-                        <input type="text" placeholder="Search..." id="search-bar"/>
+                        <div className = "search-container">
+                            <span className = "search-icon">🔍</span>
+                            <input type="text" placeholder="Search..." id="search-bar"  ></input>
+                            </div>
                     </div>
 
                     <div className="navbar-link">
@@ -27,7 +29,7 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <div class="navbar-link">
+                    <div className="navbar-link">
                         <a href="#" className="navbar-link">Project Management</a>
                         <div className="dropdown">
                             <a href="#">Step 1</a>
@@ -39,7 +41,7 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <div class="navbar-link">
+                    <div className="navbar-link">
                         <a href="#" className="navbar-link">Financial</a>
                         <div className="dropdown">
                             <a href="#">Sub-item 1</a>
@@ -62,4 +64,3 @@ export default function Navbar() {
         </>
     );
 }
-

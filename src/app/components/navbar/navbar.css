@@ -1,3 +1,4 @@
+
 /* Main wrapper styling */
 #wrapper {
     position: fixed;
@@ -5,14 +6,13 @@
     display: flex;
     float: left;
     height: 100vh;
-    width: 20%;
-    background-color: #02A0D4;
+    width: 30%;
+    background-color: #71c4d6;
     z-index: 1;
 }
 
 #seacology-logo {
-    display: flex;
-    flex-direction: row;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
@@ -21,8 +21,12 @@
 }
 
 .img-with-text {
-    text-align: justify;
-    width: 6rem;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    height: auto; 
+    text-align: center;
 }
 
 .img-with-text img {
@@ -40,11 +44,36 @@
 
 #search-bar {
     border-radius: 25px;
-    height: 2rem;
+    height: 2.5rem;
+    margin-left: -0.5rem;
+    background-color: #76D1FF;
+    color: #1F7191;
+    padding-left: 2.5rem;
+    width: 150px
+}
+
+#search-bar::placeholder {
+    color: #1F7191;
+    opacity: 1;
+    font-size: 1rem;
+   
+
+
 }
 
 #seacology-text {
     color: #f6f6f6;
+}
+
+.search-container {
+    position: relative;
+    margin-left: 0rem; /* Adjust this margin as needed */
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 23%;
 }
 
 /* Navbar styling */
@@ -57,9 +86,9 @@
 /* Navbar link styling */
 .navbar-link {
     text-decoration: none;
-    font-size: 1.5rem;
-    color: #f6f6f6;
-    padding: 1rem 0;
+    font-size: 1rem;
+    color: #1F7191;
+    padding: 1.3rem 0;
     position: relative;
     width: 100%;
 }
@@ -99,17 +128,22 @@
 
 /* Dropdown indicator arrow styling */
 .navbar-link > a::before {
-    content: "▼"; 
-    font-size: 0.8rem; 
-    color: #f6f6f6; 
-    margin-left: 0.3rem; 
-    transition: transform 0.3s ease; 
-    padding-right: 0.5rem;
+    content: '';
+    border-top: 3px solid #FDCD3B; /* Top part of the chevron */
+    border-left: 3px solid #FDCD3B; /* Left part of the chevron */
+    width: 8px; /* Control width to shape the chevron */
+    height: 8px; /* Control height to shape the chevron */
+    transform: rotate(130deg); /* Rotate to create the chevron angle */
+    display: inline-block;
+    margin-right: 0.7rem; /* Space between arrow and text */
+    vertical-align: middle;
+    margin-left: -1.8rem;
+ 
 }
 
 /* Rotate the arrow when hovering over the link */
-.navbar-link:hover > a::after {
-    transform: rotate(180deg); 
+.navbar-link:hover > a::before {
+    transform: rotate(230deg); 
 }
 
 
