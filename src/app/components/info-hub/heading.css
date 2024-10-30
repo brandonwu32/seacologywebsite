@@ -1,0 +1,26 @@
+.heading-wrapper {
+    position: absolute;
+    top: 2rem;               /* Adjusts starting position below the navbar */
+    left: 20%;               /* Accounts for the navbar width */
+    padding-left: 2%;        /* Adds flexible spacing from the navbar */
+    display: flex;
+    flex-direction: column;  /* Stack heading and divider vertically */
+    align-items: flex-start;
+}
+
+#welcome-header {
+    font-size: 5rem;
+    color: #02A0D4;
+    margin: 0;
+}
+
+.header-divider {
+    position: absolute;
+    top: calc(2rem + 5rem + 0.5rem); /* Positions the divider below the header */
+    left: 0;
+    width: 100vw;           /* Full viewport width */
+    height: 2px;            /* Visible thickness */
+    background-color: #1F7191; /* Darker color for contrast */
+    border: none;
+    margin: 0;              /* No margin for full width */
+}

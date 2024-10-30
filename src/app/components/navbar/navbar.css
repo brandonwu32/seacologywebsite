@@ -2,13 +2,16 @@
 /* Main wrapper styling */
 #wrapper {
     position: fixed;
-    border: none;
-    display: flex;
-    float: left;
-    height: 100vh;
-    width: 20%;
+    top: 0;             /* Aligns to the top of the page */
+    left: 0;            /* Aligns to the left edge of the page */
+    height: 100vh;      /* Full viewport height */
+    width: 20%;         /* Adjust width as needed */
     background-color: #71c4d6;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally within the sidebar */
+    padding-top: 1rem;  
 }
 
 #seacology-logo {

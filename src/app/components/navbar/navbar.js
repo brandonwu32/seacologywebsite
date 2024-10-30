@@ -10,7 +10,7 @@ export default function Navbar() {
         <div id="wrapper">
             <div id="navbar-wrapper">
                 <div className="img-with-text">
-                    <Image src={SeacologyLogo} id='seacology-logo'/>
+                    <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
                 </div>
                 <div className="navbar">
                     <div className="navbar-link">
