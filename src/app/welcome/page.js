@@ -3,28 +3,28 @@ import Bubble from "../components/bubble/bubble"
 import Image from "next/image";
 import styles from "./page.css";
 import Navbar from "../components/navbar/navbar";
-import button from "../components/button/button";
+import Button from "../components/button/button";
+import logo from '/assets/seacology_logo.png';
 
 
 export default function Home() {
   return (
     <div className="page">
-      
-        <Navbar />
-  
-
+      <div className="image-container">
+      <Image src={logo} alt="Description of image" />
+      </div>
       <div className="main-content">
         <div className="top-bar">
-          <h1 className="welcome-heading">Welcome</h1>
-          <button className="login-button">Log In</button>/
+          <div className = "login-area"></div>
+          <Button color = "blue" size = "large" text = "Log in"/>
         </div>
-        <div className = "bottom-bar"></div>
-        <div className="bubbles-container">
-          <Bubble heading="Guidelines" subtext="blurb" />
-          <Bubble heading="Project Management" subtext="blurb" />
-          <Bubble heading="Financial" subtext="blurb" />
-          <Bubble heading="Contact" subtext="blurb" />
-        </div>
+        <div className = "bottom-bar"> </div>
+      <div className="button-bar">
+        <Button color="blue" size = "large" text = "Submit Update"/>
+        <Button color="blue" size = "large" text = "Info Hub"/>
+        <Button color="blue" size="large" text="White Pages" />
+      </div>
+        
       </div>
     </div>
   );
