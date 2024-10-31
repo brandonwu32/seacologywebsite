@@ -1,12 +1,22 @@
 .heading-wrapper {
     position: absolute;
-    top: 2rem;               /* Adjusts starting position below the navbar */
-    left: 20%;               /* Accounts for the navbar width */
-    padding-left: 2%;        /* Adds flexible spacing from the navbar */
+    top: 2rem;                /* Adjusts starting position below the navbar */
+    left: 20%;                /* Accounts for the navbar width */
+    padding-left: 2%;         /* Adds flexible spacing from the navbar */
     display: flex;
-    flex-direction: column;  /* Stack heading and divider vertically */
+    flex-direction: column;   /* Stack heading and divider vertically */
     align-items: flex-start;
+    width: 80%;               /* Occupies the space to the right of the navbar */
 }
+
+.header-component-wrapper {
+    display: flex;
+    justify-content: space-between; /* Pushes heading and button to opposite sides */
+    align-items: center;
+    width: 100%;
+    padding-right: 2vw; /* Adds a responsive gap between the button and the page edge */
+}
+
 
 #welcome-header {
     font-size: 5rem;
@@ -18,9 +28,9 @@
     position: absolute;
     top: calc(2rem + 5rem + 0.5rem); /* Positions the divider below the header */
     left: 0;
-    width: 100vw;           /* Full viewport width */
-    height: 2px;            /* Visible thickness */
-    background-color: #1F7191; /* Darker color for contrast */
+    width: 100vw;                    /* Full viewport width */
+    height: 2px;                     /* Visible thickness */
+    background-color: #1F7191;       /* Darker color for contrast */
     border: none;
-    margin: 0;              /* No margin for full width */
+    margin: 0;                       /* No margin for full width */
 }

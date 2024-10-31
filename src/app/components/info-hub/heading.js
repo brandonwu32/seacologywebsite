@@ -12,10 +12,6 @@ export default function Heading() {
             </div>
             <hr className='header-divider'/>
         </div>
-        <div className='row1-wrapper'>
-            <Bubble/>
-            <Bubble/>
-        </div>
         </>
     );
 }

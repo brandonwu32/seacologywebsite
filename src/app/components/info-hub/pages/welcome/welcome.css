@@ -1,0 +1,22 @@
+.row1-wrapper {
+    display: flex;
+    justify-content: space-between;   /* Distributes bubbles evenly within available space */
+    align-items: center;
+    position: absolute;
+    top: 15vh;                        /* Positions bubbles lower on the page responsively */
+    left: 20%;                        /* Accounts for navbar width */
+    width: 70%;                       /* Occupies remaining width, centering bubbles */
+    padding-top: 4rem;
+}
+
+
+.row2-wrapper {
+    display: flex;
+    justify-content: space-between;   /* Distributes bubbles evenly within available space */
+    align-items: center;
+    position: absolute;
+    top: 50vh;                        /* Positions bubbles lower on the page responsively */
+    left: 20%;                        /* Accounts for navbar width */
+    width: 70%;                       /* Occupies remaining width, centering bubbles */
+    padding-top: 4rem;
+}
