@@ -1,0 +1,97 @@
+.page {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2% 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    color: #72C7F2;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 2%;
+    border-bottom: 2px solid #72C7F2;
+    padding-bottom: 0.5%;
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    margin-top: 2%;
+  }
+  
+  .form-fields {
+    width: 65%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5%;
+  }
+  
+  .form-fields label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    margin-bottom: 1%;
+  }
+  
+  .form-fields input,
+  .form-fields textarea {
+    width: 95%;
+    padding: 0.5%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 0.5%;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 80px;
+  }
+  
+  
+  .upload-bubbles {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20%;
+  }
+  
+  .upload-bubbles > div {
+    width: 100%;
+    height: 100%;
+    height: auto;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    margin-top: 2%;
+  
+  }
+  
+  .close-button, .enter-button {
+    padding: 1% 2%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: blue;
+  }
+  
+  .close-button {
+    background: #FDCD3B; 
+    color: white; 
+  }
+  
+  .enter-button {
+    background-color: #569fc3; 
+    color: white;
+  }
+  
+  
