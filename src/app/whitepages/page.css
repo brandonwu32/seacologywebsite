@@ -1,10 +1,33 @@
 .title {
-    
+    color: #02A0D4;
+    font-weight: bold;
+    font-size: 400%;
+    margin-left: 3%;
+    margin-bottom: 2%;
 }
 
+.description {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;    
+  margin-top: 10px;
+}
+.bubble-container {
+  display: flex;               /* Use flexbox to align bubbles */
+  justify-content: space-around; /* Space them evenly */
+  margin: 20px 0;            /* Add some vertical spacing between groups */
+}
 
-.container {
-    display: flex;        
-    gap: 10px;             /* Optional: adds space between items */
-    align-self: left;   /* Optional: vertically centers items */
-  }
+.blueline {
+  border: none;
+  border-top: 2px solid #02A0D4; /* Customize color and thickness */
+  width: 100%; /* Set width */
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.yellowline {
+  border: none;
+  border-top: 2px solid #FDCD3B; /* Customize color and thickness */
+  width: 100%; /* Set width */
+  margin: 20px 0; /* Optional spacing */
+}

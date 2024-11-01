@@ -1,28 +1,92 @@
+'use client'
 import Image from "next/image";
 import styles from "./page.css";
 import Button from "../components/button/button";
 import Navbar from "../components/navbar/navbar";
-import whitePageBubble from "../components/whitepagebubble/whitepagebubble";
+import WhitePageBubble from "../components/whitepagebubble/whitepagebubble";
+
+
 
 
 
 export default function Whitepages() {
   return (
-    <div className="{styles.page}">
-      <div className = "bar">
-        <Navbar />
+    <div className={styles.page}>
+      <div className='title'>
+        <p> Team</p>
       </div>
+      <hr className="blueline" />
+      <hr className="yellowline" />
 
-      <div className = 'title'>
-        <h1> Team</h1>
-      </div>
-
-      <whitePageBubble 
-        src="../components/media/ceopic.jpg"
-        alt="CeoPic"
-        // onClick={() => console.log("Bubble clicked!")}  // Optional: custom onClick function
-      />
       
+      <div className="bubble-container">
+        <div className= "b1">
+          <WhitePageBubble 
+            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
+            alt="CeoPic"
+            name= "name"
+            position= "position"
+            email= "email"
+          />
+          
+        </div>
+
+        <div className= "b2">
+          <WhitePageBubble 
+            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
+            alt="CeoPic"
+            name= "name"
+            position= "position"
+            email= "email"
+          />
+      
+        </div>
+
+        <div className= "b3">
+          <WhitePageBubble 
+            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
+            alt="CeoPic"
+            name= "name"
+            position= "position"
+            email= "email"
+          />
+          </div>
       </div>
+      
+      <div className="bubble-container">
+        <div className= "b4">
+          <WhitePageBubble 
+            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
+            alt="CeoPic"
+            name= "name"
+            position= "position"
+            email= "email"
+          />
+          
+        </div>
+
+        <div className= "b5">
+          <WhitePageBubble 
+            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
+            alt="CeoPic"
+            name= "name"
+            position= "position"
+            email= "email"
+          />
+          
+        </div>
+        
+        <div className= "b6">
+          <WhitePageBubble 
+            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
+            alt="CeoPic"
+            name= "name"
+            position= "position"
+            email= "email"
+          />
+        </div>
+
+      </div>
+    </div>
   );
 }
