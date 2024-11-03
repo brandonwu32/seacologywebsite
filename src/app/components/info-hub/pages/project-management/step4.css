@@ -1,0 +1,17 @@
+
+.title{
+    display: flex;
+   justify-content: center;
+    
+    padding-top: 13%;
+    color: rgb(16, 162, 241);
+
+}
+
+.bodyText{
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    flex-wrap: wrap;
+    padding-left: 30%;
+}

@@ -7,21 +7,13 @@ import Heading from "./components/info-hub/heading"
 import Welcome from "../app/components/info-hub/pages/welcome/welcome"
 import Step4 from "./components/info-hub/pages/project-management/step4"
 
-export default function Home() {
+export default function project() {
   return (
-   /* <div className={styles.page}>
-      <Navbar/> 
-      <Heading text = "Welcome"  nextText = "next"/> 
-
-      <Welcome/>
-     
-    </div> */
-
+   
     <div>
-      <Step4/>
+       <Step4/>
+
     </div>
-
-
      
   );
 }
