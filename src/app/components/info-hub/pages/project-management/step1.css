@@ -1,0 +1,23 @@
+.text1-wrapper {
+    margin-top: 15rem;
+}
+
+.row1-wrapper {
+    display: flex;
+    justify-content: space-between;   /* Distributes bubbles evenly within available space */
+    align-items: center;
+    position: absolute;
+    top: 15rem;                        /* Positions bubbles lower on the page responsively */
+    left: 15%;                        /* Accounts for navbar width */
+    width: 70%;                       /* Occupies remaining width, centering bubbles */
+    padding-top: 4rem;
+}
+
+.text2-wrapper {
+    margin-top: 35rem;
+}
+
+.next-button-wrapper {
+    top: 40rem;
+    margin-bottom: 3rem;
+}

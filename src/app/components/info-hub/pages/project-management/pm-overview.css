@@ -3,7 +3,7 @@
     justify-content: space-between;   /* Distributes bubbles evenly within available space */
     align-items: center;
     position: absolute;
-    top: 15vh;                        /* Positions bubbles lower on the page responsively */
+    top: 12rem;                        /* Positions bubbles lower on the page responsively */
     left: 20%;                        /* Accounts for navbar width */
     width: 70%;                       /* Occupies remaining width, centering bubbles */
     padding-top: 4rem;
@@ -14,7 +14,7 @@
     justify-content: space-between;   /* Distributes bubbles evenly within available space */
     align-items: center;
     position: absolute;
-    top: 50vh;                        /* Positions bubbles lower on the page responsively */
+    top: 28rem;                        /* Positions bubbles lower on the page responsively */
     left: 20%;                        /* Accounts for navbar width */
     width: 70%;                       /* Occupies remaining width, centering bubbles */
     padding-top: 4rem;
@@ -36,10 +36,21 @@
     justify-content: space-between;   /* Distributes bubbles evenly within available space */
     align-items: center;
     position: absolute;
-    top: 80vh;                        /* Positions bubbles lower on the page responsively */
+    top: 45rem;                        /* Positions bubbles lower on the page responsively */
     left: 86%; 
     width: 70%;                       /* Occupies remaining width, centering bubbles */
     padding-top: 4rem;
 }
 
+.pm-overview-h1 {
+    color: #71c4d6;
+    position: absolute;
+    top: 11rem;
+    left: 52vh;
+}
+
+.pm-overview-h1-wrapper {
+    display: flex;
+
+}
 
