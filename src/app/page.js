@@ -9,6 +9,7 @@ import PM_Overview  from "./components/info-hub/pages/project-management/pm-over
 import Step1 from "./components/info-hub/pages/project-management/step1"
 import Step4 from "./components/info-hub/pages/project-management/step4"
 import Step5 from "./components/info-hub/pages/project-management/step5"
+import Step6 from "./components/info-hub/pages/project-management/step6"
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
     </div> */
 
     <div>
-      <Step5/>
+      <Step6/>
     </div>
 
 
