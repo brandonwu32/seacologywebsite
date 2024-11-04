@@ -1,8 +1,8 @@
 
 .title{
     display: flex;
-   justify-content: center;
-    
+   padding-left: 25%;
+   
     padding-top: 13%;
     color: rgb(16, 162, 241);
 
@@ -10,8 +10,29 @@
 
 .bodyText{
     display: flex;
-    justify-content: center;
-    padding-top: 10%;
+    padding-top: 3%;
     flex-wrap: wrap;
-    padding-left: 30%;
+    width: 90%;
+    line-height: 1.5;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+.randomText{
+    display: flex;
+    padding-left: 25%;
+    flex-wrap: wrap;
+    width: 90%;
+    line-height: 1.5;
+
+}
+.lists{
+    display: flex;
+    padding-left: 25%;
+    flex-wrap: wrap;
+    width: 90%;
+    line-height: 1.5;
 }
