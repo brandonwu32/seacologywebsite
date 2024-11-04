@@ -15,7 +15,10 @@
 .bubble-container {
   display: flex;               /* Use flexbox to align bubbles */
   justify-content: space-around; /* Space them evenly */
-  margin: 20px 0;            /* Add some vertical spacing between groups */
+  margin: 20px 0;
+  height: 100%;
+  width: 100%;
+            
 }
 
 .blueline {

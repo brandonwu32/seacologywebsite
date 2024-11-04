@@ -3,13 +3,16 @@ import Image from "next/image";
 import styles from "./page.css";
 import Button from "../components/button/button";
 import Navbar from "../components/navbar/navbar";
+import WhitePagePopUp from "../components/whitepagepopup/whitepagespopup";
+import { useState } from "react"; 
 import WhitePageBubble from "../components/whitepagebubble/whitepagebubble";
 
-
-
-
-
 export default function Whitepages() {
+  const [buttonPopUp, setButtonPopUp] = useState(false);
+   const togglePopUp = () => {
+    setButtonPopUp(!buttonPopUp);
+   }
+
   return (
     <div className={styles.page}>
       <div className='title'>
@@ -18,6 +21,9 @@ export default function Whitepages() {
       <hr className="blueline" />
       <hr className="yellowline" />
 
+
+      <button onClick={togglePopUp}>clickMe</button>
+      <WhitePagePopUp trigger = {buttonPopUp} />
       
       <div className="bubble-container">
         <div className= "b1">
