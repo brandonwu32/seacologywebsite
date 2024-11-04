@@ -1,4 +1,4 @@
-
+import styles from "./body.css"
 
 export default function Body(props) {
     function convertToListItems(textList) {
