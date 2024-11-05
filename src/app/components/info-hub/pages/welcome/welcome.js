@@ -6,29 +6,31 @@ import Button from "../../../button/button"
 
 export default function Welcome() {
     return (
-        <>
+        <div>
+            <Navbar/>
+            <div className="page-wrapper">
+                <Heading text="Welcome" buttonText = 'edit'/>
 
-        <Navbar/>
-        <Heading text="Welcome" buttonText = 'edit'/>
+                {/* <div className="back-button-wrapper">
+                    <Button color="blue" size="small" text="back"/>
+                </div> */}
 
-        <div className="back-button-wrapper">
-            <Button color="blue" size="small" text="back"/>
+                {/* Figure out how to make the bubbles bigger */}
+
+                <div className="welcome-wrapper">
+                    <Bubble heading="G"/>
+                    <Bubble heading="PM"/>
+                </div>
+
+                <div className="welcome-wrapper">
+                    <Bubble heading="G" />
+                    <Bubble heading="G"/>
+                </div>
+
+                {/* <div className="next-button-wrapper">
+                    <Button color="blue" size="small" text="next"/>
+                </div> */}
+            </div>
         </div>
-
-        <div className="row1-wrapper">
-            <Bubble heading="Guidelines"/>
-            <Bubble heading="Project Management"/>
-        </div>
-
-        <div className="row2-wrapper">
-            <Bubble />
-            <Bubble />
-        </div>
-
-        <div className="next-button-wrapper">
-            <Button color="blue" size="small" text="next"/>
-        </div>
-
-        </>
     );
 }

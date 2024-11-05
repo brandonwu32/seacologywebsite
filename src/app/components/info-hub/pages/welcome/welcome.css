@@ -1,45 +1,16 @@
-.row1-wrapper {
+.welcome-wrapper {
     display: flex;
-    justify-content: space-between;   /* Distributes bubbles evenly within available space */
-    align-items: center;
-    position: absolute;
-    top: 15vh;                        /* Positions bubbles lower on the page responsively */
-    left: 20%;                        /* Accounts for navbar width */
-    width: 70%;                       /* Occupies remaining width, centering bubbles */
-    padding-top: 4rem;
+    flex-direction: row;
+    width: 60%;
 }
 
-.row2-wrapper {
+.page-wrapper {
+    height: 100%;
+    width: 100%;
+    margin-left: 24%;
+    margin-top: 12%;
     display: flex;
-    justify-content: space-between;   /* Distributes bubbles evenly within available space */
-    align-items: center;
-    position: absolute;
-    top: 50vh;                        /* Positions bubbles lower on the page responsively */
-    left: 20%;                        /* Accounts for navbar width */
-    width: 70%;                       /* Occupies remaining width, centering bubbles */
-    padding-top: 4rem;
+    flex-direction: column;
+    gap: 2rem;
 }
-
-.back-button-wrapper {
-    display: flex;
-    justify-content: space-between;   /* Distributes bubbles evenly within available space */
-    align-items: center;
-    position: absolute;
-    top: 15vh;                        /* Positions bubbles lower on the page responsively */
-    left: 86%; 
-    width: 70%;                       /* Occupies remaining width, centering bubbles */
-    padding-top: 4rem;
-}
-
-.next-button-wrapper {
-    display: flex;
-    justify-content: space-between;   /* Distributes bubbles evenly within available space */
-    align-items: center;
-    position: absolute;
-    top: 80vh;                        /* Positions bubbles lower on the page responsively */
-    left: 86%; 
-    width: 70%;                       /* Occupies remaining width, centering bubbles */
-    padding-top: 4rem;
-}
-
 

@@ -1,23 +1,32 @@
-.text1-wrapper {
-    margin-top: 15rem;
-}
-
-.row1-wrapper {
+.page-wrapper {
+    height: 100%;
+    width: 100%;
+    margin-left: 24%;
+    margin-top: 12%;
     display: flex;
-    justify-content: space-between;   /* Distributes bubbles evenly within available space */
-    align-items: center;
-    position: absolute;
-    top: 15rem;                        /* Positions bubbles lower on the page responsively */
-    left: 15%;                        /* Accounts for navbar width */
-    width: 70%;                       /* Occupies remaining width, centering bubbles */
-    padding-top: 4rem;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.text2-wrapper {
-    margin-top: 35rem;
+.step1-row1-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
 }
 
-.next-button-wrapper {
-    top: 40rem;
-    margin-bottom: 3rem;
+.pm-overview-h1 {
+    color: #71c4d6;
+}
+
+.lists{
+    display: flex;
+    padding-left: 25%;
+    flex-wrap: wrap;
+    padding-left: 30%;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 50%
 }

@@ -3,7 +3,30 @@ p {
 }
 
 .body-text-wrapper {
-    position: absolute;
-    left: 24%;
     width: 55%;
+}
+
+.bodyText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+li {
+    width: 60vw;
+    margin-left: 3rem;
+}
+
+.listItem {
+    width: 60vw;
+
+}
+
+.body-title {
+    color: #71c4d6;
+    margin-bottom: -5vh; 
+}
+
+h2 {
+    color: #71c4d6;
 }

@@ -1,22 +1,36 @@
 import styles from "./body.css"
 
 export default function Body(props) {
-    function convertToListItems(textList) {
+
+    function ListProcess(item) {
+        if (item.type == 'paragraph') {
+            return (
+                <p key = {item.content}>{item.content}</p>
+            )
+        }
         
-        return (
-            <div>{textList.map(textItem => {<li key = {textItem}>{textItem}</li>})}</div>
-        )
+        else if (item.type == 'header') {
+            return (
+                <h2 key = {item.content}>{item.content}</h2>
+            ) 
+        }
+
+        else if (item.type == 'bullet-point') {
+            return (
+                <ul>
+                    <li key={item.content}>{item.content}</li>
+                </ul>
+            )
+        }
     }
 
-  
-    
     return (
         <div>
             <div>
-                <p>{props.title}</p>
+                <h1 className="body-title">{props.title}</h1>
             </div>
             <div className = "bodyText">
-                {props.textList.map(textItem => (<li key = {textItem}>{textItem}</li>))}
+                {props.textList.map(textItem => <div className = "listItem">{ListProcess(textItem)}</div>)}
             </div>
         </div>
     );
