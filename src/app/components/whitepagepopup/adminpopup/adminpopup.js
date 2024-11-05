@@ -1,5 +1,4 @@
 import './adminpopup.css'
-import Image from "next/image";
 import Table from '../../../table/table';
 
 
