@@ -1,0 +1,95 @@
+.popup {
+    height: 400px;    /* make % */
+    width: 600px;
+    background-color: #ADD8E6;
+    position: fixed;
+    z-index: 1000;
+}
+.rectangle {
+    margin: 20px 25px 20px 25px;
+    border: 2px solid #02A0D4;
+    padding: 10px;
+}
+.yellowline {
+    border: none;
+    border-top: 2px solid #FDCD3B; /* Customize color and thickness */
+    width: 100%; /* Set width */
+    margin: 10px 0; /* Optional spacing */
+  }
+.name {
+    color:#02A0D4;
+    font-size: large;
+}
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popupContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.projectTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.projectTable th, .projectTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.projectTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.closeButton {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background-color: #0056b3;
+}
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+    border: 1px solid #02A0D4; /* Visible borders */
+    padding: 8px;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #FDCD3B;
+}

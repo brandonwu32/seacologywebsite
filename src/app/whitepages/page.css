@@ -1,0 +1,36 @@
+.title { /*figure out why the font size will not change */
+    color: #02A0D4;
+    font-weight: bold;
+    margin-left: 3%;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;    
+  margin-top: 10px;
+}
+.bubble-container {
+  display: flex;               /* Use flexbox to align bubbles */
+  justify-content: space-around; /* Space them evenly */
+  margin: 20px 0;
+  height: 100%;
+  width: 100%;
+            
+}
+
+.blueline {
+  border: none;
+  border-top: 2px solid #02A0D4; /* Customize color and thickness */
+  width: 100%; /* Set width */
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+.yellowline {
+  border: none;
+  border-top: 2px solid #FDCD3B; /* Customize color and thickness */
+  width: 100%; /* Set width */
+  margin: 1px 0; /* Optional spacing */
+}
