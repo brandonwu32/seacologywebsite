@@ -14,7 +14,7 @@ export default function WhitePagePopUp(props) {
                     <Table project="Project A" status="In Progress" update="2024-11-03" />
                 </div>
                 <div className = 'buttonz'>
-                <button class="blue" id="small">Close</button>
+                <button class="blue" id="small" onClick={props.close}>Close</button>
                 </div>
             </div>
         </div>

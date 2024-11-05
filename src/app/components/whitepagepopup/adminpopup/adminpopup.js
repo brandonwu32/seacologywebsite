@@ -1,5 +1,5 @@
 import './adminpopup.css'
-import Table from '../../../table/table';
+import Table from '../../table/table';
 
 
 export default function AdminPopUp(props) {

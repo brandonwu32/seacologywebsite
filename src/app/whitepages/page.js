@@ -10,6 +10,7 @@ import WhitePageBubble from "../components/whitepagebubble/whitepagebubble";
 export default function Whitepages() {
   const [buttonPopUp, setButtonPopUp] = useState(false);
 
+
   const togglePopUp = () => {
     setButtonPopUp(!buttonPopUp);
   }
@@ -22,7 +23,7 @@ export default function Whitepages() {
       <hr className="blueline" />
       <hr className="yellowline" />
 
-      <WhitePagePopUp trigger={buttonPopUp} />
+      <WhitePagePopUp trigger={buttonPopUp} close = {togglePopUp}/>
 
       <div className="bubble-container">
         <div className="b1">
