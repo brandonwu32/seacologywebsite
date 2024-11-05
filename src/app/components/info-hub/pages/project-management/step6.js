@@ -54,7 +54,7 @@ export default function Step6() {
    }
     
 
-    var textList = [itemOne, itemTwo, itemThree ]
+    var textList = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine, itemTen, itemEleven ]
 
 
     return (
@@ -64,7 +64,7 @@ export default function Step6() {
                 <Heading text="Step 6" buttonText="edit"/>
                 
                 <div>
-                    <Body textList={textList} title="Step 6. Submit the Final Report"/>
+                    <Body textList={textList} title="Submit the Final Report"/>
                 </div>
 
                 <div className="button-wrapper">

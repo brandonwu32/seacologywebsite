@@ -13,11 +13,13 @@ import Step3 from "./components/info-hub/pages/project-management/step3";
 import Step4 from "./components/info-hub/pages/project-management/step4"
 import Step5 from "./components/info-hub/pages/project-management/step5"
 import Step6 from "./components/info-hub/pages/project-management/step6"
+import Contact from "./components/info-hub/pages/project-management/contact"
+
 
 export default function Home() {
   return (
     <>
-    <Welcome/>
+    <Contact/>
     </>
     
 
