@@ -15,6 +15,7 @@ p {
 li {
     width: 60vw;
     margin-left: 3rem;
+    margin-top: -1.3rem;
 }
 
 .listItem {

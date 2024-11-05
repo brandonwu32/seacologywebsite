@@ -17,7 +17,7 @@ import Step6 from "./components/info-hub/pages/project-management/step6"
 export default function Home() {
   return (
     <>
-    <Step3/>
+    <Welcome/>
     </>
      
   );

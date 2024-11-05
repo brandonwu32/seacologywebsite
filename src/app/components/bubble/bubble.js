@@ -9,9 +9,9 @@ export default function Bubble(props) {
     };
 
     return (
-        <div className = "circle">
+        <div className = "cirlce-wrapper">
             <button className= "button-for-bubble" onClick={handleClick()} id= {props.size}>
-                <div className = "circle">
+                <div className = "circle" style = {{width: props.width, height: props.height}}>
                     <h1 className = "headinginput">{props.heading}</h1>
                     <p className="subtext">{props.subtext}</p>
                 </div>

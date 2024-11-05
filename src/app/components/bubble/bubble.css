@@ -1,6 +1,10 @@
+.circle-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
 .circle {
-    width: 200px;
-    height: 200px;
     border-radius: 50%;
     background-color: #f0f0f0;
     box-shadow: 0px 4px 10px rgba(82, 96, 225, 0.3);
@@ -12,6 +16,7 @@
     text-align: center;
     margin: 20px auto;
     object-fit: cover;
+    
 }
 
 .headinginput {
@@ -26,6 +31,7 @@
 .button-for-bubble {
     background-color: transparent;
     border: none;
+    gap: 30%
 }
 
 .subtext {

@@ -18,15 +18,14 @@ export default function Welcome() {
                 {/* Figure out how to make the bubbles bigger */}
 
                 <div className="welcome-wrapper">
-                    <Bubble heading="G"/>
-                    <Bubble heading="PM"/>
+                    <Bubble className="welcome-bubble" heading="G" width={'300px'} height={'300px'}/>
+                    <Bubble className="welcome-bubble" heading="G" width={'300px'} height={'300px'}/>
                 </div>
 
                 <div className="welcome-wrapper">
-                    <Bubble heading="G" />
-                    <Bubble heading="G"/>
+                    <Bubble className="welcome-bubble" heading="G" width={'300px'} height={'300px'}/>
+                    <Bubble className="welcome-bubble" heading="G" width={'300px'} height={'300px'}/>                
                 </div>
-
                 {/* <div className="next-button-wrapper">
                     <Button color="blue" size="small" text="next"/>
                 </div> */}

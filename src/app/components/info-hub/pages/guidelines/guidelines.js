@@ -81,11 +81,9 @@ export default function Guidelines() {
         content: "Travel Expenses"
     }
 
-    
-
     var textList = [
-        itemOne, itemTwo, itemThree, itemThirteen, itemFour, itemFourteen, itemFive, itemSix, itemFifteen, itemSeven, itemEight, itemNine, itemTen, itemEleven, itemTwelve
-       
+        itemOne, itemTwo, itemThree, itemThirteen, itemFour, itemFourteen, itemFive, itemSix, itemFifteen,
+         itemSeven, itemEight, itemNine, itemTen, itemEleven, itemTwelve
     ]
 
     return (
