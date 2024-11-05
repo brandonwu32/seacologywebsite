@@ -1,8 +1,7 @@
 .bubble {
     height: 100%;
     width: 100%;
-    display: inline-block;      /* Ensure the container is sized to the image */
-    border-radius: 50%;        /* Makes the border circular */
+    display: inline-block;      /* Ensure the container is sized to the image */  
     overflow: hidden;          /* Ensures the border is clipped in a circle */
     cursor: pointer;           /* Changes the cursor to indicate it's clickable */
     background-color: white;
