@@ -19,7 +19,10 @@ export default function Whitepages() {
     <div className={styles.page}>
       <div className='top'>
         <p className = 'title'> Team</p>
-        <button class="blue" id="large">Edit</button>
+        <div className = 'btz'>
+        <button class="blue" id="large">Edit View</button>
+        <button class="blue" id="large">Add Member</button>
+        </div>
 
       </div>
       <hr className="blueline" />

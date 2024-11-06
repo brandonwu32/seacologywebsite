@@ -4,14 +4,20 @@
     display: inline-block;      /* Ensure the container is sized to the image */  
     overflow: hidden;          /* Ensures the border is clipped in a circle */
     cursor: pointer;           /* Changes the cursor to indicate it's clickable */
-    background-color: white;
     border: none;
+    background-color: #02A0D4;
 }
 
 .bubble-image {
     width: 100%;               
     height: 100%;              
-    object-fit: cover;         /* Ensures the image covers the area */
-    border-radius: 60%;        /* Keeps the image circular */
+    object-fit: cover;         /* Ensures the image covers the area */     
     border: 20px solid #02A0D4; /* Blue border around the image */
+}
+.popup-bubble {
+    width: 50%;       /* Set a smaller width */
+    height: 70%;      /* Set a smaller height */
+    border: 5px solid #02A0D4; /* Adjust border size if needed */
+    overflow: hidden;
+    margin-left: 110px;
 }
