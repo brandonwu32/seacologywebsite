@@ -20,12 +20,12 @@ export default function Step5() {
         content: "In addition to informal communications, we require regular reports on all active projects. You must  send us a progress report when:"
     }
     var itemFour = {
-        type: "paragraph",
-        content: "▪ A Seacology board meeting is coming up. (Typically, reports are due in December and May.  We will remind you well in advance.) AND"
+        type: "bullet-point",
+        content: " A Seacology board meeting is coming up. (Typically, reports are due in December and May.  We will remind you well in advance.) AND"
     }
     var itemFive = {
-        type: "paragraph",
-        content: "▪ The community is ready for the next installment of the grant."
+        type: "bullet-point",
+        content: " The community is ready for the next installment of the grant."
     }
     var itemSix = {
         type: "paragraph",
@@ -80,7 +80,7 @@ export default function Step5() {
                 <Heading text="Step 5" buttonText="edit"/>
                 
                 <div>
-                    <Body textList={textList} title="Step 5. Review and Send Progress Reports"/>
+                    <Body textList={textList} title="Review and Send Progress Reports"/>
                 </div>
 
                 <div className="button-wrapper">

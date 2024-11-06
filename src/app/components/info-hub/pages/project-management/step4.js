@@ -20,12 +20,12 @@ export default function Step4() {
         content: "Seacology Field Representative Manual Page 4 of 12 November 2023"
     }
     var itemFour = {
-        type: "paragraph",
-        content: "▪ A conservation agreement, signed by community leaders. This is a simple, one-page  agreement that sets out what Seacology and the community are promising to do. It is  important to make sure that the community members understand and agree with the  agreement. Prepare a copy translated into the local language if appropriate."
+        type: "bullet-point",
+        content: " A conservation agreement, signed by community leaders. This is a simple, one-page  agreement that sets out what Seacology and the community are promising to do. It is  important to make sure that the community members understand and agree with the  agreement. Prepare a copy translated into the local language if appropriate."
     }
     var itemFive = {
-        type: "paragraph",
-        content: "▪ A grant agreement, signed by the fiscal administrator and on-site project leader. After the  conservation agreement has been signed and returned, we will send this agreement directly to  the project leader."
+        type: "bullet-point",
+        content: "A grant agreement, signed by the fiscal administrator and on-site project leader. After the  conservation agreement has been signed and returned, we will send this agreement directly to  the project leader."
     }
     var itemSix = {
         type: "paragraph",
@@ -36,12 +36,12 @@ export default function Step4() {
         content: "We typically pay grant funds in two or three installments. Before we send the first payment, we must  receive:"
     }
     var itemEight = {
-        type: "paragraph",
-        content: "▪ The signed grant agreement."
+        type: "bullet-point",
+        content: "The signed grant agreement."
     }
     var itemNine = {
-        type: "paragraph",
-        content: "▪ Instructions for wiring money to the fiscal administrator. (We will ask you for what we need.) Once we receive the signed grant agreement and wiring instructions, Seacology will wire the first  installment payment. We will let you know when we have sent the wire."
+        type: "bullet-point",
+        content: " Instructions for wiring money to the fiscal administrator. (We will ask you for what we need.) Once we receive the signed grant agreement and wiring instructions, Seacology will wire the first  installment payment. We will let you know when we have sent the wire."
     }
     
 
@@ -56,7 +56,7 @@ export default function Step4() {
                 <Heading text="Step 4" buttonText="edit"/>
                 
                 <div>
-                    <Body textList={textList} title="Step 4: After Approval Get Conservation and Grant Agreements Signed"/>
+                    <Body textList={textList} title="After Approval Get Conservation and Grant Agreements Signed"/>
                 </div>
 
                 <div className="button-wrapper">
