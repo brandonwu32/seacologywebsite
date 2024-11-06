@@ -1,6 +1,8 @@
 .circle-wrapper {
     display: flex;
     flex-direction: column;
+    gap: 60vw;
+    width: 100vw;
 }
 
 
@@ -14,9 +16,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 20px auto;
     object-fit: cover;
-    
 }
 
 .headinginput {
@@ -31,10 +31,21 @@
 .button-for-bubble {
     background-color: transparent;
     border: none;
-    gap: 30%
+    display: flex;
+    flex-direction: row;
+    gap: 60rem;
 }
 
 .subtext {
     font-size: 1rem;
     color: #666;
+}
+
+.midtext {
+    font-size: 1.8rem;
+    color: #72C7F2;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2%;
+    padding-bottom: 0.5%;
 }

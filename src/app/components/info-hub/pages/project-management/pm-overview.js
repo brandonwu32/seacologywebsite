@@ -62,15 +62,15 @@ export default function PM_Overview() {
                 </div>
 
                 <div className="welcome-wrapper">
-                    <Bubble heading="G"/>
-                    <Bubble heading="PM"/>
-                    <Bubble heading="PM"/>
+                    <Bubble midtext="Step 1. Find a New Project" width={'15rem'} height={'15rem'}/>
+                    <Bubble midtext="Step 2. Send Us the Idea" width={'15rem'} height={'15rem'}/>
+                    <Bubble midtext="Step 3. Send Us Information" width={'15rem'} height={'15rem'}/>
                 </div>
 
                 <div className="welcome-wrapper">
-                    <Bubble />
-                    <Bubble />
-                    <Bubble heading="PM"/>
+                    <Bubble midtext="Step 4. Get Agreements Signed" width={'15rem'} height={'15rem'}/>
+                    <Bubble midtext="Step 5. Review and Send Reports" width={'15rem'} height={'15rem'}/>
+                    <Bubble midtext="Step 6. Submit the Final Report" width={'15rem'} height={'15rem'}/>
                 </div>
 
                 <div className="button-wrapper">

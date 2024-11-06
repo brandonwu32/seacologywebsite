@@ -4,6 +4,7 @@ import Button from '../../../../components/button/button';
 import Bubble from "../../../../components/bubble/bubble";
 import Heading from "../../../../components/info-hub/heading"
 import Body from "./body";
+import Link from "next/link"
 
 export default function Step1() {
     var itemOne = {
@@ -36,12 +37,15 @@ export default function Step1() {
                     <Body textList={textList} title="Step 1: Find a New Project"/>
                 </div>
                 <div className="step1-row1-wrapper">
-                    <Bubble subtext="Identifying Good Seacology Projects"/>
-                    <Bubble subtext="Now Project Proposal Conversation"/>
+                    <Bubble subtext="Identifying Good Seacology Projects" width={'12rem'} height={'12rem'}/>
+                    <Bubble subtext="Now Project Proposal Conversation" width={'12rem'} height={'12rem'}/>
                 </div> 
 
                 <div className="button-wrapper">
-                    <Button color="blue" size="small" text="back"/>
+                    <Link href="">
+                        <Button color="blue" size="small" text="back"/>
+                    </Link>
+                    
                     <Button color="blue" size="small" text="next"/>
                 </div>
             </div>
