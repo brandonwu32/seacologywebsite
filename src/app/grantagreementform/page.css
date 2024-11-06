@@ -1,4 +1,3 @@
-/* Page Container */
 .agreement-page {
     width: 90%;
     margin: 0 auto;
@@ -7,7 +6,7 @@
     color: #333;
 }
 
-/* Heading */
+
 .agreement-heading {
     font-size: 2.5rem;
     color: #72C7F2;
@@ -27,7 +26,6 @@
     border-radius: 5px;
 }
 
-/* Form Fields */
 .form-fields {
     width: 45%;
     display: flex;
@@ -51,7 +49,6 @@
     margin-top: 5px;
 }
 
-/* Agreement Text Box */
 .agreement-text-box {
     width: 50%;
     padding: 2%;
@@ -63,7 +60,6 @@
     background-color: #f8f8f8;
 }
 
-/* Agree Button */
 .button-container {
     display: flex;
     justify-content: flex-end;
