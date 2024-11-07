@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./../../page.css";
 import Button from "../../../components/button/button";
 import Navbar from "../../../components/navbar/navbar";
-import WhitePagePopUp from "../../../components/whitepagepopup/infopopup/infopopup";
+import AdminPopUp from "../../../components/whitepagepopup/adminpopup/adminpopup";
 import { useState } from "react"; 
 import WhitePageBubble from "../../../components/whitepagebubble/whitepagebubble";
 
@@ -18,13 +18,16 @@ export default function Whitepages() {
     <div className={styles.page}>
       <div className='top'>
         <p className = 'title'> Team</p>
-        <button class="red" id="large">Editing</button>
+        <div className = 'btz'>
+        <button class="red" id="large">Edititing</button>
+        <button class="blue" id="large">Add Member</button>
+        </div>
 
       </div>
       <hr className="blueline" />
       <hr className="yellowline" />
 
-      <WhitePagePopUp trigger={buttonPopUp} />
+      <AdminPopUp trigger={buttonPopUp} close = {togglePopUp}/>
 
       <div className="bubble-container">
         <div className="b1">

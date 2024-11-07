@@ -12,7 +12,7 @@
 }
 .popup {
     width: 600px;
-    background-color: #ADD8E6;
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -106,10 +106,7 @@ h2 {
 .custom-table th {
     background-color: #FDCD3B;
 }
-.blueline {
-    border: none;
-    border-top: 2px solid #02A0D4; /* Customize color and thickness */
-    width: 100%; /* Set width */
-    margin-top: 4px;
-    margin-bottom: 2px;
-  }
+
+.buttonz {
+    margin-left: 400px;
+}

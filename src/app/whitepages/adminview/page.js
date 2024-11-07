@@ -6,7 +6,7 @@ import Navbar from "../../components/navbar/navbar";
 import WhitePagePopUp from "../../components/whitepagepopup/infopopup/infopopup";
 import { useState } from "react"; 
 import WhitePageBubble from "../../components/whitepagebubble/whitepagebubble";
-import AdminPopUp from "../../components/whitepagepopup/adminpopup/adminpopup"
+import WhitePopUp from "../../components/whitepagepopup/infopopup/infopopup"
 
 export default function Whitepages() {
   const [buttonPopUp, setButtonPopUp] = useState(false);
@@ -28,7 +28,7 @@ export default function Whitepages() {
       <hr className="blueline" />
       <hr className="yellowline" />
 
-      <AdminPopUp trigger={buttonPopUp} />
+      <AdminPopUp trigger={buttonPopUp} close = {togglePopUp}/>
 
       <div className="bubble-container">
         <div className="b1">
