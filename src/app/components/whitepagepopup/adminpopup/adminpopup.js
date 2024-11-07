@@ -20,7 +20,9 @@ export default function AdminPopUp(props) {
                     <Table project="Project A" status="In Progress" update="2024-11-03" />
                 </div>
                 <div className = 'buttonz'>
-                <button class="blue" id="small" onClick={props.close}>Close</button>
+                <button class="red" id="large" onClick={props.close}>Remove Member</button>
+                <button class="blue" id="large" onClick={props.close}>Submit Changes</button>
+                <button class="blue" id="large" onClick={props.close}>Close</button>
                 </div>
             </div>
         </div>

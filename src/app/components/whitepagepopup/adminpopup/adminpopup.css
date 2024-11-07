@@ -108,5 +108,8 @@ h2 {
 }
 
 .buttonz {
-    margin-left: 400px;
+    margin-left: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

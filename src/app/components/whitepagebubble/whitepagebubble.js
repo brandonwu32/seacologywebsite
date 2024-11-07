@@ -11,7 +11,7 @@ export default function WhitePageBubble(props) {
     };
 
     return (
-        <div>
+        <div className = "individual-bubble">
             <button onClick={handleClick} className="bubble"> 
                 <Image src={props.src} alt="none" className="bubble-image" width={190} height={150} />
             </button>

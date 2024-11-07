@@ -7,6 +7,7 @@ import WhitePagePopUp from "../../components/whitepagepopup/infopopup/infopopup"
 import { useState } from "react"; 
 import WhitePageBubble from "../../components/whitepagebubble/whitepagebubble";
 import WhitePopUp from "../../components/whitepagepopup/infopopup/infopopup"
+import AdminPopUp from "@/app/components/whitepagepopup/adminpopup/adminpopup";
 
 export default function Whitepages() {
   const [buttonPopUp, setButtonPopUp] = useState(false);
@@ -21,7 +22,6 @@ export default function Whitepages() {
         <p className = 'title'> Team</p>
         <div className = 'btz'>
         <button class="blue" id="large">Edit View</button>
-        <button class="blue" id="large">Add Member</button>
         </div>
 
       </div>
