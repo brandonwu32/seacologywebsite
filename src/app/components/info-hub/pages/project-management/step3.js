@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-=======
-import styles from "./step3.css"
->>>>>>> Stashed changes
 import Navbar from "../../../../components/navbar/navbar";
 import Button from '../../../../components/button/button';
 import Bubble from "../../../../components/bubble/bubble";
@@ -9,7 +5,6 @@ import Heading from "../../../../components/info-hub/heading"
 import Body from "./body";
 
 export default function Step3() {
-<<<<<<< Updated upstream
     var itemOne = {
         type: "paragraph",
         content: "If we think that your project idea might be a good fit, we will ask you for more information. A form  you can use is attached at the end of this document. Whether or not you use the form, please include: "
@@ -93,49 +88,18 @@ export default function Step3() {
     var textList = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight,
          itemNine, itemTen, itemEleven, itemTwelve, itemThirteen, itemFourteen, itemFifteen, itemSixteen]
 
-=======
->>>>>>> Stashed changes
     return (
         <div>
             <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Step 3" buttonText="edit"/>
 
-<<<<<<< Updated upstream
                 <div>
                     <Body textList={textList} title="Step 3: Send Us Detailed Information"/>
                 </div>
 
                 <div className="button-wrapper">
                     <Button color="blue" size="small" text="back"/>
-=======
-                <div className="back-button-wrapper">
-                    <Button color="blue" size="small" text="back"/>
-                </div>
-
-                <div>
-                    <h1 className="pm-overview-h1">Step 3: Send Us Detailed Information</h1>
-                </div>
-
-                <div>
-                    <Body text="If we think that your project idea might be a good fit, we will ask you for more information.
-                    A form  you can use is attached at the end of this document. Whether or not you use the form, please include:  "/>
-                </div>
-
-                <div>
-                    <Body text="This step is essential to ensure that the project is a good fit for Seacology.
-                    We will let you know  whether or not we want to prepare a full proposal for the board. "/>
-                </div>
-
-                <div>
-                    <Body text="Conflicts of interest. If you, or a friend or relative, would personally benefit in any way from a  Seacology project, 
-                    that is a conflict of interest. Such conflicts are inevitable on small islands, where 
-                    many people are related or are friends. We can approve a project even if there is a conflict of interest  
-                    we just need to know about the conflict. "/>
-                </div>
-
-                <div>
->>>>>>> Stashed changes
                     <Button color="blue" size="small" text="next"/>
                 </div>
             </div>
