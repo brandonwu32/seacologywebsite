@@ -56,6 +56,7 @@ export default function PM_Overview() {
             <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Project Management" buttonText = 'edit'/>
+<<<<<<< Updated upstream
 
                 <div>
                     <Body textList={textList} title="Project Management Life Cycle"/>
@@ -75,6 +76,29 @@ export default function PM_Overview() {
 
                 <div className="button-wrapper">
                     <Button color="blue" size="small" text="back"/>
+=======
+                <div>
+                    <Button color="blue" size="small" text="back"/>
+                </div>
+
+                <div>
+                    <h1 className="pm-overview-h1">Project Management Life Cycle</h1>
+                </div>
+
+                <div className="welcome-wrapper">
+                    <Bubble heading="G"/>
+                    <Bubble heading="PM"/>
+                    <Bubble heading="PM"/>
+                </div>
+
+                <div className="welcome-wrapper">
+                    <Bubble />
+                    <Bubble />
+                    <Bubble heading="PM"/>
+                </div>
+
+                <div>
+>>>>>>> Stashed changes
                     <Button color="blue" size="small" text="next"/>
                 </div>
             </div>

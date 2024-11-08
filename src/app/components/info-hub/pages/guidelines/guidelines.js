@@ -6,6 +6,7 @@ import Button from "../../../button/button"
 import Body from "../project-management/body"
 
 export default function Guidelines() {
+<<<<<<< Updated upstream
     var itemOne = {
         type: "paragraph",
         content: "Here is some information to help you work with Seacology smoothly and efficiently."
@@ -86,6 +87,8 @@ export default function Guidelines() {
          itemSeven, itemEight, itemNine, itemTen, itemEleven, itemTwelve
     ]
 
+=======
+>>>>>>> Stashed changes
     return (
         <div>
             <Navbar/>
@@ -93,12 +96,31 @@ export default function Guidelines() {
                 <Heading text="Guidelines" buttonText = 'edit'/>
 
                 <div>
+<<<<<<< Updated upstream
                     <Body textList={textList} title="Guidelines for Working With Seacology"/>
                 </div>
 
                 <div className="button-wrapper">
                     <Button color="blue" size="small" text="back"/>
                     <Button color="blue" size="small" text="next"/>
+=======
+                    <Button color="blue" size="small" text="back"/>
+                </div>
+
+                <div>
+                    <h1 className="pm-overview-h1">Guidelines for Working With Seacology</h1>
+                </div>
+
+                <div>
+                    <Body text="Here is some information to help you work with Seacology smoothly and efficiently."/>
+                </div>
+
+                {/* How to bold text in body?? And how to do it through the body component */}
+                <div>
+                    <h1 className="pm-overview-h1">Communication</h1>
+                    <Body text="We understand that communication across the globe can be challenging, but because our office is so  far away from our projects, we must be able to get in touch with you by email. If you will be out  of email contact for longer than a few days, please let us know in advance. 
+                    If you receive an email  from Seacology, it is important that you respond quickly. "/>
+>>>>>>> Stashed changes
                 </div>
             </div>
         </div>

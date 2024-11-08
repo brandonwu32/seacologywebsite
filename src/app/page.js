@@ -10,6 +10,7 @@ import NewProjProposal from "./components/info-hub/pages/project-management/newp
 import Step1 from "./components/info-hub/pages/project-management/step1"
 import Step2 from "./components/info-hub/pages/project-management/step2"
 import Step3 from "./components/info-hub/pages/project-management/step3";
+<<<<<<< Updated upstream
 import Step4 from "./components/info-hub/pages/project-management/step4"  
 import Step5 from "./components/info-hub/pages/project-management/step5"
 import Step6 from "./components/info-hub/pages/project-management/step6"
@@ -22,5 +23,15 @@ export default function Home() {
     <Guidelines/>
     </>
 
+=======
+import Step4 from "./components/info-hub/pages/project-management/step4"
+
+export default function Home() {
+  return (
+    <div>
+      <Step1/>
+    </div>
+     
+>>>>>>> Stashed changes
   );
 }

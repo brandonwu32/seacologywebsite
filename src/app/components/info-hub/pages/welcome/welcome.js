@@ -19,6 +19,7 @@ export default function Welcome() {
                 {/* Figure out how to make the bubbles bigger */}
 
                 <div className="welcome-wrapper">
+<<<<<<< Updated upstream
                     <Bubble className="welcome-bubble" heading="Guidelines" width={'20rem'} height={'20rem'}/>
                     <Bubble className="welcome-bubble" heading="Project Management" width={'20rem'} height={'20rem'}/>
                 </div>
@@ -37,6 +38,20 @@ export default function Welcome() {
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
+=======
+                    <Bubble heading="G"/>
+                    <Bubble heading="PM"/>
+                </div>
+
+                <div className="welcome-wrapper">
+                    <Bubble heading="G" />
+                    <Bubble heading="G"/>
+                </div>
+
+                {/* <div className="next-button-wrapper">
+                    <Button color="blue" size="small" text="next"/>
+                </div> */}
+>>>>>>> Stashed changes
             </div>
         </div>
     );
