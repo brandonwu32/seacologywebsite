@@ -1,9 +1,6 @@
 'use client'
 import Image from "next/image";
-import styles from "./../page.css";
-import Button from "../../components/button/button";
-import Navbar from "../../components/navbar/navbar";
-import WhitePagePopUp from "../../components/whitepagepopup/infopopup/infopopup";
+import styles from "./page.css";
 import { useState } from "react"; 
 import WhitePageBubble from "../../components/whitepagebubble/whitepagebubble";
 import WhitePopUp from "../../components/whitepagepopup/infopopup/infopopup"
