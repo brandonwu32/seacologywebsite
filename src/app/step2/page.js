@@ -1,8 +1,12 @@
-import Navbar from "../../../../components/navbar/navbar";
-import Button from '../../../../components/button/button';
-import Bubble from "../../../../components/bubble/bubble";
-import Heading from "../../../../components/info-hub/heading"
-import Body from "./body"
+'use client'
+
+import styles from "./page.css"
+import Navbar from "../components/navbar/navbar";
+import Button from '../components/button/button';
+import Bubble from "../components/bubble/bubble";
+import Heading from "../components/info-hub/heading"
+import Body from "../components/info-hub/pages/project-management/body";
+import Link from "next/link"
 
 export default function Step2() {
     var itemOne = {
@@ -33,8 +37,13 @@ export default function Step2() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Button color="blue" size="small" text="back"/>
-                    <Button color="blue" size="small" text="next"/>
+                    <Link href="/step1">
+                        <Button color="blue" size="small" text="back"/>
+                    </Link>
+
+                    <Link href="/step3">
+                        <Button color="blue" size="small" text="next"/>
+                    </Link>
                 </div>
             </div>
         </div>
