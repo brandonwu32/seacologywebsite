@@ -12,13 +12,17 @@
   align-items: center;    
   margin-top: 10px;
 }
-.bubble-container {
-  display: flex;               /* Use flexbox to align bubbles */
-  justify-content: space-around; /* Space them evenly */
-  margin: 20px 0;
+.bubble-container { 
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left:7%;
   height: 100%;
   width: 100%;
-            
+  overflow-y: scroll;
+}
+
+.bubble-wrapper {
+  margin-bottom: 5%;
 }
 
 .blueline {

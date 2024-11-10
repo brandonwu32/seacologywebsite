@@ -9,7 +9,11 @@ import WhitePageBubble from "../components/whitepagebubble/whitepagebubble";
 
 export default function Whitepages() {
   const [buttonPopUp, setButtonPopUp] = useState(false);
-
+  const [whiteList, setWhiteList] = useState([{"name":"Tanya","position":"PM","email":"tanyaberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
+                                              {"name":"sophia","position":"devloper","email":"sophiaberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
+                                              {"name":"bussy","position":"PM","email":"bussyberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
+                                              {"name":"camila","position":"devloper","email":"camilaberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
+                                              {"name":"renata","position":"devloper","email":"renataberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"}]);
 
   const togglePopUp = () => {
     setButtonPopUp(!buttonPopUp);
@@ -26,73 +30,20 @@ export default function Whitepages() {
       <WhitePagePopUp trigger={buttonPopUp} close = {togglePopUp}/>
 
       <div className="bubble-container">
-        <div className="b1">
-          <WhitePageBubble 
-            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
-            alt="CeoPic"
-            name="name"
-            position="position"
-            email="email"
-            onClick={togglePopUp} // Pass the toggle function here
-          />
-        </div>
-
-        <div className="b2">
-          <WhitePageBubble 
-            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
-            alt="CeoPic"
-            name="name"
-            position="position"
-            email="email"
-            onClick={togglePopUp} // Pass the toggle function here
-          />
-        </div>
-
-        <div className="b3">
-          <WhitePageBubble 
-            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
-            alt="CeoPic"
-            name="name"
-            position="position"
-            email="email"
-            onClick={togglePopUp} // Pass the toggle function here
-          />
-        </div>
-      </div>
-      
-      <div className="bubble-container">
-        <div className="b4">
-          <WhitePageBubble 
-            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
-            alt="CeoPic"
-            name="name"
-            position="position"
-            email="email"
-            onClick={togglePopUp} // Pass the toggle function here
-          />
-        </div>
-
-        <div className="b5">
-          <WhitePageBubble 
-            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
-            alt="CeoPic"
-            name="name"
-            position="position"
-            email="email"
-            onClick={togglePopUp} // Pass the toggle function here
-          />
-        </div>
-        
-        <div className="b6">
-          <WhitePageBubble 
-            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
-            alt="CeoPic"
-            name="name"
-            position="position"
-            email="email"
-            onClick={togglePopUp} // Pass the toggle function here
-          />
-        </div>
+        {whiteList.map(function (member){
+          return (
+            <div className = "bubble-wrapper" key={member.email}>
+              <WhitePageBubble 
+                src={member.image} 
+                alt="CeoPic"
+                name={member.name}
+                position={member.position}
+                email={member.email}
+                onClick={togglePopUp} // Pass the toggle function here
+              />
+            </div>
+          )
+        })}
       </div>
     </div>
   );

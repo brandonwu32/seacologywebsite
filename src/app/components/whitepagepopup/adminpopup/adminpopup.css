@@ -108,6 +108,37 @@ h2 {
 }
 
 .buttonz {
+    margin-left: 400px;
+}
+
+/* Form Fields */
+.add-fields {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.add-fields label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #333;
+}
+.add-fields input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #72C7F2;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+.addcontainer {
+    display: flex;
+    align-items: center;
+}
+
+.buttonz {
     margin-left: 300px;
     display: flex;
     align-items: center;

@@ -47,6 +47,7 @@
   align-items: center;
 }
 .top {
-  height: 300px;
-  width: 300px;
+  margin-top:5px;
+  display: flex;
+  margin-bottom: 5px;
 }

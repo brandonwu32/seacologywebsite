@@ -28,7 +28,7 @@ export default function Whitepages() {
           <button className="red" id="large">Edititing</button>
           <button className="blue" id="large">Add Member</button>
         </div>
-        <p>Click on a Member to Remove</p>
+        <p className = "clickremove">Click on a Member to Remove</p>
       </div>
       <hr className="blueline" />
       <hr className="yellowline" />
