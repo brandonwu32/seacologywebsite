@@ -1,4 +1,4 @@
-import Bubble from "./components/bubble/bubble";
+import Bubble from "../components/bubble/bubble";
 import button from "./components/button/button";
 
 export default function ProjectProposalPage() {

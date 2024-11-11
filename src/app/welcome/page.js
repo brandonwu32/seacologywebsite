@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="page">
       <div className="image-container">
-      <Image src={logo} alt="Description of image" />
+      <Image src={logo} alt="Seacology Logo" />
       </div>
       <div className="main-content">
         <div className="top-bar">

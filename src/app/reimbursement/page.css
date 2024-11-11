@@ -1,0 +1,166 @@
+.page {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2% 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: #72C7F2;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 1%;
+}
+
+.blue-line {
+  width: 100%;
+  margin-bottom: 1%; 
+  background-color: #72C7F2;
+  height: 0.2%; 
+}
+
+.yellow-line {
+  width: 100%;
+  height: 0.2%; 
+  background-color: #FDCD3B;
+  margin-top: 0; 
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  margin-top: 2%;
+}
+
+.form-fields {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.form-fields label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-fields input {
+  width: 100%;
+  padding: 8%;
+  border: 1px solid #72C7F2;
+  border-radius: 5%;
+  font-size: 1rem;
+  margin-top: 5%;
+}
+
+.form-fields input,
+.form-fields textarea {
+  width: 80%; 
+  padding: 3%; 
+  border: 2% solid #ccc;
+  border-radius: 5%;
+  font-size: 1rem;
+  margin-top: 0.5%;
+  min-height: 90%; 
+  border-color: #72C7F2;
+  resize: vertical;
+}
+
+.form-fields input[type="number"] {
+  height: 50%;
+  padding: 10%;
+  font-size: 1rem;
+}
+
+.upload-bubbles > div {
+  margin: 1%;
+  padding: 1%;
+}
+
+.upload-bubbles {
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin: 5% 0 0%;
+    padding: 0;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  margin-top: 10%;
+
+}
+
+.close-button, .enter-button {
+  padding: 1% 4%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3%;
+  cursor: pointer;
+  background: blue;
+}
+
+.close-button {
+  background: #FDCD3B; 
+  color: white; 
+  margin-left: 80%;
+ 
+}
+
+.enter-button {
+  background-color: #569fc3; 
+  color: white;
+}
+
+#project-input {
+  width: 70%; 
+  padding: 0.5%; 
+  border: 2% solid #ccc;
+  border-radius: 5%;
+  font-size: 1rem;
+  margin-top: 0.5%;
+  height: 50%; 
+  border-color: #72C7F2;
+  
+}
+
+#reimbursment-input {
+  width: 80%;
+  padding: 0.5%; 
+  border: 2% solid #ccc;
+  border-radius: 5%;
+  font-size: 1rem;
+  margin-top: 0.5%;
+  height: 60%; 
+  border-color: #72C7F2;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-container .dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #72C7F2;
+  z-index: 1;
+}
+
+.dropdown-container:hover .dropdown-list {
+  display: block;
+}
