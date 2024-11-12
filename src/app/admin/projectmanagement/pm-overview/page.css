@@ -14,3 +14,17 @@
     gap: 2rem;
 }
 
+.pm-overview-h1 {
+    color: #71c4d6;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 50%;
+    width: 90vw; 
+}
+
+.link-bubble-wrapper {
+    width: 35%;
+}
