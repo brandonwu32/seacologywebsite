@@ -4,28 +4,24 @@
   font-weight: bold;
   margin-left: 3%;
   margin-top: 10px;
-  font-size: 50px ;
-}
-
-.description {
-display: flex;
-flex-direction: column;  
-align-items: center;    
-margin-top: 10px;
+  font-size: 150% ;
+  margin-bottom: 0.5%;
 }
 
 .bubble-container { 
   display: grid;
   grid-template-columns: auto auto auto;
-  margin-left:7%;
-  height: 100%;
+  margin-left: 3%;
+  height: 50%;
   width: 100%;
   overflow-y: scroll;
+  justify-content: center;
 }
 
 .bubble-wrapper {
-  margin-bottom: 60%;
-  margin: 5rem;
+  margin-top: 3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 .blueline {
@@ -42,7 +38,7 @@ width: 100%; /* Set width */
 margin: 1px 0; /* Optional spacing */
 }
 .btz {
-margin-left: 70%;
+margin-left: 75%;
 align-items: center;
 }
 

@@ -10,7 +10,7 @@ export default function WhitePagePopUp(props) {
         <div className="popupOverlay">
             <div className="popup">
                 <div className='rectangle'>
-                    <p className='name'>Name</p>
+                    <p className='name'>{props.name}</p>
                     <hr className="yellowline" />
                     <div class="bubs">
                     <WhitePageBubble 
