@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2% 0;
   font-family: Arial, sans-serif;
+  height: 100vh;
 }
 
 .heading {
@@ -11,8 +12,22 @@
   font-weight: bold;
   text-align: left;
   margin-bottom: 2%;
-  border-bottom: 2px solid #FDCD3B;
   padding-bottom: 0.5%;
+}
+
+.blue-line {
+  width: 100%;
+  margin-top: -1%;
+  margin-bottom: 1%; 
+  background-color: #72C7F2;
+  height: 0.2%; 
+}
+
+.yellow-line {
+  width: 100%;
+  height: 0.2%; 
+  background-color: #FDCD3B;
+  margin-top: 0; 
 }
 
 .form-container {
@@ -61,6 +76,7 @@ textarea {
   align-items: center;
   margin-top: -1%;
   margin-bottom: -4%; 
+  margin-right: 2%;
 }
 
 .circle {
@@ -76,6 +92,7 @@ textarea {
   align-items: center;
   box-shadow: 0% 0% 8% rgba(0, 123, 255, 0.5);
   position: relative;
+  background-color: white;
 }
 
 .button-for-bubble {
@@ -98,8 +115,10 @@ textarea {
 }
 
 .subtext {
-  font-size: 1em; 
+  font-size: 1.9em; 
   pointer-events: none; 
+  color: #72C7F2;
+  font-weight: bold;
 }
 
 .button-container {
@@ -129,3 +148,4 @@ textarea {
   background-color: #72C7F2; 
   color: white;
 }
+
