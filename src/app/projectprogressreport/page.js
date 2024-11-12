@@ -76,16 +76,25 @@ export default function ProjectProgressPage() {
 
 
         <div className="upload-bubbles">
-          <div className="bubble">
-            <Bubble heading="Upload Files" subtext=".pdf" />
-          </div>
-          <div className="bubble">
-            <Bubble heading="Upload Image" subtext=".png" />
-          </div>
-          <div className = "bubble">
-            <Bubble heading = "Upload Video" subtext = ".mp4" />
-          </div>
-        </div>
+    <div className="circle">
+        <label className="button-for-bubble">
+            <input id="image-upload" type="file" className="file-input" />
+            <p className="subtext">Upload Files</p>
+        </label>
+    </div>
+    <div className="circle">
+        <label className="button-for-bubble">
+            <input id="image-upload" type="file" className="file-input" />
+            <p className="subtext">Upload Files</p>
+        </label>
+    </div>
+    <div className="circle">
+        <label className="button-for-bubble">
+            <input id="image-upload" type="file" className="file-input" />
+            <p className="subtext">Upload Image</p>
+        </label>
+    </div>
+</div>
       </div>
       <div className="button-container">
         <button className="close-button">close</button>

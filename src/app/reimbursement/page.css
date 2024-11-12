@@ -66,9 +66,10 @@
   border-radius: 5%;
   font-size: 1rem;
   margin-top: 0.5%;
-  min-height: 90%; 
+  min-height: 90%;
   border-color: #72C7F2;
   resize: vertical;
+  
 }
 
 .form-fields input[type="number"] {
@@ -77,36 +78,70 @@
   font-size: 1rem;
 }
 
-.upload-bubbles > div {
-  margin: 1%;
-  padding: 1%;
-}
-
 .upload-bubbles {
-    width: 100%;
-    display: flex;
-    flex-direction: row; 
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
-    margin: 5% 0 0%;
-    padding: 0;
+  display: flex;
+  flex-direction: row; 
+  gap: 2%; 
+  justify-content: center; 
+  margin-right: 10%;
+
+ 
 }
 
-
-.button-container {
+.circle {
+  width: 15vw; 
+  height: 15vw; 
+  max-width: 100%; 
+  max-height: 100%;
+  border-radius: 50%; 
+  background-color: #f0f0f0;
+  border: 3% solid #89CFF0;
   display: flex;
   justify-content: center;
-  gap: 2%;
-  margin-top: 10%;
+  align-items: center;
+  box-shadow: 0% 0% 8% rgba(0, 123, 255, 0.5);
+  position: relative;
+}
 
+
+
+.button-for-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.file-input {
+  opacity: 0; 
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.subtext {
+  font-size: 1em; 
+  pointer-events: none; 
+}
+
+.button-container {
+  position: fixed;
+  bottom: 2%; 
+  left: 70%; 
+  display: flex;
+  gap: 1rem;
 }
 
 .close-button, .enter-button {
-  padding: 1% 4%;
+  padding: 15% 55%;
   font-size: 1rem;
   border: none;
-  border-radius: 3%;
+  border-radius: 5%;
   cursor: pointer;
   background: blue;
 }
@@ -122,6 +157,25 @@
   background-color: #569fc3; 
   color: white;
 }
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-container .dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #72C7F2;
+  z-index: 1;
+}
+
+.dropdown-container:hover .dropdown-list {
+  display: block;
+}
+
 
 #project-input {
   width: 70%; 
@@ -157,7 +211,7 @@
   left: 0;
   width: 100%;
   background-color: white;
-  border: 1px solid #72C7F2;
+  border: 1% solid #ccc;
   z-index: 1;
 }
 
