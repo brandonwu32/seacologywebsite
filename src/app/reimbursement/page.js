@@ -40,7 +40,7 @@ export default function ReimbursementPage() {
   };
 
   const projects = ["Project 1", "Project 2", "Project 3", "Project 4"];
-
+  const reimbursements = ["Travel Equipment", "Construction & Materials", "Other"];
   return (
     <div className="page">
       <h1 className="heading">Expense Reimbursement</h1>
@@ -49,9 +49,9 @@ export default function ReimbursementPage() {
       <div className="form-container">
         <div className="form-fields">
           <label>
-            Project:
+          Project:
             <div className="dropdown-container">
-            <input id = "project-input" type="text" value={project} onClick={openFirstPopup} readOnly placeholder="Select a project"/>
+            <input type="text" value={project} onClick={openFirstPopup} readOnly placeholder="Select a project"/>
             {isFirstPopupOpen && (
               <div className="dropdown-list">
                 {projects.map((proj, index) => (
@@ -66,41 +66,42 @@ export default function ReimbursementPage() {
             <label>
               Type of Reimbursement:
               <div className="dropdown-container">
-              <input id = "reimbursment-input" type="text" value={reimbursment} onClick={openSecondPopup} readOnly placeholder="Select a reimbursment"/>
+              <input type="text" value={reimbursment} onClick={openSecondPopup} readOnly placeholder="Select a reimbursment"/>
               {isSecondPopupOpen && (
-
                 <div className="dropdown-list">
-                  <div className="dropdown-item" onClick={() => handleSelectReimbursment("Travel Equipment")}>Travel Equipment</div>
-                  <div className="dropdown-item" onClick={() => handleSelectReimbursment("Construction & Materials")}>Construction & Materials</div>
-                  <div className="dropdown-item" onClick={() => handleSelectReimbursment("Other")}>Other</div>
-                </div>
+                {reimbursements.map((reim, index) => (
+                  <div key={index} className="dropdown-item" onClick={() => handleSelectReimbursment(reim)}>
+                    {reim}
+                  </div>
+                ))}
+              </div>
               )}
               </div>
             </label>
           <label>
             List of Expenses:
-            <input type="text" value={expenses} onChange={(e) => setExpenses(e.target.value)}/>
+            <textarea type="text" value={expenses} onChange={(e) => setExpenses(e.target.value)}/>
           </label>
         </div>
 
-        <div className="upload-bubbles">
-    <div className="circle">
-        <label className="button-for-bubble">
-            <input id="image-upload" type="file" className="file-input" />
-            <p className="subtext">Upload Files</p>
-        </label>
-    </div>
-    <div className="circle">
-        <label className="button-for-bubble">
-            <input id="image-upload" type="file" className="file-input" />
-            <p className="subtext">Upload Image</p>
+    <div className="upload-bubbles">
+      <div className="circle">
+          <label className="button-for-bubble">
+              <input id="image-upload" type="file" className="file-input" />
+              <p className="subtext">Upload Files</p>
+          </label>
+      </div>
+      <div className="circle">
+          <label className="button-for-bubble">
+              <input id="image-upload" type="file" className="file-input" />
+              <p className="subtext">Upload Image</p>
 
-        </label>
-    </div>
-
+          </label>
+      </div>
+      
     </div>
     <div className="button-container">
-        <button className="close-button">close</button>
+        <button className="close-button">back</button>
         <button className="enter-button" onClick = {handleSubmit}>enter</button>
     </div>
 </div>

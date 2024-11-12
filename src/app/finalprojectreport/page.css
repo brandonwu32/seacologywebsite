@@ -69,12 +69,94 @@
   min-height: 40%; 
   border-color: #72C7F2;
   resize: vertical;
+  height: 100%;
 }
 
 .form-fields input[type="number"] {
   height: 50%;
   padding: 10%;
   font-size: 1rem;
+}
+
+
+.upload-bubbles > div {
+  margin: 1%;
+  padding: 1%;
+}
+
+.upload-bubbles {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: -1%; 
+  margin: 1% 0 1%;
+}
+
+.upload-bubbles > .bubble:nth-child(1) {
+  margin-top: 20%; 
+}
+
+.upload-bubbles > .bubble:nth-child(2) {
+  margin-top: 3%; 
+}
+
+.upload-bubbles > .bubble:nth-child(3) {
+  margin-top: 20%; 
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  margin-top: -4%;
+
+}
+
+.close-button, .enter-button {
+  padding: 1% 4%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  background: blue;
+}
+
+.close-button {
+  background: #FDCD3B; 
+  color: white; 
+  margin-left: 80%;
+ 
+}
+
+.enter-button {
+  background-color: #72C7F2; 
+  color: white;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-container .dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  width: 85%;
+  background-color: white;
+  border: 1px solid #72C7F2;
+  z-index: 1;
+}
+
+
+.dropdown-container:hover .dropdown-list {
+  display: block;
+}
+
+.dropdown-item:hover{
+  background-color: rgb(198, 198, 198);
 }
 
 .upload-bubbles {
@@ -89,9 +171,9 @@
   width: 15vw; 
   height: 15vw; 
   max-width: 100%; 
-  max-height: 200%;
+  max-height: 100%;
   border-radius: 50%; 
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: 3% solid #89CFF0;
   display: flex;
   justify-content: center;
@@ -136,51 +218,9 @@
   transform: translateY(15%);
 }
 
-
-.button-container {
-  position: fixed;
-  bottom: 2%; 
-  left: 70%; 
-  display: flex;
-  gap: 1rem;
-}
-
-.close-button, .enter-button {
-  padding: 15% 55%;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5%;
-  cursor: pointer;
-  background: blue;
-}
-
-.close-button {
-  background: #FDCD3B; 
-  color: white; 
-  margin-left: 80%;
- 
-}
-
-.enter-button {
-  background-color: #569fc3; 
-  color: white;
-}
-
-.dropdown-container {
-  position: relative;
-}
-
-.dropdown-container .dropdown-list {
-  display: none;
-  position: absolute;
-  top: 100%; 
-  left: 0;
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ccc;
-  z-index: 1;
-}
-
-.dropdown-container:hover .dropdown-list {
-  display: block;
+.subtext{
+  font-size: 1.9em;
+  pointer-events: none;
+  color: #72C7F2;
+  font-weight: bold;
 }

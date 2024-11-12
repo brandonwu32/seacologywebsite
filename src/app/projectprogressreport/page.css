@@ -69,6 +69,7 @@
     min-height: 40%; 
     border-color: #72C7F2;
     resize: vertical;
+    height: 100%;
   }
   
   .form-fields input[type="number"] {
@@ -130,7 +131,7 @@
   }
   
   .enter-button {
-    background-color: #569fc3; 
+    background-color: #72C7F2; 
     color: white;
   }
   
@@ -143,10 +144,14 @@
     position: absolute;
     top: 100%; 
     left: 0;
-    width: 100%;
+    width: 85%;
     background-color: white;
     border: 1px solid #72C7F2;
     z-index: 1;
+  }
+
+  .dropdown-item:hover{
+    background-color: rgb(198, 198, 198);
   }
   
   .dropdown-container:hover .dropdown-list {
@@ -167,7 +172,7 @@
     max-width: 100%; 
     max-height: 100%;
     border-radius: 50%; 
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     border: 3% solid #89CFF0;
     display: flex;
     justify-content: center;
@@ -210,4 +215,11 @@
   
   .upload-bubbles .circle:nth-child(3) {
     transform: translateY(15%);
+  }
+
+  .subtext{
+    font-size: 1.9em;
+    pointer-events: none;
+    color: #72C7F2;
+    font-weight: bold;
   }
