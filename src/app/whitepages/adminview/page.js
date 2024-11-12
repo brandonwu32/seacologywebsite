@@ -1,10 +1,9 @@
 'use client'
-import Image from "next/image";
 import styles from "./page.css";
 import { useState } from "react"; 
-import WhitePageBubble from "../../components/whitepagebubble/whitepagebubble";
 import WhitePopUp from "../../components/whitepagepopup/infopopup/infopopup"
-import AdminPopUp from "@/app/components/whitepagepopup/adminpopup/adminpopup";
+import InfoPageBubble from "../../components/whitepagebubbles/infobubble/infobubble";
+import Button from "@/app/components/button/button";
 
 export default function Whitepages() {
   const [buttonPopUp, setButtonPopUp] = useState(false);
@@ -30,19 +29,18 @@ export default function Whitepages() {
       <hr className="blueline" />
       <hr className="yellowline" />
 
-      <AdminPopUp trigger={buttonPopUp} close = {togglePopUp}/>
+      <WhitePopUp trigger={buttonPopUp} close = {togglePopUp}/>
 
       <div className="bubble-container">
         {whiteList.map(function (member){
           return (
             <div className = "bubble-wrapper" key={member.email}>
-              <WhitePageBubble 
+              <InfoPageBubble
                 src={member.image} 
                 alt="CeoPic"
                 name={member.name}
                 position={member.position}
                 email={member.email}
-                onClick={togglePopUp} // Pass the toggle function here
               />
             </div>
           )
@@ -50,4 +48,5 @@ export default function Whitepages() {
       </div>
     </div>
   );
+  
 }

@@ -1,4 +1,5 @@
 import './addpopup.css'
+import Button from '@/app/components/button/button';
 
 export default function AddPopUp(props) {
     return props.trigger ? (
@@ -18,7 +19,8 @@ export default function AddPopUp(props) {
                     </div>
                 </div>
                 <div className = 'buttonz'>
-                    <button class="blue" id="small" onClick={props.close}>Add Member</button>
+                    <button className="yellow" id="large" onClick={props.close}>Add Member</button>
+                    <button className="blue" id="large" onClick={props.close}>Close</button>
                 </div>
             </div>
         </div>

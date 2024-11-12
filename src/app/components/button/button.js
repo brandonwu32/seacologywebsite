@@ -11,9 +11,9 @@ export default function Button(props) {
 
     return (
         <div className="button"> 
-            <button  onClick={handleClick} > 
+            <button  className={props.color} onClick={handleClick}  id={props.size} > 
                 <div>
-                    {props.image}
+                    {props.text}
                 </div>
             </button>
         </div> 

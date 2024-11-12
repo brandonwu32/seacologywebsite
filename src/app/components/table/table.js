@@ -11,11 +11,7 @@ export default function Table(props) {
                 </tr>
             </thead>  
             <tbody>
-                <tr>
-                    <td>{props.project}</td>
-                    <td>{props.status}</td>
-                    <td>{props.update}</td>
-                </tr>
+                REPLACE WITH MAP
             </tbody>
         </table>
     );

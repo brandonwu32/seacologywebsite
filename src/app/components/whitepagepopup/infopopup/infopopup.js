@@ -2,7 +2,7 @@ import './infopopup.css'
 import Image from "next/image";
 import Table from '../../table/table';
 import Button from '../../button/button'
-import WhitePageBubble from '../../whitepagebubble/whitepagebubble';
+import WhitePageBubble from '../../whitepagebubbles/popupbubble'
 
 
 export default function WhitePagePopUp(props) {
@@ -22,7 +22,7 @@ export default function WhitePagePopUp(props) {
                     <Table project="Project A" status="In Progress" update="2024-11-03" />
                 </div>
                 <div className = 'buttonz'>
-                <button class="blue" id="small" onClick={props.close}>Close</button>
+                <Button className="blue" id="small" onClick={props.close}>Close</Button>
                 </div>
             </div>
         </div>

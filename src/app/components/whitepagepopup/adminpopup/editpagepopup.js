@@ -1,9 +1,7 @@
-import './adminpopup.css'
-import Table from '../../table/table'
-import WhitePageBubble from '../../whitepagebubble/whitepagebubble';
+import './editpagepopup.css'
 
 
-export default function AdminPopUp(props) {
+export default function EditPagePopUp(props) {
     return props.trigger ? (
     <div className="popupOverlay">
         <div className="popup">
@@ -22,9 +20,9 @@ export default function AdminPopUp(props) {
                 </div>
             </div>
                 <div className = 'buttonz'>
-                <button class="red" id="large" onClick={props.close}>Remove Member</button>
-                <button class="blue" id="large" onClick={props.close}>Submit Changes</button>
-                <button class="blue" id="large" onClick={props.close}>Close</button>
+                <button className="red" id="large" onClick={props.close}>Remove Member</button>
+                <button className="blue" id="large" onClick={props.close}>Submit Changes</button>
+                <button className="blue" id="large" onClick={props.close}>Close</button>
             </div>
     </div>
     </div>
