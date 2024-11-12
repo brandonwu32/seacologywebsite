@@ -29,7 +29,7 @@
 
 .main-content {
     flex: 1;
-    padding: 20px;
+    padding: 0%;
     box-sizing: border-box;
     position: relative;
 }
@@ -60,7 +60,7 @@
     display: flex;
     justify-content: center; 
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 10%;
     background-color: #ffffff;
     padding: 5px 0; 

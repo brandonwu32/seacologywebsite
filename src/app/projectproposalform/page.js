@@ -40,6 +40,7 @@ export default function ProjectProposalPage() {
   return (
     <div className="page">
       <h1 className="heading">New Project Proposal</h1>
+      
       <div className="form-container">
         <div className="form-fields">
           <label>
