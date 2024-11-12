@@ -24,7 +24,8 @@ margin-top: 10px;
 }
 
 .bubble-wrapper {
-  margin-bottom: 5%;
+  margin-bottom: 60%;
+  margin: 5rem;
 }
 
 .blueline {
@@ -41,7 +42,7 @@ width: 100%; /* Set width */
 margin: 1px 0; /* Optional spacing */
 }
 .btz {
-margin-left: 1000px;
+margin-left: 70%;
 align-items: center;
 }
 

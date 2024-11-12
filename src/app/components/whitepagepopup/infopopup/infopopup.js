@@ -12,7 +12,7 @@ export default function WhitePagePopUp(props) {
                 <div className='rectangle'>
                     <p className='name'>Name</p>
                     <hr className="yellowline" />
-                    <div class="bubble popup-bubble">
+                    <div class="bubs">
                     <WhitePageBubble 
                     src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
                     alt="CeoPic"
