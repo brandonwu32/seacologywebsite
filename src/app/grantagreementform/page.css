@@ -6,7 +6,6 @@
     color: #333;
 }
 
-
 .agreement-heading {
     font-size: 2.5rem;
     color: #72C7F2;
@@ -16,15 +15,14 @@
     padding-bottom: 0.5%;
 }
 
-/* Main Content Container */
 .agreement-container {
     display: flex;
     justify-content: space-between;
     gap: 2%;
     padding: 2%;
-    border-radius: 5px;
 }
 
+/* Form Fields */
 .form-fields {
     width: 45%;
     display: flex;
@@ -41,13 +39,14 @@
 
 .form-fields input {
     width: 100%;
-    padding: 8px;
+    padding: 1%;
     border: 1px solid #72C7F2;
     border-radius: 5px;
     font-size: 1rem;
-    margin-top: 5px;
+    margin-top: 1%;
 }
 
+/* Agreement Text Box */
 .agreement-text-box {
     width: 50%;
     padding: 2%;
@@ -59,6 +58,7 @@
     background-color: #f8f8f8;
 }
 
+/* Agree Button */
 .button-container {
     display: flex;
     justify-content: flex-end;
@@ -68,7 +68,7 @@
 .agree-button {
     background-color: #72C7F2;
     color: white;
-    padding: 10px 20px;
+    padding: 1% 2%;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
