@@ -40,7 +40,8 @@ export default function ProjectProposalPage() {
   return (
     <div className="page">
       <h1 className="heading">New Project Proposal</h1>
-      
+      <div className = "blue-line"></div>
+      <div className="yellow-line"></div>
       <div className="form-container">
         <div className="form-fields">
           <label>
@@ -106,7 +107,7 @@ export default function ProjectProposalPage() {
       </div>
 
       <div className="button-container">
-        <button className="close-button">close</button>
+        <button className="close-button">back</button>
         <button className="enter-button" onClick={handleSubmit}>enter</button>
       </div>
     </div>
