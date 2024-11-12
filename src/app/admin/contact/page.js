@@ -57,7 +57,7 @@ return (
     <div>
         <Navbar/> 
         <div className="page-wrapper">
-            <Heading text="Contacts" buttonText="edit"/>
+            <Heading text="Contacts" buttonText="edit" edit ={true}/>
             
             <div>
                 <Body textList={textList} title="Who to Contact at Seacology"/>

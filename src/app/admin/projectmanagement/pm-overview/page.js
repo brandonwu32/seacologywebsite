@@ -58,7 +58,7 @@ export default function PM_Overview() {
         <div>
             <Navbar/>
             <div className="page-wrapper">
-                <Heading text="Project Management" buttonText = 'edit'/>
+                <Heading text="Project Management" buttonText = 'edit' edit ={true}/>
 
                 <div>
                     <Body textList={textList} title="Project Management Life Cycle"/>

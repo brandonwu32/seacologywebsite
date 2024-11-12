@@ -12,7 +12,7 @@ export default function Welcome() {
         <div>
             <Navbar/>
             <div className="page-wrapper">
-                <Heading text="Welcome" buttonText = 'edit'/>
+                <Heading text="Welcome" buttonText = 'edit' edit ={true}/>
 
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">

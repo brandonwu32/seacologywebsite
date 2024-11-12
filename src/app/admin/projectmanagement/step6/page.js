@@ -63,7 +63,7 @@ export default function Step6() {
         <div>
             <Navbar/> 
             <div className="page-wrapper">
-                <Heading text="Step 6" buttonText="edit"/>
+                <Heading text="Step 6" buttonText="edit" edit ={true}/>
                 
                 <div>
                     <Body textList={textList} title="Submit the Final Report"/>

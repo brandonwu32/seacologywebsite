@@ -29,7 +29,7 @@ export default function Step2() {
         <div>
             <Navbar/>
             <div className="page-wrapper">
-                <Heading text="Step 2" buttonText="edit"/>
+                <Heading text="Step 2" buttonText="edit" edit ={true}/>
 
                 <div>
                     <Body textList={textList} title="Step 2: Send Us the Idea"/>

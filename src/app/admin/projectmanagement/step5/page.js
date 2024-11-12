@@ -79,7 +79,7 @@ export default function Step5() {
         <div>
             <Navbar/> 
             <div className="page-wrapper">
-                <Heading text="Step 5" buttonText="edit"/>
+                <Heading text="Step 5" buttonText="edit" edit ={true}/>
                 
                 <div>
                     <Body textList={textList} title="Review and Send Progress Reports"/>

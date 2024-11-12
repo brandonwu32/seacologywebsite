@@ -1,4 +1,3 @@
-'use client'
 
 import styles from '../info-hub/heading.css'
 import Button from '../../components/button/button'
