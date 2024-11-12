@@ -1,9 +1,11 @@
 "use client"
-import Navbar from "../../../../components/navbar/navbar";
-import Button from '../../../../components/button/button';
-import Heading from "../../../../components/info-hub/heading"
-import "./step4.css" 
-import Body from "../../../../components/info-hub/pages/project-management/body"
+
+import styles from "./page.css"
+import Navbar from "../components/navbar/navbar";
+import Button from '../components/button/button';
+import Heading from "../components/info-hub/heading"
+import Body from "../components/info-hub/pages/project-management/body";
+import Link from "next/link"
 
 
 export default function Contacts() {
@@ -48,29 +50,26 @@ var itemNine = {
   
     
 
-    var textList = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight,itemNine ]
+var textList = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight,itemNine ]
 
 
-    return (
-        <div>
-            <Navbar/> 
-            <div className="page-wrapper">
-                <Heading text="Contacts" buttonText="edit"/>
-                
-                <div>
-                    <Body textList={textList} title="Who to Contact at Seacology"/>
-                </div>
-
-                <div className="button-wrapper">
-                    <Button color="blue" size="small" text="back"/>
-                    <Button color="blue" size="small" text="next"/>
-                </div>
-
+return (
+    <div>
+        <Navbar/> 
+        <div className="page-wrapper">
+            <Heading text="Contacts" buttonText="edit"/>
+            
+            <div>
+                <Body textList={textList} title="Who to Contact at Seacology"/>
             </div>
-           
-        </div>
-    
-        
 
-    );
+            <div className="button-wrapper">
+                <Button color="blue" size="small" text="back"/>
+                <Button color="blue" size="small" text="next"/>
+            </div>
+
+        </div>
+        
+    </div>
+);
 }

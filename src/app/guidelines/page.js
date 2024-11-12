@@ -1,5 +1,6 @@
 "use client"
 
+import styles from "./page.css"
 import Navbar from "../components/navbar/navbar";
 import Button from '../components/button/button';
 import Bubble from "../components/bubble/bubble";
@@ -99,8 +100,13 @@ export default function Guidelines() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Button color="blue" size="small" text="back"/>
-                    <Button color="blue" size="small" text="next"/>
+                    <Link href="/welcome">
+                        <Button color="blue" size="small" text="back"/>
+                    </Link>
+                    
+                    <Link href="/projectmanagement/pm-overview">
+                        <Button color="blue" size="small" text="next"/>
+                    </Link>
                 </div>
             </div>
         </div>

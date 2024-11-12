@@ -50,7 +50,7 @@ export default function Navbar() {
                     </div>
 
                     <div className="navbar-link">
-                        <a href="#" className="navbar-link">Guidelines</a>
+                        <a href="/guidelines" className="navbar-link">Guidelines</a>
                         <div className="dropdown">
                             <a href="#">Sub-item 1</a>
                             <a href="#">Sub-item 2</a>
@@ -59,19 +59,19 @@ export default function Navbar() {
                     </div>
 
                     <div className="navbar-link">
-                        <a href="#" className="navbar-link">Project Management</a>
+                        <a href="/projectmanagement/pm-overview" className="navbar-link">Project Management</a>
                         <div className="dropdown">
-                            <a href="#">Step 1</a>
-                            <a href="#">Step 2</a>
-                            <a href="#">Step 3</a>
-                            <a href="#">Step 4</a>
-                            <a href="#">Step 5</a>
-                            <a href="#">Step 6</a>
+                            <a href="/projectmanagement/step1">Step 1</a>
+                            <a href="/projectmanagement/step2">Step 2</a>
+                            <a href="/projectmanagement/step3">Step 3</a>
+                            <a href="/projectmanagement/step4">Step 4</a>
+                            <a href="/projectmanagement/step5">Step 5</a>
+                            <a href="/projectmanagement/step6">Step 6</a>
                         </div>
                     </div>
 
                     <div className="navbar-link">
-                        <a href="#" className="navbar-link">Financial</a>
+                        <a href="/financial" className="navbar-link">Financial</a>
                         <div className="dropdown">
                             <a href="#">Sub-item 1</a>
                             <a href="#">Sub-item 2</a>
@@ -80,7 +80,7 @@ export default function Navbar() {
                     </div>
 
                     <div className="navbar-link">
-                        <a href="#" className="navbar-link">Prize Nominations</a>
+                        <a href="/contact" className="navbar-link">Contact</a>
                         <div className="dropdown">
                             <a href="#">Sub-item 1</a>
                             <a href="#">Sub-item 2</a>

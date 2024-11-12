@@ -1,11 +1,11 @@
 'use client'
 
 import styles from "./page.css"
-import Navbar from "../components/navbar/navbar";
-import Button from '../components/button/button';
-import Bubble from "../components/bubble/bubble";
-import Heading from "../components/info-hub/heading"
-import Body from "../components/info-hub/pages/project-management/body";
+import Navbar from "../../components/navbar/navbar";
+import Button from '../../components/button/button';
+import Bubble from "../../components/bubble/bubble";
+import Heading from "../../components/info-hub/heading"
+import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 
 export default function Step1() {
@@ -39,16 +39,24 @@ export default function Step1() {
                     <Body textList={textList} title="Step 1: Find a New Project"/>
                 </div>
                 <div className="step1-row1-wrapper">
-                    <Bubble subtext="Identifying Good Seacology Projects" width={'12rem'} height={'12rem'}/>
-                    <Bubble subtext="Now Project Proposal Conversation" width={'12rem'} height={'12rem'}/>
+                    <div className="link-bubble-wrapper">
+                        <Link href="/projectmanagement/identifyingproj">
+                            <Bubble midtext="Identifying Good Seacology Projects" width={'16rem'} height={'16rem'}/>
+                        </Link>
+                    </div>
+                    <div className="link-bubble-wrapper">
+                        <Link href="/projectmanagement/newprojproposal">
+                            <Bubble midtext="New Project Proposal Conversation" width={'16rem'} height={'16rem'}/>
+                        </Link>
+                    </div>
                 </div> 
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement">
+                    <Link href="/projectmanagement/pm-overview">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
                     
-                    <Link href="/step2">
+                    <Link href="/projectmanagement/step2">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
