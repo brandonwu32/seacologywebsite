@@ -9,15 +9,19 @@ import WhitePageBubble from "../../../components/whitepagebubble/whitepagebubble
 import AddPopUp from "../../../components/whitepagepopup/adminpopup/addpopup/addpopup"
 
 export default function Whitepages() {
-  const [buttonPopUp, setButtonPopUp] = useState(false);
+  const [addPopUp, setButtonPopUp] = useState(false);
+  const [editPopUp, setEditPopUp] = useState(false);
   const [whiteList, setWhiteList] = useState([{"name":"Tanya","position":"PM","email":"tanyaberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
                                               {"name":"sophia","position":"devloper","email":"sophiaberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
                                               {"name":"bussy","position":"PM","email":"bussyberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
                                               {"name":"camila","position":"devloper","email":"camilaberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
                                               {"name":"renata","position":"devloper","email":"renataberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"}]);
 
-  const togglePopUp = () => {
-    setButtonPopUp(!buttonPopUp);
+  const toggleAddPopUp = () => {
+    setButtonPopUp(!addPopUp);
+  }
+  const toggleEditPopUp = () => {
+    setEditPopUp(!editPopUp);
   }
 
   return (
@@ -26,14 +30,15 @@ export default function Whitepages() {
         <p className = 'title'>Team</p>
         <div className = 'btz'>
           <button className="red" id="large">Edititing</button>
-          <button className="blue" id="large">Add Member</button>
+          <button className="blue" id="large" onClick = {toggleAddPopUp}>Add Member</button>
         </div>
         <p className = "clickremove">Click on a Member to Remove</p>
       </div>
       <hr className="blueline" />
       <hr className="yellowline" />
 
-      <AddPopUp trigger={buttonPopUp} close = {togglePopUp}/>
+      <AddPopUp trigger={addPopUp} close = {toggleAddPopUp}/>
+      <AdminPopUp trigger={editPopUp} close = {toggleEditPopUp}/>
 
       <div className="bubble-container">
         {whiteList.map(function (member){
@@ -45,7 +50,7 @@ export default function Whitepages() {
                 name={member.name}
                 position={member.position}
                 email={member.email}
-                onClick={togglePopUp} // Pass the toggle function here
+                onClick={toggleEditPopUp} // Pass the toggle function here
               />
             </div>
           )
