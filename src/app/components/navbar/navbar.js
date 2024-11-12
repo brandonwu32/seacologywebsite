@@ -51,16 +51,12 @@ export default function Navbar() {
 
                     <div className="navbar-link">
                         <a href="/guidelines" className="navbar-link">Guidelines</a>
-                        <div className="dropdown">
-                            <a href="#">Sub-item 1</a>
-                            <a href="#">Sub-item 2</a>
-                            <a href="#">Sub-item 3</a>
-                        </div>
                     </div>
 
                     <div className="navbar-link">
                         <a href="/projectmanagement/pm-overview" className="navbar-link">Project Management</a>
                         <div className="dropdown">
+                            <a href="/projectmanagement/pm-overview">Overview</a>
                             <a href="/projectmanagement/step1">Step 1</a>
                             <a href="/projectmanagement/step2">Step 2</a>
                             <a href="/projectmanagement/step3">Step 3</a>
@@ -71,21 +67,11 @@ export default function Navbar() {
                     </div>
 
                     <div className="navbar-link">
-                        <a href="/financial" className="navbar-link">Financial</a>
-                        <div className="dropdown">
-                            <a href="#">Sub-item 1</a>
-                            <a href="#">Sub-item 2</a>
-                            <a href="#">Sub-item 3</a>
-                        </div>
+                        <a href="/finances" className="navbar-link">Finances</a>
                     </div>
 
                     <div className="navbar-link">
                         <a href="/contact" className="navbar-link">Contact</a>
-                        <div className="dropdown">
-                            <a href="#">Sub-item 1</a>
-                            <a href="#">Sub-item 2</a>
-                            <a href="#">Sub-item 3</a>
-                        </div>
                     </div>
                 </div>
             </div>
