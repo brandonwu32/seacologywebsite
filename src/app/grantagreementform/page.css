@@ -22,7 +22,6 @@
     display: flex;
     justify-content: space-between;
     gap: 2%;
-    border: 1px solid #72C7F2;
     padding: 2%;
     border-radius: 5px;
 }

@@ -5,12 +5,13 @@ import Bubble from "../components/bubble/bubble";
 import Button from "../components/button/button";
 import styles from "./page.css";
 
+import { NextResponse } from "next/server";
+import path from "path";
+
 export default function ProjectProposalPage() {
-  const [fullName, setFullName] = useState("");
   const [timeProtected, setTimeProtected] = useState("");
   const [address, setAddress] = useState("");
   const [ownershipConfirmation, setOwnershipConfirmation] = useState("");
-  const [phone, setPhone] = useState("");
   const [communitySize, setCommunitySize] = useState("");
   const [fiscalAdmin, setFiscalAdmin] = useState("");
   const [projectCost, setProjectCost] = useState("");
@@ -22,11 +23,9 @@ export default function ProjectProposalPage() {
 
   const handleSubmit = () => {
     console.log({
-      fullName,
       timeProtected,
       address,
       ownershipConfirmation,
-      phone,
       communitySize,
       fiscalAdmin,
       projectCost,
@@ -44,10 +43,6 @@ export default function ProjectProposalPage() {
       <div className="form-container">
         <div className="form-fields">
           <label>
-            Full Name:
-            <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
-          </label>
-          <label>
             Time area will be protected:
             <input type="text" value={timeProtected} onChange={(e) => setTimeProtected(e.target.value)} />
           </label>
@@ -58,10 +53,6 @@ export default function ProjectProposalPage() {
           <label>
             Confirmation of ownership of protected area:
             <input type="text" value={ownershipConfirmation} onChange={(e) => setOwnershipConfirmation(e.target.value)} />
-          </label>
-          <label>
-            Phone:
-            <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
           </label>
           <label>
             Number of people in the community:
@@ -98,9 +89,19 @@ export default function ProjectProposalPage() {
         </div>
 
         <div className="upload-bubbles">
-          <Bubble heading="Upload Files" subtext=".pdf" />
-          <Bubble heading="Upload Image" subtext=".png" />
-        </div>
+    <div className="circle">
+        <label className="button-for-bubble">
+            <input id="image-upload" type="file" className="file-input" />
+            <p className="subtext">Upload Files</p>
+        </label>
+    </div>
+    <div className="circle">
+        <label className="button-for-bubble">
+            <input id="image-upload" type="file" className="file-input" />
+            <p className="subtext">Upload Image</p>
+        </label>
+    </div>
+</div>
       </div>
 
       <div className="button-container">
