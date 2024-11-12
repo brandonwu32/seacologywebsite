@@ -5,9 +5,9 @@ export default function Table(props) {
         <table className="custom-table">
             <thead>
                 <tr>
-                    <th className = "title">Projects</th>
-                    <th className = "title">Status</th>
-                    <th className = "title">Latest Update</th>
+                    <th className = "tile">Projects</th>
+                    <th className = "tile">Status</th>
+                    <th className = "tile">Latest Update</th>
                 </tr>
             </thead>  
             <tbody>
