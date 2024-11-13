@@ -12,7 +12,7 @@ import Link from "next/link"
 export default function Step4() {
     var itemOne = {
         type: "paragraph",
-        content:"the board approves a project, we will probably need more information before we can release the  first installment of grant money. For example, we will need a timeline and a map of the protected  area. You will need to coordinate with the community and NGO partner to get these materials.  "
+        content:"The board approves a project, we will probably need more information before we can release the  first installment of grant money. For example, we will need a timeline and a map of the protected  area. You will need to coordinate with the community and NGO partner to get these materials.  "
     }
     var itemTwo = {
         type: "paragraph",

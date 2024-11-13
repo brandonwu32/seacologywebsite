@@ -24,40 +24,75 @@ export default function Contacts() {
    
    var itemFour = {
     type: "paragraph",
-    content: "Duane Silverstein, Executive Director duane@seacology.org Karen Peterson, Senior Manager of Special Initiatives   (Africa, Dominican Republic) Mary Randolph, Program Manager (Asia, the Americas, Caribbean, Europe, Oceania) karen@seacology.org  mary@seacology.org,Kevin Claassen, Accounting Manager kevin@seacology.org  Amanda Kirkhart, Program Assistant amanda@seacology.org  Erin Coyne, Institutional Giving Officer erin@seacology.org  Joe Clerici, Communications Director joe@seacology.org Max Rojas-Domke, Individual Giving Manager max@seacology.org    "
+    content: "- Duane Silverstein, Executive Director duane@seacology.org" 
    }
-   var itemFive = {
+    var itemFive = {
+    type: "paragraph",
+    content: "- Karen Peterson, Senior Manager of Special Initiatives (Africa, Dominican Republic, Oceania) karen@seacology.org "       
+   }
+
+   var itemSix = {
+    type: "paragraph",
+    content: "- Mary Randolph, Program Manager (Asia, the Americas, Caribbean, Europe) mary@seacology.org " 
+   }
+
+   var itemSeven = {
+    type: "paragraph",
+    content: "- Kevin Claassen, Accounting Manager kevin@seacology.org " 
+   }
+
+   var itemEight = {
+    type: "paragraph",
+    content: "- Amanda Kirkhart, Program Assistant amanda@seacology.org " 
+   }
+
+   var itemNine = {
+    type: "paragraph",
+    content: "- Erin Coyne, Institutional Giving Officer erin@seacology.org " 
+   }
+
+   var itemTen = {
+    type: "paragraph",
+    content: "- Joe Clerici, Communications Director joe@seacology.org " 
+   }
+
+   var itemEleven = {
+    type: "paragraph",
+    content: "- Max Rojas-Domke, Individual Giving Manager max@seacology.org " 
+   }   
+   
+   var itemTwelve = {
     type: "header",
     content: "Seacology"
 }
 
-var itemSix = {
+var itemThirteen = {
     type: "paragraph",
     content: "1623 Solano Avenue Berkeley, California 94707 USA"
 }
-var itemSeven = {
+var itemFourteen = {
     type: "paragraph", 
-    content: "Telephone +1 510-559-3505"
+    content: "Telephone: +1 510-559-3505"
 }
-var itemEight = {
+var itemFifteen = {
     type: "paragraph",
     content: "www.seacology.org"
 }
-var itemNine = {
+var itemSixteen = {
     type: "paragraph",
     content: "Thank you for your hard work for Seacology and island communities!"
 }
   
     
 
-var textList = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight,itemNine ]
+var textList = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight,itemNine, itemTen, itemEleven, itemTwelve, itemThirteen, itemFourteen, itemFifteen, itemSixteen]
 
 
 return (
     <div>
         <Navbar/> 
         <div className="page-wrapper">
-            <Heading text="Contacts" buttonText="edit"/>
+            <Heading text="Contacts" buttonText="edit" />
             
             <div>
                 <Body textList={textList} title="Who to Contact at Seacology"/>
