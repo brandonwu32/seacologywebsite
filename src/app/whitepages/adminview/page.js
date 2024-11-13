@@ -4,6 +4,7 @@ import { useState } from "react";
 import WhitePopUp from "../../components/whitepagepopup/infopopup/infopopup"
 import InfoPageBubble from "../../components/whitepagebubbles/infobubble/infobubble";
 import Button from "@/app/components/button/button";
+import Link from 'next/link'
 
 export default function Whitepages() {
   const [buttonPopUp, setButtonPopUp] = useState(false);
@@ -22,7 +23,9 @@ export default function Whitepages() {
       <div className='top'>
         <p className = 'title'> Team</p>
         <div className = 'btz'>
-        <Button color="blue" size="large" text="Edit View"/>
+        <Link href="/whitepages/adminview/editview">
+          <Button color="blue" size="large" text="Edit View"/>
+        </Link>
         </div>
 
       </div>

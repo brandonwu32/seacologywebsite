@@ -11,23 +11,22 @@
     z-index: 1000;
 }
 .popup {
-    width: 600px;
+    width: 50%;
     background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1%;
+    border-radius: 2%;
     z-index: 1001; /* Ensure it appears above the overlay */
 }
 .rectangle {
-    margin: 20px 25px 20px 25px;
-    border: 2px solid #02A0D4;
-    padding: 10px;
+    margin: 5%;
+    border: 0.2rem solid #02A0D4;
+    padding: 2%;
 }
 .yellowline {
     border: none;
-    border-top: 2px solid #FDCD3B; /* Customize color and thickness */
+    border-top: 0.2rem solid #FDCD3B; /* Customize color and thickness */
     width: 100%; /* Set width */
-    margin: 10px 0; /* Optional spacing */
+    margin: 2% 0; 
   }
 .name {
     color:#02A0D4;

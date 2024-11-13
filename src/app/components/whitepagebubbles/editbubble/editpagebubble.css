@@ -16,13 +16,6 @@
 .bubble-image {
            
     object-fit: cover;     
-    border: 20px solid #02A0D4; /* when change to percentage no change */   
-    border-radius: 50%;
-}
-.popup-bubble {
-    width: 40%;    
-    height: 70%;    
-    overflow: hidden;
-    margin-left: 110px;
+    border: 1rem solid #02A0D4; /* when change to percentage no change */   
     border-radius: 50%;
 }

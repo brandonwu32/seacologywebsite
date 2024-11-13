@@ -1,14 +1,14 @@
-
-.title { /*figure out why the font size will not change */
+.title {
+  /*figure out why the font size will not change */
   color: #02A0D4;
   font-weight: bold;
   margin-left: 3%;
-  margin-top: 10px;
-  font-size: 150% ;
+  margin-top: 0.5%;
+  font-size: 150%;
   margin-bottom: 0.5%;
 }
 
-.bubble-container { 
+.bubble-container {
   display: grid;
   grid-template-columns: auto auto auto;
   margin-left: 3%;
@@ -25,17 +25,18 @@
 }
 
 .blueline {
-border: none;
-border-top: 2px solid #02A0D4; /* Customize color and thickness */
-width: 100%; /* Set width */
-margin-top: 4px;
-margin-bottom: 2px;
+  border: none;
+  border-top: 0.1rem solid #02A0D4;
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
+
 .yellowline {
-border: none;
-border-top: 2px solid #FDCD3B; /* Customize color and thickness */
-width: 100%; /* Set width */
-margin: 1px 0; /* Optional spacing */
+  border: none;
+  border-top: 0.1rem solid #FDCD3B;
+  width: 100%;
+  margin: 1% 0;
 }
 .btz {
 margin-left: 75%;
@@ -43,7 +44,7 @@ align-items: center;
 }
 
 .top {
-  margin-top:5px;
+  margin-top:0.5%;
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 0.5%;
 }

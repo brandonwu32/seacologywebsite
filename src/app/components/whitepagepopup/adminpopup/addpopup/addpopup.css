@@ -25,9 +25,9 @@
 }
 .yellowline {
     border: none;
-    border-top: 2px solid #FDCD3B; /* Customize color and thickness */
+    border-top: 0.2rem solid #FDCD3B; /* Customize color and thickness */
     width: 100%; /* Set width */
-    margin: 10px 0; /* Optional spacing */
+    margin: 2% 0; 
   }
 .name {
     color:#02A0D4;
