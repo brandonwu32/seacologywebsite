@@ -1,5 +1,5 @@
 import './editpagepopup.css'
-
+import Button from '../../button/button';
 
 export default function EditPagePopUp(props) {
     return props.trigger ? (
@@ -20,9 +20,9 @@ export default function EditPagePopUp(props) {
                 </div>
             </div>
                 <div className = 'buttonz'>
-                <button className="red" id="large" onClick={props.close}>Remove Member</button>
-                <button className="blue" id="large" onClick={props.close}>Submit Changes</button>
-                <button className="blue" id="large" onClick={props.close}>Close</button>
+                    <Button color="red" size="large" text="Remove" onClick={props.close}/>
+                    <Button color="blue" size="large" text="Submit" onClick={props.close}/>
+                    <Button color="blue" size="large" text="Close" onClick={props.close}/>
             </div>
     </div>
     </div>

@@ -18,9 +18,9 @@ export default function AddPopUp(props) {
                         </div>
                     </div>
                 </div>
-                <div className = 'buttonz'>
-                    <button className="yellow" id="large" onClick={props.close}>Add Member</button>
-                    <button className="blue" id="large" onClick={props.close}>Close</button>
+                <div className = 'bttz'>
+                    <Button color="yellow" size="large" text="Add Member" onClick={props.close}/>
+                    <Button color="blue" size="large" text="Close" onClick={props.close}/>
                 </div>
             </div>
         </div>

@@ -133,3 +133,9 @@ h2 {
     display: flex;
     align-items: center;
 }
+.bttz {
+    margin-left: 35%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

@@ -107,10 +107,6 @@ h2 {
     background-color: #FDCD3B;
 }
 
-.buttonz {
-    margin-left: 400px;
-}
-
 /* Form Fields */
 .add-fields {
     width: 45%;
@@ -139,7 +135,7 @@ h2 {
 }
 
 .buttonz {
-    margin-left: 300px;
+    margin-left: 2%;
     display: flex;
     align-items: center;
     gap: 10px;

@@ -22,7 +22,7 @@ export default function Whitepages() {
       <div className='top'>
         <p className = 'title'> Team</p>
         <div className = 'btz'>
-        <button class="blue" id="large">Edit View</button>
+        <Button color="blue" size="large" text="Edit View"/>
         </div>
 
       </div>

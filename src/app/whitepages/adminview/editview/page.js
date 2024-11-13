@@ -3,6 +3,7 @@ import styles from "./page.css";
 import { useState } from "react"; 
 import AddPopUp from "../../../components/whitepagepopup/adminpopup/addpopup/addpopup"
 import EditPageBubble from "@/app/components/whitepagebubbles/editbubble/editpagebubble";
+import Button from "@/app/components/button/button";
 
 export default function Whitepages() {
   const [addPopUp, setButtonPopUp] = useState(false);
@@ -20,14 +21,16 @@ export default function Whitepages() {
     <div className={styles.page}>
       <div className='top'>
         <p className = 'title'>Team</p>
-        <div className = 'btz'>
-          <button className="red" id="large">Edititing</button>
-          <button className="blue" id="large" onClick = {toggleAddPopUp}>Add Member</button>
+        <div className="top-left">
+          <div className = 'btz'>
+            <Button color="red" size="large" text="Editing"/>
+            <Button color="blue" size="large" text="Add Member" onClick = {toggleAddPopUp}/>
+          </div>
         </div>
-        <p className = "clickremove">Click on a Member to Remove</p>
       </div>
       <hr className="blueline" />
       <hr className="yellowline" />
+      <p className = "clickremove">**Click on a Member to Remove</p>
 
       <AddPopUp trigger={addPopUp} close = {toggleAddPopUp}/>
 

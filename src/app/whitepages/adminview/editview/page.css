@@ -40,11 +40,21 @@
 .btz {
   display:flex;
   justify-content: left;
-  margin-left: 400px;
   align-items: center;
+  column-gap: 5%;
 }
+
 .top {
   margin-top:5px;
   display: flex;
   margin-bottom: 5px;
+}
+.top-left {
+  margin-left:62%;
+}
+.clickremove {
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: #02A0D4;
 }
