@@ -1,6 +1,6 @@
 import "./table.css";
 
-export default function Table({ projects }) {
+export default function Table(props) {
     return (
         <table className="custom-table">
             <thead>
@@ -11,7 +11,7 @@ export default function Table({ projects }) {
                 </tr>
             </thead>  
             <tbody>
-                {projects.map((project, index) => (
+                {props.projects.map((project, index) => (
                     <tr key={index}>
                         <td>{project.project}</td>
                         <td>{project.status}</td>

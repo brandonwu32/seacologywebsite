@@ -61,12 +61,12 @@ h2 {
 }
 
 .projectTable {
-    width: 100%;
+    width: 200%;
     border-collapse: collapse;
 }
 
 .projectTable th, .projectTable td {
-    border: 1px solid #ddd;
+    border: 5px solid #ddd;
     padding: 8px;
     text-align: left;
 }
@@ -77,11 +77,11 @@ h2 {
 }
 
 .closeButton {
-    margin-top: 20px;
+    margin-top: 10%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 8px 16px;
+    padding: 10% 16%;
     background-color: #007bff;
     color: white;
     border: none;
@@ -93,13 +93,13 @@ h2 {
     background-color: #0056b3;
 }
 .custom-table {
-    width: 100%;
+    width: 10%;
     border-collapse: collapse;
 }
 
 .custom-table th, .custom-table td {
     border: 1px solid #02A0D4;
-    padding: 8px;
+    padding: 3%;
     text-align: left;
 }
 
@@ -108,7 +108,7 @@ h2 {
 }
 
 .buttonz {
-    margin-left: 400px;
+    margin-left: 70%;
 }
 .bubs {
     margin-left: 25%;
