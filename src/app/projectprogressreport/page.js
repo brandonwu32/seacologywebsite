@@ -42,11 +42,11 @@ export default function ProjectProgressPage() {
       <div className="form-container">
         <div className="form-fields">
          
+         
           <label>
             Project:
             <div className="dropdown-container">
             <input type="text" value={project} onClick={openFirstPopup} readOnly placeholder="Select a project"/>
-            
             {isFirstPopupOpen && (
               <div className="dropdown-list">
                 {projects.map((proj, index) => (
@@ -60,17 +60,18 @@ export default function ProjectProgressPage() {
           </label>
           <label>
             Tell us what you finished:
-            <input type="text" value={finished} onChange={(e) => setFinished(e.target.value)}/>
+            <textarea type="text" value={finished} onChange={(e) => setFinished(e.target.value)}/>
           </label>
           <label>
             Tell us what is not finished:
-            <input type="text" value={notFinished} onChange={(e) => setnotFinished(e.target.value)}/>
+            <textarea type="text" value={notFinished} onChange={(e) => setnotFinished(e.target.value)}/>
           </label>
           <label>
             Conservation Efforts:
-            <input type="text" value={conservation} onChange={(e) => setConservation(e.target.value)}/>
+            <textarea type="text" value={conservation} onChange={(e) => setConservation(e.target.value)}/>
           </label>
 
+      
         </div>
 
 
@@ -97,7 +98,7 @@ export default function ProjectProgressPage() {
 </div>
       </div>
       <div className="button-container">
-        <button className="close-button">close</button>
+        <button className="close-button">back</button>
         <button className="enter-button" onClick = {handleSubmit}>enter</button>
       </div>
     </div>

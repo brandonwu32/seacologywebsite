@@ -3,7 +3,7 @@ import Bubble from "../components/bubble/bubble";
 import React, { useState } from 'react';
 import styles from "./page.css";
 
-export default function ProjectProposalPage() {
+export default function FinalProjectPage() {
   
   const [finished, setFinished] = useState("");
   const [conservation, setConservation] = useState("");
@@ -20,15 +20,12 @@ export default function ProjectProposalPage() {
   };
 
   const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
-  const [isSecondPopupOpen, setIsSecondPopupOpen] = useState(false);
+  
   
   const openFirstPopup = () => {
     setIsFirstPopupOpen(!isFirstPopupOpen);
   };
 
-  const openSecondPopup = () => {
-    setIsSecondPopupOpen(!isSecondPopupOpen);
-  };
 
   const handleSelectProject = (selectedProject) => {
     setProject(selectedProject);
@@ -61,14 +58,14 @@ export default function ProjectProposalPage() {
           </label>
           <label>
             Tell us what you finished:
-            <input type="text" value={finished} onChange={(e) => setFinished(e.target.value)}/>
+            <textarea type="text" value={finished} onChange={(e) => setFinished(e.target.value)}/>
           </label>
           <label>
             Conservation Efforts:
-            <input type="text" value={conservation} onChange={(e) => setConservation(e.target.value)}/>
+            <textarea type="text" value={conservation} onChange={(e) => setConservation(e.target.value)}/>
           </label>
           <label>Final Financial Report:
-            <input type="text" value={final} onChange={(e) => setFinal(e.target.value)}/>
+            <textarea type="text" value={final} onChange={(e) => setFinal(e.target.value)}/>
           </label>
 
         </div>
@@ -94,10 +91,10 @@ export default function ProjectProposalPage() {
         </label>
     </div>
       </div>
-      <div className="button-container">
-        <button className="close-button">close</button>
-        <button className="enter-button" onClick = {handleSubmit}>enter</button>
       </div>
+      <div className="button-container">
+        <button className="close-button">back</button>
+        <button className="enter-button" onClick = {handleSubmit}>enter</button>
       </div>
     </div>
   );
