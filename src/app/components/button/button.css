@@ -1,3 +1,11 @@
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
 .yellow {
     background-color: #FDCD3B;
     color: white;
@@ -24,9 +32,4 @@
     font-size: 24px;
     border-radius: 10px;
     border-width: 0;
-}
-
-#button {
-    font-style:italic;
-    text-align:center; 
 }
