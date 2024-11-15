@@ -2,13 +2,16 @@
 /* Main wrapper styling */
 #wrapper {
     position: fixed;
-    border: none;
-    display: flex;
-    float: left;
-    height: 100vh;
-    width: 30%;
+    top: 0;             /* Aligns to the top of the page */
+    left: 0;            /* Aligns to the left edge of the page */
+    height: 100vh;      /* Full viewport height */
+    width: 20%;         /* Adjust width as needed */
     background-color: #71c4d6;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally within the sidebar */
+    padding-top: 1rem;  
 }
 
 #seacology-logo {
@@ -138,121 +141,9 @@
     margin-right: 0.7rem; /* Space between arrow and text */
     vertical-align: middle;
     margin-left: -1.8rem;
- 
 }
 
 /* Rotate the arrow when hovering over the link */
 .navbar-link:hover > a::before {
     transform: rotate(230deg); 
 }
-
-
-/*
-.wrapper{
-display: flex;
-position: relative;
-}
-
-.wrapper .sidebar{
-width: 200px;
-height: 100%;
-background: #72C7F2;
-padding: 30px 0px;
-position: fixed;
-}
-
-.test {
-    display: flex;
-    flex-direction: row;
-    width: 8rem;
-    height: 6rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.wrapper .sidebar h2{
-color: #fff;
-text-transform: uppercase;
-text-align: center;
-margin-bottom: 30px;
-}
-
-.wrapper .sidebar ul li{
-padding: 15px;
-border-bottom: 1px solid #bdb8d7;
-border-bottom: 1px solid rgba(0,0,0,0.05);
-border-top: 1px solid rgba(255,255,255,0.05);
-}    
-
-.wrapper .sidebar ul li a{
-color: #bdb8d7;
-display: block;
-}
-
-.wrapper .sidebar ul li a .fas{
-width: 25px;
-}
-
-.wrapper .sidebar ul li:hover{
-    background-color: #72C7F2;
-}
-    
-.wrapper .sidebar ul li:hover a{
-color: #fff;
-}
-
-.wrapper .sidebar .social_media{
-position: absolute;
-bottom: 0;
-left: 50%;
-transform: translateX(-50%);
-display: flex;
-}
-
-.wrapper .sidebar .social_media a{
-    display: block;
-    width: 40px;
-    background: #594f8d;
-    height: 40px;
-    line-height: 45px;
-    text-align: center;
-    margin: 0 5px;
-    color: #bdb8d7;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-.wrapper .main_content{
-width: 100%;
-margin-left: 200px;
-}
-
-.wrapper .main_content .header{
-padding: 20px;
-background: #fff;
-color: #717171;
-border-bottom: 1px solid #e0e4e8;
-}
-
-.wrapper .main_content .info{
-margin: 20px;
-color: #717171;
-line-height: 25px;
-}
-
-.wrapper .main_content .info div{
-margin-bottom: 20px;
-}
-
-@media (max-height: 500px){
-.social_media{
-    display: none !important;
-}
-}
-
-.arrow {
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 20px solid yellow;
-
-} */
