@@ -16,9 +16,11 @@ export default function AddPopUp(props) {
                             <label>Region:<input id = "region" type="text" /></label>
                             <label>Image:<input id = "image-upload" type="file" /></label>
                         </div>
+                        {/* i'd recommend using some variables to try and keep track of the values in each input field (text). 
+                        if someone clicks on the add button, for now just have its onClick console.log the values in each box! */}
                     </div>
                 </div>
-                <div className = 'bttz'>
+                <div className = 'btttz'>
                     <Button color="yellow" size="large" text="Add Member" onClick={props.close}/>
                     <Button color="blue" size="large" text="Close" onClick={props.close}/>
                 </div>

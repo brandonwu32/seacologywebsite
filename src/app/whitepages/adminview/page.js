@@ -22,7 +22,7 @@ export default function Whitepages() {
     <div className={styles.page}>
       <div className='top'>
         <p className = 'title'> Team</p>
-        <div className = 'btz'>
+        <div className = 'btzz'>
         <Link href="/whitepages/adminview/editview">
           <Button color="blue" size="large" text="Edit View"/>
         </Link>
