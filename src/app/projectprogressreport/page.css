@@ -79,31 +79,7 @@
   }
   
   
-  .upload-bubbles > div {
-    margin: 1%;
-    padding: 1%;
-  }
-  
-  .upload-bubbles {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: -1%; 
-    margin: 1% 0 1%;
-  }
-  
-  .upload-bubbles > .bubble:nth-child(1) {
-    margin-top: 20%; 
-  }
-  
-  .upload-bubbles > .bubble:nth-child(2) {
-    margin-top: 3%; 
-  }
-  
-  .upload-bubbles > .bubble:nth-child(3) {
-    margin-top: 20%; 
-  }
+
   
   
   .button-container {

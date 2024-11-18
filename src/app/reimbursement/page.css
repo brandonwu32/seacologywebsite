@@ -84,6 +84,13 @@
   gap: 2%; 
   justify-content: center; 
   margin-top: 5%; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: -1%; 
+  margin: 1% 0 1%;
+  
 }
 
 .circle {
@@ -120,9 +127,11 @@
   cursor: pointer;
 }
 
-.subtext {
-  font-size: 1em; 
-  pointer-events: none; 
+.subtext{
+  font-size: 1.9em;
+  pointer-events: none;
+  color: #72C7F2;
+  font-weight: bold;
 }
 
 .button-container {
@@ -210,3 +219,4 @@
 .dropdown-container:hover .dropdown-list {
   display: block;
 }
+

@@ -32,7 +32,7 @@ export default function ProjectProgressPage() {
     setIsFirstPopupOpen(false); 
   };
 
-  const projects = ["Project 1", "Project 2", "Project 3", "Project 4"];
+  const projects = ["Project 1", "Project 2", "Project 3", "Project 4", "Other"];
 
   return (
     <div className="page">
@@ -70,32 +70,16 @@ export default function ProjectProgressPage() {
             Conservation Efforts:
             <textarea type="text" value={conservation} onChange={(e) => setConservation(e.target.value)}/>
           </label>
-
-      
         </div>
-
-
-
         <div className="upload-bubbles">
-    <div className="circle">
-        <label className="button-for-bubble">
-            <input id="image-upload" type="file" className="file-input" />
-            <p className="subtext">Upload Files</p>
-        </label>
-    </div>
-    <div className="circle">
-        <label className="button-for-bubble">
-            <input id="image-upload" type="file" className="file-input" />
-            <p className="subtext">Upload Files</p>
-        </label>
-    </div>
-    <div className="circle">
-        <label className="button-for-bubble">
-            <input id="image-upload" type="file" className="file-input" />
-            <p className="subtext">Upload Image</p>
-        </label>
-    </div>
-</div>
+            <div className="circle">
+                <label className="button-for-bubble">
+                    <input id="image-upload" type="file" className="file-input" />
+                    <p className="subtext">Upload Files</p>
+                </label>
+            </div>
+            
+        </div>
       </div>
       <div className="button-container">
         <button className="close-button">back</button>

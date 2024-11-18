@@ -84,22 +84,15 @@ export default function ReimbursementPage() {
           </label>
         </div>
 
-    <div className="upload-bubbles">
-      <div className="circle">
-          <label className="button-for-bubble">
-              <input id="image-upload" type="file" className="file-input" />
-              <p className="subtext">Upload Files</p>
-          </label>
-      </div>
-      <div className="circle">
-          <label className="button-for-bubble">
-              <input id="image-upload" type="file" className="file-input" />
-              <p className="subtext">Upload Image</p>
-
-          </label>
-      </div>
-      
-    </div>
+        <div className="upload-bubbles">
+            <div className="circle">
+                <label className="button-for-bubble">
+                    <input id="image-upload" type="file" className="file-input" />
+                    <p className="subtext">Upload Files</p>
+                </label>
+            </div>
+            
+        </div>
     <div className="button-container">
         <button className="close-button">back</button>
         <button className="enter-button" onClick = {handleSubmit}>enter</button>

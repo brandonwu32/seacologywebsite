@@ -78,18 +78,6 @@ export default function FinalProjectPage() {
             <p className="subtext">Upload Files</p>
         </label>
     </div>
-    <div className="circle">
-        <label className="button-for-bubble">
-            <input id="image-upload" type="file" className="file-input" />
-            <p className="subtext">Upload Video</p>
-        </label>
-    </div>
-    <div className="circle">
-        <label className="button-for-bubble">
-            <input id="image-upload" type="file" className="file-input" />
-            <p className="subtext">Upload Image</p>
-        </label>
-    </div>
       </div>
       </div>
       <div className="button-container">

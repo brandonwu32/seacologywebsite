@@ -93,19 +93,6 @@
   margin: 1% 0 1%;
 }
 
-.upload-bubbles > .bubble:nth-child(1) {
-  margin-top: 20%; 
-}
-
-.upload-bubbles > .bubble:nth-child(2) {
-  margin-top: 3%; 
-}
-
-.upload-bubbles > .bubble:nth-child(3) {
-  margin-top: 20%; 
-}
-
-
 .button-container {
   display: flex;
   justify-content: center;
@@ -199,23 +186,6 @@
   top: 0;
   left: 0;
   cursor: pointer;
-}
-
-.subtext {
-  font-size: 1em; 
-  pointer-events: none; 
-}
-
-.upload-bubbles .circle:nth-child(1) {
-  transform: translateY(15%); 
-}
-
-.upload-bubbles .circle:nth-child(2) {
-  transform: translateY(-10%); 
-}
-
-.upload-bubbles .circle:nth-child(3) {
-  transform: translateY(15%);
 }
 
 .subtext{
