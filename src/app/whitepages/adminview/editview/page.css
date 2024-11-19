@@ -1,5 +1,4 @@
-.title {
-  /*figure out why the font size will not change */
+.EWPtitle {
   color: #02A0D4;
   font-weight: bold;
   margin-left: 3%;
@@ -8,23 +7,22 @@
   margin-bottom: 0.5%;
 }
 
-.bubble-container {
+.EWPbubble-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  margin-left: 3%;
   height: 50%;
   width: 100%;
   overflow-y: scroll;
   justify-content: center;
 }
 
-.bubble-wrapper {
+.EWPbubble-wrapper {
   margin-top: 3rem;
   margin-left: 5rem;
   margin-right: 5rem;
 }
 
-.blueline {
+.EWPblueline {
   border: none;
   border-top: 0.1rem solid #02A0D4;
   width: 100%;
@@ -32,7 +30,7 @@
   margin-bottom: 1%;
 }
 
-.yellowline {
+.EWPyellowline {
   border: none;
   border-top: 0.1rem solid #FDCD3B;
   width: 100%;

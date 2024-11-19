@@ -1,4 +1,4 @@
-.title {
+.WPtitle {
   /*figure out why the font size will not change */
   color: #02A0D4;
   font-weight: bold;
@@ -8,23 +8,22 @@
   margin-bottom: 0.5%;
 }
 
-.bubble-container {
+.WPbubble-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  margin-left: 3%;
   height: 50%;
   width: 100%;
   overflow-y: scroll;
   justify-content: center;
 }
 
-.bubble-wrapper {
+.WPbubble-wrapper {
   margin-top: 3rem;
   margin-left: 5rem;
   margin-right: 5rem;
 }
 
-.blueline {
+.WPblueline {
   border: none;
   border-top: 0.1rem solid #02A0D4;
   width: 100%;
@@ -32,7 +31,7 @@
   margin-bottom: 1%;
 }
 
-.yellowline {
+.WPyellowline {
   border: none;
   border-top: 0.1rem solid #FDCD3B;
   width: 100%;
