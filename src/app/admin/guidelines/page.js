@@ -104,7 +104,7 @@ export default function Guidelines() {
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/projectmanagement/pm-overview">
+                    <Link href="/admin/projectmanagement/pm-overview">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
