@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./page.css"
+import styles from "../../page.css"
 import Navbar from "../../../components/navbar/navbar";
 import Button from '../../../components/button/button';
 import Heading from "../../../components/info-hub/heading"
@@ -54,36 +54,36 @@ export default function Step6() {
     type: "paragraph",
     content: "Seacology also organizes a few expeditions each year to show board members and donors our great  projects. If we plan an expedition to your area, we will work with you to arrange site visits or other  events such as opening celebrations."
    }
-    
+
 
     var textList = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine, itemTen, itemEleven ]
 
 
     return (
         <div>
-            <Navbar/> 
+            <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Step 6" buttonText="edit" edit ={true}/>
-                
+
                 <div>
                     <Body textList={textList} title="Submit the Final Report"/>
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step5">
+                    <Link href="/admin/projectmanagement/step5">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/step5">
+                    <Link href="/admin/finances">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
 
             </div>
-           
+
         </div>
-    
-        
+
+
 
     );
 }

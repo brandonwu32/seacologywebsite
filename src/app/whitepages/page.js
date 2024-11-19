@@ -12,16 +12,16 @@ export default function Whitepages() {
 
   return (
     <div className={styles.page}>
-      <div className='title'>
+      <div className='WPtitle'>
         <p> Team</p>
       </div>
-      <hr className="blueline" />
-      <hr className="yellowline" />
+      <hr className="WPblueline" />
+      <hr className="WPyellowline" />
 
-      <div className="bubble-container">
+      <div className="WPbubble-container">
         {whiteList.map(function (member){
           return (
-            <div className = "bubble-wrapper" key={member.email}>
+            <div className = "WPbubble-wrapper" key={member.email}>
               <InfoPageBubble 
                 src={member.image} 
                 alt="CeoPic"

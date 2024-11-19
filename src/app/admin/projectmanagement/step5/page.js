@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./page.css"
+import styles from "../../page.css"
 import Navbar from "../../../components/navbar/navbar";
 import Button from '../../../components/button/button';
 import Heading from "../../../components/info-hub/heading"
@@ -69,7 +69,7 @@ export default function Step5() {
         type: "paragraph",
         content:"If you, or another individual not associated with a partner NGO, are personally serving as the fiscal  administrator, include receipts for all expenses. Identify the vendor and type of expense."
     }
-    
+
 
     var textList = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine, itemTen, itemEleven, itemTwelve, itemThriteen, itemFourteen, itemFiveteen]
 
@@ -77,26 +77,26 @@ export default function Step5() {
 
     return (
         <div>
-            <Navbar/> 
+            <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Step 5" buttonText="edit" edit ={true}/>
-                
+
                 <div>
                     <Body textList={textList} title="Review and Send Progress Reports"/>
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step4">
+                    <Link href="/admin/projectmanagement/step4">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/projectmanagement/step6">
+                    <Link href="/admin/projectmanagement/step6">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
 
             </div>
-           
+
         </div>
 
     );

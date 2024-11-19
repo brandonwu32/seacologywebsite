@@ -21,7 +21,7 @@ export default function Whitepages() {
   return (
     <div className={styles.page}>
       <div className='top'>
-        <p className = 'title'> Team</p>
+        <p className = 'AWPtitle'> Team</p>
         <div className = 'btzz'>
         <Link href="/whitepages/adminview/editview">
           <Button color="blue" size="large" text="Edit View"/>
@@ -29,15 +29,15 @@ export default function Whitepages() {
         </div>
 
       </div>
-      <hr className="blueline" />
-      <hr className="yellowline" />
+      <hr className="AWPblueline" />
+      <hr className="AWPyellowline" />
 
       <WhitePopUp trigger={buttonPopUp} close = {togglePopUp}/>
 
-      <div className="bubble-container">
+      <div className="AWPbubble-container">
         {whiteList.map(function (member){
           return (
-            <div className = "bubble-wrapper" key={member.email}>
+            <div className = "AWPbubble-wrapper" key={member.email}>
               <InfoPageBubble
                 src={member.image} 
                 alt="CeoPic"

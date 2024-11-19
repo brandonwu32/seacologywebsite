@@ -8,11 +8,14 @@
     background-color: transparent;
 }
 
-.description {
+.ibdescription {
     display: flex;
     flex-direction: column;  
     align-items: center;   
   }
+.ibprop {
+    margin: 1%
+}
 
 .bubble-image {
            

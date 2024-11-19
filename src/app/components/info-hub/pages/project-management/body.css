@@ -9,7 +9,7 @@ p {
 .bodyText {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    line-height: 3.5vh;
 }
 
 li {
@@ -21,12 +21,10 @@ li {
 
 .listItem {
     width: 60vw;
-
 }
 
 .body-title {
     color: #71c4d6;
-    padding-bottom: 5vh;
 }
 
 h2 {

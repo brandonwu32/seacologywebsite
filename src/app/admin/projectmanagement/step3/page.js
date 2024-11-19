@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./page.css"
+import styles from "../../page.css"
 import Navbar from "../../../components/navbar/navbar";
 import Button from '../../../components/button/button';
 import Heading from "../../../components/info-hub/heading"
@@ -22,57 +22,57 @@ export default function Step3() {
         type: "bullet-point",
         content: "Name of fiscal administrator (the NGO or individual who will manage project funds)"
     }
-    
+
     var itemFour = {
         type: "bullet-point",
         content: "Estimated total cost of project, in local currency"
     }
-    
+
     var itemFive = {
         type: "bullet-point",
         content: "The protected area’s size and type (marine, terrestrial, and/or mangroves)"
     }
-    
+
     var itemSix = {
         type: "bullet-point",
         content: "How long the area will be protected (at least 15 years is best)"
     }
-    
+
     var itemSeven = {
         type: "bullet-point",
         content: "Confirmation of ownership of protected area and any other land used for the project"
     }
-    
+
     var itemEight = {
         type: "bullet-point",
         content: "Detailed information about how the community will protect the proposed protected area"
     }
-    
+
     var itemNine = {
         type: "bullet-point",
         content: "Map showing where any structure will be built or installed"
     }
-    
+
     var itemTen = {
         type: "bullet-point",
         content: "Photographs of the area, including both the community and the proposed protected area"
     }
-    
+
     var itemEleven = {
         type: "bullet-point",
         content: "Number of people in the community"
     }
-    
+
     var itemTwelve = {
         type: "bullet-point",
         content: "Other sources of project funding, if any (if we are not the only funder, we need to know)"
     }
-    
+
     var itemThirteen = {
         type: "bullet-point",
         content: "List of threatened or endangered species in the area that will be protected, if any"
     }
-    
+
     var itemFourteen = {
         type: "bullet-point",
         content: "Any conflicts of interest"
@@ -102,11 +102,11 @@ export default function Step3() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step2">
+                    <Link href="/admin/projectmanagement/step2">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/projectmanagement/step4">
+                    <Link href="/admin/projectmanagement/step4">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

@@ -1,21 +1,21 @@
-.bubble {
+.pububble {
     display: inline-block;      /* Ensure the container is sized to the image */  
     overflow: hidden;          /* Ensures the border is clipped in a circle */
     cursor: pointer;           /* Changes the cursor to indicate it's clickable */
     border: none;
     border-radius: 50%;
     align-items: center;
+    height: 50%;
+    width: 70%;
+    background: transparent;
+
 }
 
-.description {
-    display: flex;
-    flex-direction: column;  
-    align-items: center;   
-  }
-
-.bubble-image {
-           
-    object-fit: cover;     
+.bubble-image-wppu {  
     border: 1rem solid #02A0D4; /* when change to percentage no change */   
     border-radius: 50%;
+}
+
+.wp-individual-bubble {
+    height: 40%;
 }

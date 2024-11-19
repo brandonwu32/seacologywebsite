@@ -5,7 +5,7 @@
     font-family: Arial, sans-serif;
     height: 90%;
   }
-  
+
   .heading {
     font-size: 2.5rem;
     color: #72C7F2;
@@ -13,13 +13,13 @@
     text-align: left;
     margin-bottom: 1%;
   }
-  
+
   .blue-line {
     border: None;
     border-top: 0.1rem solid #72C7F2;
     width: 100%;
   }
-  
+
   .yellow-line {
     border: None;
     border-top: 0.1rem solid #FDCD3B;
@@ -30,7 +30,7 @@
     justify-content: space-between;
     margin-top: 2%;
   }
-  
+
   .form-fields {
     width: 45%;
     height: 100%;
@@ -38,14 +38,14 @@
     flex-direction: column;
     gap: 4rem;
   }
-  
+
   .form-fields label {
     display: flex;
     flex-direction: column;
     font-size: 1rem;
     color: #333;
   }
-  
+
   .form-fields input {
     width: 100%;
     padding: 8%;
@@ -54,38 +54,38 @@
     font-size: 1rem;
     margin-top: 5%;
   }
-  
-  
+
+
   .form-fields input,
   .form-fields textarea {
-    width: 80%; 
-    padding: 3%; 
+    width: 80%;
+    padding: 3%;
     border: 2% solid #ccc;
     border-radius: 10px;
     font-size: 1rem;
     margin-top: 0.5%;
-    min-height: 40%; 
+    min-height: 40%;
     border-color: #72C7F2;
     resize: vertical;
     height: 100%;
     font-family: Arial, sans-serif;
   }
-  
+
   .form-fields input[type="number"] {
     height: 50%;
     padding: 10%;
     font-size: 1rem;
   }
-  
-  
+
+
   .button-container {
     display: flex;
     justify-content: center;
     gap: 2%;
     margin-top: -4%;
-  
+
   }
-  
+
   .close-button, .enter-button {
     padding: 1% 4%;
     font-size: 1rem;
@@ -94,27 +94,27 @@
     cursor: pointer;
     background: blue;
   }
-  
+
   .close-button {
-    background: #FDCD3B; 
-    color: white; 
+    background: #FDCD3B;
+    color: white;
     margin-left: 80%;
-   
+
   }
-  
+
   .enter-button {
-    background-color: #72C7F2; 
+    background-color: #72C7F2;
     color: white;
   }
-  
+
   .dropdown-container {
     position: relative;
   }
-  
+
   .dropdown-container .dropdown-list {
     display: none;
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     width: 85%;
     background-color: white;
@@ -125,35 +125,42 @@
   .dropdown-item:hover{
     background-color: rgb(198, 198, 198);
   }
-  
+
   .dropdown-container:hover .dropdown-list {
     display: block;
   }
 
   .upload-bubbles {
     display: flex;
-    flex-direction: row; 
-    gap: 2%; 
-    justify-content: center; 
-    margin-top: 5%; 
+    flex-direction: row;
+    gap: 2%;
+    justify-content: center;
+    margin-top: 5%;
     margin-right: 20%;
   }
-  
-  .circle {
-    width: 15vw; 
-    height: 15vw; 
-    max-width: 100%; 
+
+
+  .file-circle {
+    width: 15vw;
+    height: 15vw;
+    max-width: 100%;
     max-height: 100%;
-    border-radius: 50%; 
+    border-radius: 50%;
     background-color: #ffffff;
-    border: 3% solid #89CFF0;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0% 0% 8% rgba(0, 123, 255, 0.5);
     position: relative;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(82, 96, 225, 0.3);
+    border: 3px solid #72C7F2;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    object-fit: cover;
   }
-  
+
   .button-for-bubble {
     display: flex;
     flex-direction: column;
@@ -162,28 +169,28 @@
     cursor: pointer;
     text-align: center;
   }
-  
+
   .file-input {
-    opacity: 0; 
-    width: 100%; 
-    height: 100%; 
-    position: absolute; 
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
     top: 0;
     left: 0;
     cursor: pointer;
   }
-  
 
-  
-  .upload-bubbles .circle:nth-child(1) {
-    transform: translateY(15%); 
+
+
+  .upload-bubbles .file-circle:nth-child(1) {
+    transform: translateY(15%);
   }
-  
-  .upload-bubbles .circle:nth-child(2) {
-    transform: translateY(-10%); 
+
+  .upload-bubbles .file-circle:nth-child(2) {
+    transform: translateY(-10%);
   }
-  
-  .upload-bubbles .circle:nth-child(3) {
+
+  .upload-bubbles .file-circle:nth-child(3) {
     transform: translateY(15%);
   }
 
@@ -244,7 +251,7 @@
     z-index: 1000p
 
   }
- 
+
   .bubs{
     text-align: left;
     text-indent: 1vw;
@@ -252,10 +259,107 @@
     width: 100%;
     border: 1px solid #72C7F2;
     border-radius: 10px;
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif;
     font-size: 1rem;
     color: #333;
     background-color: #fff;
     margin-top: 5%;
     height: 8vh;
   }
+
+  .agreement-page {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2% 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    height: 100vh;
+}
+
+.agreement-heading {
+    font-size: 2.5rem;
+    color: #72C7F2;
+    font-weight: bold;
+    margin-bottom: 1%;
+    padding-bottom: 0.5%;
+}
+
+.agreement-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    padding: 2%;
+}
+
+.blue-line {
+    width: 100%;
+    margin-top: -1%;
+    margin-bottom: 1%;
+    background-color: #72C7F2;
+    height: 0.2%;
+  }
+
+  .yellow-line {
+    width: 100%;
+    height: 0.2%;
+    background-color: #FDCD3B;
+    margin-top: 0;
+  }
+
+/* Form Fields */
+.form-fields {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-fields label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-fields input {
+    width: 100%;
+    padding: 1%;
+    border: 1px solid #72C7F2;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 1%;
+}
+
+/* Agreement Text Box */
+.agreement-text-box {
+    width: 50%;
+    padding: 2%;
+    border: 1px solid #72C7F2;
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    background-color: white;
+}
+
+/* Agree Button */
+.agree-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2%;
+}
+
+.agree-button {
+    background-color: #72C7F2;
+    color: white;
+    padding: 1% 2%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.agree-button:hover {
+    background-color: #5a9dc7;
+}
