@@ -3,7 +3,7 @@ import styles from "./page.css";
 import { useState } from "react"; 
 import WhitePopUp from "../../components/whitepagepopup/infopopup/infopopup"
 import InfoPageBubble from "../../components/whitepagebubbles/infobubble/infobubble";
-import Button from "@/app/components/button/button";
+import Button from "../../components/button/button";
 import Link from 'next/link'
 
 export default function Whitepages() {

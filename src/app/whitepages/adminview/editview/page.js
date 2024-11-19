@@ -2,8 +2,8 @@
 import styles from "./page.css";
 import { useState } from "react"; 
 import AddPopUp from "../../../components/whitepagepopup/adminpopup/addpopup/addpopup"
-import EditPageBubble from "@/app/components/whitepagebubbles/editbubble/editpagebubble";
-import Button from "@/app/components/button/button";
+import EditPageBubble from "../../../components/whitepagebubbles/editbubble/editpagebubble";
+import Button from "../../../components/button/button";
 import Link from 'next/link'
 
 export default function Whitepages() {
