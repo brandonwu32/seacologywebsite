@@ -1,5 +1,5 @@
 import './addpopup.css'
-import Button from '@/app/components/button/button';
+import Button from '../../../button/button';
 
 export default function AddPopUp(props) {
     return props.trigger ? (

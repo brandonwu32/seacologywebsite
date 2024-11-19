@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../navbar/Navbar.css';
 import Image from "next/image";
@@ -30,7 +30,6 @@ export default function Navbar() {
     };
 
     return (
-        <>
         <div id="wrapper">
 
             <div id="navbar-wrapper">
@@ -79,6 +78,5 @@ export default function Navbar() {
                 </div>
             </div>
         </div>
-        </>
     );
 }
