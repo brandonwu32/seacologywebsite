@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from '../navbar/Navbar.css';
@@ -30,7 +32,7 @@ export default function Navbar() {
     return (
         <>
         <div id="wrapper">
-            
+
             <div id="navbar-wrapper">
                 <div className="img-with-text">
                     <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
