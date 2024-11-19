@@ -55,7 +55,7 @@
 .form-fields textarea {
   width: 95%;
   padding: 0.5%;
-
+  font-family: Arial, sans-serif;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
