@@ -9,11 +9,10 @@ export default function Bubble(props) {
     };
 
     return (
-        <div className="circle-wrapper">
-            <button className="button-for-bubble" onClick={handleClick()} id={props.size}>
-                <div className="circle" style={{ width: props.width, height: props.height }}>
-                    <h1 className="headinginput">{props.heading}</h1>
-                    <h3 className='midtext'>{props.midtext}</h3>
+        <div className = "circle">
+            <button className= "button-for-bubble" onClick={handleClick()} id= {props.size}>
+                <div className = "circle">
+                    <h1 className = "headinginput">{props.heading}</h1>
                     <p className="subtext">{props.subtext}</p>
                 </div>
             </button>
