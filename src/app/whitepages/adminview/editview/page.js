@@ -31,16 +31,16 @@ export default function Whitepages() {
           </div>
         </div>
       </div>
-      <hr className="blueline" />
-      <hr className="yellowline" />
+      <hr className="EWPblueline" />
+      <hr className="EWPyellowline" />
       <p className = "clickremove">**Click on a Member to Remove</p>
 
       <AddPopUp trigger={addPopUp} close = {toggleAddPopUp}/>
 
-      <div className="bubble-container">
+      <div className="EWPbubble-container">
         {whiteList.map(function (member){
           return (
-            <div className = "bubble-wrapper" key={member.email}>
+            <div className = "EWPbubble-wrapper" key={member.email}>
               <EditPageBubble
                 src={member.image} 
                 alt="CeoPic"

@@ -29,15 +29,15 @@ export default function Whitepages() {
         </div>
 
       </div>
-      <hr className="blueline" />
-      <hr className="yellowline" />
+      <hr className="AWPblueline" />
+      <hr className="AWPyellowline" />
 
       <WhitePopUp trigger={buttonPopUp} close = {togglePopUp}/>
 
-      <div className="bubble-container">
+      <div className="AWPbubble-container">
         {whiteList.map(function (member){
           return (
-            <div className = "bubble-wrapper" key={member.email}>
+            <div className = "AWPbubble-wrapper" key={member.email}>
               <InfoPageBubble
                 src={member.image} 
                 alt="CeoPic"
