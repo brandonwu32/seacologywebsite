@@ -1,26 +1,53 @@
-/* bubble.css */
+.circle-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60vw;
+    width: 100vw;
+}
+
+
 .circle {
-    width: 200px;
-    height: 200px;
     border-radius: 50%;
-    background-color: #f0f0f0;
+    /*background-color: #f0f0f0; */
+    background-color: white;
     box-shadow: 0px 4px 10px rgba(82, 96, 225, 0.3);
-    border: 3px solid #72C7F2; 
+    border: 3px solid #72C7F2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin: 20px auto;
+    object-fit: cover;
 }
 
-.heading {
-    font-size: 1.5rem;
-    margin: 0;
-    color: #333;
+.headinginput {
+    font-size: 2.5rem;
+    color: #72C7F2;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2%;
+    padding-bottom: 0.5%;
+}
+
+.button-for-bubble {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    gap: 60rem;
 }
 
 .subtext {
     font-size: 1rem;
     color: #666;
+}
+
+.midtext {
+    font-size: 1.8rem;
+    color: #72C7F2;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2%;
+    padding-bottom: 0.5%;
 }
