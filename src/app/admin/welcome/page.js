@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./page.css"
+import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
 import Button from '../../components/button/button';
 import Bubble from "../../components/bubble/bubble";
@@ -35,16 +35,16 @@ export default function Welcome() {
                     </div>
                     <div className="link-bubble-wrapper">
                         <Link href="/contact">
-                            <Bubble className="welcome-bubble" heading="Contact" width={'20rem'} height={'20rem'}/> 
+                            <Bubble className="welcome-bubble" heading="Contact" width={'20rem'} height={'20rem'}/>
                         </Link>
-                    </div>               
+                    </div>
                 </div>
-                
+
                 <div className="button-wrapper">
                     <Link href="">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
-                    
+
                     <Link href="/guidelines">
                         <Button color="blue" size="small" text="next"/>
                     </Link>

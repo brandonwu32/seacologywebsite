@@ -1,16 +1,16 @@
 "use client";
-import Bubble from "../components/bubble/bubble";
+import Bubble from "../../components/bubble/bubble";
 import React, { useState } from 'react';
-import styles from "./page.css";
-import Button from "../components/button/button";
+import styles from "../page.css";
+import Button from "../../components/button/button";
 
 export default function ReimbursementPage() {
-  
- 
+
+
   const [project, setProject] = useState("");
   const [reimbursement, setReimbursement] = useState("");
   const [expenses, setExpenses] = useState("");
-  
+
   const handleSubmit = () => {
     console.log({
       project,
@@ -23,7 +23,7 @@ export default function ReimbursementPage() {
   const [isSecondPopupOpen, setIsSecondPopupOpen] = useState(false);
   const [isOtherPopupOpen, setIsOtherPopupOpen] = useState(false);
   const [isSecondOtherPopupOpen, setIsSecondOtherPopupOpen] = useState(false);
-  
+
   const openFirstPopup = () => {
     setIsFirstPopupOpen(!isFirstPopupOpen);
   };
@@ -35,7 +35,7 @@ export default function ReimbursementPage() {
     }else{
       setProject(selectedProject);
     }
-    setIsFirstPopupOpen(false); 
+    setIsFirstPopupOpen(false);
   };
   const closeOtherPopup = () => {
     setIsOtherPopupOpen(false);
@@ -47,7 +47,7 @@ export default function ReimbursementPage() {
     }else{
       setReimbursement(selectedReimbursement);
     }
-    setIsSecondPopupOpen(false); 
+    setIsSecondPopupOpen(false);
   };
 
   const closeSecondOtherPopup = () => {
@@ -103,13 +103,13 @@ export default function ReimbursementPage() {
           </label>
         </div>
         <div className="upload-bubbles">
-            <div className="circle">
+            <div className="file-circle">
                 <label className="button-for-bubble">
                     <input id="image-upload" type="file" className="file-input" />
                     <p className="subtext">Upload Files</p>
                 </label>
             </div>
-       
+
         </div>
       </div>
       <div className="button-container">
@@ -119,7 +119,7 @@ export default function ReimbursementPage() {
 {isOtherPopupOpen && (
         <div className="popupOverlay">
           <div className="popup">
-              <div className = 'rectangle'> 
+              <div className = 'rectangle'>
               <p className = "subtext"> Enter Project</p>
               <hr className= "yellow-line" />
                 <textarea type = "text" className = "bubs"
@@ -133,11 +133,11 @@ export default function ReimbursementPage() {
           </div>
         </div>
       )}
-  
+
   {isSecondOtherPopupOpen && (
         <div className="popupOverlay">
           <div className="popup">
-              <div className = 'rectangle'> 
+              <div className = 'rectangle'>
               <p className = "subtext"> Enter Reimbursement</p>
               <hr className= "yellow-line" />
                 <textarea type = "text" className = "bubs"
@@ -152,7 +152,7 @@ export default function ReimbursementPage() {
         </div>
       )}
 
-    
+
 
 </div>
 

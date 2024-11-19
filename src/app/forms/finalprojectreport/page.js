@@ -1,16 +1,16 @@
 "use client";
-import Bubble from "../components/bubble/bubble";
+import Bubble from "../../components/bubble/bubble";
 import React, { useState } from 'react';
-import styles from "./page.css";
-import Button from "../components/button/button";
+import styles from "../page.css";
+import Button from "../../components/button/button";
 
 export default function FinalProjectPage() {
-  
+
   const [finished, setFinished] = useState("");
   const [conservation, setConservation] = useState("");
   const [final, setFinal] = useState("");
   const [project, setProject] = useState("");
-  
+
   const handleSubmit = () => {
     console.log({
       finished,
@@ -22,7 +22,7 @@ export default function FinalProjectPage() {
 
   const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
   const [isOtherPopupOpen, setIsOtherPopupOpen] = useState(false);
-  
+
   const openFirstPopup = () => {
     setIsFirstPopupOpen(!isFirstPopupOpen);
   };
@@ -34,7 +34,7 @@ export default function FinalProjectPage() {
     }else{
       setProject(selectedProject);
     }
-    setIsFirstPopupOpen(false); 
+    setIsFirstPopupOpen(false);
   };
 
   const closeOtherPopup = () => {
@@ -50,8 +50,8 @@ export default function FinalProjectPage() {
       <hr className = "blue-line"></hr>
       <div className="form-container">
         <div className="form-fields">
-         
-         
+
+
           <label>
             Project:
             <div className="dropdown-container">
@@ -59,7 +59,7 @@ export default function FinalProjectPage() {
             {isFirstPopupOpen && (
               <div className="dropdown-list">
                 {projects.map((proj, index) => (
-          
+
                   <div key={index} className="dropdown-item" onClick={() => handleSelectProject(proj)}>
                     {proj}
                   </div>
@@ -84,7 +84,7 @@ export default function FinalProjectPage() {
 
 
         <div className="upload-bubbles">
-        <div className="circle">
+        <div className="file-circle">
         <label className="button-for-bubble">
             <input id="image-upload" type="file" className="file-input" />
             <p className="subtext">Upload Files</p>
@@ -99,7 +99,7 @@ export default function FinalProjectPage() {
       {isOtherPopupOpen && (
         <div className="popupOverlay">
           <div className="popup">
-              <div className = 'rectangle'> 
+              <div className = 'rectangle'>
               <p className = "subtext"> Enter Project</p>
               <hr className= "yellow-line" />
                 <textarea type = "text" className = "bubs"
