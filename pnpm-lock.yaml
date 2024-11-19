@@ -17,6 +17,9 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-69d4b800-20241021
         version: 19.0.0-rc-69d4b800-20241021(react@19.0.0-rc-69d4b800-20241021)
+      seacologywebsite:
+        specifier: 'link:'
+        version: 'link:'
     devDependencies:
       '@types/node':
         specifier: 22.9.0
