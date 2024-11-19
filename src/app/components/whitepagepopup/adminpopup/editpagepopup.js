@@ -5,7 +5,7 @@ export default function EditPagePopUp(props) {
     return props.trigger ? (
     <div className="popupOverlay">
         <div className="popup">
-            <div className='rectangle'>
+            <div className='eprectangle'>
                 <p className='name'>Edit Member Information</p>
                 <hr className="yellowline" />
                 <div className = 'addcontainer'>
@@ -19,7 +19,7 @@ export default function EditPagePopUp(props) {
                     </div>
                 </div>
             </div>
-                <div className = 'buttonz'>
+                <div className = 'epbuttonz'>
                     <Button color="red" size="large" text="Remove" onClick={props.close}/>
                     <Button color="blue" size="large" text="Submit" onClick={props.close}/>
                     <Button color="blue" size="large" text="Close" onClick={props.close}/>

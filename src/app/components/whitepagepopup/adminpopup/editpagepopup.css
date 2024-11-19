@@ -17,7 +17,7 @@
     border-radius: 2%;
     z-index: 1001; /* Ensure it appears above the overlay */
 }
-.rectangle {
+.eprectangle {
     margin: 5%;
     border: 0.2rem solid #02A0D4;
     padding: 2%;
@@ -133,7 +133,7 @@ h2 {
     align-items: center;
 }
 
-.buttonz {
+.epbuttonz {
     margin-left: 2%;
     display: flex;
     align-items: center;

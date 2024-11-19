@@ -1,4 +1,4 @@
-.popupOverlay {
+.ippopupOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,14 +10,15 @@
     align-items: center;
     z-index: 1000;
 }
-.popup {
+.ippopup {
     width: 50%;
+    height: 70%;
     background-color: white;
     padding: 1%;
     border-radius: 2%;
     z-index: 1001; /* Ensure it appears above the overlay */
 }
-.rectangle {
+.iprectangle {
     margin: 5%;
     border: 0.2rem solid #02A0D4;
     padding: 2%;
@@ -107,9 +108,9 @@ h2 {
     background-color: #FDCD3B;
 }
 
-.buttonz {
+.ipbuttonz {
     margin-left: 70%;
 }
-.bubs {
+.ipbubs {
     margin-left: 25%;
 }

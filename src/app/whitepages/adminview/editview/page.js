@@ -21,7 +21,7 @@ export default function Whitepages() {
   return (
     <div className={styles.page}>
       <div className='top'>
-        <p className = 'title'>Team</p>
+        <p className = 'EWPtitle'>Team</p>
         <div className="top-left">
           <div className = 'btz'>
             <Link href="/whitepages/adminview">

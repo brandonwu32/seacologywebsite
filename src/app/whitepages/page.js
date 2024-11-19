@@ -12,7 +12,7 @@ export default function Whitepages() {
 
   return (
     <div className={styles.page}>
-      <div className='title'>
+      <div className='WPtitle'>
         <p> Team</p>
       </div>
       <hr className="blueline" />
