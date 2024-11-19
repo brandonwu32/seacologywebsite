@@ -21,6 +21,5 @@
 .button-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 50%;
-    width: 90vw; 
+    width: 90vw;
 }

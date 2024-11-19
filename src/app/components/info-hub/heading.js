@@ -5,7 +5,6 @@ import Bubble from "../../components/bubble/bubble"
 
 export default function Heading(props) {
     return (
-        <>
         <div className='heading-wrapper'>
             <div className='header-component-wrapper'>
                 <h1 id='welcome-header'>{props.text}</h1>
@@ -13,6 +12,5 @@ export default function Heading(props) {
             </div>
             <hr className='header-divider'/>
         </div>
-        </>
     );
 }

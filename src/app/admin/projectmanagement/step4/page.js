@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./page.css"
+import styles from "../../page.css"
 import Navbar from "../../../components/navbar/navbar";
 import Button from '../../../components/button/button';
 import Bubble from "../../../components/bubble/bubble";
@@ -46,7 +46,7 @@ export default function Step4() {
         type: "bullet-point",
         content: " Instructions for wiring money to the fiscal administrator. (We will ask you for what we need.) Once we receive the signed grant agreement and wiring instructions, Seacology will wire the first  installment payment. We will let you know when we have sent the wire."
     }
-    
+
 
     var textList = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine]
 
@@ -54,10 +54,10 @@ export default function Step4() {
 
     return (
         <div>
-            <Navbar/> 
+            <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Step 4" buttonText="edit" edit ={true}/>
-                
+
                 <div>
                     <Body textList={textList} title="After Approval Get Conservation and Grant Agreements Signed"/>
                 </div>
@@ -73,12 +73,12 @@ export default function Step4() {
                 </div>
 
             </div>
-           
-        </div>
-     
-           
 
-        
+        </div>
+
+
+
+
 
     );
 }
