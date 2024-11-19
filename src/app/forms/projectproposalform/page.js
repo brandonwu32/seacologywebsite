@@ -1,9 +1,9 @@
-"use client"; 
+"use client";
 
 import React, { useState } from "react";
-import Bubble from "../components/bubble/bubble";
-import Button from "../components/button/button";
-import styles from "./page.css";
+import Bubble from "../../components/bubble/bubble";
+import Button from "../../components/button/button";
+import styles from "../page.css";
 
 import { NextResponse } from "next/server";
 import path from "path";
@@ -91,13 +91,13 @@ export default function ProjectProposalPage() {
         </div>
 
         <div className="upload-bubbles">
-    <div className="circle">
+    <div className="file-circle">
         <label className="button-for-bubble">
             <input id="image-upload" type="file" className="file-input" />
             <p className="subtext">Upload Files</p>
         </label>
     </div>
-    
+
 </div>
       </div>
 

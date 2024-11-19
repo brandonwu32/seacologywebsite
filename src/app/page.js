@@ -1,33 +1,27 @@
-'use client'
-import Image from "next/image";
-import styles from "./page.module.css";
 
-import Navbar from "./components/navbar/navbar";
+import Image from "next/image";
+import Button from './components/button/button';
+import logo from '/assets/seacology_logo.png';
+import styles from "./page.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <Navbar/>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-        <div className = "bubs">
+    <div className="page">
+      <div className="image-container">
+      <Image src={logo} alt="Seacology Logo" />
       </div>
+      <div className="main-content">
+        <div className="top-bar">
+          <div className = "login-area"></div>
+          <Button color = "blue" size = "large" text = "Log in"/>
+        </div>
+        <div className = "bottom-bar"> </div>
+      <div className="button-bar">
+        <Button color="blue" size = "large" text = "Submit Update"/>
+        <Button color="blue" size = "large" text = "Info Hub"/>
+        <Button color="blue" size="large" text="White Pages" />
       </div>
-      
 
-  );
-}
-
-
+      </div>
+    </div>
+  )}

@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./page.css"
+import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
 import Button from '../../components/button/button';
 import Heading from "../../components/info-hub/heading"
@@ -21,17 +21,17 @@ export default function Step6() {
         type: "paragraph",
         content: "If the project was finished under budget, talk to us about what to do with the leftover funds. "
     }
-    
+
 
     var textList = [itemOne, itemTwo, itemThree]
 
 
     return (
         <div>
-            <Navbar/> 
+            <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Step 6" buttonText="edit"/>
-                
+
                 <div>
                     <Body textList={textList} title="Submit the Final Report"/>
                 </div>
@@ -41,16 +41,16 @@ export default function Step6() {
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/step5">
+                    <Link href="/projectmanagement/step5">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
 
             </div>
-           
+
         </div>
-    
-        
+
+
 
     );
 }
