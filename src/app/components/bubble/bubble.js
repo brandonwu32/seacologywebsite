@@ -1,5 +1,5 @@
 import './bubble.css'
- 
+
 
 export default function Bubble(props) {
     function handleClick() {
