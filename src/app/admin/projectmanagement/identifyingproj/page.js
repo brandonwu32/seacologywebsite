@@ -93,11 +93,11 @@ export default function Identifying() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step1">
+                    <Link href="/admin/projectmanagement/step1">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/projectmanagement/newprojproposal">
+                    <Link href="/admin/projectmanagement/newprojproposal">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

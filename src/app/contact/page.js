@@ -99,8 +99,9 @@ return (
             </div>
 
             <div className="button-wrapper">
+                <Link href="/finances">
                 <Button color="blue" size="small" text="back"/>
-                <Button color="blue" size="small" text="next"/>
+                </Link>
             </div>
 
         </div>

@@ -70,11 +70,11 @@ export default function Step6() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step5">
+                    <Link href="/admin/projectmanagement/step5">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/step5">
+                    <Link href="/admin/finances">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
