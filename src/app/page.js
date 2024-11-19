@@ -24,7 +24,7 @@ export default function Home() {
         <div className = "bubs">
       </div>
       </div>
-      
+
 
   );
 }
