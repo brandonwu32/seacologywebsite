@@ -12,7 +12,6 @@
 }
 .ippopup {
     width: 50%;
-    height: 70%;
     background-color: white;
     padding: 1%;
     border-radius: 2%;
@@ -24,37 +23,17 @@
     padding: 2%;
 }
 
-.yellowline {
+.ipyellowline {
     border: none;
     border-top: 0.2rem solid #FDCD3B; /* Customize color and thickness */
     width: 100%; /* Set width */
     margin: 2% 0; 
   }
-.name {
+.ipname {
     color:#02A0D4;
     font-size: large;
 }
-.popupOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
 
-.popupContent {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 h2 {
     text-align: center;
@@ -66,33 +45,6 @@ h2 {
     border-collapse: collapse;
 }
 
-.projectTable th, .projectTable td {
-    border: 5px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.projectTable th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-.closeButton {
-    margin-top: 10%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10% 16%;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.closeButton:hover {
-    background-color: #0056b3;
-}
 .custom-table {
     width: 10%;
     border-collapse: collapse;
@@ -113,4 +65,5 @@ h2 {
 }
 .ipbubs {
     margin-left: 25%;
+    margin-bottom: 5%;
 }

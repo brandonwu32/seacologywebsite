@@ -8,8 +8,8 @@ export default function WhitePagePopUp(props) {
         <div className="ippopupOverlay">
             <div className="ippopup">
                 <div className='iprectangle'>
-                    <p className='name'>{props.name}</p>
-                    <hr className="yellowline" />
+                    <p className='ipname'>{props.name}</p>
+                    <hr className="ipyellowline" />
                     <div className="ipbubs">
                         <WhitePageBubble 
                             src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"

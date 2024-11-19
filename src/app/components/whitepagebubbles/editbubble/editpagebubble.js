@@ -15,9 +15,9 @@ export default function EditPageBubble(props) {
                 <Image src={props.src} alt="none" className="bubble-image" width={250} height={250} />
             </button>
             <div className="ebdescription">
-                <p>{props.name}</p>
-                <p>{props.position}</p> 
-                <p>{props.email}</p>
+                <p className='ebprop'>{props.name}</p>
+                <p className='ebprop'>{props.position}</p> 
+                <p className='ebprop'>{props.email}</p>
             </div>
             <EditPagePopUp trigger={buttonPopUp} close = {togglePopUp}/>
         </div>
