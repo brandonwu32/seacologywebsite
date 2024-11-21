@@ -22,6 +22,27 @@ const users = [
         password: 'helloworld',
         admin: 'FALSE'
     },
+    {
+      id: '410544b2-4001-4271-9855-fec4b6a6442d',
+      name: 'Habeeb',
+      email: 'king@nextmail.com',
+      password: 'tripleC',
+      admin: 'FALSE'
+  },
+  {
+    id: '410544b2-4001-4271-9855-fec4b6a6442c',
+    name: 'Bussy',
+    email: 'Buss@nextmail.com',
+    password: 'lakewater',
+    admin: 'FALSE'
+},
+{
+  id: '410544b2-4001-4271-9855-fec4b6a6442c',
+  name: 'Camila',
+  email: 'quiet@nextmail.com',
+  password: 'secretsanta',
+  admin: 'FALSE'
+},
   ];
 
   // Don't worry about anything below here
