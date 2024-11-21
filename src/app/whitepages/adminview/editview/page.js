@@ -19,7 +19,7 @@ export default function Whitepages() {
   }
 
   return (
-    <div className={styles.page}>
+    <div className='editview-page'>
       <div className='top'>
         <p className = 'EWPtitle'>Team</p>
         <div className="top-left">

@@ -6,8 +6,11 @@
   margin-top: 0.5%;
   font-size: 150%;
   margin-bottom: 0.5%;
+  font-family: Arial, sans-serif;
 }
-
+.styles.page{
+  font-family: Arial, sans-serif;
+}
 .WPbubble-container {
   display: grid;
   grid-template-columns: auto auto auto;
