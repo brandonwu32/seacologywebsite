@@ -109,7 +109,18 @@ export default function ReimbursementPage() {
                     <p className="formSubtext">Upload Files</p>
                 </label>
             </div>
-
+            <div className="formFile-circle">
+                <label className="formButton-for-bubble">
+                    <input id="image-upload" type="file" className="formFile-input" />
+                    <p className="formSubtext">Upload Images</p>
+                </label>
+            </div>
+            <div className="formFile-circle">
+                <label className="formButton-for-bubble">
+                    <input id="image-upload" type="file" className="formFile-input" />
+                    <p className="formSubtext">Upload Videos</p>
+                </label>
+            </div>
         </div>
       </div>
       <div className="formButton-container">
