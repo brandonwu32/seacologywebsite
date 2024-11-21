@@ -5,12 +5,16 @@
     border: none;
     border-radius: 50%;
     align-items: center;
+    background-color: transparent;
 }
 
-.description {
+.ebdescription {
     display: flex;
     flex-direction: column;  
     align-items: center;   
+  }
+  .ebprop {
+    margin: 1%
   }
 
 .bubble-image {

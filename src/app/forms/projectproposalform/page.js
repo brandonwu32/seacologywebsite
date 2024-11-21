@@ -38,10 +38,10 @@ export default function ProjectProposalPage() {
   };
 
   return (
-    <div className="page">
-      <h1 className="heading">New Project Proposal</h1>
-      <div className = "blue-line"></div>
-      <div className="yellow-line"></div>
+    <div className="formPage">
+      <h1 className="formHeading">New Project Proposal</h1>
+      <hr className= "formYellow-line"></hr>
+      <hr className = "formBlue-line"></hr>
       <div className="form-container">
         <div className="form-fields">
           <label>
@@ -90,20 +90,20 @@ export default function ProjectProposalPage() {
           </label>
         </div>
 
-        <div className="upload-bubbles">
-    <div className="file-circle">
-        <label className="button-for-bubble">
-            <input id="image-upload" type="file" className="file-input" />
-            <p className="subtext">Upload Files</p>
+        <div className="formUpload-bubbles">
+    <div className="formFile-circle">
+        <label className="formButton-for-bubble">
+            <input id="image-upload" type="file" className="formFile-input" />
+            <p className="formSubtext">Upload Files</p>
         </label>
     </div>
 
 </div>
       </div>
 
-      <div className="button-container">
-        <button className="close-button">back</button>
-        <button className="enter-button" onClick={handleSubmit}>enter</button>
+      <div className="formButton-container">
+        <button className="formClose-button">back</button>
+        <button className="formEnter-button" onClick={handleSubmit}>enter</button>
       </div>
     </div>
   );

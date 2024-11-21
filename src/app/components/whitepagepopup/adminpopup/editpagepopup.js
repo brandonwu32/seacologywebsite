@@ -3,13 +3,13 @@ import Button from '../../button/button';
 
 export default function EditPagePopUp(props) {
     return props.trigger ? (
-    <div className="popupOverlay">
-        <div className="popup">
-            <div className='rectangle'>
-                <p className='name'>Edit Member Information</p>
-                <hr className="yellowline" />
-                <div className = 'addcontainer'>
-                    <div className = "add-fields">
+    <div className="eppopupOverlay">
+        <div className="eppopup">
+            <div className='eprectangle'>
+                <p className='epname'>Edit Member Information</p>
+                <hr className="epyellowline" />
+                <div className = 'epaddcontainer'>
+                    <div className = "epadd-fields">
                         {/* figure out how to make thse prefilled */}
                         <label>Full Name:<input id = "name" type="text" /></label>
                         <label>Position:<input id = "position" type="text" /></label>
@@ -19,7 +19,7 @@ export default function EditPagePopUp(props) {
                     </div>
                 </div>
             </div>
-                <div className = 'buttonz'>
+                <div className = 'epbuttonz'>
                     <Button color="red" size="large" text="Remove" onClick={props.close}/>
                     <Button color="blue" size="large" text="Submit" onClick={props.close}/>
                     <Button color="blue" size="large" text="Close" onClick={props.close}/>

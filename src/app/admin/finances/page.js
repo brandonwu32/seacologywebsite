@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./page.css"
+import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar"
 import Button from '../../components/button/button';
 import Heading from "../../components/info-hub/heading"
@@ -42,17 +42,17 @@ export default function Finances() {
     type: "paragraph",
     content: "Seacology also organizes a few expeditions each year to show board members and donors our great  projects. If we plan an expedition to your area, we will work with you to arrange site visits or other  events such as opening celebrations."
    }
-    
+
 
     var textList = [itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine, itemTen, itemEleven ]
 
 
     return (
         <div>
-            <Navbar/> 
+            <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Finances Info" buttonText="edit"/>
-                
+
                 <div>
                     <Body textList={textList} title=""/>
                 </div>
@@ -68,10 +68,10 @@ export default function Finances() {
                 </div>
 
             </div>
-           
+
         </div>
-    
-        
+
+
 
     );
 }
