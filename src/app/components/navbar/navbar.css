@@ -127,10 +127,12 @@
     text-decoration: none;
     padding: 0.5rem 0;
     font-size: 1rem;
+    text-indent: 0.5rem;
 }
 
 .dropdown a:hover {
-    text-decoration: underline;
+    background-color: #98b6c0;
+    border-radius: 5px;
 }
 
 /* Smooth transition for dropdown to avoid abrupt changes */
