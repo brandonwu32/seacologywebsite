@@ -45,6 +45,30 @@ const users = [
 },
   ];
 
+  const guidelines = [
+    {
+      id: '13D07535-C59E-4157-A011-F8D2EF4E0CBC',
+      content: "Finding a new project can be hard! See below for some of our advice on identifying good Seacology Projects and New Project Proposal Conversation that may help build the project framework.",
+      type: 'balazs@orban.com',
+      page: 1,
+      position: 1
+    },
+    {
+      id: '13D07535-C59E-4157-A011-F8D2EF4E0CBD',
+      content: "A final report is due from you or the partner NGO within three months after the project is complete.  If you believe this deadline will not be met, inform Seacology staff as soon as you can. Like previous  progress reports, the final report must include a narrative report on the completed project and  conservation area and photos. It must also include a final financial report of how all Seacology grant  funds were spent, including a comparison of actual expenditures to the original budget. We may  request line-item detail and receipts.",
+      type: 'paragraph',
+      page: 1,
+      position: 2
+    },
+    {
+      id: '13D07535-C59E-4157-A011-F8D2EF4E0CBE',
+      content: "If the project was finished under budget, talk to us about what to do with the leftover funds. ",
+      type: 'paragraph',
+      page: 3,
+      position: 10
+    },
+  ]
+
   // Don't worry about anything below here
 
   const customers = [
@@ -182,4 +206,4 @@ const users = [
     { month: 'Dec', revenue: 4800 },
   ];
 
-  export { users, customers, invoices, revenue };
+  export { users, guidelines, invoices, revenue };

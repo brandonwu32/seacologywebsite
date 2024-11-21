@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import { db } from '@vercel/postgres';
-import { invoices, customers, revenue, users } from '../lib/placeholder-data';
+import { invoices, customers, guidelines, users } from '../lib/placeholder-data';
 
 const client = await db.connect();
 
@@ -16,6 +16,7 @@ async function seedUsers() {
     );
   `;
 
+
   const insertedUsers = await Promise.all(
     users.map(async (user) => {
       const hashedPassword = await bcrypt.hash(user.password, 10);
@@ -28,6 +29,35 @@ async function seedUsers() {
   );
 
   return insertedUsers;
+}
+
+async function seedGuidelines() {
+  await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+
+
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS guidelines (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      content TEXT NOT NULL,
+      type TEXT NOT NULL,
+      page INT NOT NULL,
+      position INT NOT NULL
+    );
+  `;
+
+  console.log("created successfully")
+
+  const insertedGuidelines = await Promise.all(
+    guidelines.map(async (guideline) => {
+      return client.sql`
+        INSERT INTO guidelines (id, content, type, page, position)
+        VALUES (${guideline.id}, ${guideline.content}, ${guideline.type}, ${guideline.page}, ${guideline.position})
+        ON CONFLICT (id) DO NOTHING;
+      `;
+    }),
+  );
+
+  return insertedGuidelines;
 }
 
 // async function seedInvoices() {
@@ -110,6 +140,7 @@ export async function GET() {
     try {
       await client.sql`BEGIN`;
       await seedUsers();
+      await seedGuidelines();
     //   await seedCustomers();
     //   await seedInvoices();
     //   await seedRevenue();

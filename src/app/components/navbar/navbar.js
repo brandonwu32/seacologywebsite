@@ -5,8 +5,10 @@ import Link from 'next/link';
 import styles from '../navbar/Navbar.css';
 import Image from "next/image";
 import SeacologyLogo from "../../../../assets/seacology_logo.png";
+import { fetchGuidelineSearch } from '../../lib/data';
 
 export default function Navbar() {
+
     // Define state to store search input
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -16,8 +18,14 @@ export default function Navbar() {
     };
 
     // Handler for search submission (captures search text and clears input)
-    const handleSearchSubmit = () => {
+    async function handleSearchSubmit() {
         console.log("Searched for:", searchQuery);
+        let data = await fetchGuidelineSearch(searchQuery);
+
+        data.map(row => {
+            console.log(row.content)
+        })
+
         setSearchQuery("");  // Clear the input after submission
         // Implement functionality here, e.g., filtering items, redirecting, etc.
     };
@@ -71,12 +79,21 @@ export default function Navbar() {
                     <div className="navbar-link">
                         <a className="navbar-link">Status Updates</a>
                             <div className="dropdown">
+<<<<<<< Updated upstream
                                 <a href="/forms/conservationagreement">Conservation Agreement</a>
                                 <a href="/forms/finalprojectreport">Final Project Report</a>
                                 <a href="/forms/grantagreementform">Grant Agreement</a>
                                 <a href="/forms/projectprogressreport">Project Progress Report</a>
                                 <a href="/forms/projectproposalform">Project Proposal Form</a>
                                 <a href="/forms/reimbursement">Reimbursement Form</a>
+=======
+                                <a href="./forms/conservationagreement">Conservation Agreement</a>
+                                <a href="./forms/finalprojectreport">Final Project Report</a>
+                                <a href="./forms/grantagreementform">Grant Agreement</a>
+                                <a href="./forms/projectprogressreport">Project Progress Report</a>
+                                <a href="./forms/projectproposalform">Project Proposal Form</a>
+                                <a href="./forms/reimbursement">Reimbursement Form</a>
+>>>>>>> Stashed changes
                             </div>
                     </div>
 
