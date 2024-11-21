@@ -148,7 +148,7 @@
     border-left: 3px solid #FDCD3B; /* Left part of the chevron */
     width: 8px; /* Control width to shape the chevron */
     height: 8px; /* Control height to shape the chevron */
-    transform: rotate(130deg); /* Rotate to create the chevron angle */
+    transform: rotate(135deg); /* Rotate to create the chevron angle */
     display: inline-block;
     margin-right: 0.7rem; /* Space between arrow and text */
     vertical-align: middle;
@@ -157,5 +157,5 @@
 
 /* Rotate the arrow when hovering over the link */
 .navbar-link:hover > a::before {
-    transform: rotate(230deg);
+    transform: rotate(225deg);
 }
