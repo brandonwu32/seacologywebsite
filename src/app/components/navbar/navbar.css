@@ -99,11 +99,19 @@
 /* Dropdown container */
 .dropdown {
     display: none;
-    position: fixed;
-
+    position: sticky;
 }
 
 /* Show dropdown on hover, push other navbar items down */
+.navbar-link:hover .dropdown {
+    display: flex;
+    flex-direction: column;
+    background-color: #0178A1; /* Slightly darker blue */
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
 .navbar-link:hover .dropdown {
     display: flex;
     flex-direction: column;
@@ -128,6 +136,7 @@
 /* Smooth transition for dropdown to avoid abrupt changes */
 .navbar-link {
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 /* Dropdown indicator arrow styling */

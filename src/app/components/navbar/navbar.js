@@ -71,13 +71,13 @@ export default function Navbar() {
                     <div className="navbar-link">
                         <a className="navbar-link">Status Updates</a>
                             <div className="dropdown">
-                                <a href="./forms/conservationagreement">Conservation Agreement</a>
-                                <a href="./forms/finalprojectreport">Final Project Report</a>
-                                <a href="./forms/grantagreementform">Grant Agreement</a>
-                                <a href="./forms/projectprogressreport">Project Progress Report</a>
-                                <a href="./forms/projectproposalform">Project Proposal Form</a>
-                                <a href="./forms/reimbursement">Reimbursement Form</a>
-                            </div>              
+                                <a href="/forms/conservationagreement">Conservation Agreement</a>
+                                <a href="/forms/finalprojectreport">Final Project Report</a>
+                                <a href="/forms/grantagreementform">Grant Agreement</a>
+                                <a href="/forms/projectprogressreport">Project Progress Report</a>
+                                <a href="/forms/projectproposalform">Project Proposal Form</a>
+                                <a href="/forms/reimbursement">Reimbursement Form</a>
+                            </div>
                     </div>
 
                     <div className="navbar-link">
