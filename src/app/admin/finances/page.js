@@ -1,10 +1,10 @@
 'use client'
 
-import styles from "./page.css"
-import Navbar from "../components/navbar/navbar"
-import Button from '../components/button/button';
-import Heading from "../components/info-hub/heading"
-import Body from "../components/info-hub/pages/project-management/body";
+import styles from "../page.css"
+import Navbar from "../../components/navbar/navbar"
+import Button from '../../components/button/button';
+import Heading from "../../components/info-hub/heading"
+import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 
 
@@ -42,36 +42,36 @@ export default function Finances() {
     type: "paragraph",
     content: "Seacology also organizes a few expeditions each year to show board members and donors our great  projects. If we plan an expedition to your area, we will work with you to arrange site visits or other  events such as opening celebrations."
    }
-    
+
 
     var textList = [itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine, itemTen, itemEleven ]
 
 
     return (
         <div>
-            <Navbar/> 
+            <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Finances Info" buttonText="edit"/>
-                
+
                 <div>
                     <Body textList={textList} title=""/>
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step6">
+                    <Link href="/admin/projectmanagement/step6">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/contact">
+                    <Link href="/admin/contact">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
 
             </div>
-           
+
         </div>
-    
-        
+
+
 
     );
 }

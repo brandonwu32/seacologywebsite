@@ -8,7 +8,7 @@ import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 
 
-export default function Contacts() {
+export default function Contact() {
     var itemOne = {
         type: "paragraph",
         content:"PROJECTS Send email to: Project ideas, questions, or proposals Karen or Mary  Documents: timeline, budget, signed agreements, maps, wiring instructions, etc. Amanda  Project updates and photos (before each Board of Directors meeting) Karen or Mary  Request for project grant payments Amanda "
@@ -99,8 +99,10 @@ return (
             </div>
 
             <div className="button-wrapper">
+                <Link href="/admin/finances">
                 <Button color="blue" size="small" text="back"/>
-                <Button color="blue" size="small" text="next"/>
+                </Link>
+               
             </div>
 
         </div>

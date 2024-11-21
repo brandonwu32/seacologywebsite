@@ -30,7 +30,7 @@ export default function Body(props) {
                 <h1 className="body-title">{props.title}</h1>
             </div>
             <div className = "bodyText">
-                {props.textList.map(textItem => <div className = "listItem">{ListProcess(textItem)}</div>)}
+                {props.textList.map(textItem => <div key={textItem.content} className = "listItem">{ListProcess(textItem)}</div>)}
             </div>
         </div>
     );

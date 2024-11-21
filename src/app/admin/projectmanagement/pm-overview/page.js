@@ -66,17 +66,17 @@ export default function PM_Overview() {
 
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/step1">
+                        <Link href="/admin/projectmanagement/step1">
                             <Bubble midtext="Step 1. Find a New Project" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/step2">
+                        <Link href="/admin/projectmanagement/step2">
                             <Bubble midtext="Step 2. Find a New Project" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/step3">
+                        <Link href="/admin/projectmanagement/step3">
                             <Bubble midtext="Step 3. Find a New Project" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
@@ -84,17 +84,17 @@ export default function PM_Overview() {
 
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/step4">
+                        <Link href="/admin/projectmanagement/step4">
                             <Bubble midtext="Step 4. Get Agreements Signed" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/step5">
+                        <Link href="/admin/projectmanagement/step5">
                             <Bubble midtext="Step 5. Review and Send Reports" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/step6">
+                        <Link href="/admin/projectmanagement/step6">
                             <Bubble midtext="Step 6. Submit the Final Report" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
@@ -105,7 +105,7 @@ export default function PM_Overview() {
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/projectmanagement/step1">
+                    <Link href="/admin/projectmanagement/step1">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
