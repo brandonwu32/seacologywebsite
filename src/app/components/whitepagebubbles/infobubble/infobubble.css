@@ -7,6 +7,9 @@
     align-items: center;
     background-color: transparent;
 }
+.individual-bubble{
+    font-family: Arial, sans-serif;
+}
 
 .ibdescription {
     display: flex;

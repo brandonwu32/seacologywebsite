@@ -15,6 +15,7 @@ export default function Whitepages() {
                                               {"name":"renata","position":"devloper","email":"renataberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"}]);
 
   const toggleAddPopUp = () => {
+    console.log("SLDKFJLSKDJF");
     setButtonPopUp(!addPopUp);
   }
 

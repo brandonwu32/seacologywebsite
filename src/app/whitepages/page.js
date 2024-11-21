@@ -12,8 +12,10 @@ export default function Whitepages() {
 
   return (
     <div className={styles.page}>
-      <div className='WPtitle'>
-        <p> Team</p>
+      <div className='top'>
+        <p className = 'WPtitle'> Team</p>
+        <div className = 'btzz'>
+        </div>
       </div>
       <hr className="WPblueline" />
       <hr className="WPyellowline" />

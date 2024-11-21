@@ -2,14 +2,21 @@
   /*figure out why the font size will not change */
   color: #02A0D4;
   font-weight: bold;
+  font-family: Arial, sans-serif;
   margin-left: 3%;
   margin-top: 0.5%;
-  font-size: 150%;
+  font-size: 3rem;
   margin-bottom: 0.5%;
-  font-family: Arial, sans-serif;
 }
 .styles.page{
   font-family: Arial, sans-serif;
+
+}
+.top {
+  margin-top:0.5%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5%;
 }
 .WPbubble-container {
   display: grid;
@@ -22,8 +29,8 @@
 
 .WPbubble-wrapper {
   margin-top: 3rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
 }
 
 .WPblueline {
