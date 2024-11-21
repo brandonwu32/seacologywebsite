@@ -99,16 +99,18 @@
 /* Dropdown container */
 .dropdown {
     display: none;
-    flex-direction: column;
-    background-color: #0178A1; /* Slightly darker blue */
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 4px;
+    position: fixed;
+
 }
 
 /* Show dropdown on hover, push other navbar items down */
 .navbar-link:hover .dropdown {
     display: flex;
+    flex-direction: column;
+    background-color: #0178A1; /* Slightly darker blue */
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
 }
 
 /* Style dropdown links */

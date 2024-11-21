@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import Button from './components/button/button';
-import logo from '/assets/seacology_logo.png';
+import logo from '/assets/logo-blue-web-transparent.png';
 import styles from "./page.css";
 
 export default function Home() {
@@ -17,9 +17,9 @@ export default function Home() {
         </div>
         <div className = "bottom-bar"> </div>
       <div className="button-bar">
-        <Button color="blue" size = "large" text = "Submit Update"/>
+        {/* <Button color="blue" size = "large" text = "Submit Update"/>
         <Button color="blue" size = "large" text = "Info Hub"/>
-        <Button color="blue" size="large" text="White Pages" />
+        <Button color="blue" size="large" text="White Pages" /> */}
       </div>
 
       </div>

@@ -38,12 +38,12 @@ export default function ProjectProposalPage() {
   };
 
   return (
-    <div className="formPage">
-      <h1 className="formHeading">New Project Proposal</h1>
+    <div className="proposalpage">
+      <h1 className="proposalheading">New Project Proposal</h1>
       <hr className= "formYellow-line"></hr>
       <hr className = "formBlue-line"></hr>
       <div className="form-container">
-        <div className="form-fields">
+        <div className="prop-form-fields">
           <label>
             Time area will be protected:
             <input type="text" value={timeProtected} onChange={(e) => setTimeProtected(e.target.value)} />
@@ -90,7 +90,7 @@ export default function ProjectProposalPage() {
           </label>
         </div>
 
-        <div className="formUpload-bubbles">
+        <div className="upload-bubbles-proposal">
     <div className="formFile-circle">
         <label className="formButton-for-bubble">
             <input id="image-upload" type="file" className="formFile-input" />
