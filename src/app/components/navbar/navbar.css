@@ -59,6 +59,8 @@
     color: #1F7191;
     opacity: 1;
     font-size: 1rem;
+    font-family: Arial, sans-serif;
+
 
 
 
@@ -94,16 +96,25 @@
     padding: 1.3rem 0;
     position: relative;
     width: 100%;
+    font-family: Arial, sans-serif;
 }
 
 /* Dropdown container */
 .dropdown {
     display: none;
-    position: fixed;
-
+    position: sticky;
 }
 
 /* Show dropdown on hover, push other navbar items down */
+.navbar-link:hover .dropdown {
+    display: flex;
+    flex-direction: column;
+    background-color: #0178A1; /* Slightly darker blue */
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
 .navbar-link:hover .dropdown {
     display: flex;
     flex-direction: column;
@@ -119,15 +130,19 @@
     text-decoration: none;
     padding: 0.5rem 0;
     font-size: 1rem;
+    text-indent: 0.5rem;
+    font-family: Arial, sans-serif;
 }
 
 .dropdown a:hover {
-    text-decoration: underline;
+    background-color: #98b6c0;
+    border-radius: 5px;
 }
 
 /* Smooth transition for dropdown to avoid abrupt changes */
 .navbar-link {
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 /* Dropdown indicator arrow styling */
@@ -137,7 +152,7 @@
     border-left: 3px solid #FDCD3B; /* Left part of the chevron */
     width: 8px; /* Control width to shape the chevron */
     height: 8px; /* Control height to shape the chevron */
-    transform: rotate(130deg); /* Rotate to create the chevron angle */
+    transform: rotate(135deg); /* Rotate to create the chevron angle */
     display: inline-block;
     margin-right: 0.7rem; /* Space between arrow and text */
     vertical-align: middle;
@@ -146,5 +161,5 @@
 
 /* Rotate the arrow when hovering over the link */
 .navbar-link:hover > a::before {
-    transform: rotate(230deg);
+    transform: rotate(225deg);
 }
