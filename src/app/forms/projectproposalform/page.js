@@ -91,17 +91,23 @@ export default function ProjectProposalPage() {
         </div>
 
         <div className="upload-bubbles-proposal">
-    <div className="formFile-circle">
+    <div className="prop-circle">
         <label className="formButton-for-bubble">
             <input id="image-upload" type="file" className="formFile-input" />
             <p className="formSubtext">Upload Files</p>
+        </label>
+    </div>
+    <div className="prop-circle">
+        <label className="formButton-for-bubble">
+            <input id="image-upload" type="file" className="formFile-input" />
+            <p className="formSubtext">Upload Images</p>
         </label>
     </div>
 
 </div>
       </div>
 
-      <div className="formButton-container">
+      <div className="propButton-container">
         <button className="formClose-button">back</button>
         <button className="formEnter-button" onClick={handleSubmit}>enter</button>
       </div>

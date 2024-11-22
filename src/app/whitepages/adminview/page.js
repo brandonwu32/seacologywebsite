@@ -27,7 +27,6 @@ export default function Whitepages() {
           <Button color="blue" size="large" text="Edit View"/>
         </Link>
         </div>
-
       </div>
       <hr className="AWPblueline" />
       <hr className="AWPyellowline" />
