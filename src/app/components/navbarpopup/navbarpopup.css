@@ -67,3 +67,56 @@ h2 {
     margin-left: 25%;
     margin-bottom: 5%;
 }
+
+
+#search-bar {
+    border-radius: 25px;
+    height: 2.5rem;
+    margin-left: -0.5rem;
+    background-color: #76D1FF;
+    color: #1F7191;
+    padding-left: 2.5rem;
+    justify-self: center;
+    width: 80%;
+}
+
+#search-bar::placeholder {
+    color: #1F7191;
+    opacity: 1;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+
+
+
+
+}
+
+#seacology-text {
+    color: #f6f6f6;
+}
+
+.search-container {
+    position: relative;
+    margin-left: 0rem; /* Adjust this margin as needed */
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 23%;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 5vh;
+    max-height: 50vh;
+    width: 100%;
+    overflow: scroll;
+    gap: 5%;
+}
+
+.search-popup-title {
+    color: #71c4d6;
+    font-family: Arial, Helvetica, sans-serif;
+}

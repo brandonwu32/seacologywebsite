@@ -19,7 +19,8 @@ export async function fetchGuidelineSearch(query) {
         const data = await sql `
             SELECT *
             FROM guidelines
-            WHERE content ILIKE ${`%${query}%`}`
+            WHERE content ILIKE ${`%${query}%`}
+            ORDER BY page, position`
         return data.rows
     } catch(error) {
         console.log("An error occurred", error)

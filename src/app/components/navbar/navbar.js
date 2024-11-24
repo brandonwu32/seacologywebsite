@@ -8,34 +8,17 @@ import NavBarPopUp from '../navbarpopup/navbarpopup';
 export default function Navbar() {
 
     // Define state to store search input
-    const [searchBarText, setSearchBarText] = useState("")
-
-    const [searchQuery, setSearchQuery] = useState(false);
-
+    const [popupTrigger, setPopupTrigger] = useState(false)
 
     const togglePopUp = () => {
-        setSearchQuery(searchQuery === null);
+        setPopupTrigger(!popupTrigger);
       }
 
     // Handler for search input change
-    const handleInputChange = (event) => {
-        setSearchBarText(event.target.value);
-    }
-
-    async function handleSearchSubmit() {
-        setSearchQuery(searchBarText)
-    };
-
-    // Handle Enter key press to trigger search
-    const handleKeyDown = (event) => {
-        if (event.key === "Enter") {
-            handleSearchSubmit();
-        }
-    };
 
     return (
         <div id="wrapper">
-            <NavBarPopUp trigger={searchQuery} close={togglePopUp} name={"Search Results for: " + searchQuery}/>
+            <NavBarPopUp trigger={popupTrigger} close={togglePopUp} name={"Search for Keywords in Guidelines"}/>
             <div id="navbar-wrapper">
                 <div className="img-with-text">
                     <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
@@ -44,7 +27,7 @@ export default function Navbar() {
                     <div className="navbar-link">
                         <div className="search-container">
                             <span className="search-icon">🔍</span>
-                            <button></button>
+                            <button id="search-bar" onClick={() => togglePopUp()}></button>
                         </div>
                     </div>
 
