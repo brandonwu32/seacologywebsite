@@ -1,7 +1,9 @@
+'use client'
+import { useState } from "react";
 import './infobubble.css';
 import Image from "next/image";
 import WhitePagePopUp from "../../whitepagepopup/infopopup/infopopup";
-import { useState } from "react";
+
 
 export default function InfoPageBubble(props) {
     const [buttonPopUp, setButtonPopUp] = useState(false);
