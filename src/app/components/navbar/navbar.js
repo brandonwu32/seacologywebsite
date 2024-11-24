@@ -1,33 +1,29 @@
 'use client'
 
 import { useState } from 'react';
-import Link from 'next/link';
-import styles from '../navbar/Navbar.css';
+import '../navbar/Navbar.css';
 import Image from "next/image";
 import SeacologyLogo from "../../../../assets/seacology_logo.png";
-import { fetchGuidelineSearch } from '../../lib/data';
-
+import NavBarPopUp from '../navbarpopup/navbarpopup';
 export default function Navbar() {
 
     // Define state to store search input
-    const [searchQuery, setSearchQuery] = useState("");
+    const [searchBarText, setSearchBarText] = useState("")
+
+    const [searchQuery, setSearchQuery] = useState(false);
+
+
+    const togglePopUp = () => {
+        setSearchQuery(searchQuery === null);
+      }
 
     // Handler for search input change
     const handleInputChange = (event) => {
-        setSearchQuery(event.target.value);
-    };
+        setSearchBarText(event.target.value);
+    }
 
-    // Handler for search submission (captures search text and clears input)
     async function handleSearchSubmit() {
-        console.log("Searched for:", searchQuery);
-        let data = await fetchGuidelineSearch(searchQuery);
-
-        data.map(row => {
-            console.log(row.content)
-        })
-
-        setSearchQuery("");  // Clear the input after submission
-        // Implement functionality here, e.g., filtering items, redirecting, etc.
+        setSearchQuery(searchBarText)
     };
 
     // Handle Enter key press to trigger search
@@ -39,7 +35,7 @@ export default function Navbar() {
 
     return (
         <div id="wrapper">
-
+            <NavBarPopUp trigger={searchQuery} close={togglePopUp} name={"Search Results for: " + searchQuery}/>
             <div id="navbar-wrapper">
                 <div className="img-with-text">
                     <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
@@ -48,14 +44,7 @@ export default function Navbar() {
                     <div className="navbar-link">
                         <div className="search-container">
                             <span className="search-icon">🔍</span>
-                            <input
-                                type="text"
-                                placeholder="Search..."
-                                id="search-bar"
-                                value={searchQuery}
-                                onChange={handleInputChange}
-                                onKeyDown={handleKeyDown} // Capture Enter key
-                            />
+                            <button></button>
                         </div>
                     </div>
 
