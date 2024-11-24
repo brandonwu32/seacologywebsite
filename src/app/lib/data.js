@@ -3,7 +3,7 @@ import { sql } from '@vercel/postgres';
 export async function fetchGuidelinesPage() {
     try {
         const page = '/guidelines';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page}`;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         console.log("Fetched data successfully")
         return data.rows;
     } catch(error) {
