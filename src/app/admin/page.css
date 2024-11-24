@@ -37,20 +37,12 @@
     gap: 50%;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
 .welcome-wrapper {
     display: flex;
     flex-direction: row;
     width: 60%;
 }
 
-
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 .welcome-bubble {
     background-color: #f0f0f0;
     box-shadow: 0px 4px 10px rgba(82, 96, 225, 0.3);
