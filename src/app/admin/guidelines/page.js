@@ -100,7 +100,7 @@ export default function Guidelines() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/welcome">
+                    <Link href="/admin/welcome">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 

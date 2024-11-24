@@ -40,12 +40,12 @@ export default function Step1() {
                 </div>
                 <div className="step1-row1-wrapper">
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/identifyingproj">
+                        <Link href="/admin/projectmanagement/identifyingproj">
                             <Bubble midtext="Identifying Good Seacology Projects" width={'16rem'} height={'16rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/newprojproposal">
+                        <Link href="/admin/projectmanagement/newprojproposal">
                             <Bubble midtext="New Project Proposal Conversation" width={'16rem'} height={'16rem'}/>
                         </Link>
                     </div>
