@@ -13,7 +13,7 @@ pnpm dev
 # or
 bun dev
 
-bruh dev
+bruh dev hey
 hello 
 ```
 
