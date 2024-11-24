@@ -1,4 +1,5 @@
 import { db } from '@vercel/postgres';
+import { guidelinestable } from '../lib/placeholder-data';
 
 import { users, updates } from '../lib/placeholder-data';
 const client = await db.connect();
@@ -31,30 +32,27 @@ async function seedUsers() {
 async function seedGuidelines() {
   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
-
   await client.sql`
     CREATE TABLE IF NOT EXISTS guidelines (
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-      content TEXT NOT NULL,
-      type TEXT NOT NULL,
-      page INT NOT NULL,
-      position INT NOT NULL
+      name VARCHAR(255) NOT NULL,
+      email TEXT NOT NULL UNIQUE,
+      position TEXT NOT NULL,
+      admin BOOLEAN NOT NULL
     );
   `;
 
-  console.log("created successfully")
-
-  const insertedGuidelines = await Promise.all(
-    guidelines.map(async (guideline) => {
+  const insertedUsers = await Promise.all(
+    users.map(async (user) => {
       return client.sql`
-        INSERT INTO guidelines (id, content, type, page, position)
-        VALUES (${guideline.id}, ${guideline.content}, ${guideline.type}, ${guideline.page}, ${guideline.position})
+        INSERT INTO users (name, email, position, admin)
+        VALUES (${user.name}, ${user.email}, ${user.position}, ${user.admin})
         ON CONFLICT (id) DO NOTHING;
       `;
     }),
   );
 
-  return insertedGuidelines;
+  return insertedUsers;
 }
 
 async function seedUpdates() {
@@ -72,14 +70,14 @@ async function seedUpdates() {
   const insertedUpdates = await Promise.all(
     updates.map(async (update) => {
       return client.sql`
-        INSERT INTO updates (type, time, project_id, field_rep_id)
-        VALUES (${update.type}, ${update.time}, ${update.project_id}, ${update.field_rep_id})
+        INSERT INTO guidelines (type, content, page, position)
+        VALUES (${guideline.type}, ${guideline.content}, ${guideline.page}, ${guideline.position})
         ON CONFLICT (id) DO NOTHING;
       `;
     }),
   );
 
-  return insertedUpdates;
+  return insertedGuidelines;
 }
 
 export async function GET() {

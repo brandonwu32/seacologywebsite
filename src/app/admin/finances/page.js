@@ -51,7 +51,7 @@ export default function Finances() {
         <div>
             <Navbar/>
             <div className="page-wrapper">
-                <Heading text="Finances Info" buttonText="edit"/>
+                <Heading text="Finances Info" buttonText="Editing"/>
 
                 <div>
                     <Body textList={textList} title=""/>
