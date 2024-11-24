@@ -23,8 +23,8 @@ export default function ConservationAgreementPage() {
   return (
     <div className="agreement-page">
       <h1 className="agreement-heading">Conservation Agreement</h1>
-      <div className = "blue-line"></div>
-      <div className="yellow-line"></div>
+      <hr className= "formYellow-line"></hr>
+      <hr className = "formBlue-line"></hr>
       <div className="agreement-container">
 
         <div className="form-fields">

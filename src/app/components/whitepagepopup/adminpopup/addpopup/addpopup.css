@@ -1,4 +1,4 @@
-.appopupOverlay {
+.popupOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,59 +10,132 @@
     align-items: center;
     z-index: 1000;
 }
-.appopup {
-    width: 50%;
+.popup {
+    width: 600%;
     background-color: white;
-    padding: 1%;
-    border-radius: 2%;
+    padding: 20%;
+    border-radius: 8px;
+    box-shadow: 0 4% 8% rgba(0, 0, 0, 0.2);
     z-index: 1001; /* Ensure it appears above the overlay */
 }
-.aprectangle {
-    margin: 4%;
-    border: 0.2rem solid #02A0D4;
-    padding: 2%;
+.rectangle {
+    margin: 20% 25% 20% 25%;
+    border: 2% solid #02A0D4;
+    padding: 10px;
 }
-.apyellowline {
+.yellowline {
     border: none;
     border-top: 0.2rem solid #FDCD3B; /* Customize color and thickness */
     width: 100%; /* Set width */
     margin: 2% 0; 
   }
-.apname {
+.name {
     color:#02A0D4;
     font-size: large;
+}
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popupContent {
+    background-color: white;
+    padding: 20%;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600%;
+    box-shadow: 0 4% 8% rgba(0, 0, 0, 0.2);
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 10%;
+}
+
+.projectTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.projectTable th, .projectTable td {
+    border: 1% solid #ddd;
+    padding: 8%;
+    text-align: left;
+}
+
+.projectTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.closeButton {
+    margin-top: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8% 16%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background-color: #0056b3;
+}
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+    border: 1px solid #02A0D4; /* Visible borders */
+    padding: 8%;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #FDCD3B;
 }
 
 /* Form Fields */
-.apadd-fields {
+.add-fields {
     width: 45%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.apadd-fields input {
+.add-fields label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #333;
+}
+.add-fields input {
     width: 100%;
-    padding: 8px;
+    padding: 8%;
     border: 1px solid #72C7F2;
     border-radius: 5px;
-    font-size: 0.8rem;
-    margin-top: 5px;
-    
+    font-size: 1rem;
+    margin-top: 5%;
 }
 .addcontainer {
     display: flex;
     align-items: center;
 }
-
-.apbuttonz {
-    margin-left: 40%;
+.btttz {
+    margin-left: 35%;
     display: flex;
     align-items: center;
-    gap: 3%;
+    gap: 10%;
 }

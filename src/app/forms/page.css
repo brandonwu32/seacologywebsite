@@ -1,365 +1,426 @@
-.page {
-    width: 90%;
-    margin: 0 auto;
-    padding: 2% 0;
-    font-family: Arial, sans-serif;
-    height: 90%;
-  }
-
-  .heading {
-    font-size: 2.5rem;
-    color: #72C7F2;
-    font-weight: bold;
-    text-align: left;
-    margin-bottom: 1%;
-  }
-
-  .blue-line {
-    border: None;
-    border-top: 0.1rem solid #72C7F2;
-    width: 100%;
-  }
-
-  .yellow-line {
-    border: None;
-    border-top: 0.1rem solid #FDCD3B;
-    width: 100%;
-  }
-  .form-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2%;
-  }
-
-  .form-fields {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-  }
-
-  .form-fields label {
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-    color: #333;
-  }
-
-  .form-fields input {
-    width: 100%;
-    padding: 8%;
-    border: 1px solid #72C7F2;
-    border-radius: 10px;
-    font-size: 1rem;
-    margin-top: 5%;
-  }
-
-
-  .form-fields input,
-  .form-fields textarea {
-    width: 80%;
-    padding: 3%;
-    border: 2% solid #ccc;
-    border-radius: 10px;
-    font-size: 1rem;
-    margin-top: 0.5%;
-    min-height: 40%;
-    border-color: #72C7F2;
-    resize: vertical;
-    height: 100%;
-    font-family: Arial, sans-serif;
-  }
-
-  .form-fields input[type="number"] {
-    height: 50%;
-    padding: 10%;
-    font-size: 1rem;
-  }
-
-
-  .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 2%;
-    margin-top: -4%;
-
-  }
-
-  .close-button, .enter-button {
-    padding: 1% 4%;
-    font-size: 1rem;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background: blue;
-  }
-
-  .close-button {
-    background: #FDCD3B;
-    color: white;
-    margin-left: 80%;
-
-  }
-
-  .enter-button {
-    background-color: #72C7F2;
-    color: white;
-  }
-
-  .dropdown-container {
-    position: relative;
-  }
-
-  .dropdown-container .dropdown-list {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 85%;
-    background-color: white;
-    border: 1px solid #72C7F2;
-    z-index: 1;
-  }
-
-  .dropdown-item:hover{
-    background-color: rgb(198, 198, 198);
-  }
-
-  .dropdown-container:hover .dropdown-list {
-    display: block;
-  }
-
-  .upload-bubbles {
-    display: flex;
-    flex-direction: row;
-    gap: 2%;
-    justify-content: center;
-    margin-top: 5%;
-    margin-right: 20%;
-  }
-
-
-  .file-circle {
-    width: 15vw;
-    height: 15vw;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 50%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow: 0px 4px 10px rgba(82, 96, 225, 0.3);
-    border: 3px solid #72C7F2;
-    display: flex;
-    flex-direction: column;
-    margin: 20px auto;
-    object-fit: cover;
-  }
-
-  .button-for-bubble {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    text-align: center;
-  }
-
-  .file-input {
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-  }
-
-
-
-  .upload-bubbles .file-circle:nth-child(1) {
-    transform: translateY(15%);
-  }
-
-  .upload-bubbles .file-circle:nth-child(2) {
-    transform: translateY(-10%);
-  }
-
-  .upload-bubbles .file-circle:nth-child(3) {
-    transform: translateY(15%);
-  }
-
-  .subtext{
-    font-size: 1.9em;
-    pointer-events: none;
-    color: #72C7F2;
-    font-weight: bold;
-  }
-
-  .popupOverlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  .popup{
-    width: 50%;
-    background-color: white;
-    padding: 1%;
-    border-radius: 10px;
-    z-index: 1001;
-    font-family: Arial, sans-serif;
-  }
-
-  .rectangle{
-    margin: 5%;
-    border: 0.2rem solid #02A0D4;
-    padding: 2%;
-    padding-inline: 4%;
-    display: flex;
-    flex-direction: column;
-    line-height: 0%;
-  }
-
-  .name{
-    color: #02A0D4;
-    font-size: large;
-  }
-
-  .popupOverlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000p
-
-  }
-
-  .bubs{
-    text-align: left;
-    text-indent: 1vw;
-    padding-top: 1vw;
-    width: 100%;
-    border: 1px solid #72C7F2;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    color: #333;
-    background-color: #fff;
-    margin-top: 5%;
-    height: 8vh;
-  }
-
-  .agreement-page {
-    width: 90%;
-    margin: 0 auto;
-    padding: 2% 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-    height: 100vh;
+.formPage {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2% 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
 }
 
-.agreement-heading {
-    font-size: 2.5rem;
-    color: #72C7F2;
-    font-weight: bold;
-    margin-bottom: 1%;
-    padding-bottom: 0.5%;
+.formHeading {
+  font-size: 2.5rem;
+  color: #72C7F2;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 0.5%;
 }
 
-.agreement-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 2%;
-    padding: 2%;
+.formBlue-line {
+  border: None;
+  border-top: 0.1rem solid #72C7F2;
+  width: 100%;
 }
 
-.blue-line {
-    width: 100%;
-    margin-top: -1%;
-    margin-bottom: 1%;
-    background-color: #72C7F2;
-    height: 0.2%;
-  }
+.formYellow-line {
+  border: None;
+  border-top: 0.1rem solid #FDCD3B;
+  width: 100%;
+}
 
-  .yellow-line {
-    width: 100%;
-    height: 0.2%;
-    background-color: #FDCD3B;
-    margin-top: 0;
-  }
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
 
-/* Form Fields */
 .form-fields {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .form-fields label {
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-    color: #333;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #333;
 }
 
 .form-fields input {
-    width: 100%;
-    padding: 1%;
-    border: 1px solid #72C7F2;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-top: 1%;
+  width: 100%;
+  padding: 8%;
+  border: 1px solid #72C7F2;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-top: 5%;
+}
+
+.form-fields input,
+.form-fields textarea {
+  width: 80%;
+  padding: 3%;
+  border: 2% solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-top: 0.5%;
+  min-height: 40%;
+  border-color: #72C7F2;
+  resize: vertical;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.form-fields input[type="number"] {
+  height: 50%;
+  padding: 10%;
+  font-size: 1rem;
+}
+
+.formButton-container {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  margin-top: -4%;
+}
+
+.formClose-button, .formEnter-button {
+  padding: 1% 4%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: blue;
+}
+
+.formClose-button {
+  background: #FDCD3B;
+  color: white;
+  margin-left: 80%;
+}
+
+.formEnter-button {
+  background-color: #72C7F2;
+  color: white;
+}
+
+.formDropdown-container {
+  position: relative;
+}
+
+.formDropdown-container .formDropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 85%;
+  background-color: white;
+  border: 1px solid #72C7F2;
+  z-index: 1;
+}
+
+.formDropdown-item:hover{
+  background-color: rgb(198, 198, 198);
+}
+
+.formDropdown-container:hover .formDropdown-list {
+  display: block;
+}
+
+.formUpload-bubbles {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  justify-content: center;
+  margin-top: 5%;
+  margin-right: 20%;
+  width: 100;
+}
+
+.formFile-circle {
+  width: 15vw;
+  height: 15vw;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(82, 96, 225, 0.3);
+  border: 3px solid #72C7F2;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  object-fit: cover;
+}
+
+.formButton-for-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.formFile-input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.formSubtext{
+  font-size: 1.9em;
+  pointer-events: none;
+  color: #72C7F2;
+  font-weight: bold;
+  margin-bottom: 6%;
+}
+
+.formPopupOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.formPopup{
+  width: 50%;
+  background-color: white;
+  padding: 1%;
+  border-radius: 10px;
+  z-index: 1001;
+  font-family: Arial, sans-serif;
+}
+
+.formRectangle{
+  margin: 5%;
+  border: 0.2rem solid #02A0D4;
+  padding: 2%;
+  padding-inline: 4%;
+  display: flex;
+  flex-direction: column;
+  line-height: 0%;
+}
+
+.formPopupOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000p
+}
+
+.formBubs{
+  text-align: left;
+  text-indent: 1vw;
+  padding-top: 1vw;
+  width: 100%;
+  border: 1px solid #72C7F2;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  margin-top: 5%;
+  height: 8vh;
+}
+
+.agreement-page {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2% 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  height: 100vh;
+}
+
+.agreement-heading {
+  font-size: 2.5rem;
+  color: #72C7F2;
+  font-weight: bold;
+  margin-bottom: 1%;
+  padding-bottom: 0.5%;
+}
+
+.agreement-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  padding: 2%;
+}
+
+/* Form Fields */
+.form-fields {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-fields label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-fields input {
+  width: 100%;
+  padding: 1%;
+  border: 1px solid #72C7F2;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 1%;
 }
 
 /* Agreement Text Box */
 .agreement-text-box {
-    width: 50%;
-    padding: 2%;
-    border: 1px solid #72C7F2;
-    border-radius: 5px;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #333;
-    background-color: white;
+  width: 50%;
+  padding: 2%;
+  border: 1px solid #72C7F2;
+  border-radius: 5px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  background-color: white;
 }
 
 /* Agree Button */
 .agree-button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 2%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2%;
 }
 
 .agree-button {
-    background-color: #72C7F2;
-    color: white;
-    padding: 1% 2%;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #72C7F2;
+  color: white;
+  padding: 1% 2%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .agree-button:hover {
-    background-color: #5a9dc7;
+  background-color: #5a9dc7;
+}
+
+.proposalpage {
+width: 90%;
+margin: 0 auto;
+padding: 2% 0;
+font-family: Arial, sans-serif;
+height: 100vh;
+}
+
+.proposalheading {
+font-size: 2.5rem;
+color: #72C7F2;
+font-weight: bold;
+text-align: left;
+margin-bottom: 0.5%;
+padding-bottom: 0.5%;
+}
+
+.form-container {
+display: flex;
+justify-content: space-between;
+margin-top: 1%;
+}
+
+.prop-form-fields {
+width: 65%;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.5%;
+}
+
+.prop-form-fields label {
+display: flex;
+flex-direction: column;
+font-size: 1rem;
+margin-bottom: 1%;
+}
+
+.prop-form-fields input,
+.prop-form-fields textarea {
+width: 95%;
+padding: 0.5%;
+font-family: Arial, sans-serif;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 1rem;
+margin-top: 0.5%;
+border: 1px solid #72C7F2; 
+}
+
+.upload-bubbles-proposal {
+  display: flex;
+  flex-direction: column;
+  gap: 2%; 
+  align-items: center;
+  margin-top: 2%;
+  margin-bottom: -4%; 
+  margin-right: 4%;
+}
+
+.propButton-container {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  margin-top: 5%;
+}
+
+.prop-circle {
+  width: 12vw;
+  height: 12vw;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(82, 96, 225, 0.3);
+  border: 3px solid #72C7F2;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+.formUpload-bubbles > .formFile-circle:nth-child(1) {
+  margin-top: 4% !important;
+}
+
+.formUpload-bubbles > .formFile-circle:nth-child(2) {
+  margin-top: 0% !important;
+}
+
+.formUpload-bubbles > .formFile-circle:nth-child(3) {
+  margin-top: 4% !important;
 }
