@@ -414,13 +414,13 @@ border: 1px solid #72C7F2;
 }
 
 .formUpload-bubbles > .formFile-circle:nth-child(1) {
-  margin-top: 10% !important;
+  margin-top: 4% !important;
 }
 
 .formUpload-bubbles > .formFile-circle:nth-child(2) {
-  margin-top: 3% !important;
+  margin-top: 0% !important;
 }
 
 .formUpload-bubbles > .formFile-circle:nth-child(3) {
-  margin-top: 10% !important;
+  margin-top: 4% !important;
 }
