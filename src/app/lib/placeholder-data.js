@@ -1,36 +1,31 @@
 // This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
 // https://nextjs.org/learn/dashboard-app/fetching-data
 const users = [
-    {
-      id: '410544b2-4001-4271-9855-fec4b6a6442a',
-      name: 'Sophia',
-      email: 'bro@nextmail.com',
-      password: '123456',
-      admin: 'TRUE'
-    },
-    {
-        id: '410544b2-4001-4271-9855-fec4b6a6442b',
-        name: 'Renata',
-        email: 'bruh@nextmail.com',
-        password: 'password',
-        admin: 'FALSE'
-    },
-    {
-        id: '410544b2-4001-4271-9855-fec4b6a6442c',
-        name: 'Tanya',
-        email: 'ayo@nextmail.com',
-        password: 'helloworld',
-        admin: 'FALSE'
-    },
-    {
-      id: '410544b2-4001-4271-9855-fec4b6a6442d',
-      name: 'Habeeb',
-      email: 'king@nextmail.com',
-      password: 'tripleC',
-      admin: 'FALSE'
+  {
+    name: 'Sophia',
+    email: 'bro@nextmail.com',
+    position: 'dev',
+    admin: false
   },
   {
-    id: '410544b2-4001-4271-9855-fec4b6a6442c',
+    name: 'Renata',
+    email: 'bruh@nextmail.com',
+    position: 'dev',
+    admin: false
+  },
+  {
+    name: 'Tanya',
+    email: 'ayo@nextmail.com',
+    position: 'PM',
+    admin: true
+  },
+  {
+    name: 'Habeeb',
+    email: 'king@nextmail.com',
+    position: 'dev',
+    admin: false
+  },
+  {
     name: 'Bussy',
     email: 'Buss@nextmail.com',
     password: 'lakewater',

@@ -19,7 +19,15 @@ export default function Welcome() {
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
                         <Link href="/guidelines">
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+                            <Bubble className="welcome-bubble" heading="Guidelines" width={'20rem'} height={'20rem'}/>
+=======
                             <Bubble className="welcome-bubble" heading="Guidelines"/>
+>>>>>>> Stashed changes
+=======
+                            <Bubble className="welcome-bubble" heading="Guidelines"/>
+>>>>>>> Stashed changes
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
