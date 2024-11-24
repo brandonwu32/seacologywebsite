@@ -1,6 +1,6 @@
 import { db } from '@vercel/postgres';
-import { users } from '../lib/placeholder-data';
 
+import { users, updates } from '../lib/placeholder-data';
 const client = await db.connect();
 
 async function seedUsers() {
@@ -28,19 +28,50 @@ async function seedUsers() {
   return insertedUsers;
 }
 
+async function seedUpdates() {
+  await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS updates (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      type VARCHAR(255) NOT NULL,
+      time TIMESTAMP NOT NULL,
+      project_id UUID NOT NULL,
+      field_rep_id UUID NOT NULL
+    );
+  `;
+  
+  const insertedUpdates = await Promise.all(
+    updates.map(async (update) => {
+      return client.sql`
+        INSERT INTO updates (type, time, project_id, field_rep_id)
+        VALUES (${update.type}, ${update.time}, ${update.project_id}, ${update.field_rep_id})
+        ON CONFLICT (id) DO NOTHING;
+      `;
+    }),
+  );
+
+  return insertedUpdates;
+}
 
 export async function GET() {
-    try {
-      console.log("Before Begin");
-      await client.sql`BEGIN`;
-      console.log("Before Seed");
-      await seedUsers();
-      console.log("Before Commit");
-      await client.sql`COMMIT`;
+  try {
+    console.log("Before Begin");
+    await client.sql`BEGIN`;
 
-      return Response.json({ message: 'Database seeded successfully' });
-    } catch (error) {
-      await client.sql`ROLLBACK`;
-      return Response.json({ error }, { status: 500 });
-    }
+    
+    console.log("Seeding Users...");
+    // await seedUsers();
+
+    console.log("Seeding Updates...");
+    await seedUpdates();
+
+    console.log("Before Commit");
+    await client.sql`COMMIT`;
+
+    return Response.json({ message: 'Database seeded successfully' });
+  } catch (error) {
+    console.error("Error during seeding:", error);
+    await client.sql`ROLLBACK`;
+    return Response.json({ error }, { status: 500 });
   }
+}
