@@ -45,7 +45,11 @@ export default function Welcome() {
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
+<<<<<<< Updated upstream
                     <Link href="/admin/guidelines">
+=======
+                    <Link href="/guidelines">
+>>>>>>> Stashed changes
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
