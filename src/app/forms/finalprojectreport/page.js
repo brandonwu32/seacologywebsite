@@ -44,23 +44,23 @@ export default function FinalProjectPage() {
   const projects = ["Project 1", "Project 2", "Project 3", "Project 4", "Other"];
 
   return (
-    <div className="page">
-      <h1 className="heading">Final Project  Report</h1>
-      <hr className= "yellow-line"></hr>
-      <hr className = "blue-line"></hr>
+    <div className="formPage">
+      <h1 className="formHeading">Final Project  Report</h1>
+      <hr className= "formYellow-line"></hr>
+      <hr className = "formBlue-line"></hr>
       <div className="form-container">
         <div className="form-fields">
 
 
           <label>
             Project:
-            <div className="dropdown-container">
+            <div className="formDropdown-container">
             <input type="text" value={project} onClick={openFirstPopup} readOnly placeholder="Select a project" className = "page"/>
             {isFirstPopupOpen && (
-              <div className="dropdown-list">
+              <div className="formDropdown-list">
                 {projects.map((proj, index) => (
 
-                  <div key={index} className="dropdown-item" onClick={() => handleSelectProject(proj)}>
+                  <div key={index} className="formDropdown-item" onClick={() => handleSelectProject(proj)}>
                     {proj}
                   </div>
                 ))}
@@ -83,33 +83,31 @@ export default function FinalProjectPage() {
         </div>
 
 
-        <div className="upload-bubbles">
-        <div className="file-circle">
-        <label className="button-for-bubble">
-            <input id="image-upload" type="file" className="file-input" />
-            <p className="subtext">Upload Files</p>
+        <div className="formUpload-bubbles">
+        <div className="formFile-circle">
+        <label className="formButton-for-bubble">
+            <input id="image-upload" type="file" className="formFile-input" />
+            <p className="formSubtext">Upload Files</p>
         </label>
     </div>
       </div>
       </div>
-      <div className="button-container">
-        <button className="close-button">back</button>
-        <button className="enter-button" onClick = {handleSubmit}>enter</button>
+      <div className="formButton-container">
+        <button className="formClose-button">back</button>
+        <button className="formEnter-button" onClick = {handleSubmit}>enter</button>
       </div>
       {isOtherPopupOpen && (
-        <div className="popupOverlay">
-          <div className="popup">
-              <div className = 'rectangle'>
-              <p className = "subtext"> Enter Project</p>
-              <hr className= "yellow-line" />
-                <textarea type = "text" className = "bubs"
+        <div className="formPopupOverlay">
+          <div className="formPopup">
+              <div className = 'formRectangle'>
+              <p className = "formSubtext"> Enter Project</p>
+              <hr className= "formYellow-line" />
+                <textarea type = "text" className = "formBubs"
                   placeholder="Describe your project"
                   onChange={(e) => setProject(e.target.value)}
                 />
             </div>
-            <div className = "buttonz">
               <Button color = "blue" size = "small" text = "Close" onClick={closeOtherPopup}/>
-            </div>
           </div>
         </div>
       )}
