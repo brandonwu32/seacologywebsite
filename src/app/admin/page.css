@@ -37,15 +37,11 @@
     gap: 50%;
 }
 
-
-
 .welcome-wrapper {
     display: flex;
     flex-direction: row;
     width: 60%;
 }
-
-
 
 .welcome-bubble {
     background-color: #f0f0f0;
