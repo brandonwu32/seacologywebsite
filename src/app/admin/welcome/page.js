@@ -1,4 +1,4 @@
-'use client'
+'use server'
 
 import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
@@ -6,13 +6,14 @@ import Button from '../../components/button/button';
 import Bubble from "../../components/bubble/bubble";
 import Heading from "../../components/info-hub/heading"
 import Link from "next/link"
+import { fetchGuidelinesPage } from "../../lib/data"
 
-export default function Welcome() {
+export default async function Welcome() {
     return (
         <div>
             <Navbar/>
             <div className="page-wrapper">
-                <Heading text="Welcome" buttonText = 'edit' edit ={true}/>
+                <Heading text="Welcome" buttonText = 'Editing' edit ={true}/>
 
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
@@ -45,7 +46,14 @@ export default function Welcome() {
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     <Link href="/admin/guidelines">
+=======
+=======
+>>>>>>> Stashed changes
+                    <Link href="/guidelines">
+>>>>>>> Stashed changes
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
