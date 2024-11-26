@@ -173,7 +173,7 @@ export async function getUserID() {
 
 export async function fetchProjects(user_id) {
     try {
-        const projects = await sql`SELECT * FROM projects WHERE field_rep_id=${`%${user_id}%`}}`
+        const projects = await sql`SELECT * FROM projects WHERE field_rep_id=${user_id}`
         console.log('Fetched projects')
         return projects.rows
     } catch(error) {
