@@ -19,8 +19,6 @@ export default function ProjectProgressPage() {
       project,
     });
   };
-
-  const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
   const [isOtherPopupOpen, setIsOtherPopupOpen] = useState(false);
 
   const openFirstPopup = () => {

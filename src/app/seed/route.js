@@ -1,7 +1,7 @@
 import { db } from '@vercel/postgres';
 import { guidelinestable } from '../lib/placeholder-data';
 
-import { users, updates } from '../lib/placeholder-data';
+import { users, updates, projects } from '../lib/placeholder-data';
 const client = await db.connect();
 
 
@@ -46,6 +46,30 @@ async function seedGuidelines() {
   return insertedGuidelines;
 }
 
+async function seedProjects() {
+  await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS projects (
+      project_id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      field_rep_id UUID NOT NULL,
+      status VARCHAR(255) NOT NULL,
+      project_name VARCHAR(255) NOT NULL
+    );
+  `;
+
+  const insertedProjects = await Promise.all(
+    projects.map(async (project) => {
+      return client.sql`
+        INSERT INTO projects (field_rep_id, status, project_name)
+        VALUES (${project.field_rep_id}, ${project.status}, ${project.project_name})
+        ON CONFLICT (project_id) DO NOTHING;
+      `;
+    }),
+  );
+
+  return insertedProjects;
+}
+
 async function seedUpdates() {
   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
   await client.sql`
@@ -84,6 +108,9 @@ export async function GET() {
 
     console.log("Seeding Updates....");
     // await seedUpdates();
+
+    console.log("Seeding Projects...");
+    await seedProjects();
 
     console.log("Before Commit");
     await client.sql`COMMIT`;

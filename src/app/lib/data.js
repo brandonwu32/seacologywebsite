@@ -144,6 +144,7 @@ export async function fetchContact() {
         throw new Error("An error occurred")
     }
 }
+
 export async function fetchUpdatesName(user_id) {
     try {
         const updates = await sql`SELECT * FROM updates WHERE field_rep_id=${`%${user_id}%`} ORDER BY time DESC`
@@ -161,6 +162,21 @@ export async function fetchUpdatesProject(project_id, user_id) {
         console.log('Fetched data')
         return updates.rows
     } catch (error) {
+        console.log("An error occured", error)
+        throw new Error('An error occured')
+    }
+}
+
+export async function getUserID() {
+    return "97fe71f8-de46-4d42-8f39-9fdceba174ee" // returns a dummy user id, created so that we can test this function
+}
+
+export async function fetchProjects(user_id) {
+    try {
+        const projects = await sql`SELECT * FROM projects WHERE field_rep_id=${`%${user_id}%`}}`
+        console.log('Fetched projects')
+        return projects.rows
+    } catch(error) {
         console.log("An error occured", error)
         throw new Error('An error occured')
     }
