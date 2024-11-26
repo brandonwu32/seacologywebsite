@@ -11,7 +11,7 @@ export default function SearchItem(props) {
     }
     return (
         <div className = 'item-container'>
-            <a href = {props.item.page}>
+            <a href = {props.item.page + '#' + props.item.position}>
             <div className = 'item-header-container'>
                 <div className = 'item-header'>
                     <p className = 'page-url'>Page: {props.item.page}</p>
