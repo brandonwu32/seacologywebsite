@@ -166,3 +166,4 @@ export async function fetchUpdatesProject(project_id, user_id) {
     }
 }
 
+//create fetch projects fucntion given user id

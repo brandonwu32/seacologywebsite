@@ -46,18 +46,6 @@ async function seedGuidelines() {
   return insertedGuidelines;
 }
 
-export async function GET() {
-    try {
-      await client.sql`BEGIN`;
-      await seedGuidelines();
-      await client.sql`COMMIT`;
-      console.log("committed");
-      return Response.json({ message: 'Database seeded successfully' });
-    } catch (error) {
-      await client.sql`ROLLBACK`;
-      return Response.json({ error }, { status: 500 });
-    }
-  }
 async function seedUpdates() {
   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
   await client.sql`
@@ -88,6 +76,8 @@ export async function GET() {
     console.log("Before Begin");
     await client.sql`BEGIN`;
 
+    console.log("Seeding Guidelines...")
+    // await seedGuidelines()
     
     console.log("Seeding Users...");
     // await seedUsers();
