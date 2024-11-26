@@ -1,3 +1,5 @@
+'use server'
+
 import { sql } from '@vercel/postgres';
 
 export async function fetchGuidelinesPage() {
@@ -26,6 +28,7 @@ export async function fetchOverview() {
 export async function fetchStep1() {
     try {
         const page = '/projectmanagement/step1';
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         const data = await sql`SELECT * FROM guidelines WHERE page = ${page} `;
         console.log("Fetched data successfully")
         return data.rows;
@@ -162,3 +165,4 @@ export async function fetchUpdatesProject(project_id, user_id) {
         throw new Error('An error occured')
     }
 }
+
