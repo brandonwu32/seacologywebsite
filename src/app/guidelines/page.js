@@ -19,7 +19,7 @@ export default async function Guidelines() {
             <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Guidelines" buttonText = 'edit'/>
-            
+            <Guide_Editing/>
                 <div>
                     <Body textList={textList} title="Guidelines for Working With Seacology"/>
                 </div>
