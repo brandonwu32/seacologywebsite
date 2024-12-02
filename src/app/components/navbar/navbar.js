@@ -42,7 +42,9 @@ export default function Navbar() {
 
             <div id="navbar-wrapper">
                 <div className="img-with-text">
-                    <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
+                    <Link href="/welcome">
+                        <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
+                    </Link>
                 </div>
                 <div className="navbar">
                     <div className="navbar-link">

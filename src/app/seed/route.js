@@ -1,28 +1,30 @@
-import bcrypt from 'bcrypt';
 import { db } from '@vercel/postgres';
 import { invoices, customers, guidelines, users } from '../lib/placeholder-data';
 
+import { users, updates } from '../lib/placeholder-data';
 const client = await db.connect();
 
-async function seedUsers() {
+
+async function seedGuidelines() {
   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+
   await client.sql`
-    CREATE TABLE IF NOT EXISTS users (
+    CREATE TABLE IF NOT EXISTS guidelines (
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-      name VARCHAR(255) NOT NULL,
-      email TEXT NOT NULL UNIQUE,
-      password TEXT NOT NULL,
-      admin BOOLEAN NOT NULL
+      type TEXT NOT NULL,
+      content TEXT NOT NULL,
+      page TEXT NOT NULL,
+      position INT NOT NULL
     );
   `;
 
 
-  const insertedUsers = await Promise.all(
-    users.map(async (user) => {
-      const hashedPassword = await bcrypt.hash(user.password, 10);
+  const insertedGuidelines = await Promise.all(
+    guidelinestable.map(async (guideline) => {
+      console.log(guideline);
       return client.sql`
-        INSERT INTO users (id, name, email, password, admin)
-        VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword}, ${user.admin})
+        INSERT INTO guidelines (type, content, page, position)
+        VALUES (${guideline.type}, ${guideline.content}, ${guideline.page}, ${guideline.position})
         ON CONFLICT (id) DO NOTHING;
       `;
     }),
@@ -133,10 +135,6 @@ async function seedGuidelines() {
 // }
 
 export async function GET() {
-    // return Response.json({
-    //   message:
-    //     'Uncomment this file and remove this line. You can delete this file when you are finished.',
-    // });
     try {
       await client.sql`BEGIN`;
       await seedUsers();
@@ -145,7 +143,7 @@ export async function GET() {
     //   await seedInvoices();
     //   await seedRevenue();
       await client.sql`COMMIT`;
-
+      console.log("committed");
       return Response.json({ message: 'Database seeded successfully' });
     } catch (error) {
       await client.sql`ROLLBACK`;
