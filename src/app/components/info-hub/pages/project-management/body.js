@@ -8,11 +8,11 @@ export default function Body(props) {
                 <p key = {item.content}>{item.content}</p>
             )
         }
-        
+
         else if (item.type == 'header') {
             return (
                 <h2 key = {item.content}>{item.content}</h2>
-            ) 
+            )
         }
 
         else if (item.type == 'bullet-point') {
@@ -30,7 +30,7 @@ export default function Body(props) {
                 <h1 className="body-title">{props.title}</h1>
             </div>
             <div className = "bodyText">
-                {props.textList.map(textItem => <div key={textItem.content} className = "listItem">{ListProcess(textItem)}</div>)}
+                {props.textList.map(textItem => <div key={textItem.content} id = {textItem.position} className = "listItem">{ListProcess(textItem)}</div>)}
             </div>
         </div>
     );

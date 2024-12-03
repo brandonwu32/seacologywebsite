@@ -1,6 +1,46 @@
 // This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
 // https://nextjs.org/learn/dashboard-app/fetching-data
-  const guidelinestable = [
+const users = [
+  {
+    name: 'Sophia',
+    email: 'bro@nextmail.com',
+    position: 'dev',
+    admin: false
+  },
+  {
+    name: 'Renata',
+    email: 'bruh@nextmail.com',
+    position: 'dev',
+    admin: false
+  },
+  {
+    name: 'Tanya',
+    email: 'ayo@nextmail.com',
+    position: 'PM',
+    admin: true
+  },
+  {
+    name: 'Habeeb',
+    email: 'king@nextmail.com',
+    position: 'dev',
+    admin: false
+  },
+  {
+    name: 'Bussy',
+    email: 'Buss@nextmail.com',
+    password: 'lakewater',
+    admin: 'FALSE'
+},
+{
+  id: '410544b2-4001-4271-9855-fec4b6a6442c',
+  name: 'Camila',
+  email: 'quiet@nextmail.com',
+  password: 'secretsanta',
+  admin: 'FALSE'
+},
+  ];
+
+const guidelinestable = [
     {
       type: 'paragraph',
       content: 'Here is some information to help you work with Seacology smoothly and efficiently.',
@@ -604,26 +644,186 @@
       position: 12,
     },
     {
-      customer_id: customers[2].id,
-      amount: 1000,
-      status: 'paid',
-      date: '2022-06-05',
+      type: 'paragraph',
+      content: 'Receipts. Project leaders should use reputable contractors and vendors who will provide good  invoices and receipts. If the receipt does not say exactly what was received, attach a materials list  and/or note the service provided.',
+      page: '/projectmanagement/step5',
+      position: 13,
     },
-  ];
+    {
+      type: 'paragraph',
+      content: 'If the NGO is the fiscal administrator, you don’t need to send all the receipts with the financial  reports, but later, we will ask you to provide some receipts.',
+      page: '/projectmanagement/step5',
+      position: 14,
+    },
+    {
+      type: 'paragraph',
+      content: 'If you, or another individual not associated with a partner NGO, are personally serving as the fiscal  administrator, include receipts for all expenses. Identify the vendor and type of expense.',
+      page: '/projectmanagement/step5',
+      position: 15,
+    },
+    {
+      type: 'paragraph',
+      content: 'If there is a ceremony to mark the completion of a project, attend if you can. We will reimburse your  travel expenses, if the Seacology program manager has authorized them before your trip.',
+      page: '/projectmanagement/step6',
+      position: 1,
+    },
+    {
+      type: 'paragraph',
+      content: 'A final report is due from you or the partner NGO within three months after the project is complete.  If you believe this deadline will not be met, inform Seacology staff as soon as you can. Like previous  progress reports, the final report must include a narrative report on the completed project and  conservation area and photos. It must also include a final financial report of how all Seacology grant  funds were spent, including a comparison of actual expenditures to the original budget. We may  request line-item detail and receipts.',
+      page: '/projectmanagement/step6',
+      position: 2,
+    },
+    {
+      type: 'paragraph',
+      content: 'If the project was finished under budget, talk to us about what to do with the leftover funds.',
+      page: '/projectmanagement/step6',
+      position: 3,
+    },
+    {
+      type: 'header',
+      content: 'Requesting Small Grants and Maintenance Funds',
+      page: '/finances',
+      position: 1,
+    },
+    {
+      type: 'paragraph',
+      content: 'If a community has a small project, or needs money for maintenance or repair of an existing project,  you do not need to wait until the next board meeting to request funds. We can approve a small grant  between meetings. Just let the program manager know what the community needs.',
+      page: '/finances',
+      position: 2,
+    },
+    {
+      type: 'header',
+      content: 'Making Nominations for the Seacology Prize',
+      page: '/finances',
+      position: 3,
+    },
+    {
+      type: 'paragraph',
+      content: 'Every June, the Seacology board chooses a winner of the Seacology Prize. The prize goes to an  indigenous islander for exceptional achievement in preserving island environment and culture. The  recipient receives USD 10,000 and a trip to the award ceremony in October, usually in Berkeley,  California.',
+      page: '/finances',
+      position: 4,
+    },
+    {
+      type: 'paragraph',
+      content: 'We rely on our field representatives to nominate people for this honor. Each year, we will ask you  whether you know of someone who is doing outstanding work in island conservation, and explain  how to nominate someone. Feel free to share nomination instructions with your contacts in the  region—we are always looking for strong nominees.',
+      page: '/finances',
+      position: 5,
+    },
+    {
+      type: 'header',
+      content: 'Organizing Site Visits by Seacology Staff or Donors',
+      page: '/finances',
+      position: 6,
+    },
+    {
+      type: 'paragraph',
+      content: 'Occasionally, Seacology staff may come to your country to meet with you and see projects. They will  work with you to ensure that the visit is convenient for you as well as for the communities.',
+      page: '/finances',
+      position: 7,
+    },
+    {
+      type: 'paragraph',
+      content: 'Seacology also organizes a few expeditions each year to show board members and donors our great  projects. If we plan an expedition to your area, we will work with you to arrange site visits or other  events such as opening celebrations.',
+      page: '/finances',
+      position: 8,
+    },
+    {
+      type: 'paragraph',
+      content: 'PROJECTS Send email to: Project ideas, questions, or proposals Karen or Mary  Documents: timeline, budget, signed agreements, maps, wiring instructions, etc. Amanda  Project updates and photos (before each Board of Directors meeting) Karen or Mary  Request for project grant payments Amanda',
+      page: '/contact',
+      position: 1,
+    },
+    {
+      type: 'paragraph',
+      content: 'EXPENSES Send email to:  Request for prior approval of expenses Karen or Mary  Expense reimbursement requests Kevin',
+      page: '/contact',
+      position: 2,
+    },
+    {
+      type: 'header',
+      content: 'STAFF EMAILS',
+      page: '/contact',
+      position: 3,
+    },
+    {
+      type: 'paragraph',
+      content: '- Duane Silverstein, Executive Director duane@seacology.org',
+      page: '/contact',
+      position: 4,
+    },
+    {
+      type: 'paragraph',
+      content: '- Karen Peterson, Senior Manager of Special Initiatives (Africa, Dominican Republic, Oceania) karen@seacology.org ',
+      page: '/contact',
+      position: 5,
+    },
+    {
+      type: 'paragraph',
+      content: '- Mary Randolph, Program Manager (Asia, the Americas, Caribbean, Europe) mary@seacology.org ',
+      page: '/contact',
+      position: 6,
+    },
+    {
+      type: 'paragraph',
+      content: '- Kevin Claassen, Accounting Manager kevin@seacology.org',
+      page: '/contact',
+      position: 7,
+    },
+    {
+      type: 'paragraph',
+      content: '- Amanda Kirkhart, Program Assistant amanda@seacology.org',
+      page: '/contact',
+      position: 8,
+    },
+    {
+      type: 'paragraph',
+      content: '- Erin Coyne, Institutional Giving Officer erin@seacology.org ',
+      page: '/contact',
+      position: 9,
+    },
+    {
+      type: 'paragraph',
+      content: '- Joe Clerici, Communications Director joe@seacology.org',
+      page: '/contact',
+      position: 10,
+    },
+    {
+      type: 'paragraph',
+      content: '- Max Rojas-Domke, Individual Giving Manager max@seacology.org',
+      page: '/contact',
+      position: 11,
+    },
+    {
+      type: 'header',
+      content: 'Seacology',
+      page: '/contact',
+      position: 12,
+    },
+    {
+      type: 'paragraph',
+      content: '1623 Solano Avenue Berkeley, California 94707 USA',
+      page: '/contact',
+      position: 13,
+    },
+    {
+      type: 'paragraph',
+      content: 'Telephone: +1 510-559-3505',
+      page: '/contact',
+      position: 14,
+    },
+    {
+      type: 'paragraph',
+      content: 'www.seacology.org',
+      page: '/contact',
+      position: 15,
+    },
+    {
+      type: 'paragraph',
+      content: 'Thank you for your hard work for Seacology and island communities!',
+      page: '/contact',
+      position: 16,
+    },
 
-  const revenue = [
-    { month: 'Jan', revenue: 2000 },
-    { month: 'Feb', revenue: 1800 },
-    { month: 'Mar', revenue: 2200 },
-    { month: 'Apr', revenue: 2500 },
-    { month: 'May', revenue: 2300 },
-    { month: 'Jun', revenue: 3200 },
-    { month: 'Jul', revenue: 3500 },
-    { month: 'Aug', revenue: 3700 },
-    { month: 'Sep', revenue: 2500 },
-    { month: 'Oct', revenue: 2800 },
-    { month: 'Nov', revenue: 3000 },
-    { month: 'Dec', revenue: 4800 },
-  ];
+  ]
 
-  export { users, guidelines, invoices, revenue };
+  export { guidelinestable, users };
