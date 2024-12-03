@@ -1,7 +1,8 @@
-import './addpopup.css'
-import Button from '../../../button/button';
+import './geaddpopup.css'
+import Button from '../../button/button';
 
-export default function AddPopUp(props) {
+
+export default function GEAddPopUp(props) {
     return props.trigger ? (
         <div className="gepopupOverlay">
             <div className="gepopup">

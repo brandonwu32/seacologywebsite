@@ -1,4 +1,5 @@
 "use server"
+// saying that i need client for use state but need server for databse
 
 import styles from "./page.css"
 import Navbar from "../components/navbar/navbar";
