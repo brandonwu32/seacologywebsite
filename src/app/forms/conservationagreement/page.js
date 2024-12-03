@@ -130,7 +130,7 @@ export default function ConservationAgreementPage() {
         </div>
 
         <div className="agree-button-container">
-          <button className="agree-button" onClick={() => createUpdate("conservation-agreement", projectID)}>Agree</button>
+          <button className="agree-button" onClick={() => createUpdate("conservation-agreement", projectID, date)}>Agree</button>
         </div>
       </div>
       {isOtherPopupOpen && (

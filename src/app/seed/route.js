@@ -26,13 +26,24 @@ async function seedGuidelines() {
       return client.sql`
         INSERT INTO guidelines (type, content, page, position)
         VALUES (${guideline.type}, ${guideline.content}, ${guideline.page}, ${guideline.position})
-      name VARCHAR(255) NOT NULL,
-      email TEXT NOT NULL UNIQUE,
-      position TEXT NOT NULL, 
-      admin BOOLEAN NOT NULL
-    );
+    ;
   `}));
-  
+
+  return insertedGuidelines
+}
+
+  async function seedUsers() {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    await client.sql`
+      CREATE TABLE IF NOT EXISTS users (
+        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email TEXT NOT NULL UNIQUE,
+        position TEXT NOT NULL,
+        admin BOOLEAN NOT NULL
+      );
+    `;
+
   const insertedUsers = await Promise.all(
     users.map(async (user) => {
       return client.sql`
@@ -43,7 +54,7 @@ async function seedGuidelines() {
     }),
   );
 
-  return insertedGuidelines;
+  return insertedUsers;
 }
 
 async function seedProjects() {
@@ -81,7 +92,7 @@ async function seedUpdates() {
       field_rep_id UUID NOT NULL
     );
   `;
-  
+
   const insertedUpdates = await Promise.all(
     updates.map(async (update) => {
       return client.sql`
@@ -101,13 +112,13 @@ export async function GET() {
     await client.sql`BEGIN`;
 
     console.log("Seeding Guidelines...")
-    // await seedGuidelines()
-    
+    await seedGuidelines()
+
     console.log("Seeding Users...");
-    // await seedUsers();
+    await seedUsers();
 
     console.log("Seeding Updates....");
-    // await seedUpdates();
+    await seedUpdates();
 
     console.log("Seeding Projects...");
     await seedProjects();
