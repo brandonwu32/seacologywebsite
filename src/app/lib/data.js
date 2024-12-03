@@ -1,5 +1,7 @@
 'use server'
 
+'use server'
+
 import { sql } from '@vercel/postgres';
 
 export async function fetchGuidelineSearch(query) {
