@@ -3,6 +3,7 @@ import Bubble from "../../components/bubble/bubble";
 import React, { useState } from 'react';
 import styles from "../page.css";
 import Button from "../../components/button/button";
+import {createUpdate} from "../../lib/actions"
 
 export default function ProjectProgressPage() {
 
@@ -12,6 +13,7 @@ export default function ProjectProgressPage() {
   const [project, setProject] = useState("");
 
   const handleSubmit = () => {
+    createUpdate("projectprogressreport", "123");
     console.log({
       finished,
       notFinished,
@@ -19,6 +21,8 @@ export default function ProjectProgressPage() {
       project,
     });
   };
+
+  const [isFirstPopupOpen] = useState(false);
   const [isOtherPopupOpen, setIsOtherPopupOpen] = useState(false);
 
   const openFirstPopup = () => {

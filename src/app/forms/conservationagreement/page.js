@@ -57,10 +57,10 @@ export default function ConservationAgreementPage() {
 
   const handleSelectProject = (selectedProject) => {
       if (selectedProject == "Other") {
-      setIsOtherPopupOpen(true);
+        setIsOtherPopupOpen(true);
       }else{
-      setProject(selectedProject.project_name);
-      setProjectID(selectedProject.project_id)
+        setProject(selectedProject.project_name);
+        setProjectID(selectedProject.project_id)
       }
       setIsFirstPopupOpen(false);
   };
@@ -70,7 +70,7 @@ export default function ConservationAgreementPage() {
   };
 
   return (
-    <form action = {formAction}>
+    <form>
       <input id = 'type' value='conservation-agreement' type='hidden'></input>
       <div className="agreement-page">
         <h1 className="agreement-heading">Conservation Agreement</h1>
@@ -130,7 +130,7 @@ export default function ConservationAgreementPage() {
         </div>
 
         <div className="agree-button-container">
-          <button className="agree-button" onClick={createUpdate("conservation-agreement", "123e4567-e89b-12d3-a456-426614174006")}>Agree</button>
+          <button className="agree-button" onClick={() => createUpdate("conservation-agreement", projectID)}>Agree</button>
         </div>
       </div>
       {isOtherPopupOpen && (
