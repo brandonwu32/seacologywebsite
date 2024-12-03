@@ -3,14 +3,9 @@
 import { sql } from '@vercel/postgres';
 import { getUserID } from './data';
 
-export async function createUpdate(formData) {
-    console.log(formData)
-    const validatedFields = {
-        project_id: formData.get('project-id'),
-        time: formData.get('date'),
-        type: formData.get('type'),
-      };
-
+export async function createUpdate(type, project_id) {
+    console.log("Type: ", type)
+    console.log("Project id: ", project_id)
     try {
         const field_rep_id = await getUserID()
         const time = new Date().toISOString()

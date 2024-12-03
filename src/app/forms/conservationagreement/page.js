@@ -7,6 +7,7 @@ import "../page.css";
 import { createUpdate } from '../../lib/actions';
 import { useActionState } from "react";
 import { fetchProjects, getUserID } from "../../lib/data";
+import { create } from "domain";
 
 export default function ConservationAgreementPage() {
 
@@ -48,16 +49,6 @@ export default function ConservationAgreementPage() {
 
   const [signature, setSignature] = useState("");
   const [date, setDate] = useState("");
-
-
-  const handleAgree = () => {
-    console.log({
-      lastName,
-      firstName,
-      signature,
-      date,
-    });
-  };
 
   const openFirstPopup = () => {
     setIsFirstPopupOpen(!isFirstPopupOpen);
@@ -114,6 +105,7 @@ export default function ConservationAgreementPage() {
                 type="text"
                 value={signature}
                 onChange={(e) => setSignature(e.target.value)}
+                required
               />
             </label>
             <label>
@@ -123,6 +115,7 @@ export default function ConservationAgreementPage() {
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
+                required
               />
             </label>
           </div>
@@ -137,7 +130,7 @@ export default function ConservationAgreementPage() {
         </div>
 
         <div className="agree-button-container">
-          <button className="agree-button" onClick={handleAgree}>Agree</button>
+          <button className="agree-button" onClick={createUpdate("conservation-agreement", "123e4567-e89b-12d3-a456-426614174006")}>Agree</button>
         </div>
       </div>
       {isOtherPopupOpen && (

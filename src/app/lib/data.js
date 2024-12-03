@@ -181,5 +181,3 @@ export async function fetchProjects(user_id) {
         throw new Error('An error occured')
     }
 }
-
-//create fetch projects fucntion given user id
