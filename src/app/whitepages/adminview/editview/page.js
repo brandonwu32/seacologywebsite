@@ -5,6 +5,7 @@ import AddPopUp from "../../../components/whitepagepopup/adminpopup/addpopup/add
 import EditPageBubble from "../../../components/whitepagebubbles/editbubble/editpagebubble";
 import Button from "../../../components/button/button";
 import Link from 'next/link'
+import GEAddPopUp from "../../../components/guide-editing/geaddpopup/geaddpopup" // remove later
 
 export default function Whitepages() {
   const [addPopUp, setButtonPopUp] = useState(false);
@@ -35,8 +36,8 @@ export default function Whitepages() {
       <hr className="EWPblueline" />
       <hr className="EWPyellowline" />
       <p className = "clickremove">**Click on a Member to Remove</p>
-
-      <AddPopUp trigger={addPopUp} close = {toggleAddPopUp}/>
+{/* change EPpopup to addPopUp */}
+      <GEAddPopUp trigger={addPopUp} close = {toggleAddPopUp}/> 
 
       <div className="EWPbubble-container">
         {whiteList.map(function (member){

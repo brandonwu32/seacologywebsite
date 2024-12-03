@@ -12,11 +12,7 @@ export default function GEAddPopUp(props) {
                     <div className = 'addcontainer'>
                         <div className = "geadd-fields">
                             {/* make a drop down for options and inputting text */}
-                            <label>Full Name:<input id = "name" type="text" /></label>
-                            <label>Position:<input id = "position" type="text" /></label>
-                            <label>Email:<input id = "email" type="text" /></label>
-                            <label>Region:<input id = "region" type="text" /></label>
-                            <label>Image:<input id = "image-upload" type="file" /></label>
+                            <label>Add Text:<input id = "name" type="text" /></label>
                         </div>
                     </div>
                 </div>
