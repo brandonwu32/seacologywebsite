@@ -1,8 +1,23 @@
+'use client';
 import './geaddpopup.css'
+import React, { useState } from 'react';
 import Button from '../../button/button';
 
 
 export default function GEAddPopUp(props) {
+const types = ["header", "paragraph", "bullet-point"]
+const [type, setType] = useState("");
+const [txt, setFinished] = useState("");
+const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
+
+const openFirstPopup = () => {
+    setIsFirstPopupOpen(!isFirstPopupOpen);
+  };
+
+const handleSelectType = (selectedType) => {
+    setType(selectedType);
+    setIsFirstPopupOpen(false);
+}
     return props.trigger ? (
         <div className="gepopupOverlay">
             <div className="gepopup">
@@ -11,8 +26,25 @@ export default function GEAddPopUp(props) {
                     <hr className="geyellowline" />
                     <div className = 'addcontainer'>
                         <div className = "geadd-fields">
-                            {/* make a drop down for options and inputting text */}
-                            <label>Add Text:<input id = "name" type="text" /></label>
+                            <label> 
+                                Text Type:
+                                <div className="formDropdown-container">
+                                    <input type="text" value={type} onClick={openFirstPopup} readOnly placeholder="Select text type" className = "geaddpop"/>
+                                {isFirstPopupOpen && (
+                                    <div className="GEADDDropdown-list">
+                                        {types.map((typ, index) => (
+                                        <div key={index} className="GEADDDropdown-item" onClick={() => handleSelectType(proj)}>
+                                            {typ}
+                                        </div>
+                                        ))}
+                                    </div>
+                                )}
+                                </div>
+                            </label>
+                            <label>
+                                Input Text:
+                                <textarea type="text" value={txt} onChange={(e) => setFinished(e.target.value)}/>
+                            </label>
                         </div>
                     </div>
                 </div>
