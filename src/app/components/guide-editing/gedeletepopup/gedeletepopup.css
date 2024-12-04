@@ -1,4 +1,4 @@
-.gepopupOverlay {
+.gedpopupOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,25 +10,25 @@
     align-items: center;
     z-index: 1000;
 }
-.gepopup {
+.gedpopup {
     width: 50%;
     background-color: white;
     padding: 1%;
     border-radius: 2%;
     z-index: 1001; /* Ensure it appears above the overlay */
 }
-.gerectangle {
+.gedrectangle {
     margin: 4%;
     border: 0.2rem solid #02A0D4;
     padding: 2%;
 }
-.geyellowline {
+.gedyellowline {
     border: none;
     border-top: 0.2rem solid #FDCD3B; /* Customize color and thickness */
     width: 100%; /* Set width */
     margin: 2% 0; 
   }
-.gename {
+.gedname {
     color:#02A0D4;
     font-size: large;
 }
@@ -39,14 +39,14 @@ h2 {
 }
 
 /* Form Fields */
-.geadd-fields {
+.gedadd-fields {
     width: 45%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.geadd-fields input {
+.gedadd-fields input {
     width: 100%;
     padding: 8px;
     border: 1px solid #72C7F2;
@@ -55,37 +55,14 @@ h2 {
     margin-top: 5px;
     
 }
-.addcontainer {
+.deletecontainer {
     display: flex;
     align-items: center;
 }
 
-.gebuttonz {
+.gedbuttonz {
     margin-left: 40%;
     display: flex;
     align-items: center;
     gap: 3%;
-}
-
-.formDropdown-container {
-    position: relative;
-}
-  
-.formDropdown-container .formDropdown-list {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 85%;
-    background-color: white;
-    border: 1px solid #72C7F2;
-    z-index: 1;
-}
-  
-.formDropdown-item:hover{
-    background-color: rgb(198, 198, 198);
-}
-  
-.formDropdown-container:hover .formDropdown-list {
-    display: block;
 }

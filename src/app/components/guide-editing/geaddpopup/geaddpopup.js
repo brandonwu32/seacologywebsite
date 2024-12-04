@@ -7,18 +7,30 @@ import Button from '../../button/button';
 export default function GEAddPopUp(props) {
 const types = ["header", "paragraph", "bullet-point"]
 const [type, setType] = useState("");
-const [txt, setFinished] = useState("");
+const [finished, setFinished] = useState("");
+const [notFinished, setnotFinished] = useState("");
+
+
+const handleSubmit = () => {
+    console.log({
+        finished,
+        notFinished,
+    });
+};
+
 const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
 
 const openFirstPopup = () => {
     setIsFirstPopupOpen(!isFirstPopupOpen);
   };
 
+
+
 const handleSelectType = (selectedType) => {
     setType(selectedType);
     setIsFirstPopupOpen(false);
 }
-    return props.trigger ? (
+    return (
         <div className="gepopupOverlay">
             <div className="gepopup">
                 <div className='gerectangle'>
@@ -31,9 +43,9 @@ const handleSelectType = (selectedType) => {
                                 <div className="formDropdown-container">
                                     <input type="text" value={type} onClick={openFirstPopup} readOnly placeholder="Select text type" className = "geaddpop"/>
                                 {isFirstPopupOpen && (
-                                    <div className="GEADDDropdown-list">
+                                    <div className="formDropdown-list">
                                         {types.map((typ, index) => (
-                                        <div key={index} className="GEADDDropdown-item" onClick={() => handleSelectType(proj)}>
+                                        <div key={index} className="formDropdown-item" onClick={() => handleSelectType(typ)}>
                                             {typ}
                                         </div>
                                         ))}
@@ -43,7 +55,7 @@ const handleSelectType = (selectedType) => {
                             </label>
                             <label>
                                 Input Text:
-                                <textarea type="text" value={txt} onChange={(e) => setFinished(e.target.value)}/>
+                                <textarea type="text" value={finished} onChange={(e) => setFinished(e.target.value)}/>
                             </label>
                         </div>
                     </div>
@@ -54,5 +66,5 @@ const handleSelectType = (selectedType) => {
                 </div>
         </div>
         </div>
-    ) : null;
+    );
     }
