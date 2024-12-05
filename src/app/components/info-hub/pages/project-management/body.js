@@ -1,23 +1,38 @@
+'use client'
 import styles from "./body.css"
 import Guide_Editing from "../../../guide-editing/guide-editing"
+import GEAddPopUp from "../../../guide-editing/geaddpopup/geaddpopup"
+import GEDeletePopUp from "../../../../components/guide-editing/gedeletepopup/gedeletepopup"
+import { useState } from "react";
 
 export default function Body(props) {
+    const [addTextPopUp, setAddPopUp] = useState(false);
+    const [deleteTextPopUp, setDeletePopUp] = useState(false);
+
+    const atogglePopUp = () => {
+     setAddPopUp(!addTextPopUp);
+    }
+    const dtogglePopUp = () => {
+        setDeletePopUp(!deleteTextPopUp);
+       }
 
     function ListProcess(item) {
         if (item.type == 'paragraph') {
             return (
-                <div>
-                <p key = {item.content}>{item.content}</p>
-                <Guide_Editing/>
+                <div key = {item.position}>
+                    <p>{item.content}</p>
+                    <Guide_Editing geaddopen = {atogglePopUp} gedeleteopen = {dtogglePopUp}/>
+                    <GEAddPopUp trigger={addTextPopUp} close = {atogglePopUp}/> 
+                    <GEDeletePopUp trigger = {deleteTextPopUp} close = {dtogglePopUp} deletingwords = {item.content}/>
                 </div>
             )
         }
         
         else if (item.type == 'header') {
             return (
-                <div>
-                <h2 key = {item.content}>{item.content}</h2>
-                <Guide_Editing/>
+                <div key = {item.position}>
+                <h2>{item.content}</h2>
+                {/* <Guide_Editing/> */}
                 </div>
             ) 
         }
@@ -25,9 +40,9 @@ export default function Body(props) {
         else if (item.type == 'bullet-point') {
             return (
                 <ul>
-                    <div>
-                    <li key={item.content}>{item.content}</li>
-                    <Guide_Editing/>
+                    <div key = {item.content} >
+                    <li>{item.content}</li>
+                    {/* <Guide_Editing/> */}
                     </div>
                 </ul>
             )

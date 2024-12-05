@@ -7,7 +7,7 @@ export default function Guide_Editing(props) {
         <div className="gebigdiv">
             <Button color="blue" size="large" text="add below" onClick = {props.geaddopen}/>
 
-            <Button color="red" size="large" text="delete above" onClick = {props.geaddopen}/>
+            <Button color="red" size="large" text="delete above" onClick = {props.gedeleteopen}/>
         </div>
 
     )

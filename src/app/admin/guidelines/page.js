@@ -7,7 +7,6 @@ import Bubble from "../../components/bubble/bubble";
 import Heading from "../../components/info-hub/heading"
 import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
-import Guide_Editing from "../../components/guide-editing/guide-editing"
 import { fetchGuidelinesPage } from "../../lib/data"
 //import { useState } from "react";
 

@@ -30,7 +30,7 @@ const handleSelectType = (selectedType) => {
     setType(selectedType);
     setIsFirstPopupOpen(false);
 }
-    return (
+    return props.trigger ? (
         <div className="gepopupOverlay">
             <div className="gepopup">
                 <div className='gerectangle'>
@@ -55,7 +55,9 @@ const handleSelectType = (selectedType) => {
                             </label>
                             <label>
                                 Input Text:
-                                <textarea type="text" value={finished} onChange={(e) => setFinished(e.target.value)}/>
+                                <div className="formDropdown-container">
+                                    <textarea type="text" value={finished} onChange={(e) => setFinished(e.target.value)}/>
+                                </div>
                             </label>
                         </div>
                     </div>
@@ -66,5 +68,5 @@ const handleSelectType = (selectedType) => {
                 </div>
         </div>
         </div>
-    );
+    ) :null;
     }
