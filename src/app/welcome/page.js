@@ -19,7 +19,7 @@ export default function Welcome() {
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
                         <Link href="/guidelines">
-                            <Bubble className="welcome-bubble" heading="Guidelines"/>
+                            <Bubble className="welcome-bubble" heading="Guidelines" width={'20rem'} height={'20rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">

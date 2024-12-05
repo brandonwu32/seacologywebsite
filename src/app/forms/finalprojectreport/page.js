@@ -51,7 +51,6 @@ export default function FinalProjectPage() {
       <div className="form-container">
         <div className="form-fields">
 
-
           <label>
             Project:
             <div className="formDropdown-container">
@@ -79,18 +78,27 @@ export default function FinalProjectPage() {
           <label>Final Financial Report:
             <textarea type="text" value={final} onChange={(e) => setFinal(e.target.value)}/>
           </label>
-
         </div>
-
-
         <div className="formUpload-bubbles">
         <div className="formFile-circle">
         <label className="formButton-for-bubble">
             <input id="image-upload" type="file" className="formFile-input" />
             <p className="formSubtext">Upload Files</p>
         </label>
-    </div>
-      </div>
+        </div>
+        <div className="formFile-circle">
+        <label className="formButton-for-bubble">
+            <input id="image-upload" type="file" className="formFile-input" />
+            <p className="formSubtext">Upload Images</p>
+        </label>
+        </div>
+        <div className="formFile-circle">
+        <label className="formButton-for-bubble">
+            <input id="image-upload" type="file" className="formFile-input" />
+            <p className="formSubtext">Upload Videos</p>
+        </label>
+        </div>
+        </div>
       </div>
       <div className="formButton-container">
         <button className="formClose-button">back</button>
