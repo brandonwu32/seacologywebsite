@@ -24,12 +24,48 @@ export default function ProjectProposalPage() {
   const [protectionDetails, setProtectionDetails] = useState("");
   const [projectName, setProjectName] = useState("");
 
+  const sendEmail = (to, subject, body) => {
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
   const handleSubmit = () => {
+    const subject = `Project Progress Report: ${projectName}`
+    const body = `Hello! 
+    
+                  A new project proposal was submitted. Here are the responses:
+
+                  Time area will be protected: ${timeProtected}
+
+                  Conservation of ownership of protected area: ${ownershipConfirmation}
+
+                  Name of fiscal administrator: ${fiscalAdmin}
+
+                  Other sources of project funding, if any: ${fundingSources}
+
+                  List of protected threatened or endangered species in the area, if any: ${threatenedSpecies}
+
+                  Deatiled information abouth how the community will protect the proposed protected area: ${protectionDetails}
+
+                  Address: ${address}
+
+                  Number of people in the community: ${communitySize}
+
+                  Estimated total cost of project: ${projectCost}
+
+                  Protected area's size and type: ${areaSizeType}
+
+                  Any conflicts of interest: ${conflicts}
+
+                  Project Name: ${projectName}
+                  
+                  Thanks!`
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
     const now = new Date()
     const currentDate = now.toDateString()
     console.log("Current date: ", currentDate)
     createProject("project created", projectName, currentDate)
   };
+
 
   return (
     <div className="proposalpage">

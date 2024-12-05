@@ -37,8 +37,18 @@ export default function ProjectProgressPage() {
   }, [isFirstPopupOpen]);
 
   const handleSubmit = () => {
-    const subject = "test"
-    const body = "test"
+    const subject = `Project Progress Report: ${project}`
+    const body = `Hello! 
+    
+                  A project progress report was submitted for ${project} Here are the responses:
+
+                  Tell us what you finished: ${finished}
+
+                  Tell us what you didn't finish: ${notFinished}
+
+                  Conservation Efforts: ${conservation}
+                  
+                  Thanks!`
     sendEmail("nishant.malpani@berkeley.edu", subject, body)
     const now = new Date()
     const currentDate = now.toDateString()

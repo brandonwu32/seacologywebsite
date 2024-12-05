@@ -7,7 +7,7 @@ import styles from "../page.css";
 import { createUpdate } from '../../lib/actions';
 import { fetchProjects, getUserID } from "../../lib/data";
 
-export default function ConservationAgreementPage() {
+export default function GrantAgreementPage() {
   const [lastName, setLastName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [signature, setSignature] = useState("");
@@ -50,6 +50,25 @@ export default function ConservationAgreementPage() {
     setIsFirstPopupOpen(!isFirstPopupOpen);
   };
 
+  const handleSubmit = () => {
+    const subject = `Conservation Agreement Signed: ${project}`
+    const body = `Hello! 
+    
+                  A conservation agreement was signed for ${project} on ${date}.
+
+                  Here is their electronic signature: ${signature}
+                  
+                  Thanks!`
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    const now = new Date()
+    const currentDate = now.toDateString()
+    console.log("Current date: ", currentDate)
+    createUpdate("grant-agreement-form")
+  };
+
+  const sendEmail = (to, subject, body) => {
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
 
   const handleSelectProject = (selectedProject) => {
       if (selectedProject == "Other") {
@@ -139,7 +158,7 @@ export default function ConservationAgreementPage() {
       </div>
 
       <div className="agree-button-container">
-        <button className="agree-button" onClick={() => createUpdate("grant-agreement-form")}>Agree</button>
+        <button className="agree-button" onClick={handleSubmit}>Agree</button>
       </div>
     </div>
   );

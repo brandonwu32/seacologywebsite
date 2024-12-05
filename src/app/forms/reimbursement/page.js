@@ -39,11 +39,28 @@ export default function ReimbursementPage() {
   }, [isFirstPopupOpen]);
 
   const handleSubmit = () => {
+    const subject = `Reimbursement Submitted: ${project}`
+    const body = `Hello! 
+    
+                  A reimbursement was submitted for ${project} Here is the information contained in their response:
+
+                  Project: ${project}
+
+                  Type of reimbursement: ${reimbursement}
+
+                  List of Expenses: ${expenses}
+                  
+                  Thanks!`
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
     const now = new Date()
     const currentDate = now.toDateString()
     console.log("Current time: ", currentDate)
     createUpdate("reimbursement", projectID, currentDate);
   };
+
+  const sendEmail = (to, subject, body) => {
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
 
   const openFirstPopup = () => {
     setIsFirstPopupOpen(!isFirstPopupOpen);
@@ -54,7 +71,7 @@ export default function ReimbursementPage() {
     if (selectedProject == "Other") {
       setIsOtherPopupOpen(true);
     }else{
-      setProject(selectedProject);
+      setProject(selectedProject.project_name);
       setProjectID(selectedProject.project_id)
     }
     setIsFirstPopupOpen(false);

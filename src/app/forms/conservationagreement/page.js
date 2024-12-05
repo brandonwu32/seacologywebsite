@@ -52,6 +52,22 @@ export default function ConservationAgreementPage() {
     setIsFirstPopupOpen(!isFirstPopupOpen);
   };
 
+  const handleSubmit = () => {
+    const subject = `Conservation Agreement Signed: ${project}`
+    const body = `Hello! 
+    
+                  A conservation agreement was signed for ${project} on ${date}.
+
+                  Here is their electronic signature: ${signature}
+                  
+                  Thanks!`
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    const now = new Date()
+    const currentDate = now.toDateString()
+    console.log("Current date: ", currentDate)
+    createUpdate("conservation-agreement", projectID, date)
+  };
+
 
   const handleSelectProject = (selectedProject) => {
       if (selectedProject == "Other") {
@@ -66,6 +82,10 @@ export default function ConservationAgreementPage() {
   const closeOtherPopup = () => {
     setIsOtherPopupOpen(false);
   };
+
+  const sendEmail = (to, subject, body) => {
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
 
   return (
     <form>
@@ -128,7 +148,7 @@ export default function ConservationAgreementPage() {
         </div>
 
         <div className="agree-button-container">
-          <button className="agree-button" onClick={() => createUpdate("conservation-agreement", projectID, date)}>Agree</button>
+          <button className="agree-button" onClick={handleSubmit}>Agree</button>
         </div>
       </div>
       {isOtherPopupOpen && (

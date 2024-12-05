@@ -36,7 +36,25 @@ export default function FinalProjectPage() {
     fetchData();
   }, [isFirstPopupOpen]);
 
+  const sendEmail = (to, subject, body) => {
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+  
+
   const handleSubmit = () => {
+    const subject = `Project Progress Report: ${project}`
+    const body = `Hello! 
+    
+                  A new project progress report was submitted for ${project} Here are the responses:
+
+                  Tell us what you finished: ${finished}
+
+                  Conservation Efforts: ${conservation}
+
+                  Final Fiancial Report: ${final}
+
+                  Thanks!`
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
     const now = new Date()
     const currentDate = now.toDateString()
     console.log("Current time: ", currentDate)
