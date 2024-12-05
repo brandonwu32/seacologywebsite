@@ -1,21 +1,49 @@
 'use client'
+
+
 import styles from "./page.css";
-import {useState} from "react";
+import { fetchMembers } from "../../../lib/data";
+import { useState, useEffect } from "react";
 import AddPopUp from "../../../components/whitepagepopup/adminpopup/addpopup/addpopup"
 import EditPageBubble from "../../../components/whitepagebubbles/editbubble/editpagebubble";
 import Button from "../../../components/button/button";
+import seacology_Logo from "../../../../../assets/logo-blue-web-transparent.png";
 import Link from 'next/link'
 import WhitepagesRenderer from "../../whitepagesRender";
 import ProfileSkeletons from '../../../components/skeletons/whitepages/profileSkeletons';
+import InfoPageBubble from "../../../components/whitepagebubbles/infobubble/infobubble";
 import { Suspense } from 'react';
 
 export default function Whitepages() {
   const [addPopUp, setButtonPopUp] = useState(false);
-  const [whiteList, setWhiteList] = useState([{"name":"Tanya","position":"PM","email":"tanyaberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
-                                              {"name":"sophia","position":"devloper","email":"sophiaberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
-                                              {"name":"bussy","position":"PM","email":"bussyberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
-                                              {"name":"camila","position":"devloper","email":"camilaberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"},
-                                              {"name":"renata","position":"devloper","email":"renataberklee","image":"https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"}]);
+  const [whiteList, setWhiteList] = useState([]);
+  
+  useEffect(() => {
+    const members = async () => {
+      try {
+        const result = await fetchMembers();
+        setWhiteList(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    members()
+  }, [whiteList]);
+
+  function bubbleMember(item) {
+    console.log(item.name)
+    return (
+      <InfoPageBubble
+                src={seacology_Logo}
+                alt="CeoPic"
+                name={item.name}
+                position={item.position}
+                email={item.email}
+            />
+    )
+  }
+
   const toggleAddPopUp = () => {
     console.log("SLDKFJLSKDJF");
     setButtonPopUp(!addPopUp);
@@ -30,17 +58,18 @@ export default function Whitepages() {
             <Link href="/whitepages/adminview">
             <Button color="red" size="large" text="Editing"/>
             </Link>
-            <Button color="blue" size="large" text="Add Member" onClick = {toggleAddPopUp}/>
+            <Button color="blue" size="large" text="Add Member" onClick = {()=>{toggleAddPopUp()}}/>
           </div>
         </div>
       </div>
       <hr className="EWPblueline" />
       <hr className="EWPyellowline" />
       <p className = "clickremove">**Click on a Member to Remove</p>
-
-      <Suspense fallback={<ProfileSkeletons/>}>
-          <WhitepagesRenderer/>
-        </Suspense>
+      <div className = "WPbubble-container">
+        {whiteList.map((item) =>
+            bubbleMember(item)
+        )}
+      </div>
     </div>
   );
 }
