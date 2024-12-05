@@ -12,13 +12,14 @@ import { create } from "domain";
 export default function ConservationAgreementPage() {
 
   const initialState = { message: null, errors: {} };
-  const [state, formAction] = useActionState(createUpdate, initialState);
   const [project, setProject] = useState("");
   const [projectID, setProjectID] = useState("")
   const [projects, setProjects] = useState([])
   const [user_id, setUserID] = useState("")
   const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
   const [isOtherPopupOpen, setIsOtherPopupOpen] = useState(false);
+  const [signature, setSignature] = useState("");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     const user = async () => {
@@ -47,12 +48,9 @@ export default function ConservationAgreementPage() {
 
   }, [isFirstPopupOpen]);
 
-  const [signature, setSignature] = useState("");
-  const [date, setDate] = useState("");
-
   const openFirstPopup = () => {
     setIsFirstPopupOpen(!isFirstPopupOpen);
-};
+  };
 
 
   const handleSelectProject = (selectedProject) => {

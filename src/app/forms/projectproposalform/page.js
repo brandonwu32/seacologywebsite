@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Bubble from "../../components/bubble/bubble";
 import Button from "../../components/button/button";
 import styles from "../page.css";
+import {createUpdate, createProject} from "../../lib/actions"
+import { fetchProjects, getUserID } from "../../lib/data";
 
 import { NextResponse } from "next/server";
 import path from "path";
@@ -20,21 +22,13 @@ export default function ProjectProposalPage() {
   const [threatenedSpecies, setThreatenedSpecies] = useState("");
   const [conflicts, setConflicts] = useState("");
   const [protectionDetails, setProtectionDetails] = useState("");
+  const [projectName, setProjectName] = useState("");
 
   const handleSubmit = () => {
-    console.log({
-      timeProtected,
-      address,
-      ownershipConfirmation,
-      communitySize,
-      fiscalAdmin,
-      projectCost,
-      fundingSources,
-      areaSizeType,
-      threatenedSpecies,
-      conflicts,
-      protectionDetails,
-    });
+    const now = new Date()
+    const currentDate = now.toDateString()
+    console.log("Current date: ", currentDate)
+    createProject("project created", projectName, currentDate)
   };
 
   return (
@@ -87,6 +81,10 @@ export default function ProjectProposalPage() {
           <label>
             Detailed information about how the community will protect the proposed protected area:
             <textarea value={protectionDetails} onChange={(e) => setProtectionDetails(e.target.value)} />
+          </label>
+          <label>
+            Project Name:
+            <textarea value={projectName} onChange={(e) => setProjectName(e.target.value)} />
           </label>
         </div>
 
