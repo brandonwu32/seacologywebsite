@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 
 
 
+
 export default function Whitepages() {
   const [whiteList, setWhiteList] = useState([]);
   useEffect(() => {
