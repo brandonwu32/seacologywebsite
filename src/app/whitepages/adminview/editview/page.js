@@ -1,6 +1,4 @@
 'use client'
-
-
 import styles from "./page.css";
 import { fetchMembers } from "../../../lib/data";
 import { useState, useEffect } from "react";
@@ -11,7 +9,6 @@ import seacology_Logo from "../../../../../assets/logo-blue-web-transparent.png"
 import Link from 'next/link'
 import WhitepagesRenderer from "../../whitepagesRender";
 import ProfileSkeletons from '../../../components/skeletons/whitepages/profileSkeletons';
-import InfoPageBubble from "../../../components/whitepagebubbles/infobubble/infobubble";
 import { Suspense } from 'react';
 
 export default function Whitepages() {
@@ -34,7 +31,7 @@ export default function Whitepages() {
   function bubbleMember(item) {
     console.log(item.name)
     return (
-      <InfoPageBubble
+      <EditPageBubble
                 src={seacology_Logo}
                 alt="CeoPic"
                 name={item.name}
@@ -65,6 +62,7 @@ export default function Whitepages() {
       <hr className="EWPblueline" />
       <hr className="EWPyellowline" />
       <p className = "clickremove">**Click on a Member to Remove</p>
+      <AddPopUp trigger={addPopUp} close = {toggleAddPopUp}/>
       <div className = "WPbubble-container">
         {whiteList.map((item) =>
             bubbleMember(item)
