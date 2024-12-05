@@ -21,9 +21,9 @@ export default function Body(props) {
             return (
                 <div key = {item.position}>
                     <p>{item.content}</p>
-                    <Guide_Editing geaddopen = {atogglePopUp} gedeleteopen = {dtogglePopUp}/>
-                    <GEAddPopUp trigger={addTextPopUp} close = {atogglePopUp}/> 
-                    <GEDeletePopUp trigger = {deleteTextPopUp} close = {dtogglePopUp} deletingwords = {item.content}/>
+                    <Guide_Editing geaddopen = {atogglePopUp} gedeleteopen = {dtogglePopUp} editingwords = {item.content}/>
+                    {/* <GEAddPopUp trigger={addTextPopUp} close = {atogglePopUp}/> 
+                    <GEDeletePopUp trigger = {deleteTextPopUp} close = {dtogglePopUp} deletingwords = {item.content}/> */}
                 </div>
             )
         }
@@ -40,7 +40,7 @@ export default function Body(props) {
         else if (item.type == 'bullet-point') {
             return (
                 <ul>
-                    <div key = {item.content} >
+                    <div key = {item.position} >
                     <li>{item.content}</li>
                     {/* <Guide_Editing/> */}
                     </div>
@@ -55,7 +55,7 @@ export default function Body(props) {
                 <h1 className="body-title">{props.title}</h1>
             </div>
             <div className = "bodyText">
-                {props.textList.map(textItem => <div key={textItem.content} className = "listItem">{ListProcess(textItem)}</div>)}
+                {props.textList.map(textItem => <div key={textItem.position} className = "listItem">{ListProcess(textItem)}</div>)}
             </div>
         </div>
     );
