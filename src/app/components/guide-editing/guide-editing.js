@@ -21,7 +21,7 @@ export default function Guide_Editing(props) {
         <div className="gebigdiv">
             <Button color="blue" size="large" text="add below" onClick = {atogglePopUp}/>
 
-            <Button color="red" size="large" text="delete above" onClick = {dtogglePopUp}/>
+            <Button color="red" size="large" text="edit above" onClick = {dtogglePopUp}/>
 
             <GEAddPopUp trigger={addTextPopUp} close = {atogglePopUp}/> 
             <GEDeletePopUp trigger = {deleteTextPopUp} close = {dtogglePopUp} deletingwords = {props.editingwords}/>

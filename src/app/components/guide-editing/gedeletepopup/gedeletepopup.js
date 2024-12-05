@@ -6,11 +6,11 @@ export default function GEDeletePopUp(props) {
         <div className="gedpopupOverlay">
             <div className="gedpopup">
                 <div className='gedrectangle'>
-                    <p className='gedname'>Delete Text</p>
+                    <p className='gedname'>Edit Text</p>
                     <hr className="gedyellowline" />
                     <div className = 'deletecontainer'>
-                        <p> Are you sure you want to delete this?</p>
-                            <p>{props.deletingwords}</p>
+                        <p className = "deletequestion"> Are you sure you want to delete this text?</p>
+                            <p className = "deletingwords">{props.deletingwords}</p>
                     </div>
                 </div>
                     <div className = 'gedbuttonz'>

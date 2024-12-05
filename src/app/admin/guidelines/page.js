@@ -13,12 +13,6 @@ import { fetchGuidelinesPage } from "../../lib/data"
 export default async function Guidelines() {
 
     var textList = await fetchGuidelinesPage();
-    //const [AddTextPopUp, setAddPopUp] = useState(false);
-    //const [DeleteTextPopUp, setDeletePopUp] = useState(false);
-
-    //const togglePopUp = () => {
-    //  setButtonPopUp(!buttonPopUp);
-    //}
 
     return (
         <div>
@@ -26,7 +20,7 @@ export default async function Guidelines() {
             <div className="page-wrapper">
                 <Heading text="Guidelines" buttonText = 'Editing' edit ={true}/>
                 
-                <div>
+                <div className = "zinx">
                     <Body textList={textList} title="Guidelines for Working With Seacology"/>
                 </div>
 

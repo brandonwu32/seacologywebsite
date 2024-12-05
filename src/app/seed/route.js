@@ -46,3 +46,27 @@ export async function GET() {
       return Response.json({ error }, { status: 500 });
     }
   }
+
+export async function DELETE(content) {
+  try {
+    const deleteResult = await sql`
+        DELETE FROM guidelines
+        WHERE content = ${content}
+        RETURNING *;
+    `;
+
+    if (deleteResult.count === 0) {
+        return { message: 'No matching content found to delete' };
+    }
+    const updateResult = await sql`
+            UPDATE guidelines
+            SET position = position - 1
+            WHERE position > ${position};
+        `;
+
+    return { message: 'Content deleted successfully', deleted: deleteResult.rows[0] };
+  } catch (error) {
+    console.error('Error deleting or updating content:', error);
+    throw new Error('An error occurred while deleting and updating the content');
+  }
+}
