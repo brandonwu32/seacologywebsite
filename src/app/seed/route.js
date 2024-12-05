@@ -59,14 +59,33 @@ export async function DELETE(content) {
         return { message: 'No matching content found to delete' };
     }
     const updateResult = await sql`
-            UPDATE guidelines
-            SET position = position - 1
-            WHERE position > ${position};
+      UPDATE guidelines
+      SET position = position - 1
+      WHERE position > ${position};
         `;
 
     return { message: 'Content deleted successfully', deleted: deleteResult.rows[0] };
   } catch (error) {
     console.error('Error deleting or updating content:', error);
     throw new Error('An error occurred while deleting and updating the content');
+  }
+}
+
+export async function POST(content, type, position, page) {
+  try{
+    const updateResult = await sql`
+        UPDATE guidelines
+        SET position = position + 1
+        WHERE position >= ${position};
+        `;
+    const insertResult = await sql`
+      INSERT INTO guidelines (content, type, position)
+      VALUES (${type}, ${content}, ${page}, ${position})
+      RETURNING *;
+    `;
+    return { message: 'New guideline added successfully', inserted: insertResult.rows[0] };
+  } catch (error) {
+      console.error('Error adding new guideline:', error);
+      throw new Error('An error occurred while adding the new guideline');
   }
 }
