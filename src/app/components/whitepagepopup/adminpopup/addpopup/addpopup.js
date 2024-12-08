@@ -52,13 +52,14 @@ export default function AddPopUp(props) {
                                 {renderInput("Position", "position")}
                                 {renderInput("Email", "email")}
                                 <label>Image:<input id = "image-upload" type="file" /></label>
-                                <button type="submit" onClick = {() => handleSubmit()}>Add Member</button>
                             </form>
                         </div>
                     </div>
                 </div>
                     <div className = 'apbuttonz'>
                         {/* <Button color="blue" size="large" text="Submit" onClick={props.close}/> */}
+                        <button color="blue" size="large" type="submit" onClick = {() => handleSubmit()}>Add Member</button>
+
                         <Button color="blue" size="large" text="Close" onClick={props.close}/>
                 </div>
         </div>
