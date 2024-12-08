@@ -42,6 +42,8 @@ export default function ProjectProgressPage() {
     
                   A project progress report was submitted for ${project} Here are the responses:
 
+                  ***Note: Please attach any files you may want to share (images, videos, etc.).
+
                   Tell us what you finished: ${finished}
 
                   Tell us what you didn't finish: ${notFinished}
@@ -120,26 +122,6 @@ export default function ProjectProgressPage() {
             Conservation Efforts:
             <textarea type="text" value={conservation} onChange={(e) => setConservation(e.target.value)}/>
           </label>
-        </div>
-        <div className="formUpload-bubbles">
-            <div className="formFile-circle">
-                <label className="formButton-for-bubble">
-                    <input id="image-upload" type="file" className="formFile-input" />
-                    <p className="formSubtext">Upload Files</p>
-                </label>
-            </div>
-            <div className="formFile-circle">
-                <label className="formButton-for-bubble">
-                    <input id="image-upload" type="file" className="formFile-input" />
-                    <p className="formSubtext">Upload Images</p>
-                </label>
-            </div>
-            <div className="formFile-circle">
-                <label className="formButton-for-bubble">
-                    <input id="image-upload" type="file" className="formFile-input" />
-                    <p className="formSubtext">Upload Videos</p>
-                </label>
-            </div>
         </div>
 
       </div>

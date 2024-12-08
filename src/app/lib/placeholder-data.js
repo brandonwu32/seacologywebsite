@@ -913,16 +913,19 @@ const updates = [
 const projects = [
   {
     field_rep_id: "97fe71f8-de46-4d42-8f39-9fdceba174ee",
+    time: new Date().toISOString(),
     status: "ongoing",
     project_name: "Project 1",
   },
   {
     field_rep_id: "97fe71f8-de46-4d42-8f39-9fdceba174ee",
+    time: new Date().toISOString(),
     status: "ongoing",
     project_name: "Project 2"
   },
   {
     field_rep_id: "97fe71f8-de46-4d42-8f39-9fdceba174ee",
+    time: new Date().toISOString(),
     status: "finished",
     project_name: "Project 3",
   }

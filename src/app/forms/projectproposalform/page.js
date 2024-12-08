@@ -34,6 +34,8 @@ export default function ProjectProposalPage() {
     
                   A new project proposal was submitted. Here are the responses:
 
+                  ***Note: Please attach any files you may want to share (images, videos, etc.).
+
                   Time area will be protected: ${timeProtected}
 
                   Conservation of ownership of protected area: ${ownershipConfirmation}
@@ -76,69 +78,53 @@ export default function ProjectProposalPage() {
         <div className="prop-form-fields">
           <label>
             Time area will be protected:
-            <input type="text" value={timeProtected} onChange={(e) => setTimeProtected(e.target.value)} />
+            <input type="text" value={timeProtected} onChange={(e) => setTimeProtected(e.target.value)} required/>
           </label>
           <label>
             Address:
-            <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
+            <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required/>
           </label>
           <label>
             Confirmation of ownership of protected area:
-            <input type="text" value={ownershipConfirmation} onChange={(e) => setOwnershipConfirmation(e.target.value)} />
+            <input type="text" value={ownershipConfirmation} onChange={(e) => setOwnershipConfirmation(e.target.value)} required/>
           </label>
           <label>
             Number of people in the community:
-            <input type="number" value={communitySize} onChange={(e) => setCommunitySize(e.target.value)} />
+            <input type="number" value={communitySize} onChange={(e) => setCommunitySize(e.target.value)} required/>
           </label>
           <label>
             Name of fiscal administrator:
-            <input type="text" value={fiscalAdmin} onChange={(e) => setFiscalAdmin(e.target.value)} />
+            <input type="text" value={fiscalAdmin} onChange={(e) => setFiscalAdmin(e.target.value)} required/>
           </label>
           <label>
             Estimated total cost of project:
-            <input type="text" value={projectCost} onChange={(e) => setProjectCost(e.target.value)} />
+            <input type="text" value={projectCost} onChange={(e) => setProjectCost(e.target.value)} required/>
           </label>
           <label>
             Other sources of project funding, if any:
-            <input type="text" value={fundingSources} onChange={(e) => setFundingSources(e.target.value)} />
+            <input type="text" value={fundingSources} onChange={(e) => setFundingSources(e.target.value)} required/>
           </label>
           <label>
             Protected area’s size and type:
-            <input type="text" value={areaSizeType} onChange={(e) => setAreaSizeType(e.target.value)} />
+            <input type="text" value={areaSizeType} onChange={(e) => setAreaSizeType(e.target.value)} required/>
           </label>
           <label>
             List of protected threatened or endangered species in the area, if any:
-            <textarea value={threatenedSpecies} onChange={(e) => setThreatenedSpecies(e.target.value)} />
+            <textarea value={threatenedSpecies} onChange={(e) => setThreatenedSpecies(e.target.value)} required/>
           </label>
           <label>
             Any conflicts of interest:
-            <textarea value={conflicts} onChange={(e) => setConflicts(e.target.value)} />
+            <textarea value={conflicts} onChange={(e) => setConflicts(e.target.value)} required/>
           </label>
           <label>
             Detailed information about how the community will protect the proposed protected area:
-            <textarea value={protectionDetails} onChange={(e) => setProtectionDetails(e.target.value)} />
+            <textarea value={protectionDetails} onChange={(e) => setProtectionDetails(e.target.value)} required/>
           </label>
           <label>
             Project Name:
-            <textarea value={projectName} onChange={(e) => setProjectName(e.target.value)} />
+            <textarea value={projectName} onChange={(e) => setProjectName(e.target.value)} required/>
           </label>
         </div>
-
-        <div className="upload-bubbles-proposal">
-    <div className="prop-circle">
-        <label className="formButton-for-bubble">
-            <input id="image-upload" type="file" className="formFile-input" />
-            <p className="formSubtext">Upload Files</p>
-        </label>
-    </div>
-    <div className="prop-circle">
-        <label className="formButton-for-bubble">
-            <input id="image-upload" type="file" className="formFile-input" />
-            <p className="formSubtext">Upload Images</p>
-        </label>
-    </div>
-
-</div>
       </div>
 
       <div className="propButton-container">

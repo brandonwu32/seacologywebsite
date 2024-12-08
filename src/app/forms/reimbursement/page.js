@@ -44,6 +44,8 @@ export default function ReimbursementPage() {
     
                   A reimbursement was submitted for ${project} Here is the information contained in their response:
 
+                  ***Note: Please attach any files you may want to share (images, videos, etc.).
+
                   Project: ${project}
 
                   Type of reimbursement: ${reimbursement}
@@ -103,6 +105,11 @@ export default function ReimbursementPage() {
       <h1 className="formHeading">Reimbursement</h1>
       <hr className= "formYellow-line"></hr>
       <hr className = "formBlue-line"></hr>
+      <div className="formLink-container">
+        <p className="formText">
+        Need help? Visit our <a href="https://example.com/help" className="formLink" target="_blank" rel="noopener noreferrer">Help Center</a> for more information.
+        </p>
+      </div>
       <div className="form-container">
         <div className="form-fields">
           <label>
@@ -144,26 +151,6 @@ export default function ReimbursementPage() {
             List of Expenses:
             <textarea type="text" value={expenses} onChange={(e) => setExpenses(e.target.value)}/>
           </label>
-        </div>
-        <div className="formUpload-bubbles">
-            <div className="formFile-circle">
-                <label className="formButton-for-bubble">
-                    <input id="image-upload" type="file" className="formFile-input" />
-                    <p className="formSubtext">Upload Files</p>
-                </label>
-            </div>
-            <div className="formFile-circle">
-                <label className="formButton-for-bubble">
-                    <input id="image-upload" type="file" className="formFile-input" />
-                    <p className="formSubtext">Upload Images</p>
-                </label>
-            </div>
-            <div className="formFile-circle">
-                <label className="formButton-for-bubble">
-                    <input id="image-upload" type="file" className="formFile-input" />
-                    <p className="formSubtext">Upload Videos</p>
-                </label>
-            </div>
         </div>
       </div>
       <div className="formButton-container">
