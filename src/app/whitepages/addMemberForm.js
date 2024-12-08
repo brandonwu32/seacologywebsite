@@ -2,13 +2,14 @@
 import "./page.css";
 import { useState } from "react";
 
-export default function AddMemberForm({ onAdd }) {
-  const [newMember, setNewMember] = useState({ name: "", position: "", email: "", region: "", image: "" });
+export default function AddMemberForm(props) {
+  const [newMember, setNewMember] = useState({ name: "", position: "", email: "", region: "", image: null });
 
   function handleSubmit(event) {
+
     event.preventDefault();
 
-    // Simulate a POST request or handle the form submission here
+   
     const member = {
       name: newMember.name,
       position: newMember.position,
@@ -18,7 +19,8 @@ export default function AddMemberForm({ onAdd }) {
     console.log("Adding Member:", member);
 
     // Call the onAdd callback to update parent state
-    onAdd(member);
+    console.log("hello")
+    props.addFunction(member);
 
     // Reset the form
     setNewMember({ name: "", position: "", email: "" });
@@ -40,7 +42,7 @@ export default function AddMemberForm({ onAdd }) {
       {renderInput("Name", "name")}
       {renderInput("Position", "position")}
       {renderInput("Email", "email")}
-      <button type="submit">Add Member</button>
+      <button type="submit" onClick = {() => handleSubmit()}>Add Member</button>
     </form>
   );
 }
