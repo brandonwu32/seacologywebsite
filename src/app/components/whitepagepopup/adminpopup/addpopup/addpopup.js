@@ -51,6 +51,7 @@ export default function AddPopUp(props) {
                                 {renderInput("Name", "name")}
                                 {renderInput("Position", "position")}
                                 {renderInput("Email", "email")}
+                                <label>Image:<input id = "image-upload" type="file" /></label>
                                 <button type="submit" onClick = {() => handleSubmit()}>Add Member</button>
                             </form>
                         </div>
