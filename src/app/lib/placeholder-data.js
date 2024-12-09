@@ -844,4 +844,49 @@
 
   ]
 
-  export { guidelinestable };
+  const users = [
+    {
+      name: 'Sophia',
+      email: 'bro@nextmail.com',
+      position: 'dev',
+      admin: false,
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa'
+    },
+    {
+      name: 'Renata',
+      email: 'bruh@nextmail.com',
+      position: 'dev',
+      admin: false,
+      password: 'helloworld'
+    },
+    {
+      name: 'Tanya',
+      email: 'ayo@nextmail.com',
+      position: 'PM',
+      admin: true,
+      password: 'helloworld'
+    },
+    {
+      name: 'Habeeb',
+      email: 'baller@nextmail.com',
+      position: 'dev',
+      admin: false,
+      password: 'helloworld'
+    },
+    {
+      name: 'Bussy',
+      email: 'Buss@nextmail.com',
+      position: 'PM',
+      admin: true,
+      password: 'helloworld'
+    },
+    {
+      name: 'Camila',
+      email: 'quiet@nextmail.com',
+      position: 'dev',
+      admin: false,
+      password: 'helloworld'
+    },
+  ];
+
+  export { guidelinestable, users };

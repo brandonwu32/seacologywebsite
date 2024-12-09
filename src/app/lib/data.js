@@ -144,3 +144,24 @@ export async function fetchMembers() {
         throw new Error("An error occurred")
     }
 }
+
+export async function isAuthenticated(user_id) {
+    try {
+        const data = await sql`SELECT * FROM users WHERE id=${user_id}`;
+        console.log("Authenticated successfully");
+        const userExists = data.rows.length > 0
+        if (!userExists) {
+            return (false, false)
+        }
+        const isAdmin = data.rows[0].status === 'admin'
+        if (isAdmin) {
+            return (true, true);
+        } else {
+            return (true, false)
+        }
+
+    } catch(error) {
+        console.log("An error occurred", error)
+        throw new Error("An error occurred")
+    }
+}

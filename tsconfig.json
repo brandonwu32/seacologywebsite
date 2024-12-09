@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/app/auth.config.js", "src/app/actions.js", "src/app/auth.js"  ],
   "exclude": [
     "node_modules"
   ]

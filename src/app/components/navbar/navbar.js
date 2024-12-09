@@ -89,7 +89,6 @@ export default function Navbar() {
                     <div className="navbar-link">
                         <a href="/contact" className="navbar-link">Contact</a>
                     </div>
-
                 </div>
             </div>
         </div>
