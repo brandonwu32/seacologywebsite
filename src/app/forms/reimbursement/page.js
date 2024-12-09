@@ -39,6 +39,9 @@ export default function ReimbursementPage() {
   }, [isFirstPopupOpen]);
 
   const handleSubmit = () => {
+    if (project == "" || reimbursement == "" || expenses == "") {
+      return;
+    }
     const subject = `Reimbursement Submitted: ${project}`
     const body = `Hello! 
     
@@ -101,7 +104,8 @@ export default function ReimbursementPage() {
   };
 
   return (
-    <div className="formPage">
+    <form>
+      <div className="formPage">
       <h1 className="formHeading">Reimbursement</h1>
       <hr className= "formYellow-line"></hr>
       <hr className = "formBlue-line"></hr>
@@ -149,7 +153,7 @@ export default function ReimbursementPage() {
             </label>
           <label>
             List of Expenses:
-            <textarea type="text" value={expenses} onChange={(e) => setExpenses(e.target.value)}/>
+            <textarea type="text" value={expenses} onChange={(e) => setExpenses(e.target.value)} required/>
           </label>
         </div>
       </div>
@@ -166,6 +170,7 @@ export default function ReimbursementPage() {
                 <textarea type = "text" className = "formBubs"
                   placeholder="Describe your project"
                   onChange={(e) => setProject(e.target.value)}
+                  required
                 />
             </div>
             
@@ -184,6 +189,7 @@ export default function ReimbursementPage() {
                 <textarea type = "text" className = "formBubs"
                   placeholder="Describe your reimbursement"
                   onChange={(e) => setReimbursement(e.target.value)}
+                  required
                 />
             </div>
             
@@ -196,6 +202,7 @@ export default function ReimbursementPage() {
 
 
 </div>
+    </form>
 
 
   );

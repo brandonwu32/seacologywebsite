@@ -29,6 +29,16 @@ export default function ProjectProposalPage() {
   }
 
   const handleSubmit = () => {
+    const fields = [projectName, timeProtected, ownershipConfirmation, fiscalAdmin, fundingSources, threatenedSpecies,
+      protectionDetails, address, communitySize, projectCost, areaSizeType, conflicts];
+
+    for (let i = 0; i < fields.length; i++) {
+      if (fields[i] == "") {
+        return;
+      }
+    }
+
+    
     const subject = `Project Progress Report: ${projectName}`
     const body = `Hello! 
     
@@ -70,7 +80,8 @@ export default function ProjectProposalPage() {
 
 
   return (
-    <div className="proposalpage">
+    <form>
+      <div className="proposalpage">
       <h1 className="proposalheading">New Project Proposal</h1>
       <hr className= "formYellow-line"></hr>
       <hr className = "formBlue-line"></hr>
@@ -132,5 +143,6 @@ export default function ProjectProposalPage() {
         <button className="formEnter-button" onClick={handleSubmit}>enter</button>
       </div>
     </div>
+    </form>
   );
 }

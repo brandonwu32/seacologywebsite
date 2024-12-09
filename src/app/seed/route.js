@@ -113,14 +113,14 @@ export async function GET() {
     console.log("Before Begin");
     await client.sql`BEGIN`;
 
-    // console.log("Seeding Guidelines...")
-    // await seedGuidelines()
+    console.log("Seeding Guidelines...")
+    await seedGuidelines()
 
-    // console.log("Seeding Users...");
-    // await seedUsers();
+    console.log("Seeding Users...");
+    await seedUsers();
 
-    // console.log("Seeding Updates....");
-    // await seedUpdates();
+    console.log("Seeding Updates....");
+    await seedUpdates();
 
     console.log("Seeding Projects...");
     await seedProjects();

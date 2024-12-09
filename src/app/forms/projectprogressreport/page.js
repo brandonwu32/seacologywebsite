@@ -37,6 +37,11 @@ export default function ProjectProgressPage() {
   }, [isFirstPopupOpen]);
 
   const handleSubmit = () => {
+    if (finished == "" || notFinished == "" || conservation == "" || project == "") {
+      return
+    }
+
+
     const subject = `Project Progress Report: ${project}`
     const body = `Hello! 
     
@@ -82,7 +87,8 @@ export default function ProjectProgressPage() {
   };
 
   return (
-    <div className="formPage">
+    <form>
+      <div className="formPage">
       <h1 className="formHeading">Project Progress Report</h1>
       <hr className= "formYellow-line"></hr>
       <hr className = "formBlue-line"></hr>
@@ -93,8 +99,8 @@ export default function ProjectProgressPage() {
           <label>
             Project:
             <div className="formDropdown-container">
-                <input type="text" value={project} onClick={openFirstPopup} readOnly placeholder="Select a project" className = "page"/>
-                <input id = "project-id" type="hidden" value = {projectID}/>
+                <input type="text" value={project} onClick={openFirstPopup} readOnly placeholder="Select a project" className = "page" required/>
+                <input id = "project-id" type="hidden" value = {projectID} required />
                 {isFirstPopupOpen && (
                 <div className="formDropdown-list">
                     {projects.map((proj, index) => (
@@ -112,15 +118,15 @@ export default function ProjectProgressPage() {
           </label>
           <label>
             Tell us what you finished:
-            <textarea type="text" value={finished} onChange={(e) => setFinished(e.target.value)}/>
+            <textarea type="text" value={finished} onChange={(e) => setFinished(e.target.value)} required />
           </label>
           <label>
             Tell us what is not finished:
-            <textarea type="text" value={notFinished} onChange={(e) => setnotFinished(e.target.value)}/>
+            <textarea type="text" value={notFinished} onChange={(e) => setnotFinished(e.target.value)} required />
           </label>
           <label>
             Conservation Efforts:
-            <textarea type="text" value={conservation} onChange={(e) => setConservation(e.target.value)}/>
+            <textarea type="text" value={conservation} onChange={(e) => setConservation(e.target.value)} required />
           </label>
         </div>
 
@@ -147,5 +153,6 @@ export default function ProjectProgressPage() {
         </div>
       )}
     </div>
+    </form>
   );
 }

@@ -51,10 +51,17 @@ export default function GrantAgreementPage() {
   };
 
   const handleSubmit = () => {
+    if (firstName == "" || lastName == "" || signature == "" || date == "" || project == "") {
+      return
+    }
     const subject = `Conservation Agreement Signed: ${project}`
     const body = `Hello! 
     
                   A conservation agreement was signed for ${project} on ${date}.
+
+                  Here is their first name: ${firstName}.
+
+                  Here is their last name: ${lastName}.
 
                   Here is their electronic signature: ${signature}
                   
@@ -63,7 +70,7 @@ export default function GrantAgreementPage() {
     const now = new Date()
     const currentDate = now.toDateString()
     console.log("Current date: ", currentDate)
-    createUpdate("grant-agreement-form")
+    createUpdate("grant-agreement-form", projectID, currentDate)
   };
 
   const sendEmail = (to, subject, body) => {
@@ -85,18 +92,19 @@ export default function GrantAgreementPage() {
   };
 
   return (
-    <div className="agreement-page">
+    <form>
+      <div className="agreement-page">
       <h1 className="agreement-heading">Grant Agreement</h1>
       <hr className= "formYellow-line"></hr>
       <hr className = "formBlue-line"></hr>
       <div className="agreement-container">
 
         <div className="form-fields">
-          {/* <label>
+          <label>
               Project:
               <div className="formDropdown-container">
                 <input type="text" value={project} onClick={openFirstPopup} readOnly placeholder="Select a project" className = "page"/>
-                <input id = "project-id" type="hidden" value = {projectID}/>
+                <input id = "project-id" type="hidden" value = {projectID} required/>
                 {isFirstPopupOpen && (
                 <div className="formDropdown-list">
                     {projects.map((proj, index) => (
@@ -111,13 +119,14 @@ export default function GrantAgreementPage() {
                 </div>
                 )}
               </div>
-            </label> */}
+            </label>
           <label>
             Last name:
             <input
               type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              required
             />
           </label>
           <label>
@@ -126,6 +135,7 @@ export default function GrantAgreementPage() {
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              required
             />
           </label>
           <label>
@@ -134,6 +144,7 @@ export default function GrantAgreementPage() {
               type="text"
               value={signature}
               onChange={(e) => setSignature(e.target.value)}
+              required
             />
           </label>
           <label>
@@ -161,5 +172,6 @@ export default function GrantAgreementPage() {
         <button className="agree-button" onClick={handleSubmit}>Agree</button>
       </div>
     </div>
+    </form>
   );
 }

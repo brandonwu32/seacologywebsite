@@ -42,6 +42,10 @@ export default function FinalProjectPage() {
   
 
   const handleSubmit = () => {
+    if (project == "" || final == "" || conservation == "" || finished == "") {
+      return
+    }
+    
     const subject = `Project Progress Report: ${project}`
     const body = `Hello! 
     
@@ -83,7 +87,8 @@ export default function FinalProjectPage() {
   };
 
   return (
-    <div className="formPage">
+    <form>
+      <div className="formPage">
       <h1 className="formHeading">Final Project  Report</h1>
       <hr className= "formYellow-line"></hr>
       <hr className = "formBlue-line"></hr>
@@ -94,7 +99,7 @@ export default function FinalProjectPage() {
             Project:
             <div className="formDropdown-container">
                 <input type="text" value={project} onClick={openFirstPopup} readOnly placeholder="Select a project" className = "page"/>
-                <input id = "project-id" type="hidden" value = {projectID}/>
+                <input id = "project-id" type="hidden" value = {projectID} required/>
                 {isFirstPopupOpen && (
                 <div className="formDropdown-list">
                     {projects.map((proj, index) => (
@@ -112,14 +117,14 @@ export default function FinalProjectPage() {
           </label>
           <label>
             Tell us what you finished:
-            <textarea type="text" value={finished} onChange={(e) => setFinished(e.target.value)}/>
+            <textarea type="text" value={finished} onChange={(e) => setFinished(e.target.value)} required />
           </label>
           <label>
             Conservation Efforts:
-            <textarea type="text" value={conservation} onChange={(e) => setConservation(e.target.value)}/>
+            <textarea type="text" value={conservation} onChange={(e) => setConservation(e.target.value)} required/>
           </label>
           <label>Final Financial Report:
-            <textarea type="text" value={final} onChange={(e) => setFinal(e.target.value)}/>
+            <textarea type="text" value={final} onChange={(e) => setFinal(e.target.value)} required/>
           </label>
         </div>
         
@@ -144,5 +149,6 @@ export default function FinalProjectPage() {
         </div>
       )}
     </div>
+    </form>
   );
 }
