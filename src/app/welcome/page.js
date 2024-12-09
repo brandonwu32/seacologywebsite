@@ -1,4 +1,6 @@
 'use client'
+
+
 import Bubble from "../components/bubble/bubble"
 import { useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
@@ -27,8 +29,9 @@ export default function Welcome() {
         }
 
         authenticated();
+        console.log(authentication)
 
-    }, [authentication])
+    }, [])
 
     if (authentication[0]) {
         return (
@@ -77,7 +80,7 @@ export default function Welcome() {
         )
     } else {
         return (
-            <p>Unauthorized access</p>
+            <p>Unauthorized access please login</p>
         )
     }
 

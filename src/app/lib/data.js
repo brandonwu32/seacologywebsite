@@ -151,13 +151,13 @@ export async function isAuthenticated(user_id) {
         console.log("Authenticated successfully");
         const userExists = data.rows.length > 0
         if (!userExists) {
-            return (false, false)
+            return [false, false]
         }
         const isAdmin = data.rows[0].status === 'admin'
         if (isAdmin) {
-            return (true, true);
+            return [true, true];
         } else {
-            return (true, false)
+            return [true, false]
         }
 
     } catch(error) {
