@@ -37,7 +37,7 @@ export default function Whitepages() {
  // Add a new member
  function addMemberTwo(newMember) {
    setWhiteList((prevList) => [...prevList, newMember]);
-   addMember(newMember.name, newMember.email, newMember.position);
+   addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin);
  }
 
 
@@ -105,8 +105,8 @@ export default function Whitepages() {
 
 
      {/* AddPopUp with AddMemberForm */}
-     <AddPopUp trigger={addPopUp} close={toggleAddPopUp} addFunction = {() => addMemberTwo(newMember)}>
-       <AddMemberForm addFunction = {() => addMemberTwo(newMember)}/> // Add member to the state
+     <AddPopUp trigger={addPopUp} close={toggleAddPopUp} addFunction = {addMemberTwo}>
+       <AddMemberForm addFunction = {() => addMemberTwo(newMember)}/>
      </AddPopUp>
 
 

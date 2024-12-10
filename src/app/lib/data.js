@@ -145,20 +145,22 @@ export async function fetchMembers() {
     }
 }
 
-export async function addMember(name, email, position) {
+export async function addMember(name, email, position, password, admin) {
     console.log("bruh")
+
+
     try {
         if (!name || !email || !position) {
             throw new Error("Missing fields: name, email, or position");
         }
 
         const data = await sql`
-            INSERT INTO users (name, email, position)
-            VALUES (${name}, ${email}, ${position})
+            INSERT INTO users (name, email, position, admin, password)
+            VALUES (${name}, ${email}, ${position}, ${Stuff}, ${admin})
             RETURNING *;
         `;
         console.log("Added member successfully:", data.rows[0]);
-        return data.rows[0]; 
+        return data.rows[0];
     } catch (error) {
         console.error("Error adding member:", error);
         throw new Error("Error adding member");
@@ -182,7 +184,7 @@ export async function deleteMember(email) {
         }
 
         console.log("Deleted member successfully:", result.rows[0]);
-        return result.rows[0]; 
+        return result.rows[0];
     } catch (error) {
         console.error("Error deleting member:", error);
         throw new Error("Error deleting member");
