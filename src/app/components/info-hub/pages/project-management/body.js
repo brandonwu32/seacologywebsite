@@ -14,10 +14,18 @@ export default function Body(props) {
     const atogglePopUp = () => {
      setAddPopUp(!addTextPopUp);
     }
-    const dtogglePopUp = (wurd) => {
-        setGuideline2remove(wurd)
+
+    function dtogglePopUp(guideline) {
+        setGuideline2remove(guideline);
         setDeletePopUp(!deleteTextPopUp);
-       }
+
+    }
+    // const dtogglePopUp = () => {
+    //    }
+
+    // const wannaremove = (wurd) => {
+    //     setGuideline2remove(wurd)
+    // }
 
 
     function ListProcess(item) {
@@ -25,7 +33,7 @@ export default function Body(props) {
             return (
                 <div key = {item.position}>
                     <p>{item.content}</p>
-                    <Guide_Editing geaddopen = {atogglePopUp} gedeleteopen = {dtogglePopUp(item.content)}/>
+                    <Guide_Editing geaddopen = {atogglePopUp} gedeleteopen = {() => dtogglePopUp(item.content)}/>
                 </div>
             )
         }
@@ -34,7 +42,7 @@ export default function Body(props) {
             return (
                 <div key = {item.position}>
                 <h2>{item.content}</h2>
-                {/* <Guide_Editing geaddopen = {atogglePopUp} gedeleteopen = {dtogglePopUp}/> */}
+                <Guide_Editing geaddopen = {atogglePopUp} gedeleteopen = {() => dtogglePopUp(item.content)}/>
                 </div>
             ) 
         }
@@ -44,7 +52,7 @@ export default function Body(props) {
                 <ul>
                     <div key = {item.position} >
                     <li>{item.content}</li>
-                    {/* <Guide_Editing geaddopen = {atogglePopUp} gedeleteopen = {dtogglePopUp}/> */}
+                    <Guide_Editing geaddopen = {atogglePopUp} gedeleteopen = {() => dtogglePopUp(item.content)}/>
                     </div>
                 </ul>
             )
@@ -60,7 +68,7 @@ export default function Body(props) {
                 {props.textList.map(textItem => <div key={textItem.position} className = "listItem">{ListProcess(textItem)}</div>)}
             </div>
             <GEAddPopUp trigger={addTextPopUp} close = {atogglePopUp}/> 
-            <GEDeletePopUp trigger = {deleteTextPopUp} close = {() => dtogglePopUp(guideline2remove)} deletingwords = {guideline2remove}/>
+            <GEDeletePopUp trigger = {deleteTextPopUp} close = {dtogglePopUp} deletingwords = {guideline2remove}/>
         </div>
     );
 }

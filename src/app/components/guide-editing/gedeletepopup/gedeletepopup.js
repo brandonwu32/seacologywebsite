@@ -1,5 +1,6 @@
 import './gedeletepopup.css'
 import Button from '../../button/button';
+import { DELETE } from '../../../seed/route'
 
 export default function GEDeletePopUp(props) {
     return props.trigger ? (
@@ -14,7 +15,7 @@ export default function GEDeletePopUp(props) {
                     </div>
                 </div>
                     <div className = 'gedbuttonz'>
-                        <Button color="blue" size="large" text="Submit" onClick={props.close}/>
+                        <Button color="red" size="large" text="REMOVE" onClick={DELETE(props.deletingwords)}/>
                         <Button color="blue" size="large" text="Close" onClick={props.close}/>
                 </div>
         </div>
