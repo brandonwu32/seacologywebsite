@@ -8,7 +8,6 @@ import Button from "../../../components/button/button";
 import seacology_Logo from "../../../../../assets/logo-blue-web-transparent.png";
 import Link from 'next/link';
 import AddMemberForm from "../../AddMemberForm";
-import { addMember } from '../../../lib/data';
 
 
 export default function Whitepages() {
@@ -37,6 +36,7 @@ export default function Whitepages() {
  // Add a new member
  function addMemberTwo(newMember) {
    setWhiteList((prevList) => [...prevList, newMember]);
+   console.log(newMember);
    addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin);
  }
 
@@ -105,8 +105,7 @@ export default function Whitepages() {
 
 
      {/* AddPopUp with AddMemberForm */}
-     <AddPopUp trigger={addPopUp} close={toggleAddPopUp} addFunction = {addMemberTwo}>
-       <AddMemberForm addFunction = {() => addMemberTwo(newMember)}/>
+     <AddPopUp trigger={addPopUp} close={toggleAddPopUp}>
      </AddPopUp>
 
 

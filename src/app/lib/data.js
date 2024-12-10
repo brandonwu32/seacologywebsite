@@ -2,6 +2,8 @@
 
 import { sql } from '@vercel/postgres';
 
+const bcrypt = require('bcrypt')
+
 export async function fetchGuidelinesPage() {
     try {
         const page = '/guidelines';
@@ -146,17 +148,17 @@ export async function fetchMembers() {
 }
 
 export async function addMember(name, email, position, password, admin) {
-    console.log("bruh")
-
-
+    console.log(name, email, position, password, admin)
     try {
         if (!name || !email || !position) {
             throw new Error("Missing fields: name, email, or position");
         }
 
+        const hashPassword = await bcrypt.hash(password, 10);
+
         const data = await sql`
             INSERT INTO users (name, email, position, admin, password)
-            VALUES (${name}, ${email}, ${position}, ${Stuff}, ${admin})
+            VALUES (${name}, ${email}, ${position}, ${admin}, ${hashPassword})
             RETURNING *;
         `;
         console.log("Added member successfully:", data.rows[0]);

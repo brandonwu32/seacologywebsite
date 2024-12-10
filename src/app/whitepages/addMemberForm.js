@@ -1,26 +1,35 @@
 
 import "./page.css";
 import { useState } from "react";
+import { addMember } from '../lib/data';
+
 
 export default function AddMemberForm(props) {
   const [newMember, setNewMember] = useState({ name: "", position: "", email: "", region: "", image: null });
 
-  function handleSubmit(event) {
+  const add = async () => {
+    try {
+      const result = await addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin);
+    } catch (error) {
+      console.error("Error adding member:", error);
+    }
+  };
 
-    event.preventDefault();
+  function handleSubmit() {
 
-   
     const member = {
       name: newMember.name,
       position: newMember.position,
       email: newMember.email,
+      password: newMember.password,
+      admin: newMember.admin
     };
 
     console.log("Adding Member:", member);
 
     // Call the onAdd callback to update parent state
     console.log("hello")
-    props.addFunction(member);
+    add();
 
     // Reset the form
     setNewMember({ name: "", position: "", email: "" });

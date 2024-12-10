@@ -1,6 +1,8 @@
 import './addpopup.css';
 import Button from '../../../button/button';
 import { useState } from 'react';
+import { addMember } from '../../../../lib/data';
+
 
 export default function AddPopUp(props) {
   const [newMember, setNewMember] = useState({
@@ -8,14 +10,24 @@ export default function AddPopUp(props) {
     password: '',
     email: '',
     admin: '',
+    position: '',
     image: null,
   });
+
+  const add = async () => {
+    try {
+      const result = await addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin);
+    } catch (error) {
+      console.error("Error adding member:", error);
+    }
+  };
 
   function handleSubmit() {
     const member = {
       name: newMember.name,
       password: newMember.password,
       email: newMember.email,
+      position: newMember.position,
       admin: newMember.admin,
       image: newMember.image,
     };
@@ -23,7 +35,7 @@ export default function AddPopUp(props) {
     console.log('Adding Member:', member);
 
     // Call the onAdd callback to update parent state
-    props.addFunction(member);
+    add();
 
     // Clear the form after submission
     setNewMember({
@@ -81,6 +93,7 @@ export default function AddPopUp(props) {
                 {renderInput('Name', 'name')}
                 {renderInput('Password', 'password')}
                 {renderInput('Email', 'email')}
+                {renderInput('Position', 'position')}
                 <label>Admin:</label>
                 {renderDropdown('admin')}
                 <label>Image:</label>
