@@ -144,3 +144,47 @@ export async function fetchMembers() {
         throw new Error("An error occurred")
     }
 }
+
+export async function addMember(name, email, position) {
+    console.log("bruh")
+    try {
+        if (!name || !email || !position) {
+            throw new Error("Missing fields: name, email, or position");
+        }
+
+        const data = await sql`
+            INSERT INTO users (name, email, position)
+            VALUES (${name}, ${email}, ${position})
+            RETURNING *;
+        `;
+        console.log("Added member successfully:", data.rows[0]);
+        return data.rows[0]; 
+    } catch (error) {
+        console.error("Error adding member:", error);
+        throw new Error("Error adding member");
+    }
+}
+
+export async function deleteMember(email) {
+    try {
+        if (!email) {
+            throw new Error("Missing required field: email");
+        }
+
+        const result = await sql`
+            DELETE FROM users
+            WHERE email = ${email}
+            RETURNING *;
+        `;
+
+        if (result.rowCount === 0) {
+            throw new Error(`No member found with email: ${email}`);
+        }
+
+        console.log("Deleted member successfully:", result.rows[0]);
+        return result.rows[0]; 
+    } catch (error) {
+        console.error("Error deleting member:", error);
+        throw new Error("Error deleting member");
+    }
+}
