@@ -438,6 +438,7 @@ border: 1px solid #72C7F2;
   color: #72C7F2;
   text-decoration: none;
   font-weight: bold;
+  margin-right: 0.5%;
 }
 
 .formLink:hover {
