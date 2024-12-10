@@ -107,18 +107,15 @@ export default function ReimbursementPage() {
         <hr className="formYellow-line" />
         <hr className="formBlue-line" />
         <div className="formLink-container">
-          <p className="formText">
-            Need to add a reimbursement? Please download this {" "}
-            <a 
-              href="/excelsheet.pdf" 
-              className="formLink" 
-              download="excelsheet.pdf"
-            >
-              excel sheet  
-            </a> 
-              for more information.
-          </p>
-        </div>
+        <p className="formText">
+          Need to add a reimbursement? Please download either: 
+          <a href="/expensereisheet.xlsx" className="formLink" download="expensereisheet.xlsx"> expense reimbursement sheet</a>, 
+          <a href="/formreq.pdf" className="formLink" download="formreq.pdf"> form request</a>, 
+          <a href="/formconflict.pdf" className="formLink" download="formconflict.pdf"> form conflict</a>, 
+          <a href="/financialreport.xlsx" className="formLink" download="financialreport.xlsx"> financial report</a>, 
+          <a href="/timelinebudgets.xlsx" className="formLink" download="timelinebudgets.xlsx"> timeline budgets</a>.
+        </p>
+      </div>
         <div className="form-container">
           <div className="form-fields">
             <label>
