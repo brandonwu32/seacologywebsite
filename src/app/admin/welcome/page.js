@@ -46,7 +46,7 @@ export default async function Welcome() {
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/admin/guidelines">
+                    <Link href="/guidelines">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
