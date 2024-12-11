@@ -1,7 +1,8 @@
+"use server"
+
 import { db } from '@vercel/postgres';
 import { guidelinestable } from '../lib/placeholder-data';
 
-import { users, updates } from '../lib/placeholder-data';
 const client = await db.connect();
 
 
@@ -49,7 +50,7 @@ export async function GET() {
 
 export async function DELETE(content) {
   try {
-    const deleteResult = await sql`
+    const deleteResult = await client.sql`
         DELETE FROM guidelines
         WHERE content = ${content}
         RETURNING *;
@@ -58,7 +59,7 @@ export async function DELETE(content) {
     if (deleteResult.count === 0) {
         return { message: 'No matching content found to delete' };
     }
-    const updateResult = await sql`
+    const updateResult = await client.sql`
       UPDATE guidelines
       SET position = position - 1
       WHERE position > ${position};
@@ -66,21 +67,20 @@ export async function DELETE(content) {
 
     return { message: 'Content deleted successfully', deleted: deleteResult.rows[0] };
   } catch (error) {
-    console.error('Error deleting or updating content:', error);
-    throw new Error('An error occurred while deleting and updating the content');
+    console.log(error)
   }
 }
 
 export async function POST(content, type, position, page) {
   try{
-    const updateResult = await sql`
+    const updateResult = await client.sql`
         UPDATE guidelines
         SET position = position + 1
         WHERE position >= ${position};
         `;
-    const insertResult = await sql`
-      INSERT INTO guidelines (content, type, position)
-      VALUES (${type}, ${content}, ${page}, ${position})
+    const insertResult = await client.sql`
+      INSERT INTO guidelines (content, type, page, position)
+      VALUES (${content}, ${type}, ${page}, ${position})
       RETURNING *;
     `;
     return { message: 'New guideline added successfully', inserted: insertResult.rows[0] };
@@ -89,3 +89,14 @@ export async function POST(content, type, position, page) {
       throw new Error('An error occurred while adding the new guideline');
   }
 }
+
+export async function PUT(newcont) {
+  try {
+    const updateData = await client.sql`
+    UPDATE guidelines
+    SET content = `
+  } catch (error){
+    console.error('Error deleting guideline', error);
+  }
+}
+

@@ -2,6 +2,7 @@
 import './geaddpopup.css'
 import React, { useState } from 'react';
 import Button from '../../button/button';
+import { POST } from '../../../seed/route'
 
 
 export default function GEAddPopUp(props) {
@@ -10,7 +11,10 @@ const [type, setType] = useState("");
 const [finished, setFinished] = useState("");
 const [notFinished, setnotFinished] = useState("");
 
-
+    function add() {
+        POST(finished, type, props.position, props.page);
+        window.location.reload();
+    }
 const handleSubmit = () => {
     console.log({
         finished,
@@ -63,7 +67,7 @@ const handleSelectType = (selectedType) => {
                     </div>
                 </div>
                     <div className = 'gebuttonz'>
-                        <Button color="blue" size="large" text="Submit" onClick={props.close}/>
+                        <Button color="blue" size="large" text="Submit" onClick={() => add()}/>
                         <Button color="blue" size="large" text="Close" onClick={props.close}/>
                 </div>
         </div>

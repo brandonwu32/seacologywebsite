@@ -1,0 +1,94 @@
+.geepopupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.geepopup {
+    width: 50vw;
+    background-color: white;
+    padding: 1%;
+    border-radius: 2%;
+    z-index: 1001; /* Ensure it appears above the overlay */
+}
+.geerectangle {
+    margin: 4%;
+    border: 0.2rem solid #02A0D4;
+    padding: 2%;
+}
+.geeyellowline {
+    border: none;
+    border-top: 0.2rem solid #FDCD3B; /* Customize color and thickness */
+    width: 100%; /* Set width */
+    margin: 2% 0; 
+  }
+.geename {
+    color:#02A0D4;
+    font-size: large;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Form Fields */
+.geedit-fields {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.geedit-fields input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #72C7F2;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-top: 5px;
+
+   
+}
+.editcontainer {
+    display: flex;
+    align-items: center;
+}
+
+.geebuttonz {
+    margin-left: 40%;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+}
+
+.formDropdown-container {
+    position: relative;
+}
+  
+.formDropdown-container .formDropdown-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 85%;
+    background-color: white;
+    border: 1px solid #72C7F2;
+    z-index: 1;
+}
+  
+.formDropdown-item:hover{
+    background-color: rgb(198, 198, 198);
+}
+  
+.formDropdown-container:hover .formDropdown-list {
+    display: block;
+}

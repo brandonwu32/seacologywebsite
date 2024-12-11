@@ -3,6 +3,10 @@ import Button from '../../button/button';
 import { DELETE } from '../../../seed/route'
 
 export default function GEDeletePopUp(props) {
+    function del() {
+        DELETE(props.deletingwords);
+        window.location.reload();
+    }
     return props.trigger ? (
         <div className="gedpopupOverlay">
             <div className="gedpopup">
@@ -15,7 +19,7 @@ export default function GEDeletePopUp(props) {
                     </div>
                 </div>
                     <div className = 'gedbuttonz'>
-                        <Button color="red" size="large" text="REMOVE" onClick={DELETE(props.deletingwords)}/>
+                        <Button color="red" size="large" text="REMOVE" onClick={() => del()}/>
                         <Button color="blue" size="large" text="Close" onClick={props.close}/>
                 </div>
         </div>
