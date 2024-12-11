@@ -1,10 +1,10 @@
 import './gedeletepopup.css'
 import Button from '../../button/button';
-import { DELETE } from '../../../seed/route'
+import { deleteContent } from '../../../lib/actions'
 
 export default function GEDeletePopUp(props) {
     function del() {
-        DELETE(props.deletingwords);
+        deleteContent(props.deletingwords);
         window.location.reload();
     }
     return props.trigger ? (

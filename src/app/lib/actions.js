@@ -26,7 +26,7 @@ export async function deleteContent(content) {
     }
   }
   
-  export async function updateContent(content, type, position, page) {
+  export async function addContent(content, type, position, page) {
     try{
       const updateResult = await sql`
           UPDATE guidelines
@@ -34,7 +34,7 @@ export async function deleteContent(content) {
           WHERE position >= ${position};
           `;
       const insertResult = await sql`
-        INSERT INTO guidelines (content, type, position)
+        INSERT INTO guidelines (content, type, position, page)
         VALUES (${type}, ${content}, ${page}, ${position})
         RETURNING *;
       `;
@@ -45,3 +45,13 @@ export async function deleteContent(content) {
     }
   }
   
+  export async function putContent(newcont) {
+    try {
+      const updateData = await client.sql`
+      UPDATE guidelines
+      SET content = ${newcont};
+      `
+    } catch (error){
+      console.error('Error deleting guideline', error);
+    }
+  }

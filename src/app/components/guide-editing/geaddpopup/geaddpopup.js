@@ -2,7 +2,7 @@
 import './geaddpopup.css'
 import React, { useState } from 'react';
 import Button from '../../button/button';
-import { POST } from '../../../seed/route'
+import { addContent } from '../../../lib/actions'
 
 
 export default function GEAddPopUp(props) {
@@ -12,7 +12,7 @@ const [finished, setFinished] = useState("");
 const [notFinished, setnotFinished] = useState("");
 
     function add() {
-        POST(finished, type, props.position, props.page);
+        addContent(finished, type, props.position, props.page);
         window.location.reload();
     }
 const handleSubmit = () => {
