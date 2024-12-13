@@ -14,8 +14,10 @@ export default function Login() {
 
     return (
         <form action={formAction}>
-            <div>
-                <p>Email:</p>
+            <div className = "login-wrapper">
+                <h1 className = "login-header-1" id = "big-title-for-login"> Welcome to Seacology!</h1>
+                <p>Please login to access the portal.</p>
+                <h2 className = "login-header-1">Email:</h2>
                 <input
                     className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
                     id="email"
@@ -24,7 +26,7 @@ export default function Login() {
                     placeholder="Enter your email address"
                     required
                 />
-                <p>Password:</p>
+                <h2 className = "login-header-1">Password:</h2>
                 <input
                     className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
                     id="password"
