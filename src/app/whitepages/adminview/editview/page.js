@@ -74,6 +74,7 @@ export default function Whitepages() {
        name={item.name}
        position={item.position}
        email={item.email}
+       user_id = {item.id}
        onClick={() => deleteMember(item.email)} // Trigger delete on click
      />
    );
