@@ -424,3 +424,23 @@ border: 1px solid #72C7F2;
 .formUpload-bubbles > .formFile-circle:nth-child(3) {
   margin-top: 4% !important;
 }
+.formLink-container {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.formText {
+  font-size: 1rem;
+  color: #333;
+}
+
+.formLink {
+  color: #72C7F2;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 0.5%;
+}
+
+.formLink:hover {
+  text-decoration: underline;
+}
