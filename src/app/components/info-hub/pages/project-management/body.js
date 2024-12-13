@@ -11,6 +11,7 @@ export default function Body(props) {
     const [deleteTextPopUp, setDeletePopUp] = useState(false);
     const [editTextPopup, setEditPopup] = useState(false);
     const [guideline2remove, setGuideline2remove] = useState('');
+    const [guideline2edit, setGuideline2edit] = useState('');
     const [position2add, setPositionadd] = useState(0);
     const [page2put, setPage2put] = useState('');
 
@@ -23,7 +24,8 @@ export default function Body(props) {
         setAddPopUp(!addTextPopUp);
     }
 
-    function etogglePopup(){
+    function etogglePopup(guideline){
+        setGuideline2edit(guideline);
         setEditPopup(!editTextPopup)
     }
 
@@ -41,7 +43,7 @@ export default function Body(props) {
             return (
                 <div key = {item.position}>
                     <p>{item.content}</p>
-                    <Guide_Editing geaddopen = {() => atogglePopUp(item.position + 1, item.page)} gedeleteopen = {() => dtogglePopUp(item.content)} geeditopen = {() => etogglePopup()}/>
+                    <Guide_Editing geaddopen = {() => atogglePopUp(item.position + 1, item.page)} gedeleteopen = {() => dtogglePopUp(item.content)} geeditopen = {() => etogglePopup(item.content)}/>
                 </div>
             )
         }
@@ -50,7 +52,7 @@ export default function Body(props) {
             return (
                 <div key = {item.position}>
                 <h2>{item.content}</h2>
-                <Guide_Editing geaddopen = {() => atogglePopUp(item.position + 1, item.page)} gedeleteopen = {() => dtogglePopUp(item.content)} geeditopen = {() => etogglePopup()}/>
+                <Guide_Editing geaddopen = {() => atogglePopUp(item.position + 1, item.page)} gedeleteopen = {() => dtogglePopUp(item.content)} geeditopen = {() => etogglePopup(item.content)}/>
                 </div>
             ) 
         }
@@ -60,7 +62,7 @@ export default function Body(props) {
                 <ul>
                     <div key = {item.position} >
                     <li>{item.content}</li>
-                    <Guide_Editing geaddopen = {() => atogglePopUp(item.position + 1, item.page)} gedeleteopen = {() => dtogglePopUp(item.content)} geeditopen = {() => etogglePopup()}/>
+                    <Guide_Editing geaddopen = {() => atogglePopUp(item.position + 1, item.page)} gedeleteopen = {() => dtogglePopUp(item.content)} geeditopen = {() => etogglePopup(item.content)}/>
                     </div>
                 </ul>
             )
@@ -77,7 +79,7 @@ export default function Body(props) {
             </div>
             <GEAddPopUp trigger={addTextPopUp} close = {atogglePopUp} position = {position2add} page = {page2put}/> 
             <GEDeletePopUp trigger = {deleteTextPopUp} close = {dtogglePopUp} deletingwords = {guideline2remove}/>
-            <GEEditPopUp trigger = {editTextPopup} close = {etogglePopup}/>
+            <GEEditPopUp trigger = {editTextPopup} close = {etogglePopup} editingwords = {guideline2edit}/>
         </div>
     );
 }
