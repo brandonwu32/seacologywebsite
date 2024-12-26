@@ -14,28 +14,31 @@ export default function Login() {
 
     return (
         <form action={formAction}>
-            <div>
-                <p>Email:</p>
-                <input
-                    className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email address"
-                    required
-                />
-                <p>Password:</p>
-                <input
-                    className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
-                    id="password"
-                    type="password"
-                    name="password"
-                    placeholder="Enter password"
-                    required
-                    minLength={6}
-                />
-                <Button id = 'large' color = "blue" text = "Enter" aria-disabled={isPending}/>
-
+            <div className = 'login-container'>
+                <div className="form-section">
+                    <p className='form-title'>Email:</p>
+                    <input
+                        className="input-section"
+                        id="email"
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required
+                    />
+                </div>
+                <div className="form-section">
+                    <p className='form-title'>Password:</p>
+                    <input
+                        className="input-section"
+                        id="password"
+                        type="password"
+                        name="password"
+                        placeholder="Enter password"
+                        required
+                        minLength={6}
+                    />
+                </div>
+                <Button id = 'large' color = "blue" text = "Sign In" aria-disabled={isPending}/>
                 <div>
                     {errorMessage && (
                         <p className="text-sm text-red-500">{errorMessage}</p>

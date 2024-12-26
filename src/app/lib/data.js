@@ -145,6 +145,7 @@ export async function fetchMembers() {
     }
 }
 
+
 export async function isAuthenticated(user_id) {
     try {
         const data = await sql`SELECT * FROM users WHERE id=${user_id}`;
