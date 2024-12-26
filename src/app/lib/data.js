@@ -2,6 +2,8 @@
 
 import { sql } from '@vercel/postgres';
 
+const bcrypt = require('bcrypt')
+
 export async function fetchGuidelinesPage() {
     try {
         const page = '/guidelines';
@@ -182,3 +184,6 @@ export async function fetchProjects() {
         throw new Error('An error occured')
     }
 }
+
+
+

@@ -7,6 +7,9 @@ import EditPagePopUp from '../../whitepagepopup/adminpopup/editpagepopup';
 export default function EditPageBubble(props) {
     const [buttonPopUp, setButtonPopUp] = useState(false);
     const togglePopUp = () => {
+        if (buttonPopUp) {
+            window.location.reload();
+        }
         setButtonPopUp(!buttonPopUp);
       }
     return (
@@ -19,7 +22,7 @@ export default function EditPageBubble(props) {
                 <p className='ebprop'>{props.position}</p> 
                 <p className='ebprop'>{props.email}</p>
             </div>
-            <EditPagePopUp trigger={buttonPopUp} close = {togglePopUp}/>
+            <EditPagePopUp trigger={buttonPopUp} close = {togglePopUp} user_id = {props.user_id}/>
         </div>
     )
 }
