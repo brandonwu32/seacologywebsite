@@ -7,7 +7,6 @@ import EditPageBubble from "../../../components/whitepagebubbles/editbubble/edit
 import Button from "../../../components/button/button";
 import seacology_Logo from "../../../../../assets/logo-blue-web-transparent.png";
 import Link from 'next/link';
-import AddMemberForm from "../../AddMemberForm";
 
 
 export default function Whitepages() {
@@ -27,8 +26,6 @@ export default function Whitepages() {
        console.error("Error fetching data:", error);
      }
    };
-
-
    members();
  }, []);
 

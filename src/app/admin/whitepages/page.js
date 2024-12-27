@@ -6,7 +6,7 @@ import { fetchMembers } from "../../lib/data";
 import WhitePopUp from "../../components/whitepagepopup/infopopup/infopopup"
 import Button from "../../components/button/button";
 import Link from 'next/link'
-import WhitepagesRenderer from "../whitepagesRender";
+import WhitepagesRenderer from "./whitepagesRender";
 import ProfileSkeletons from '../../components/skeletons/whitepages/profileSkeletons';
 import { Suspense } from 'react';
 import seacology_Logo from "../../../../assets/logo-blue-web-transparent.png";
@@ -27,7 +27,7 @@ export default function Whitepages() {
     };
 
     members()
-  }, [whiteList]);
+  }, []);
 
   function bubbleMember(item) {
     console.log(item.name)
@@ -60,8 +60,8 @@ export default function Whitepages() {
             bubbleMember(item)
         )}
       </div>
-          
+
       </div>
   );
-  
+
 }

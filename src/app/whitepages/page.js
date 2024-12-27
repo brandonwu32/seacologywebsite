@@ -1,18 +1,18 @@
 'use client'
+
+
 import styles from "./page.css";
 import InfoPageBubble from "../components/whitepagebubbles/infobubble/infobubble";
 import { fetchMembers } from "../lib/data";
 import seacology_Logo from "../../../assets/seacology_logo.png";
-import WhitepagesRenderer from "./whitepagesRender";
-import ProfileSkeletons from '../components/skeletons/whitepages/profileSkeletons';
-import { Suspense } from 'react';
 import { useState, useEffect } from "react";
-
-
+import { useSearchParams } from 'next/navigation';
 
 
 export default function Whitepages() {
   const [whiteList, setWhiteList] = useState([]);
+
+
   useEffect(() => {
     const members = async () => {
       try {
@@ -24,7 +24,7 @@ export default function Whitepages() {
     };
 
     members()
-  }, [whiteList]);
+  }, []);
 
   function bubbleMember(item) {
     console.log(item.name)
@@ -39,7 +39,7 @@ export default function Whitepages() {
     )
   }
 
-  return (
+    return (
           <div className={styles.page}>
         <div className='top'>
           <p className = 'WPtitle'> Team</p>
@@ -54,5 +54,5 @@ export default function Whitepages() {
         )}
       </div>
       </div>
-  );
+  )
 }

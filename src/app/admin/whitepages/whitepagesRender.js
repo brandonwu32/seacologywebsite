@@ -1,7 +1,7 @@
 
-import InfoPageBubble from "../components/whitepagebubbles/infobubble/infobubble";
+import InfoPageBubble from "../../components/whitepagebubbles/infobubble/infobubble";
 import "./page.css";
-import { fetchMembers } from "../lib/data";
+import { fetchMembers } from "../../lib/data";
 import seacology_Logo from "../../../assets/logo-blue-web-transparent.png";
 
 

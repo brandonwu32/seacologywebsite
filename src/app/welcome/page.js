@@ -4,36 +4,14 @@
 import Bubble from "../components/bubble/bubble"
 import { useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import styles from "./page.css"
-import Image from "next/image";
 import Navbar from "../components/navbar/navbar";
 import Button from '../components/button/button';
 import Heading from "../components/info-hub/heading"
 import Link from "next/link"
-import logo from '/assets/seacology_logo.png';
-import { isAuthenticated } from '../lib/data.js';
 
 export default function Welcome() {
     const [authentication, setAuthentication] = useState((false, false));
-    const searchParams = useSearchParams();
-    let sesh = searchParams.get("session");
-    useEffect(() => {
-        const authenticated = async () => {
-            try {
-                const data = await isAuthenticated(sesh);
-                console.log(data);
-                setAuthentication(data);
-            } catch (error) {
-                console.log(error);
-            }
-        }
 
-        authenticated();
-        console.log(authentication)
-
-    }, [])
-
-    if (authentication[0]) {
         return (
             <div>
                 <Navbar/>
@@ -77,11 +55,5 @@ export default function Welcome() {
                     </div>
                 </div>
               </div>
-        )
-    } else {
-        return (
-            <p>Unauthorized access please login</p>
-        )
-    }
-
+        );
   }

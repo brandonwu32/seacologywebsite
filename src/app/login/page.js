@@ -1,9 +1,11 @@
 'use client'
 
 import './page.css';
+import Logo from '../../../assets/logo-blue-web-transparent.png'
 import Button from '../components/button/button';
+import Image from 'next/image';
 import { useActionState } from 'react';
-import { authenticate } from '../actions.js';
+import { authenticate } from '../auth-actions.js';
 
 export default function Login() {
 
@@ -14,6 +16,7 @@ export default function Login() {
 
     return (
         <form action={formAction}>
+            <Image className='auth-logo' src={Logo} alt='none' height={50} width={50}/>
             <div className = 'login-container'>
                 <div className="form-section">
                     <p className='form-title'>Email:</p>
