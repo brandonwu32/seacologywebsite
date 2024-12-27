@@ -1,4 +1,4 @@
-'use server'
+'use client'
 
 import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
@@ -6,9 +6,9 @@ import Button from '../../components/button/button';
 import Bubble from "../../components/bubble/bubble";
 import Heading from "../../components/info-hub/heading"
 import Link from "next/link"
-import { fetchGuidelinesPage } from "../../lib/data"
 
-export default async function Welcome() {
+export default function Welcome() {
+
     return (
         <div>
             <Navbar/>

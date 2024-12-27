@@ -1,4 +1,4 @@
-"use server"
+"use client"
 
 import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
@@ -7,10 +7,24 @@ import Heading from "../../components/info-hub/heading"
 import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 import { fetchIdentifyingproj } from "../../lib/data";
+import { useState, useEffect } from 'react';
 
-export default async function Identifying() {
-    var textList = await fetchIdentifyingproj();
+export default function Identifying() {
+    const [textList, setTextList] = useState([])
 
+
+    useEffect(() => {
+        const text = async () => {
+        try {
+            const result = await fetchGuidelinesPage();
+            setTextList(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        text()
+    }, []);
     return (
         <div>
             <Navbar/>

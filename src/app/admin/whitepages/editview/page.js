@@ -1,5 +1,5 @@
 'use client'
-import styles from "./page.css";
+
 import { fetchMembers } from "../../../lib/data";
 import { useState, useEffect } from "react";
 import AddPopUp from "../../../components/whitepagepopup/adminpopup/addpopup/addpopup";
@@ -12,7 +12,6 @@ import Link from 'next/link';
 export default function Whitepages() {
  const [addPopUp, setButtonPopUp] = useState(false);
  const [whiteList, setWhiteList] = useState([]);
- const [newMember, setNewMember] = useState({ name: "", position: "", email: "", region: "", image: "" });
 
 
 

@@ -1,4 +1,4 @@
-"use server"
+"use client"
 
 import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
@@ -7,11 +7,26 @@ import Bubble from "../../components/bubble/bubble";
 import Heading from "../../components/info-hub/heading"
 import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
-import { fetchGuidelinesPage } from "../../lib/data"
+import { fetchGuidelinesPage } from "../../lib/data";
+import { useEffect, useState } from 'react';
 
-export default async function Guidelines() {
+export default function Guidelines() {
 
-    var textList = await fetchGuidelinesPage();
+    const [textList, setTextList] = useState([])
+
+
+    useEffect(() => {
+        const text = async () => {
+        try {
+            const result = await fetchGuidelinesPage();
+            setTextList(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        text()
+    }, []);
 
     return (
         <div>
