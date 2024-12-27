@@ -8,7 +8,7 @@ import Button from "../../../components/button/button";
 import seacology_Logo from "../../../../../assets/logo-blue-web-transparent.png";
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-
+import styles from './page.css'
 
 export default function Whitepages() {
  const [addPopUp, setButtonPopUp] = useState(false);
@@ -91,7 +91,7 @@ export default function Whitepages() {
        <p className="EWPtitle">Team</p>
        <div className="top-left">
          <div className="btz">
-           <Link href={"/whitepages/adminview?session="+sesh}>
+           <Link href={"/whitepages?session="+sesh}>
              <Button color="red" size="large" text="Editing" />
            </Link>
            <Button color="blue" size="large" text="Add Member" onClick={toggleAddPopUp} />
@@ -109,7 +109,7 @@ export default function Whitepages() {
           return (
             <div className = "EWPbubble-wrapper" key={member.email}>
               <EditPageBubble
-                src={member.image}
+                src={seacology_Logo}
                 alt="CeoPic"
                 name={member.name}
                 position={member.position}
