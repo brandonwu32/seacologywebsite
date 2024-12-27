@@ -4,12 +4,12 @@ import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
 import Button from '../../components/button/button';
 import Heading from "../../components/info-hub/heading"
-import Body from "../../components/info-hub/pages/project-management/body";
+import Body from "../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
 import { fetchGuidelinesPage } from "../../lib/data"
 
 export default async function Contact() {
-   
+
 var textList = await fetchGuidelinesPage();
 
 
@@ -27,7 +27,7 @@ return (
                 <Link href="/admin/finances">
                 <Button color="blue" size="small" text="back"/>
                 </Link>
-               
+
             </div>
 
         </div>

@@ -1,4 +1,5 @@
 "use server"
+// saying that i need client for use state but need server for databse
 
 import styles from "./page.css"
 import Navbar from "../components/navbar/navbar";
@@ -18,7 +19,6 @@ export default async function Guidelines() {
             <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Guidelines" buttonText = 'edit'/>
-
                 <div>
                     <Body textList={textList} title="Guidelines for Working With Seacology"/>
                 </div>
@@ -27,7 +27,7 @@ export default async function Guidelines() {
                     <Link href="/welcome">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
-                    
+
                     <Link href="/projectmanagement/pm-overview">
                         <Button color="blue" size="small" text="next"/>
                     </Link>

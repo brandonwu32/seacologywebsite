@@ -37,6 +37,62 @@ export async function createProject(status, project_name, date) {
     }
 }
 
+export async function deleteContent(content) {
+    try {
+      const deleteResult = await sql`
+          DELETE FROM guidelines
+          WHERE content = ${content}
+          RETURNING *;
+      `;
+
+      if (deleteResult.count === 0) {
+          return { message: 'No matching content found to delete' };
+      }
+      const updateResult = await sql`
+        UPDATE guidelines
+        SET position = position - 1
+        WHERE position > ${position};
+          `;
+
+      return { message: 'Content deleted successfully', deleted: deleteResult.rows[0] };
+    } catch (error) {
+      console.error('Error deleting or updating content:', error);
+      throw new Error('An error occurred while deleting and updating the content');
+    }
+  }
+
+  export async function addContent(content, type, position, page) {
+    try{
+      const updateResult = await sql`
+          UPDATE guidelines
+          SET position = position + 1
+          WHERE position >= ${position};
+          `;
+      const insertResult = await sql`
+        INSERT INTO guidelines (content, type, position, page)
+        VALUES (${content}, ${type}, ${position}, ${page})
+        RETURNING *;
+      `;
+      return { message: 'New guideline added successfully', inserted: insertResult.rows[0] };
+    } catch (error) {
+        console.error('Error adding new guideline:', error);
+        throw new Error('An error occurred while adding the new guideline');
+    }
+  }
+
+  export async function putContent(newContent, newType, id) {
+    try {
+      const updateData = await sql`
+      UPDATE guidelines
+      SET content = ${newContent}, type=${newType}
+      WHERE id=${id};
+      `
+    } catch (error){
+      console.error('Error updating guideline', error);
+    } finally {
+        console.log(`Successfully Updated ${id}`)
+    }
+  }
 
 export async function addMember(name, email, position, password, admin) {
     console.log(name, email, position, password, admin)
