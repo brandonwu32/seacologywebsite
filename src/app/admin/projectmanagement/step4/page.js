@@ -5,7 +5,7 @@ import Navbar from "../../../components/navbar/navbar";
 import Button from '../../../components/button/button';
 import Bubble from "../../../components/bubble/bubble";
 import Heading from "../../../components/info-hub/heading"
-import Body from "../../../components/info-hub/pages/project-management/body";
+import Body from "../../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
 import { fetchStep4 } from "../../../lib/data";
 import { useState, useEffect } from 'react';

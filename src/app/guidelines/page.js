@@ -37,9 +37,6 @@ export default function Guidelines() {
             <div className="page-wrapper">
                 <Heading text="Guidelines" buttonText = 'edit'/>
                 <div>
-                </div>
-
-                <div>
                     <Body textList={textList} title="Guidelines for Working With Seacology"/>
                 </div>
 
@@ -48,7 +45,7 @@ export default function Guidelines() {
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href={"/projectmanagement/pm-overview?session="+sesh}>
+                    <Link href="/projectmanagement/pm-overview">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

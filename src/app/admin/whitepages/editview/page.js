@@ -102,16 +102,23 @@ export default function Whitepages() {
      <hr className="EWPyellowline" />
      <p className="clickremove">**Click on a Member to Remove</p>
 
+      <AddPopUp trigger={addPopUp} close = {toggleAddPopUp}/>
 
-     {/* AddPopUp with AddMemberForm */}
-     <AddPopUp trigger={addPopUp} close={toggleAddPopUp}>
-     </AddPopUp>
-
-
-     {/* Render member bubbles */}
-     <div className="WPbubble-container">
-       {whiteList.map((item) => bubbleMember(item))}
-     </div>
-   </div>
- );
+      <div className="EWPbubble-container">
+        {whiteList.map(function (member){
+          return (
+            <div className = "EWPbubble-wrapper" key={member.email}>
+              <EditPageBubble
+                src={member.image}
+                alt="CeoPic"
+                name={member.name}
+                position={member.position}
+                email={member.email}
+              />
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  );
 }

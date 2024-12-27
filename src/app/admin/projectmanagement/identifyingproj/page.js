@@ -4,7 +4,7 @@ import styles from "../../page.css"
 import Navbar from "../../../components/navbar/navbar";
 import Button from '../../../components/button/button';
 import Heading from "../../../components/info-hub/heading"
-import Body from "../../../components/info-hub/pages/project-management/body";
+import Body from "../../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
 import { fetchProjects } from "../../../lib/data";
 import { useEffect, useState } from 'react';

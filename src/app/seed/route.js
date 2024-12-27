@@ -1,3 +1,5 @@
+"use server"
+
 import { db } from '@vercel/postgres';
 import { guidelinestable, users } from '../lib/placeholder-data';
 
