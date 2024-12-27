@@ -10,11 +10,13 @@ import Body from "../components/info-hub/pages/project-management/body";
 import Link from "next/link";
 import { fetchGuidelinesPage } from "../lib/data";
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 export default function Guidelines() {
 
     const [textList, setTextList] = useState([])
-
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
 
     useEffect(() => {
         const text = async () => {
@@ -42,11 +44,11 @@ export default function Guidelines() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/welcome">
+                    <Link href={"/welcome?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/projectmanagement/pm-overview">
+                    <Link href={"/projectmanagement/pm-overview?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

@@ -7,12 +7,14 @@ import EditPageBubble from "../../../components/whitepagebubbles/editbubble/edit
 import Button from "../../../components/button/button";
 import seacology_Logo from "../../../../../assets/logo-blue-web-transparent.png";
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 
 export default function Whitepages() {
  const [addPopUp, setButtonPopUp] = useState(false);
  const [whiteList, setWhiteList] = useState([]);
-
+ const searchParams = useSearchParams();
+ let sesh = searchParams.get("session");
 
 
  // Fetch initial members
@@ -89,7 +91,7 @@ export default function Whitepages() {
        <p className="EWPtitle">Team</p>
        <div className="top-left">
          <div className="btz">
-           <Link href="/whitepages/adminview">
+           <Link href={"/whitepages/adminview?session="+sesh}>
              <Button color="red" size="large" text="Editing" />
            </Link>
            <Button color="blue" size="large" text="Add Member" onClick={toggleAddPopUp} />

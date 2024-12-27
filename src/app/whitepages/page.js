@@ -6,7 +6,6 @@ import InfoPageBubble from "../components/whitepagebubbles/infobubble/infobubble
 import { fetchMembers } from "../lib/data";
 import seacology_Logo from "../../../assets/seacology_logo.png";
 import { useState, useEffect } from "react";
-import { useSearchParams } from 'next/navigation';
 
 
 export default function Whitepages() {

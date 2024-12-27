@@ -9,16 +9,18 @@ import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 import { fetchStep1 } from "../../lib/data";
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 export default function Step1() {
 
     const [textList, setTextList] = useState([])
-
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
 
     useEffect(() => {
         const text = async () => {
         try {
-            const result = await fetchGuidelinesPage();
+            const result = await fetchStep1();
             setTextList(result);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -37,12 +39,12 @@ export default function Step1() {
                 </div>
                 <div className="step1-row1-wrapper">
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/identifyingproj">
+                        <Link href={"/projectmanagement/identifyingproj?session="+sesh}>
                             <Bubble midtext="Identifying Good Seacology Projects" width={'16rem'} height={'16rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/newprojproposal">
+                        <Link href={"/projectmanagement/newprojproposal?session="+sesh}>
                             <Bubble midtext="New Project Proposal Conversation" width={'16rem'} height={'16rem'}/>
                         </Link>
                     </div>

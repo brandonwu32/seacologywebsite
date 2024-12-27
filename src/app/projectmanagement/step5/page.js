@@ -8,17 +8,19 @@ import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 import { fetchStep5 } from "../../lib/data";
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 
 export default function Step5() {
 
     const [textList, setTextList] = useState([])
-
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
 
     useEffect(() => {
         const text = async () => {
         try {
-            const result = await fetchGuidelinesPage();
+            const result = await fetchStep5();
             setTextList(result);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -40,11 +42,11 @@ export default function Step5() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step4">
+                    <Link href={"/projectmanagement/step4?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/projectmanagement/step6">
+                    <Link href={"/projectmanagement/step6?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

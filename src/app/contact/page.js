@@ -8,17 +8,19 @@ import Body from "../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 import { fetchContact } from "../lib/data";
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 
 export default function Contacts() {
 
     const [textList, setTextList] = useState([])
-
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
 
     useEffect(() => {
         const text = async () => {
         try {
-            const result = await fetchGuidelinesPage();
+            const result = await fetchContact();
             setTextList(result);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -39,7 +41,7 @@ return (
             </div>
 
             <div className="button-wrapper">
-                <Link href="/finances">
+                <Link href={"/finances?session="+sesh}>
                 <Button color="blue" size="small" text="back"/>
                 </Link>
             </div>

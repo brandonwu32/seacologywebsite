@@ -5,11 +5,13 @@ import Link from 'next/link';
 import styles from '../navbar/Navbar.css';
 import Image from "next/image";
 import SeacologyLogo from "../../../../assets/seacology_logo.png";
+import { useSearchParams } from 'next/navigation';
 
 export default function Navbar() {
     // Define state to store search input
     const [searchQuery, setSearchQuery] = useState("");
-
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
     // Handler for search input change
     const handleInputChange = (event) => {
         setSearchQuery(event.target.value);
@@ -34,7 +36,7 @@ export default function Navbar() {
 
             <div id="navbar-wrapper">
                 <div className="img-with-text">
-                    <Link href="/welcome">
+                    <Link href={"/welcome?session="+sesh}>
                         <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
                     </Link>
                 </div>
@@ -54,40 +56,40 @@ export default function Navbar() {
                     </div>
 
                     <div className="navbar-link">
-                        <a href="/guidelines" className="navbar-link">Guidelines</a>
+                        <Link href={"/guidelines?session="+sesh} className="navbar-link">Guidelines</Link>
                     </div>
 
                     <div className="navbar-link">
-                        <a href="/projectmanagement/pm-overview" className="navbar-link">Project Management</a>
+                        <Link href={"/projectmanagement/pm-overview?session="+sesh} className="navbar-link">Project Management</Link>
                         <div className="dropdown">
-                            <a href="/projectmanagement/pm-overview">Overview</a>
-                            <a href="/projectmanagement/step1">Step 1</a>
-                            <a href="/projectmanagement/step2">Step 2</a>
-                            <a href="/projectmanagement/step3">Step 3</a>
-                            <a href="/projectmanagement/step4">Step 4</a>
-                            <a href="/projectmanagement/step5">Step 5</a>
-                            <a href="/projectmanagement/step6">Step 6</a>
+                            <Link href={"/projectmanagement/pm-overview?session="+sesh}>Overview</Link>
+                            <Link href={"/projectmanagement/step1?session="+sesh}>Step 1</Link>
+                            <Link href={"/projectmanagement/step2?session="+sesh}>Step 2</Link>
+                            <Link href={"/projectmanagement/step3?session="+sesh}>Step 3</Link>
+                            <Link href={"/projectmanagement/step4?session="+sesh}>Step 4</Link>
+                            <Link href={"/projectmanagement/step5?session="+sesh}>Step 5</Link>
+                            <Link href={"/projectmanagement/step6?session="+sesh}>Step 6</Link>
                         </div>
                     </div>
 
                     <div className="navbar-link">
                         <a className="navbar-link">Status Updates</a>
                             <div className="dropdown">
-                                <a href="/forms/conservationagreement">Conservation Agreement</a>
-                                <a href="/forms/finalprojectreport">Final Project Report</a>
-                                <a href="/forms/grantagreementform">Grant Agreement</a>
-                                <a href="/forms/projectprogressreport">Project Progress Report</a>
-                                <a href="/forms/projectproposalform">Project Proposal Form</a>
-                                <a href="/forms/reimbursement">Reimbursement Form</a>
+                                <Link href={"/forms/conservationagreement?session="+sesh}>Conservation Agreement</Link>
+                                <Link href={"/forms/finalprojectreport?session="+sesh}>Final Project Report</Link>
+                                <Link href={"/forms/grantagreementform?session="+sesh}>Grant Agreement</Link>
+                                <Link href={"/forms/projectprogressreport?session="+sesh}>Project Progress Report</Link>
+                                <Link href={"/forms/projectproposalform?session="+sesh}>Project Proposal Form</Link>
+                                <Link href={"/forms/reimbursement?session="+sesh}>Reimbursement Form</Link>
                             </div>
                     </div>
 
                     <div className="navbar-link">
-                        <a href="/finances" className="navbar-link">Finances</a>
+                        <Link href={"/finances?session="+sesh} className="navbar-link">Finances</Link>
                     </div>
 
                     <div className="navbar-link">
-                        <a href="/contact" className="navbar-link">Contact</a>
+                        <Link href={"/contact?session="+sesh} className="navbar-link">Contact</Link>
                     </div>
                 </div>
             </div>

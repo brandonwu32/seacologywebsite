@@ -11,11 +11,15 @@ import ProfileSkeletons from '../../components/skeletons/whitepages/profileSkele
 import { Suspense } from 'react';
 import seacology_Logo from "../../../../assets/logo-blue-web-transparent.png";
 import InfoPageBubble from "../../components/whitepagebubbles/infobubble/infobubble";
+import { useSearchParams } from 'next/navigation';
 
 
 
 export default function Whitepages() {
   const [whiteList, setWhiteList] = useState([]);
+  const searchParams = useSearchParams();
+  let sesh = searchParams.get("session");
+
   useEffect(() => {
     const members = async () => {
       try {
@@ -47,7 +51,7 @@ export default function Whitepages() {
       <div className='top'>
         <p className = 'AWPtitle'> Team</p>
         <div className = 'btzz'>
-        <Link href="/whitepages/adminview/editview">
+        <Link href={"/whitepages/adminview/editview?session="+sesh}>
           <Button color="blue" size="large" text="Edit View"/>
         </Link>
         </div>
