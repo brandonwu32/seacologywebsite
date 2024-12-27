@@ -1,8 +1,7 @@
 'use server'
 
 import { sql } from '@vercel/postgres';
-
-const bcrypt = require('bcrypt')
+import bcrypt from 'bcrypt';
 
 export async function fetchGuidelinesPage() {
     try {

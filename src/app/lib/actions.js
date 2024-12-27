@@ -2,7 +2,7 @@
 
 import { sql } from '@vercel/postgres';
 import { getUserID } from './data';
-import { stat } from 'fs';
+import bcrypt from 'bcrypt';
 
 export async function createUpdate(type, project_id, date) {
     console.log("Type: ", type)
@@ -88,4 +88,4 @@ export async function deleteMember(
         console.error("Error deleting member:", error);
         throw new Error("Error deleting member");
     }
-} 
+}
