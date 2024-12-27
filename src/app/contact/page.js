@@ -15,10 +15,10 @@ var textList = await fetchContact();
 
 return (
     <div>
-        <Navbar/> 
+        <Navbar/>
         <div className="page-wrapper">
             <Heading text="Contacts" buttonText="edit" />
-            
+
             <div>
                 <Body textList={textList} title="Who to Contact at Seacology"/>
             </div>
@@ -30,7 +30,7 @@ return (
             </div>
 
         </div>
-        
+
     </div>
 );
 }

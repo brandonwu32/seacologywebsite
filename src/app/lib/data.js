@@ -1,6 +1,7 @@
 'use server'
 
 import { sql } from '@vercel/postgres';
+import bcrypt from 'bcrypt';
 
 export async function fetchGuidelinesPage() {
     try {
@@ -182,3 +183,6 @@ export async function fetchProjects() {
         throw new Error('An error occured')
     }
 }
+
+
+

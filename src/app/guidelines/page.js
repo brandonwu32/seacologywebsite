@@ -27,7 +27,7 @@ export default async function Guidelines() {
                     <Link href="/welcome">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
-                    
+
                     <Link href="/projectmanagement/pm-overview">
                         <Button color="blue" size="small" text="next"/>
                     </Link>

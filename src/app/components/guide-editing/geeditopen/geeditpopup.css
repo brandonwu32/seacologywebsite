@@ -28,8 +28,16 @@
     border: none;
     border-top: 0.2rem solid #FDCD3B; /* Customize color and thickness */
     width: 100%; /* Set width */
-    margin: 2% 0; 
+    margin: 2% 0;
   }
+
+.geeblueline {
+    border: none;
+    border-top: 0.2rem solid #02A0D4; /* Customize color and thickness */
+    width: 100%; /* Set width */
+    margin: 2% 0;
+  }
+
 .geename {
     color:#02A0D4;
     font-size: large;
@@ -56,7 +64,7 @@ h2 {
     font-size: 0.8rem;
     margin-top: 5px;
 
-   
+
 }
 .editcontainer {
     display: flex;
@@ -73,7 +81,7 @@ h2 {
 .formDropdown-container {
     position: relative;
 }
-  
+
 .formDropdown-container .formDropdown-list {
     display: none;
     position: absolute;
@@ -84,11 +92,11 @@ h2 {
     border: 1px solid #72C7F2;
     z-index: 1;
 }
-  
+
 .formDropdown-item:hover{
     background-color: rgb(198, 198, 198);
 }
-  
+
 .formDropdown-container:hover .formDropdown-list {
     display: block;
 }

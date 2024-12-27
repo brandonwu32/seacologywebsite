@@ -2,7 +2,7 @@
 
 import { sql } from '@vercel/postgres';
 import { getUserID } from './data';
-import { stat } from 'fs';
+import bcrypt from 'bcrypt';
 
 export async function createUpdate(type, project_id, date) {
     console.log("Type: ", type)
@@ -36,9 +36,6 @@ export async function createProject(status, project_name, date) {
         throw new Error("An error occured")
     }
 }
-'use server'
-
-import { sql } from '@vercel/postgres';
 
 export async function deleteContent(content) {
     try {
@@ -73,7 +70,7 @@ export async function deleteContent(content) {
           `;
       const insertResult = await sql`
         INSERT INTO guidelines (content, type, position, page)
-        VALUES (${type}, ${content}, ${page}, ${position})
+        VALUES (${content}, ${type}, ${position}, ${page})
         RETURNING *;
       `;
       return { message: 'New guideline added successfully', inserted: insertResult.rows[0] };
@@ -83,13 +80,68 @@ export async function deleteContent(content) {
     }
   }
 
-  export async function putContent(newcont) {
+  export async function putContent(newContent, newType, id) {
     try {
-      const updateData = await client.sql`
+      const updateData = await sql`
       UPDATE guidelines
-      SET content = ${newcont};
+      SET content = ${newContent}, type=${newType}
+      WHERE id=${id};
       `
     } catch (error){
-      console.error('Error deleting guideline', error);
+      console.error('Error updating guideline', error);
+    } finally {
+        console.log(`Successfully Updated ${id}`)
     }
   }
+
+export async function addMember(name, email, position, password, admin) {
+    console.log(name, email, position, password, admin)
+    try {
+        if (!name || !email || !position) {
+            throw new Error("Missing fields: name, email, or position");
+        }
+
+        const hashPassword = await bcrypt.hash(password, 10);
+
+        const data = await sql`
+            INSERT INTO users (name, email, position, admin, password)
+            VALUES (${name}, ${email}, ${position}, ${admin}, ${hashPassword})
+            RETURNING *;
+        `;
+        console.log("Added member successfully:", data.rows[0]);
+        return data.rows[0];
+    } catch (error) {
+        console.error("Error adding member:", error);
+        throw new Error("Error adding member");
+    }
+}
+
+export async function deleteMember(
+    prevState,
+    formData
+) {
+    try {
+        const parsedFormData = Object.fromEntries(formData.entries());
+
+        console.log(parsedFormData)
+        if (!parsedFormData.user_id) {
+            throw new Error("Missing required field: email");
+        }
+
+        const result = await sql`
+            DELETE FROM users
+            WHERE id = ${parsedFormData.user_id}
+            RETURNING *;
+        `;
+
+        if (result.rowCount === 0) {
+            throw new Error(`No member found with id: ${parsedFormData.user_id}`);
+        }
+
+        console.log("Deleted member successfully:", result.rows[0]);
+        return result.rows[0];
+    } catch (error) {
+        console.error("Error deleting member:", error);
+        throw new Error("Error deleting member");
+    }
+}

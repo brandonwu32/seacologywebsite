@@ -10,16 +10,16 @@ import { fetchFinances } from "../lib/data";
 
 
 export default async function Finances() {
-   
+
     var textList = await fetchFinances();
 
 
     return (
         <div>
-            <Navbar/> 
+            <Navbar/>
             <div className="page-wrapper">
                 <Heading text="Finances Info" buttonText="edit"/>
-                
+
                 <div>
                     <Body textList={textList} title=""/>
                 </div>
@@ -35,10 +35,10 @@ export default async function Finances() {
                 </div>
 
             </div>
-           
+
         </div>
-    
-        
+
+
 
     );
 }
