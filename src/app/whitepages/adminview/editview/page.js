@@ -110,12 +110,13 @@ export default function Whitepages() {
           return (
             <div className = "EWPbubble-wrapper" key={member.email}>
               <EditPageBubble
-                src={member.image}
+                src={seacology_Logo}
                 alt="CeoPic"
                 name={member.name}
                 position={member.position}
                 email={member.email}
-              />
+                user_id = {member.id}
+                />
             </div>
           )
         })}

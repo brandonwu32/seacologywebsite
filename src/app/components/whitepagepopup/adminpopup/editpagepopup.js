@@ -7,6 +7,8 @@ import { useEffect, useState, useActionState } from 'react';
 
 export default function EditPagePopUp(props) {
 
+    console.log(props)
+
     const [errorMessage, formAction, isPending] = useActionState(
         deleteMember,
         undefined,
