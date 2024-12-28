@@ -1,9 +1,8 @@
 "use server"
 
 import { db } from '@vercel/postgres';
-import { guidelinestable, users } from '../lib/placeholder-data';
 
-import { users, updates, projects } from '../lib/placeholder-data';
+import { guidelinestable, users, updates, projects } from '../lib/placeholder-data';
 import { time } from 'console';
 const client = await db.connect();
 
@@ -33,31 +32,6 @@ async function seedGuidelines() {
   `}));
 
   return insertedGuidelines
-}
-
-  async function seedUsers() {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-    await client.sql`
-      CREATE TABLE IF NOT EXISTS users (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        email TEXT NOT NULL UNIQUE,
-        position TEXT NOT NULL,
-        admin BOOLEAN NOT NULL
-      );
-    `;
-
-  const insertedUsers = await Promise.all(
-    users.map(async (user) => {
-      return client.sql`
-        INSERT INTO users (name, email, position, admin)
-        VALUES (${user.name}, ${user.email}, ${user.position}, ${user.admin})
-        ON CONFLICT (id) DO NOTHING;
-      `;
-    }),
-  );
-
-  return insertedUsers;
 }
 
 async function seedProjects() {
@@ -139,7 +113,10 @@ return insertedUsers;
 export async function GET() {
     try {
       await client.sql`BEGIN`;
+      await seedUsers();
       await seedGuidelines();
+      await seedProjects();
+      await seedUpdates();
       await client.sql`COMMIT`;
       console.log("committed");
       return Response.json({ message: 'Database seeded successfully' });

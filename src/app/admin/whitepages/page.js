@@ -51,7 +51,7 @@ export default function Whitepages() {
       <div className='top'>
         <p className = 'AWPtitle'> Team</p>
         <div className = 'btzz'>
-        <Link href={"/whitepages/adminview/editview?session="+sesh}>
+        <Link href={"/admin/whitepages/editview?session="+sesh}>
           <Button color="blue" size="large" text="Edit View"/>
         </Link>
         </div>

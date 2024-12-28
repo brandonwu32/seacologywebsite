@@ -91,7 +91,7 @@ export default function Whitepages() {
        <p className="EWPtitle">Team</p>
        <div className="top-left">
          <div className="btz">
-           <Link href={"/whitepages?session="+sesh}>
+           <Link href={"/admin/whitepages?session="+sesh}>
              <Button color="red" size="large" text="Editing" />
            </Link>
            <Button color="blue" size="large" text="Add Member" onClick={toggleAddPopUp} />

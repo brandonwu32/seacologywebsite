@@ -12,17 +12,20 @@ export default async function middleware(request) {
   if (session_id == undefined) {
     return NextResponse.rewrite(new URL('/login', request.url))
   }
+  try {
+    const existsAndAdmin = await isAuthenticated(session_id);
+    if (!existsAndAdmin[0]) {
+      return NextResponse.rewrite(new URL('/login', request.url))
+    }
 
-  const existsAndAdmin = await isAuthenticated(session_id)
-
-  if (!existsAndAdmin[0]) {
+    if (request.nextUrl.pathname.startsWith('/admin') && existsAndAdmin[1]) {
+      return NextResponse.next()
+    }
+    return NextResponse.next()
+  } catch(error) {
+    console.log("Error authenticated current session", error);
     return NextResponse.rewrite(new URL('/login', request.url))
   }
-
-  if (request.nextUrl.pathname.startsWith('/admin') && existsAndAdmin[1]) {
-    return NextResponse.next()
-  }
-  return NextResponse.next()
 }
 
 

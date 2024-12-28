@@ -889,4 +889,52 @@
     },
   ];
 
-  export { guidelinestable, users };
+  const updates = [
+    {
+      type: 'status_change',
+      time: new Date().toISOString(),
+      project_id: '123e4567-e89b-12d3-a456-426614174000', // Replace with valid UUID
+      field_rep_id: '234e5678-e89b-12d3-a456-426614174001', // Replace with valid UUID
+    },
+    {
+      type: 'note_added',
+      time: new Date().toISOString(),
+      project_id: '123e4567-e89b-12d3-a456-426614174002', // Replace with valid UUID
+      field_rep_id: '234e5678-e89b-12d3-a456-426614174003', // Replace with valid UUID
+    },
+    {
+      type: 'status_update',
+      time: new Date().toISOString(),
+      project_id: '123e4567-e89b-12d3-a456-426614174004', // Replace with valid UUID
+      field_rep_id: '234e5678-e89b-12d3-a456-426614174005', // Replace with valid UUID
+    },
+    {
+      type: 'task_completed',
+      time: new Date().toISOString(),
+      project_id: '123e4567-e89b-12d3-a456-426614174006', // Replace with valid UUID
+      field_rep_id: '234e5678-e89b-12d3-a456-426614174007', // Replace with valid UUID
+    },
+  ];
+
+  const projects = [
+    {
+      field_rep_id: "97fe71f8-de46-4d42-8f39-9fdceba174ee",
+      time: new Date().toISOString(),
+      status: "ongoing",
+      project_name: "Project 1",
+    },
+    {
+      field_rep_id: "97fe71f8-de46-4d42-8f39-9fdceba174ee",
+      time: new Date().toISOString(),
+      status: "ongoing",
+      project_name: "Project 2"
+    },
+    {
+      field_rep_id: "97fe71f8-de46-4d42-8f39-9fdceba174ee",
+      time: new Date().toISOString(),
+      status: "finished",
+      project_name: "Project 3",
+    }
+  ]
+
+  export { guidelinestable, users, updates, projects };
