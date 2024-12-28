@@ -1,39 +1,37 @@
 'use client'
 
 import { useState } from 'react';
-import Link from 'next/link';
-import styles from '../navbar/Navbar.css';
+import '../navbar/Navbar.css';
 import Image from "next/image";
 import SeacologyLogo from "../../../../assets/seacology_logo.png";
+<<<<<<< HEAD
 import { useSearchParams } from 'next/navigation';
+=======
+import NavBarPopUp from '../navbarpopup/navbarpopup';
+import Link from "next/link"
+
+>>>>>>> 2a802456101bfe06ffd5c0c8eeb85f57c955b6d6
 
 export default function Navbar() {
+
     // Define state to store search input
+<<<<<<< HEAD
     const [searchQuery, setSearchQuery] = useState("");
     const searchParams = useSearchParams();
     let sesh = searchParams.get("session");
+=======
+    const [popupTrigger, setPopupTrigger] = useState(false)
+
+    const togglePopUp = () => {
+        setPopupTrigger(!popupTrigger);
+      }
+
+>>>>>>> 2a802456101bfe06ffd5c0c8eeb85f57c955b6d6
     // Handler for search input change
-    const handleInputChange = (event) => {
-        setSearchQuery(event.target.value);
-    };
-
-    // Handler for search submission (captures search text and clears input)
-    const handleSearchSubmit = () => {
-        console.log("Searched for:", searchQuery);
-        setSearchQuery("");  // Clear the input after submission
-        // Implement functionality here, e.g., filtering items, redirecting, etc.
-    };
-
-    // Handle Enter key press to trigger search
-    const handleKeyDown = (event) => {
-        if (event.key === "Enter") {
-            handleSearchSubmit();
-        }
-    };
 
     return (
         <div id="wrapper">
-
+            <NavBarPopUp trigger={popupTrigger} close={togglePopUp} name={"Search for Keywords in Guidelines"}/>
             <div id="navbar-wrapper">
                 <div className="img-with-text">
                     <Link href={"/welcome?session="+sesh}>
@@ -44,14 +42,7 @@ export default function Navbar() {
                     <div className="navbar-link">
                         <div className="search-container">
                             <span className="search-icon">🔍</span>
-                            <input
-                                type="text"
-                                placeholder="Search..."
-                                id="search-bar"
-                                value={searchQuery}
-                                onChange={handleInputChange}
-                                onKeyDown={handleKeyDown} // Capture Enter key
-                            />
+                            <button id="search-bar" onClick={() => togglePopUp()}></button>
                         </div>
                     </div>
 

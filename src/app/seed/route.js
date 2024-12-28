@@ -6,6 +6,30 @@ import { guidelinestable, users, updates, projects } from '../lib/placeholder-da
 import { time } from 'console';
 const client = await db.connect();
 
+async function seedUsers() {
+  await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS users (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      email TEXT NOT NULL UNIQUE,
+      position TEXT NOT NULL,
+      admin BOOLEAN NOT NULL
+    );
+  `;
+
+  const insertedUsers = await Promise.all(
+    users.map(async (user) => {
+      return client.sql`
+        INSERT INTO users (name, email, position, admin)
+        VALUES (${user.name}, ${user.email}, ${user.position}, ${user.admin})
+        ON CONFLICT (id) DO NOTHING;
+      `;
+    }),
+  );
+
+  return insertedUsers;
+}
 
 async function seedGuidelines() {
   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
@@ -13,18 +37,40 @@ async function seedGuidelines() {
   await client.sql`
     CREATE TABLE IF NOT EXISTS guidelines (
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-      type TEXT NOT NULL,
-      content TEXT NOT NULL,
-      page TEXT NOT NULL,
-      position INT NOT NULL
+      name VARCHAR(255) NOT NULL,
+      email TEXT NOT NULL UNIQUE,
+      position TEXT NOT NULL,
+      admin BOOLEAN NOT NULL
     );
   `;
 
-  console.log("created successfully")
+  const insertedUsers = await Promise.all(
+    users.map(async (user) => {
+      return client.sql`
+        INSERT INTO users (name, email, position, admin)
+        VALUES (${user.name}, ${user.email}, ${user.position}, ${user.admin})
+        ON CONFLICT (id) DO NOTHING;
+      `;
+    }),
+  );
 
-  const insertedGuidelines = await Promise.all(
-    guidelinestable.map(async (guideline) => {
-      console.log(guideline);
+  return insertedUsers;
+}
+
+async function seedUpdates() {
+  await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS updates (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      type VARCHAR(255) NOT NULL,
+      time TIMESTAMP NOT NULL,
+      project_id UUID NOT NULL,
+      field_rep_id UUID NOT NULL
+    );
+  `;
+
+  const insertedUpdates = await Promise.all(
+    updates.map(async (update) => {
       return client.sql`
         INSERT INTO guidelines (type, content, page, position)
         VALUES (${guideline.type}, ${guideline.content}, ${guideline.page}, ${guideline.position})

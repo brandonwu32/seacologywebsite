@@ -31,7 +31,6 @@
     margin-bottom: 2%;
     padding-bottom: 0.5%;
     text-decoration: none;
-    z-index: 20;
 }
 
 a {
@@ -49,13 +48,11 @@ a::before {
     border: none;
     display: flex;
     flex-direction: row;
-    z-index: 20;
 }
 
 .subtext {
     font-size: 1rem;
     color: #666;
-    z-index: 20;
 }
 
 .midtext {
