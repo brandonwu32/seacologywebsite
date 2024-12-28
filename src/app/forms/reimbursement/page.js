@@ -7,6 +7,8 @@ import Button from "../../components/button/button";
 import {createUpdate} from "../../lib/actions";
 import { fetchProjects, getUserID } from "../../lib/data";
 import Link from "next/link";
+import { useSearchParams } from 'next/navigation';
+
 
 export default function ReimbursementPage() {
 
@@ -22,13 +24,13 @@ export default function ReimbursementPage() {
   const [isSecondOtherPopupOpen, setIsSecondOtherPopupOpen] = useState(false);
   const reimbursements = ["Travel Equipment", "Construction & Materials", "Other"];
 
+  const searchParams = useSearchParams();
+  let sesh = searchParams.get("session");
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userResult = await getUserID();
-        setUserID(userResult);
-
-        const projectsResult = await fetchProjects(userResult);
+        const projectsResult = await fetchProjects(sesh);
         setProjects(projectsResult);
         console.log(projectsResult);
       } catch (error) {
@@ -39,7 +41,7 @@ export default function ReimbursementPage() {
     fetchData();
   }, [isFirstPopupOpen]);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (project === "" || reimbursement === "" || expenses === "") {
       return;
     }
@@ -56,11 +58,13 @@ export default function ReimbursementPage() {
 
                   Thanks!`;
 
-    sendEmail("nishant.malpani@berkeley.edu", subject, body);
     const now = new Date();
     const currentDate = now.toDateString();
     console.log("Current time: ", currentDate);
-    createUpdate("reimbursement", projectID, currentDate);
+    const update = await createUpdate("reimbursement", projectID, currentDate, sesh);
+    alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   };
 
   const sendEmail = (to, subject, body) => {
@@ -103,7 +107,6 @@ export default function ReimbursementPage() {
   };
 
   return (
-    <form>
       <div className="formPage">
         <h1 className="formHeading">Reimbursement</h1>
         <hr className="formYellow-line" />
@@ -234,6 +237,5 @@ export default function ReimbursementPage() {
           </div>
         )}
       </div>
-    </form>
   );
 }

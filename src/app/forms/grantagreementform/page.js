@@ -6,6 +6,7 @@ import Button from "../../components/button/button";
 import styles from "../page.css";
 import { createUpdate } from '../../lib/actions';
 import { fetchProjects, getUserID } from "../../lib/data";
+import { useSearchParams } from 'next/navigation';
 
 export default function GrantAgreementPage() {
   const [lastName, setLastName] = useState("");
@@ -18,23 +19,13 @@ export default function GrantAgreementPage() {
   const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
   const [isOtherPopupOpen, setIsOtherPopupOpen] = useState(false);
   const [date, setDate] = useState("");
+  const searchParams = useSearchParams();
+  let sesh = searchParams.get("session");
 
   useEffect(() => {
-    const user = async () => {
-      try {
-        const result = await getUserID();
-        setUserID(result);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    user()
-
-
     const projects = async () => {
       try {
-        const result = await fetchProjects(user_id);
+        const result = await fetchProjects(sesh);
         setProjects(result);
         console.log(result);
       } catch (error) {
@@ -50,13 +41,13 @@ export default function GrantAgreementPage() {
     setIsFirstPopupOpen(!isFirstPopupOpen);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (firstName == "" || lastName == "" || signature == "" || date == "" || project == "") {
       return
     }
     const subject = `Conservation Agreement Signed: ${project}`
-    const body = `Hello! 
-    
+    const body = `Hello!
+
                   A conservation agreement was signed for ${project} on ${date}.
 
                   Here is their first name: ${firstName}.
@@ -64,13 +55,15 @@ export default function GrantAgreementPage() {
                   Here is their last name: ${lastName}.
 
                   Here is their electronic signature: ${signature}
-                  
+
                   Thanks!`
-    sendEmail("nishant.malpani@berkeley.edu", subject, body)
     const now = new Date()
     const currentDate = now.toDateString()
     console.log("Current date: ", currentDate)
-    createUpdate("grant-agreement-form", projectID, currentDate)
+    const update = await createUpdate("grant-agreement-form", projectID, currentDate, sesh)
+    alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   };
 
   const sendEmail = (to, subject, body) => {
@@ -92,7 +85,6 @@ export default function GrantAgreementPage() {
   };
 
   return (
-    <form>
       <div className="agreement-page">
       <h1 className="agreement-heading">Grant Agreement</h1>
       <hr className= "formYellow-line"></hr>
@@ -172,6 +164,5 @@ export default function GrantAgreementPage() {
         <button className="agree-button" onClick={handleSubmit}>Agree</button>
       </div>
     </div>
-    </form>
   );
 }
