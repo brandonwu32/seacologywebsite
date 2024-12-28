@@ -23,6 +23,12 @@ importers:
       postgres:
         specifier: ^3.4.5
         version: 3.4.5
+      preact:
+        specifier: 10.11.3
+        version: 10.11.3
+      preact-render-to-string:
+        specifier: 5.2.3
+        version: 5.2.3(preact@10.11.3)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -3082,6 +3088,13 @@ snapshots:
   postgres-range@1.1.4: {}
 
   postgres@3.4.5: {}
+
+  preact-render-to-string@5.2.3(preact@10.11.3):
+    dependencies:
+      preact: 10.11.3
+      pretty-format: 3.8.0
+
+  preact@10.11.3: {}
 
   prelude-ls@1.2.1: {}
 
