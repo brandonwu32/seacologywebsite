@@ -6,6 +6,8 @@ import styles from "../page.css";
 import Button from "../../components/button/button";
 import {createUpdate} from "../../lib/actions"
 import { fetchProjects, getUserID } from "../../lib/data";
+import { useSearchParams } from 'next/navigation';
+import Link from 'next/link'
 
 export default function ProjectProgressPage() {
 
@@ -18,33 +20,32 @@ export default function ProjectProgressPage() {
   const [user_id, setUserID] = useState("")
   const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
   const [isOtherPopupOpen, setIsOtherPopupOpen] = useState(false);
+  const searchParams = useSearchParams();
+  let sesh = searchParams.get("session");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userResult = await getUserID();
-        setUserID(userResult);
-  
-        const projectsResult = await fetchProjects(userResult);
+        const projectsResult = await fetchProjects(sesh);
         setProjects(projectsResult);
         console.log(projectsResult);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-  
+
     fetchData();
   }, [isFirstPopupOpen]);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (finished == "" || notFinished == "" || conservation == "" || project == "") {
       return
     }
 
 
     const subject = `Project Progress Report: ${project}`
-    const body = `Hello! 
-    
+    const body = `Hello!
+
                   A project progress report was submitted for ${project} Here are the responses:
 
                   ***Note: Please attach any files you may want to share (images, videos, etc.).
@@ -54,14 +55,15 @@ export default function ProjectProgressPage() {
                   Tell us what you didn't finish: ${notFinished}
 
                   Conservation Efforts: ${conservation}
-                  
+
                   Thanks!`
-    sendEmail("nishant.malpani@berkeley.edu", subject, body)
     const now = new Date()
     const currentDate = now.toDateString()
     console.log("Current time: ", currentDate)
-    createUpdate("project-progress-report", projectID, currentDate);
-  };
+    const update = await createUpdate("project-progress-report", projectID, currentDate, sesh);
+    alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    await new Promise((resolve) => setTimeout(resolve, 1000));  };
 
   const openFirstPopup = () => {
     setIsFirstPopupOpen(!isFirstPopupOpen);
@@ -87,7 +89,6 @@ export default function ProjectProgressPage() {
   };
 
   return (
-    <form>
       <div className="formPage">
       <h1 className="formHeading">Project Progress Report</h1>
       <hr className= "formYellow-line"></hr>
@@ -146,13 +147,12 @@ export default function ProjectProgressPage() {
                   onChange={(e) => setProject(e.target.value)}
                 />
             </div>
-        
+
               <Button color = "blue" size = "small" text = "Close" onClick={closeOtherPopup}/>
-            
+
           </div>
         </div>
       )}
     </div>
-    </form>
   );
 }

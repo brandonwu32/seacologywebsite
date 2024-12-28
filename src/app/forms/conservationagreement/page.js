@@ -8,6 +8,9 @@ import { createUpdate } from '../../lib/actions';
 import { useActionState } from "react";
 import { fetchProjects, getUserID } from "../../lib/data";
 import { create } from "domain";
+import { useSearchParams } from 'next/navigation';
+import { redirect } from 'next/navigation'
+import { revalidatePath } from 'next/cache'
 
 export default function ConservationAgreementPage() {
 
@@ -20,23 +23,13 @@ export default function ConservationAgreementPage() {
   const [isOtherPopupOpen, setIsOtherPopupOpen] = useState(false);
   const [signature, setSignature] = useState("");
   const [date, setDate] = useState("");
+  const searchParams = useSearchParams();
+  let sesh = searchParams.get("session");
 
   useEffect(() => {
-    const user = async () => {
-      try {
-        const result = await getUserID();
-        setUserID(result);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    user()
-
-
     const projects = async () => {
       try {
-        const result = await fetchProjects(user_id);
+        const result = await fetchProjects(sesh);
         setProjects(result);
         console.log(result);
       } catch (error) {
@@ -52,20 +45,23 @@ export default function ConservationAgreementPage() {
     setIsFirstPopupOpen(!isFirstPopupOpen);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const subject = `Conservation Agreement Signed: ${project}`
-    const body = `Hello! 
-    
+    const body = `Hello!
+
                   A conservation agreement was signed for ${project} on ${date}.
 
                   Here is their electronic signature: ${signature}
-                  
+
                   Thanks!`
-    sendEmail("nishant.malpani@berkeley.edu", subject, body)
     const now = new Date()
     const currentDate = now.toDateString()
     console.log("Current date: ", currentDate)
-    createUpdate("conservation-agreement", projectID, date)
+    const update = await createUpdate("conservation-agreement", projectID, date, sesh);
+    alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    redirect('/welcome?session=' + sesh)
   };
 
 
@@ -88,7 +84,7 @@ export default function ConservationAgreementPage() {
   }
 
   return (
-    <form>
+    <div>
       <input id = 'type' value='conservation-agreement' type='hidden'></input>
       <div className="agreement-page">
         <h1 className="agreement-heading">Conservation Agreement</h1>
@@ -168,7 +164,7 @@ export default function ConservationAgreementPage() {
           </div>
         </div>
       )}
-    </form>
+    </div>
   );
 
 }

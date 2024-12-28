@@ -82,7 +82,7 @@ async function seedUpdates() {
     }),
   );
 
-  return insertedGuidelines;
+  return insertedUpdates;
 }
 
 async function seedUsers() {
@@ -115,9 +115,9 @@ export async function GET() {
     try {
       await client.sql`BEGIN`;
       // await seedUsers();
-      await seedGuidelines();
+      // await seedGuidelines();
       // await seedProjects();
-      // await seedUpdates();
+      await seedUpdates();
       await client.sql`COMMIT`;
       console.log("committed");
       return Response.json({ message: 'Database seeded successfully' });
