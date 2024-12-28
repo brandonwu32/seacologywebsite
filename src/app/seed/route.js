@@ -50,8 +50,8 @@ async function seedProjects() {
   const insertedProjects = await Promise.all(
     projects.map(async (project) => {
       return client.sql`
-        INSERT INTO projects (field_rep_id, time, status, project_name)
-        VALUES (${project.field_rep_id}, ${project.time}, ${project.status}, ${project.project_name})
+        INSERT INTO projects (project_id, field_rep_id, time, status, project_name)
+        VALUES (${project.project_id}, ${project.field_rep_id}, ${project.time}, ${project.status}, ${project.project_name})
         ON CONFLICT (project_id) DO NOTHING;
       `;
     }),
@@ -101,8 +101,8 @@ async function seedUsers() {
 const insertedUsers = await Promise.all(
   users.map(async (user) => {
     return client.sql`
-      INSERT INTO users (name, email, password, position, admin)
-      VALUES (${user.name}, ${user.email}, ${user.password}, ${user.position}, ${user.admin})
+      INSERT INTO users (id, name, email, password, position, admin)
+      VALUES (${user.id}, ${user.name}, ${user.email}, ${user.password}, ${user.position}, ${user.admin})
       ON CONFLICT (id) DO NOTHING;
     `;
   }),
@@ -114,9 +114,9 @@ return insertedUsers;
 export async function GET() {
     try {
       await client.sql`BEGIN`;
-      // await seedUsers();
-      // await seedGuidelines();
-      // await seedProjects();
+      await seedUsers();
+      await seedGuidelines();
+      await seedProjects();
       await seedUpdates();
       await client.sql`COMMIT`;
       console.log("committed");

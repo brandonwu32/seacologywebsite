@@ -9,13 +9,13 @@ export default function Table(props) {
                     <th className="tile">Status</th>
                     <th className="tile">Latest Update</th>
                 </tr>
-            </thead>  
+            </thead>
             <tbody>
                 {props.projects.map((project, index) => (
                     <tr key={index}>
-                        <td>{project.project}</td>
+                        <td>{project.project_name}</td>
                         <td>{project.status}</td>
-                        <td>{project.latestupdate}</td>
+                        <td>{project.time.toLocaleDateString()}</td>
                     </tr>
                 ))}
             </tbody>

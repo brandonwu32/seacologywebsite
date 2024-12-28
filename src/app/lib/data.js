@@ -187,10 +187,10 @@ export async function getUserID() {
     return "97fe71f8-de46-4d42-8f39-9fdceba174ee" // returns a dummy user id, created so that we can test this function
 }
 
-export async function fetchProjects() {
+export async function fetchProjects(name) {
     try {
-        const userID = await getUserID()
-        const projects = await sql`SELECT * FROM projects WHERE field_rep_id=${userID}`
+        const field_rep_id = await sql`SELECT id FROM users WHERE name=${name}`
+        const projects = await sql`SELECT * FROM projects WHERE field_rep_id=${field_rep_id.rows[0].id}`
         console.log('Fetched projects')
         return projects.rows
     } catch(error) {
