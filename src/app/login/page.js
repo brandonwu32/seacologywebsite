@@ -41,7 +41,7 @@ export default function Login() {
                         minLength={6}
                     />
                 </div>
-                <Button id = 'large' color = "blue" text = "Sign In" aria-disabled={isPending}/>
+                <Button size = 'large' color = "blue" text = "Sign In" aria-disabled={isPending}/>
                 <div>
                     {errorMessage && (
                         <p className="text-sm text-red-500">{errorMessage}</p>

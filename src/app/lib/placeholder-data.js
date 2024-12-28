@@ -2,7 +2,10 @@
 // https://nextjs.org/learn/dashboard-app/fetching-data
 
 
-const guidelinestable = [
+
+  // Don't worry about anything below here
+
+ const guidelines = [
     {
       type: 'paragraph',
       content: 'Here is some information to help you work with Seacology smoothly and efficiently.',
@@ -76,60 +79,118 @@ const guidelinestable = [
       position: 15,
     },
     {
-      id: '410544b2-4001-4271-9855-fec4b6a6442d',
-      name: 'Habeeb',
-      email: 'king@nextmail.com',
-      password: 'tripleC',
-      admin: 'FALSE'
-  },
-  {
-    id: '410544b2-4001-4271-9855-fec4b6a6442c',
-    name: 'Bussy',
-    email: 'Buss@nextmail.com',
-    password: 'lakewater',
-    admin: 'FALSE'
-},
-{
-  id: '410544b2-4001-4271-9855-fec4b6a6442c',
-  name: 'Camila',
-  email: 'quiet@nextmail.com',
-  password: 'secretsanta',
-  admin: 'FALSE'
-},
-  ];
-
-  const guidelines = [
-    {
-      id: '13D07535-C59E-4157-A011-F8D2EF4E0CBC',
-      content: "Finding a new project can be hard! See below for some of our advice on identifying good Seacology Projects and New Project Proposal Conversation that may help build the project framework.",
-      type: 'balazs@orban.com',
-      page: 1,
-      position: 1
+      type: 'header',
+      content: 'Deadlines',
+      page: '/guidelines',
+      position: 4,
     },
     {
-      id: '13D07535-C59E-4157-A011-F8D2EF4E0CBD',
-      content: "A final report is due from you or the partner NGO within three months after the project is complete.  If you believe this deadline will not be met, inform Seacology staff as soon as you can. Like previous  progress reports, the final report must include a narrative report on the completed project and  conservation area and photos. It must also include a final financial report of how all Seacology grant  funds were spent, including a comparison of actual expenditures to the original budget. We may  request line-item detail and receipts.",
+      type: 'header',
+      content: 'Photos',
+      page: '/guidelines',
+      position: 6,
+    },
+    {
+      type: 'header',
+      content: 'Travel Expenses',
+      page: '/guidelines',
+      position: 9,
+    },
+    {
       type: 'paragraph',
-      page: 1,
-      position: 2
+      content: 'Your contract with Seacology states how many project recommendations you are required to submit each year. See the project management cycle at the bottom of the page.',
+      page: '/projectmanagement/pm-overview',
+      position: 1,
     },
     {
-      id: '13D07535-C59E-4157-A011-F8D2EF4E0CBE',
-      content: "If the project was finished under budget, talk to us about what to do with the leftover funds. ",
+    type: 'header',
+    content: 'Here is an overview of the process. Each step is discussed in more detail below.',
+    page:'/projectmanagement/pm-overview',
+    position: 2,
+    },
+    {
       type: 'paragraph',
-      page: 3,
-      position: 10
+      content: '1. Research. You talk to communities and NGOs to look for promising projects.',
+      page:'/projectmanagement/pm-overview',
+      position: 3,
     },
-  ]
-
-  // Don't worry about anything below here
-
-  const customers = [
     {
-      id: 'd6e15727-9fe1-4961-8c5b-ea44a9bd81aa',
-      name: 'Evil Rabbit',
-      email: 'evil@rabbit.com',
-      image_url: '/customers/evil-rabbit.png',
+      type: 'paragraph',
+      content: '2. Recommendation. You send us a very brief description of the project idea and any potential  conflicts of interest.',
+      page:'/projectmanagement/pm-overview',
+      position: 4,
+    },
+    {
+      type: 'paragraph',
+      content: '3. Proposal. If we are interested, we ask for details—who, what, where, when, and how much money  it will cost. We then prepare a one-page proposal, with a map and photos, for Seacology’s Board of  Directors.',
+      page:'/projectmanagement/pm-overview',
+      position: 5,
+    },
+    {
+      type: 'paragraph',
+      content: '4. Approval. The board votes on new proposals twice a year, usually in February and June. If the  board approves the project, we send you agreements setting out the terms of the grant. Once those  agreements are signed, we can send the first installment of the grant.',
+      page:'/projectmanagement/pm-overview',
+      position: 6,
+    },
+    {
+      type: 'paragraph',
+      content: '5. Reporting. You monitor the project, both remotely and through site visits, and keep Seacology  staff informed about progress and problems. We ask you for a brief update before each board  meeting (twice a year) and whenever you request a grant payment from us.',
+      page:'/projectmanagement/pm-overview',
+      position: 7,
+    },
+    {
+      type: 'paragraph',
+      content: '6. Final Report. Within three months after the project is complete, you or the partner NGO submit a final report.',
+      page:'/projectmanagement/pm-overview',
+      position: 8,
+    },
+    {
+      type: 'paragraph',
+      content: 'Finding a new project can be hard! See below for some of our advice on identifying good Seacology Projects and New Project Proposal Conversation that may help build the project framework.',
+      page:'/projectmanagement/step1',
+      position: 1,
+    },
+    {
+      type: 'paragraph',
+      content: 'In the ideal Seacology project, an island community agrees to protect some part of the natural environment, such as a coral reef, rainforest, or mangrove forest. In exchange for this commitment, Seacology funds a community benefit, such as a community center, water system, alternative energy system, or school. Seacology does not fund salaries, scientific research, diesel generators, or motorized boats or other vehicles.',
+      page:'/projectmanagement/step1',
+      position: 2,
+    },
+    {
+      type: 'paragraph',
+      content: 'The community must be truly motivated to protect its environment, and have a firm plan for conservation. The benefit provided to the community must be appropriate, fair, and practical. You should visit the community and talk to as many people as you can—men and women, elders and youth. For more on finding likely projects, see “Identifying Good Seacology Projects” at the end of this document.',
+      page:'/projectmanagement/step1',
+      position: 3,
+    },
+    {
+      type: 'paragraph',
+      content: 'When you are talking to community members, it is easy to raise hopes. Be sure to respectfully let the community know that funding is not guaranteed until the board approves the project. Seacology funds are limited, and we cannot fund all the requests we get for great projects. Please help guard against disappointment in the event that Seacology decides not to fund the project.',
+      page:'/projectmanagement/step1',
+      position: 4,
+    },
+    {
+      type: 'paragraph',
+      content: '1. Identify an underserved region or habitat. Occasionally, organizations or island communities will approach you directly, but generally, you’ll need to reach out to potential partners.',
+      page:'/projectmanagement/identifyingproj',
+      position: 1,
+    },
+    {
+      type: 'paragraph',
+      content: '2. Find a good potential partner—an NGO or community association. Ask leading conservationists for opinions about potential partners’ work in a particular region. Does the organization have a good record, and stable leadership that does not rely on just one person? Smaller NGOs may have more local expertise, but less staff and experience; they sometimes collapse if a leader leaves.',
+      page:'/projectmanagement/identifyingproj',
+      position: 2,
+    },
+    {
+      type: 'paragraph',
+      content: '3. Approach an organization or island community. Be clear that initial discussions are not promises of funding. Funding is never guaranteed until the Seacology board approves it. Seacology has limited funds and unfortunately, cannot fund every good project that it considers.',
+      page:'/projectmanagement/identifyingproj',
+      position: 3,
+    },
+    {
+      type: 'paragraph',
+      content: '4. Explain that Seacology can fund just about any structure that the community wants except religious buildings or those intended for the benefit of only a few people. For example, Seacology has funded ecotourism centers, schools, community centers, dispensaries, guard houses, signs, walkways, water pipes/tanks, micro-hydro projects, solar energy systems, and marine area surveillance equipment. Seacology does not fund research, salaries, conferences, motorboats, or anything that is bad for the environment, such as diesel generators.',
+      page:'/projectmanagement/identifyingproj',
+      position: 4,
     },
     {
       type: 'paragraph',
@@ -881,4 +942,4 @@ const guidelinestable = [
     }
   ]
 
-  export { guidelinestable, users, updates, projects };
+  export { guidelines, users, updates, projects };

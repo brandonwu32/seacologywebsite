@@ -208,7 +208,7 @@ export async function isAuthenticated(user_id) {
         if (!userExists) {
             return [false, false]
         }
-        const isAdmin = data.rows[0].status === 'admin'
+        const isAdmin = data.rows[0].admin === true;
         if (isAdmin) {
             return [true, true];
         } else {
