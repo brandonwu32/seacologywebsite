@@ -20,6 +20,12 @@
     width: 100%;
 }
 
+.welcome-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+
 .link-bubble-wrapper {
     width: 90vw;
 }

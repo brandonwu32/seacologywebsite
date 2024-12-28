@@ -85,12 +85,12 @@ export default function Navbar() {
                     <div className="navbar-link">
                         <a className="navbar-link">Status Updates</a>
                             <div className="dropdown">
-                                <Link href={`${adminView && '/admin' || ''}`+"/forms/conservationagreement?session="+sesh}>Conservation Agreement</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/forms/finalprojectreport?session="+sesh}>Final Project Report</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/forms/grantagreementform?session="+sesh}>Grant Agreement</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/forms/projectprogressreport?session="+sesh}>Project Progress Report</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/forms/projectproposalform?session="+sesh}>Project Proposal Form</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/forms/reimbursement?session="+sesh}>Reimbursement Form</Link>
+                                <Link href={"/forms/conservationagreement?session="+sesh}>Conservation Agreement</Link>
+                                <Link href={"/forms/finalprojectreport?session="+sesh}>Final Project Report</Link>
+                                <Link href={"/forms/grantagreementform?session="+sesh}>Grant Agreement</Link>
+                                <Link href={"/forms/projectprogressreport?session="+sesh}>Project Progress Report</Link>
+                                <Link href={"/forms/projectproposalform?session="+sesh}>Project Proposal Form</Link>
+                                <Link href={"/forms/reimbursement?session="+sesh}>Reimbursement Form</Link>
                             </div>
                     </div>
 

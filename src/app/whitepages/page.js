@@ -49,7 +49,7 @@ export default function Whitepages() {
         <hr className="WPyellowline" />
         <div className = "WPbubble-container">
         {whiteList.map((item) =>
-            bubbleMember(item)
+            <div key={item.id}>{bubbleMember(item)}</div>
         )}
       </div>
       </div>

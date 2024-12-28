@@ -8,6 +8,7 @@ import Navbar from "../components/navbar/navbar";
 import Button from '../components/button/button';
 import Heading from "../components/info-hub/heading"
 import Link from "next/link"
+import styles from './page.css'
 
 export default function Welcome() {
     const [authentication, setAuthentication] = useState((false, false));
