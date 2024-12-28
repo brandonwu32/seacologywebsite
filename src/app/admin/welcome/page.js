@@ -30,7 +30,7 @@ export default async function Welcome() {
 
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
-                        <Link href="/financial">
+                        <Link href="/finances">
                             <Bubble className="welcome-bubble" heading="Financial" width={'20rem'} height={'20rem'}/>
                         </Link>
                     </div>
@@ -45,8 +45,7 @@ export default async function Welcome() {
                     <Link href="">
                         <Button color="blue" size="small" text="back"/>
                     </Link>
-
-                    <Link href="/guidelines">
+                    <Link href="/admin/guidelines">
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

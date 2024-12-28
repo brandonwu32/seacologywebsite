@@ -31,7 +31,7 @@ export default function Welcome() {
 
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
-                        <Link href="/financial">
+                        <Link href="/finances">
                             <Bubble className="welcome-bubble" heading="Financial" width={'20rem'} height={'20rem'}/>
                         </Link>
                     </div>
