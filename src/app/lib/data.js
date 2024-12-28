@@ -3,6 +3,7 @@
 'use server'
 
 import { sql } from '@vercel/postgres';
+import bcrypt from 'bcrypt';
 
 export async function fetchGuidelineSearch(query) {
     try {
@@ -40,6 +41,7 @@ export async function fetchOverview() {
         throw new Error("An error occurred")
     }
 }
+
 export async function fetchStep1() {
     try {
         const page = '/projectmanagement/step1';
@@ -47,6 +49,17 @@ export async function fetchStep1() {
         const data = await sql`SELECT * FROM guidelines WHERE page = ${page} `;
         console.log("Fetched data successfully")
         return data.rows;
+    } catch(error) {
+        console.log("An error occurred", error)
+        throw new Error("An error occurred")
+    }
+}
+
+export async function fetchMembers() {
+    try {
+        const data = await sql`SELECT * FROM users`
+        console.log("Fetched data successfully")
+        return data.rows
     } catch(error) {
         console.log("An error occurred", error)
         throw new Error("An error occurred")
@@ -149,14 +162,43 @@ export async function fetchContact() {
     }
 }
 
-export async function fetchMembers() {
+export async function fetchUpdatesName(user_id) {
     try {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        const data = await sql`SELECT * FROM users`
-        console.log("Fetched data successfully")
-        return data.rows
-    } catch(error) {
-        console.log("An error occurred", error)
-        throw new Error("An error occurred")
+        const updates = await sql`SELECT * FROM updates WHERE field_rep_id=${`%${user_id}%`} ORDER BY time DESC`
+        console.log('Fetched data')
+        return updates.rows
+    } catch (error) {
+        console.log("An error occured", error)
+        throw new Error('An error occured')
     }
 }
+
+export async function fetchUpdatesProject(project_id, user_id) {
+    try {
+        const updates = await sql`SELECT * FROM updates WHERE project_id=${`%${project_id}%`} AND field_rep_id=${`%${user_id}%`}} ORDER BY time DESC`
+        console.log('Fetched data')
+        return updates.rows
+    } catch (error) {
+        console.log("An error occured", error)
+        throw new Error('An error occured')
+    }
+}
+
+export async function getUserID() {
+    return "97fe71f8-de46-4d42-8f39-9fdceba174ee" // returns a dummy user id, created so that we can test this function
+}
+
+export async function fetchProjects() {
+    try {
+        const userID = await getUserID()
+        const projects = await sql`SELECT * FROM projects WHERE field_rep_id=${userID}`
+        console.log('Fetched projects')
+        return projects.rows
+    } catch(error) {
+        console.log("An error occured", error)
+        throw new Error('An error occured')
+    }
+}
+
+
+
