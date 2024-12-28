@@ -1,4 +1,4 @@
-'use server'
+'use client'
 
 import styles from "./page.css"
 import Navbar from "../components/navbar/navbar"
@@ -7,12 +7,28 @@ import Heading from "../components/info-hub/heading"
 import Body from "../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 import { fetchFinances } from "../lib/data";
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 
-export default async function Finances() {
+export default function Finances() {
 
-    var textList = await fetchFinances();
+    const [textList, setTextList] = useState([])
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
 
+    useEffect(() => {
+        const text = async () => {
+        try {
+            const result = await fetchFinances();
+            setTextList(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        text()
+    }, []);
 
     return (
         <div>
@@ -25,11 +41,11 @@ export default async function Finances() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step6">
+                    <Link href={"/projectmanagement/step6?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/contact">
+                    <Link href={"/contact?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

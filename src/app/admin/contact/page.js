@@ -1,4 +1,4 @@
-"use server"
+"use client"
 
 import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
@@ -6,11 +6,27 @@ import Button from '../../components/button/button';
 import Heading from "../../components/info-hub/heading"
 import Body from "../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
-import { fetchGuidelinesPage } from "../../lib/data"
+import { fetchContact } from "../../lib/data";
+import { useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
-export default async function Contact() {
+export default function Contact() {
+    const [textList, setTextList] = useState([])
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
 
-var textList = await fetchGuidelinesPage();
+    useEffect(() => {
+        const text = async () => {
+        try {
+            const result = await fetchContact();
+            setTextList(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        text()
+    }, []);
 
 
 return (
@@ -24,8 +40,8 @@ return (
             </div>
 
             <div className="button-wrapper">
-                <Link href="/admin/finances">
-                <Button color="blue" size="small" text="back"/>
+                <Link href={"/admin/finances?session="+sesh}>
+                    <Button color="blue" size="small" text="back"/>
                 </Link>
 
             </div>

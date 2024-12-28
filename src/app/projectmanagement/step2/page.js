@@ -1,4 +1,4 @@
-'use server'
+'use client'
 
 import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
@@ -7,10 +7,27 @@ import Heading from "../../components/info-hub/heading"
 import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 import { fetchStep2 } from "../../lib/data";
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
-export default async function Step2() {
+export default function Step2() {
 
-    var textList = await fetchStep2();
+    const [textList, setTextList] = useState([])
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
+
+    useEffect(() => {
+        const text = async () => {
+        try {
+            const result = await fetchStep2();
+            setTextList(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        text()
+    }, []);
 
     return (
         <div>
@@ -23,11 +40,11 @@ export default async function Step2() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step1">
+                    <Link href={"/projectmanagement/step1?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/projectmanagement/step3">
+                    <Link href={"/projectmanagement/step3?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

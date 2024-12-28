@@ -1,4 +1,4 @@
-'use server'
+'use client'
 
 import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
@@ -6,9 +6,11 @@ import Button from '../../components/button/button';
 import Bubble from "../../components/bubble/bubble";
 import Heading from "../../components/info-hub/heading"
 import Link from "next/link"
-import { fetchGuidelinesPage } from "../../lib/data"
+import { useSearchParams } from 'next/navigation';
 
-export default async function Welcome() {
+export default function Welcome() {
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
     return (
         <div>
             <Navbar/>
@@ -17,12 +19,12 @@ export default async function Welcome() {
 
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
-                        <Link href="/guidelines">
+                        <Link href={"/guidelines?session="+sesh}>
                             <Bubble className="welcome-bubble" heading="Guidelines" width={'20rem'} height={'20rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/pm-overview">
+                        <Link href={"/projectmanagement/pm-overview?session="+sesh}>
                             <Bubble className="welcome-bubble" heading="Project Management" width={'20rem'} height={'20rem'}/>
                         </Link>
                     </div>
@@ -30,22 +32,21 @@ export default async function Welcome() {
 
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
-                        <Link href="/finances">
+                        <Link href={"/financial?session="+sesh}>
                             <Bubble className="welcome-bubble" heading="Financial" width={'20rem'} height={'20rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/contact">
+                        <Link href={"/contact?session="+sesh}>
                             <Bubble className="welcome-bubble" heading="Contact" width={'20rem'} height={'20rem'}/>
                         </Link>
                     </div>
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="">
-                        <Button color="blue" size="small" text="back"/>
-                    </Link>
-                    <Link href="/admin/guidelines">
+                    <Button color="blue" size="small" text="back"/>
+
+                    <Link href={"/guidelines?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

@@ -1,4 +1,4 @@
-'use server'
+'use client'
 
 import styles from "../../page.css"
 import Navbar from "../../../components/navbar/navbar";
@@ -7,12 +7,29 @@ import Bubble from "../../../components/bubble/bubble";
 import Heading from "../../../components/info-hub/heading"
 import Body from "../../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
-import { fetchGuidelinesPage } from "../../../lib/data"
+import { fetchStep4 } from "../../../lib/data";
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
-export default async function Step4() {
+export default function Step4() {
+
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
+    const [textList, setTextList] = useState([])
 
 
-    var textList = await fetchGuidelinesPage();
+    useEffect(() => {
+        const text = async () => {
+        try {
+            const result = await fetchStep4();
+            setTextList(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        text()
+    }, []);
 
 
 
@@ -27,11 +44,11 @@ export default async function Step4() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/admin/projectmanagement/step3">
+                    <Link href={"/admin/projectmanagement/step3?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/admin/projectmanagement/step5">
+                    <Link href={"/admin/projectmanagement/step5?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>

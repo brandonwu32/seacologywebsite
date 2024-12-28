@@ -3,7 +3,6 @@
 'use server'
 
 import { sql } from '@vercel/postgres';
-import bcrypt from 'bcrypt';
 
 export async function fetchGuidelineSearch(query) {
     try {
@@ -197,6 +196,28 @@ export async function fetchProjects() {
     } catch(error) {
         console.log("An error occured", error)
         throw new Error('An error occured')
+    }
+}
+
+
+export async function isAuthenticated(user_id) {
+    try {
+        const data = await sql`SELECT * FROM users WHERE id=${user_id}`;
+        console.log("Authenticated successfully");
+        const userExists = data.rows.length > 0
+        if (!userExists) {
+            return [false, false]
+        }
+        const isAdmin = data.rows[0].admin === true;
+        if (isAdmin) {
+            return [true, true];
+        } else {
+            return [true, false]
+        }
+
+    } catch(error) {
+        console.log("An error occurred", error)
+        throw new Error("An error occurred")
     }
 }
 

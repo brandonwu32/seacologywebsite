@@ -1,13 +1,15 @@
 "use client";
+
 import Bubble from "../../components/bubble/bubble";
 import React, { useState, useEffect } from 'react';
 import styles from "../page.css";
 import Button from "../../components/button/button";
 import {createUpdate} from "../../lib/actions";
 import { fetchProjects, getUserID } from "../../lib/data";
+import Link from "next/link";
 
 export default function ReimbursementPage() {
-  
+
   const [project, setProject] = useState("");
   const [reimbursement, setReimbursement] = useState("");
   const [expenses, setExpenses] = useState("");
@@ -25,7 +27,7 @@ export default function ReimbursementPage() {
       try {
         const userResult = await getUserID();
         setUserID(userResult);
-  
+
         const projectsResult = await fetchProjects(userResult);
         setProjects(projectsResult);
         console.log(projectsResult);
@@ -33,7 +35,7 @@ export default function ReimbursementPage() {
         console.error('Error fetching data:', error);
       }
     };
-  
+
     fetchData();
   }, [isFirstPopupOpen]);
 
@@ -42,8 +44,8 @@ export default function ReimbursementPage() {
       return;
     }
     const subject = `Reimbursement Submitted: ${project}`;
-    const body = `Hello! 
-    
+    const body = `Hello!
+
                   A reimbursement was submitted for ${project}. Here is the information contained in their response:
 
                   ***Note: Please attach any files you may want to share (images, videos, etc.).
@@ -51,7 +53,7 @@ export default function ReimbursementPage() {
                   Project: ${project}
                   Type of reimbursement: ${reimbursement}
                   List of Expenses: ${expenses}
-                  
+
                   Thanks!`;
 
     sendEmail("nishant.malpani@berkeley.edu", subject, body);
@@ -78,7 +80,7 @@ export default function ReimbursementPage() {
     }
     setIsFirstPopupOpen(false);
   };
-  
+
   const closeOtherPopup = () => {
     setIsOtherPopupOpen(false);
   };
@@ -108,12 +110,12 @@ export default function ReimbursementPage() {
         <hr className="formBlue-line" />
         <div className="formLink-container">
         <p className="formText">
-          Need to add a reimbursement? Please download either: 
-          <a href="/expensereisheet.xlsx" className="formLink" download="expensereisheet.xlsx"> expense reimbursement sheet</a>, 
-          <a href="/formreq.pdf" className="formLink" download="formreq.pdf"> form request</a>, 
-          <a href="/formconflict.pdf" className="formLink" download="formconflict.pdf"> form conflict</a>, 
-          <a href="/financialreport.xlsx" className="formLink" download="financialreport.xlsx"> financial report</a>, 
-          <a href="/timelinebudgets.xlsx" className="formLink" download="timelinebudgets.xlsx"> timeline budgets</a>.
+          Need to add a reimbursement? Please download either:
+          <Link href="/expensereisheet.xlsx" className="formLink" download="expensereisheet.xlsx"> expense reimbursement sheet</Link>,
+          <Link href="/formreq.pdf" className="formLink" download="formreq.pdf"> form request</Link>,
+          <Link href="/formconflict.pdf" className="formLink" download="formconflict.pdf"> form conflict</Link>,
+          <Link href="/financialreport.xlsx" className="formLink" download="financialreport.xlsx"> financial report</Link>,
+          <Link href="/timelinebudgets.xlsx" className="formLink" download="timelinebudgets.xlsx"> timeline budgets</Link>.
         </p>
       </div>
         <div className="form-container">
@@ -121,28 +123,28 @@ export default function ReimbursementPage() {
             <label>
               Project:
               <div className="formDropdown-container">
-                <input 
-                  type="text" 
-                  value={project} 
-                  onClick={openFirstPopup} 
-                  readOnly 
-                  placeholder="Select a project" 
-                  className="page" 
+                <input
+                  type="text"
+                  value={project}
+                  onClick={openFirstPopup}
+                  readOnly
+                  placeholder="Select a project"
+                  className="page"
                 />
                 <input id="project-id" type="hidden" value={projectID} />
                 {isFirstPopupOpen && (
                   <div className="formDropdown-list">
                     {projects.map((proj, index) => (
-                      <div 
-                        key={index} 
-                        className="formDropdown-item" 
+                      <div
+                        key={index}
+                        className="formDropdown-item"
                         onClick={() => handleSelectProject(proj)}
                       >
                         {proj.project_name}
                       </div>
                     ))}
-                    <div 
-                      className="formDropdown-item" 
+                    <div
+                      className="formDropdown-item"
                       onClick={() => handleSelectProject("Other")}
                     >
                       Other
@@ -154,20 +156,20 @@ export default function ReimbursementPage() {
             <label>
               Type of Reimbursement:
               <div className="formDropdown-container">
-                <input 
-                  type="text" 
-                  value={reimbursement} 
-                  onClick={openSecondPopup} 
-                  readOnly 
-                  placeholder="Select a reimbursement" 
-                  className="page" 
+                <input
+                  type="text"
+                  value={reimbursement}
+                  onClick={openSecondPopup}
+                  readOnly
+                  placeholder="Select a reimbursement"
+                  className="page"
                 />
                 {isSecondPopupOpen && (
                   <div className="formDropdown-list">
                     {reimbursements.map((reim, index) => (
-                      <div 
-                        key={index} 
-                        className="formDropdown-item" 
+                      <div
+                        key={index}
+                        className="formDropdown-item"
                         onClick={() => handleSelectReimbursement(reim)}
                       >
                         {reim}
@@ -179,11 +181,11 @@ export default function ReimbursementPage() {
             </label>
             <label>
               List of Expenses:
-              <textarea 
-                type="text" 
-                value={expenses} 
-                onChange={(e) => setExpenses(e.target.value)} 
-                required 
+              <textarea
+                type="text"
+                value={expenses}
+                onChange={(e) => setExpenses(e.target.value)}
+                required
               />
             </label>
           </div>
@@ -200,8 +202,8 @@ export default function ReimbursementPage() {
               <div className="formRectangle">
                 <p className="formSubtext"> Enter Project</p>
                 <hr className="formYellow-line" />
-                <textarea 
-                  type="text" 
+                <textarea
+                  type="text"
                   className="formBubs"
                   placeholder="Describe your project"
                   onChange={(e) => setProject(e.target.value)}
@@ -219,8 +221,8 @@ export default function ReimbursementPage() {
               <div className="formRectangle">
                 <p className="formSubtext"> Enter Reimbursement</p>
                 <hr className="formYellow-line" />
-                <textarea 
-                  type="text" 
+                <textarea
+                  type="text"
                   className="formBubs"
                   placeholder="Describe your reimbursement"
                   onChange={(e) => setReimbursement(e.target.value)}
