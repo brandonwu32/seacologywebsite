@@ -101,6 +101,9 @@ export default function Navbar() {
                     <div className="navbar-link">
                         <Link href={`${adminView && '/admin' || ''}`+"/contact?session="+sesh} className="navbar-link">Contact</Link>
                     </div>
+                    <div className="navbar-link">
+                        <Link href={`${adminView && '/admin' || ''}`+"/whitepages?session="+sesh} className="navbar-link">Whitepages</Link>
+                    </div>
                 </div>
             </div>
         </div>
