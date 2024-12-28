@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import '../navbar/Navbar.css';
+import '../navbar/navbar.css';
 import Image from "next/image";
 import SeacologyLogo from "../../../../assets/seacology_logo.png";
 import Button from '../button/button'
