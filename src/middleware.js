@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { isAuthenticated } from './app/lib/data';
 
 export default async function middleware(request) {
   if (request.nextUrl.pathname.startsWith('/login')) {
