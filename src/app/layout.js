@@ -17,6 +17,14 @@ const geistMono = localFont({
 export const metadata = {
   title: "Seacology Portal",
   description: "Field Representative Portal",
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/jpg',
+      sizes: '32x32',
+      url: 'https://cdn.vectorstock.com/i/1000v/41/85/water-drop-icon-vector-9694185.jpg',
+    },
+  ]
 };
 
 export default function RootLayout({ children }) {
