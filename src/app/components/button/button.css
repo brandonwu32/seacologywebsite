@@ -1,23 +1,33 @@
 button {
     cursor: pointer;
-    padding: none;
-}
-
-button:hover {
-    transform: scale(1.05);
 }
 
 .yellow {
     background-color: #FDCD3B;
     color: white;
+    cursor: pointer;
+    padding: none;
+}
+.yellow:hover {
+    transform: scale(1.05);
 }
 .blue {
     background-color: #02A0D4;
     color: white;
+    cursor: pointer;
+    padding: none;
+}
+.blue:hover {
+    transform: scale(1.05);
 }
 .red{
     background-color: #FC6666;
     color: white;
+    cursor: pointer;
+    padding: none;
+}
+.red:hover {
+    transform: scale(1.05);
 }
 #small {
     width: 150px;

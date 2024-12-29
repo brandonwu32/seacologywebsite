@@ -1,7 +1,7 @@
 
 import "./page.css";
 import { useState } from "react";
-import { addMember } from '../lib/data';
+import { addMember } from '../lib/actions';
 
 
 export default function AddMemberForm(props) {

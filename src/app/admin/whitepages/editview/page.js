@@ -1,5 +1,5 @@
 'use client'
-import styles from "./page.css";
+
 import { fetchMembers } from "../../../lib/data";
 import { useState, useEffect } from "react";
 import AddPopUp from "../../../components/whitepagepopup/adminpopup/addpopup/addpopup";
@@ -7,14 +7,14 @@ import EditPageBubble from "../../../components/whitepagebubbles/editbubble/edit
 import Button from "../../../components/button/button";
 import seacology_Logo from "../../../../../assets/logo-blue-web-transparent.png";
 import Link from 'next/link';
-import AddMemberForm from "../../AddMemberForm";
-
+import { useSearchParams } from 'next/navigation';
+import styles from './page.css'
 
 export default function Whitepages() {
  const [addPopUp, setButtonPopUp] = useState(false);
  const [whiteList, setWhiteList] = useState([]);
- const [newMember, setNewMember] = useState({ name: "", position: "", email: "", region: "", image: "" });
-
+ const searchParams = useSearchParams();
+ let sesh = searchParams.get("session");
 
 
  // Fetch initial members
@@ -27,8 +27,6 @@ export default function Whitepages() {
        console.error("Error fetching data:", error);
      }
    };
-
-
    members();
  }, []);
 
@@ -74,6 +72,7 @@ export default function Whitepages() {
        name={item.name}
        position={item.position}
        email={item.email}
+       user_id = {item.id}
        onClick={() => deleteMember(item.email)} // Trigger delete on click
      />
    );
@@ -92,7 +91,7 @@ export default function Whitepages() {
        <p className="EWPtitle">Team</p>
        <div className="top-left">
          <div className="btz">
-           <Link href="/whitepages/adminview">
+           <Link href={"/admin/whitepages?session="+sesh}>
              <Button color="red" size="large" text="Editing" />
            </Link>
            <Button color="blue" size="large" text="Add Member" onClick={toggleAddPopUp} />
@@ -103,16 +102,23 @@ export default function Whitepages() {
      <hr className="EWPyellowline" />
      <p className="clickremove">**Click on a Member to Remove</p>
 
+      <AddPopUp trigger={addPopUp} close = {toggleAddPopUp}/>
 
-     {/* AddPopUp with AddMemberForm */}
-     <AddPopUp trigger={addPopUp} close={toggleAddPopUp}>
-     </AddPopUp>
-
-
-     {/* Render member bubbles */}
-     <div className="WPbubble-container">
-       {whiteList.map((item) => bubbleMember(item))}
-     </div>
-   </div>
- );
+      <div className="EWPbubble-container">
+        {whiteList.map(function (member){
+          return (
+            <div className = "EWPbubble-wrapper" key={member.email}>
+              <EditPageBubble
+                src={seacology_Logo}
+                alt="CeoPic"
+                name={member.name}
+                position={member.position}
+                email={member.email}
+              />
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  );
 }

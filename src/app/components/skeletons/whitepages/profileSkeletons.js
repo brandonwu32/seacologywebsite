@@ -51,7 +51,7 @@ export default function ProfileSkeletons() {
   function bubbleMember(item) {
     return (
       <InfoPageBubble
-                src={default_profile}
+                src={seacology_Logo}
                 alt="CeoPic"
                 name={item.name}
                 position={item.position}
@@ -62,7 +62,7 @@ export default function ProfileSkeletons() {
     return (
       <div className = "WPbubble-container">
         {data.map((item) =>
-            bubbleMember(item)
+            <div key={item.id}>{bubbleMember(item)}</div>
         )}
       </div>
     );

@@ -1,8 +1,22 @@
 'use server'
 
+'use server'
+
 import { sql } from '@vercel/postgres';
 
-const bcrypt = require('bcrypt')
+export async function fetchGuidelineSearch(query) {
+    try {
+        const data = await sql `
+            SELECT *
+            FROM guidelines
+            WHERE content ILIKE ${`%${query}%`}
+            ORDER BY page, position`
+        return data.rows
+    } catch(error) {
+        console.log("An error occurred", error)
+        throw new Error("An error occurred")
+    }
+}
 
 export async function fetchGuidelinesPage() {
     try {
@@ -173,10 +187,10 @@ export async function getUserID() {
     return "97fe71f8-de46-4d42-8f39-9fdceba174ee" // returns a dummy user id, created so that we can test this function
 }
 
-export async function fetchProjects() {
+export async function fetchProjects(name) {
     try {
-        const userID = await getUserID()
-        const projects = await sql`SELECT * FROM projects WHERE field_rep_id=${userID}`
+        const field_rep_id = await sql`SELECT id FROM users WHERE name=${name}`
+        const projects = await sql`SELECT * FROM projects WHERE field_rep_id=${field_rep_id.rows[0].id}`
         console.log('Fetched projects')
         return projects.rows
     } catch(error) {
@@ -185,48 +199,27 @@ export async function fetchProjects() {
     }
 }
 
-export async function addMember(name, email, position, password, admin) {
-    console.log(name, email, position, password, admin)
+
+export async function isAuthenticated(user_id) {
     try {
-        if (!name || !email || !position) {
-            throw new Error("Missing fields: name, email, or position");
+        const data = await sql`SELECT * FROM users WHERE id=${user_id}`;
+        console.log("Authenticated successfully");
+        const userExists = data.rows.length > 0
+        if (!userExists) {
+            return [false, false]
+        }
+        const isAdmin = data.rows[0].admin === true;
+        if (isAdmin) {
+            return [true, true];
+        } else {
+            return [true, false]
         }
 
-        const hashPassword = await bcrypt.hash(password, 10);
-
-        const data = await sql`
-            INSERT INTO users (name, email, position, admin, password)
-            VALUES (${name}, ${email}, ${position}, ${admin}, ${hashPassword})
-            RETURNING *;
-        `;
-        console.log("Added member successfully:", data.rows[0]);
-        return data.rows[0];
-    } catch (error) {
-        console.error("Error adding member:", error);
-        throw new Error("Error adding member");
+    } catch(error) {
+        console.log("An error occurred", error)
+        throw new Error("An error occurred")
     }
 }
 
-export async function deleteMember(email) {
-    try {
-        if (!email) {
-            throw new Error("Missing required field: email");
-        }
 
-        const result = await sql`
-            DELETE FROM users
-            WHERE email = ${email}
-            RETURNING *;
-        `;
 
-        if (result.rowCount === 0) {
-            throw new Error(`No member found with email: ${email}`);
-        }
-
-        console.log("Deleted member successfully:", result.rows[0]);
-        return result.rows[0];
-    } catch (error) {
-        console.error("Error deleting member:", error);
-        throw new Error("Error deleting member");
-    }
-}

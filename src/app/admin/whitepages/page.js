@@ -6,16 +6,20 @@ import { fetchMembers } from "../../lib/data";
 import WhitePopUp from "../../components/whitepagepopup/infopopup/infopopup"
 import Button from "../../components/button/button";
 import Link from 'next/link'
-import WhitepagesRenderer from "../whitepagesRender";
+import WhitepagesRenderer from "./whitepagesRender";
 import ProfileSkeletons from '../../components/skeletons/whitepages/profileSkeletons';
 import { Suspense } from 'react';
 import seacology_Logo from "../../../../assets/logo-blue-web-transparent.png";
 import InfoPageBubble from "../../components/whitepagebubbles/infobubble/infobubble";
+import { useSearchParams } from 'next/navigation';
 
 
 
 export default function Whitepages() {
   const [whiteList, setWhiteList] = useState([]);
+  const searchParams = useSearchParams();
+  let sesh = searchParams.get("session");
+
   useEffect(() => {
     const members = async () => {
       try {
@@ -27,7 +31,7 @@ export default function Whitepages() {
     };
 
     members()
-  }, [whiteList]);
+  }, []);
 
   function bubbleMember(item) {
     console.log(item.name)
@@ -47,7 +51,7 @@ export default function Whitepages() {
       <div className='top'>
         <p className = 'AWPtitle'> Team</p>
         <div className = 'btzz'>
-        <Link href="/whitepages/adminview/editview">
+        <Link href={"/admin/whitepages/editview?session="+sesh}>
           <Button color="blue" size="large" text="Edit View"/>
         </Link>
         </div>
@@ -60,8 +64,8 @@ export default function Whitepages() {
             bubbleMember(item)
         )}
       </div>
-          
+
       </div>
   );
-  
+
 }

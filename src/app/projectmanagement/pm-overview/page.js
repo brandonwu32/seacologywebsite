@@ -1,4 +1,4 @@
-"use server"
+"use client"
 
 import styles from "../page.css"
 import Navbar from "../../components/navbar/navbar";
@@ -8,11 +8,28 @@ import Heading from "../../components/info-hub/heading"
 import Body from "../../components/info-hub/pages/project-management/body";
 import Link from "next/link"
 import { fetchOverview } from '../../lib/data'
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 
-export default async function PM_Overview() {
-    const textList = await fetchOverview();
+export default function PM_Overview() {
+    const [textList, setTextList] = useState([])
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
 
+    useEffect(() => {
+        const text = async () => {
+        try {
+            const result = await fetchOverview();
+            setTextList(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        text()
+
+    }, []);
     return (
         <div>
             <Navbar/>
@@ -25,17 +42,17 @@ export default async function PM_Overview() {
 
                 <div className="welcome-wrapper">
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/step1">
+                        <Link href={"/projectmanagement/step1?session="+sesh}>
                             <Bubble midtext="Step 1. Find a New Project" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/step2">
+                        <Link href={"/projectmanagement/step2?session="+sesh}>
                             <Bubble midtext="Step 2. Find a New Project" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
                     <div className="link-bubble-wrapper">
-                        <Link href="/projectmanagement/step3">
+                        <Link href={"/projectmanagement/step3?session="+sesh}>
                             <Bubble midtext="Step 3. Find a New Project" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>

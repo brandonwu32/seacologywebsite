@@ -1,7 +1,7 @@
 import './addpopup.css';
 import Button from '../../../button/button';
 import { useState } from 'react';
-import { addMember } from '../../../../lib/data';
+import { addMember } from '../../../../lib/actions';
 
 
 export default function AddPopUp(props) {
