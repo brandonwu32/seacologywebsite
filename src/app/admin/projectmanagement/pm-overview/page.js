@@ -10,6 +10,7 @@ import Link from "next/link"
 import { fetchOverview } from "../../../lib/data";
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function PM_Overview() {
     const [textList, setTextList] = useState([])
@@ -40,6 +41,7 @@ export default function PM_Overview() {
                 </div>
 
                 <div className="welcome-wrapper">
+                <Suspense>
                     <div className="link-bubble-wrapper">
                         <Link href={"/admin/projectmanagement/step1?session="+sesh}>
                             <Bubble midtext="Step 1. Find a New Project" width={'15rem'} height={'15rem'}/>
@@ -55,9 +57,11 @@ export default function PM_Overview() {
                             <Bubble midtext="Step 3. Find a New Project" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
+                    </Suspense>
                 </div>
 
                 <div className="welcome-wrapper">
+                <Suspense>
                     <div className="link-bubble-wrapper">
                         <Link href={"/admin/projectmanagement/step4?session="+sesh}>
                             <Bubble midtext="Step 4. Get Agreements Signed" width={'15rem'} height={'15rem'}/>
@@ -73,9 +77,11 @@ export default function PM_Overview() {
                             <Bubble midtext="Step 6. Submit the Final Report" width={'15rem'} height={'15rem'}/>
                         </Link>
                     </div>
+                    </Suspense>
                 </div>
 
                 <div className="button-wrapper">
+                <Suspense>
                     <Link href={"/admin/welcome?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
@@ -83,6 +89,7 @@ export default function PM_Overview() {
                     <Link href={"/admin/projectmanagement/step1?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>

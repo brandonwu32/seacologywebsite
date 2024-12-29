@@ -39,6 +39,7 @@ export default function Step3() {
                 </div>
 
                 <div className="button-wrapper">
+                <Suspense>
                     <Link href={"/admin/projectmanagement/step2?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
@@ -46,6 +47,7 @@ export default function Step3() {
                     <Link href={"/admin/projectmanagement/step4?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>

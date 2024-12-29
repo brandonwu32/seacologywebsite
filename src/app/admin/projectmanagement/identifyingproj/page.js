@@ -9,6 +9,7 @@ import Link from "next/link"
 import { fetchProjectsWithID } from "../../../lib/data";
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Identifying() {
 
@@ -40,6 +41,7 @@ export default function Identifying() {
                 </div>
 
                 <div className="button-wrapper">
+                <Suspense>
                     <Link href={"/admin/projectmanagement/step1?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
@@ -47,6 +49,7 @@ export default function Identifying() {
                     <Link href={"/admin/projectmanagement/newprojproposal?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>
