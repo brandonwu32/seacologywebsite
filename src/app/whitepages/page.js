@@ -4,7 +4,6 @@
 import styles from "./page.css";
 import InfoPageBubble from "../components/whitepagebubbles/infobubble/infobubble";
 import { fetchMembers } from "../lib/data";
-import seacology_Logo from "../../../assets/seacology_logo.png";
 import { useState, useEffect } from "react";
 
 
@@ -29,7 +28,7 @@ export default function Whitepages() {
     console.log(item.name)
     return (
       <InfoPageBubble
-                src={seacology_Logo}
+                image={item.image}
                 alt="CeoPic"
                 name={item.name}
                 position={item.position}

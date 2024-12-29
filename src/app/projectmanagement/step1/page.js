@@ -37,6 +37,7 @@ export default function Step1() {
                 <div>
                     <Body textList={textList} title="Step 1: Find a New Project"/>
                 </div>
+                <Suspense>
                 <div className="step1-row1-wrapper">
                     <div className="link-bubble-wrapper">
                         <Link href={"/projectmanagement/identifyingproj?session="+sesh}>
@@ -55,6 +56,7 @@ export default function Step1() {
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
+                </Suspense>
             </div>
         </div>
     );

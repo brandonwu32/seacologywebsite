@@ -3,7 +3,8 @@
 import { db } from '@vercel/postgres';
 
 import { guidelines, users, updates, projects } from '../lib/placeholder-data';
-import { time } from 'console';
+
+
 const client = await db.connect();
 
 async function seedGuidelines() {
@@ -94,15 +95,16 @@ async function seedUsers() {
       email TEXT NOT NULL UNIQUE,
       password TEXT NOT NULL,
       position TEXT NOT NULL,
-      admin BOOLEAN NOT NULL
+      admin BOOLEAN NOT NULL,
+      image TEXT NOT NULL
     );
   `;
 
 const insertedUsers = await Promise.all(
   users.map(async (user) => {
     return client.sql`
-      INSERT INTO users (id, name, email, password, position, admin)
-      VALUES (${user.id}, ${user.name}, ${user.email}, ${user.password}, ${user.position}, ${user.admin})
+      INSERT INTO users (id, name, email, password, position, admin, image)
+      VALUES (${user.id}, ${user.name}, ${user.email}, ${user.password}, ${user.position}, ${user.admin}, ${user.image})
       ON CONFLICT (id) DO NOTHING;
     `;
   }),
@@ -115,9 +117,9 @@ export async function GET() {
     try {
       await client.sql`BEGIN`;
       await seedUsers();
-      await seedGuidelines();
-      await seedProjects();
-      await seedUpdates();
+      // await seedGuidelines();
+      // await seedProjects();
+      // await seedUpdates();
       await client.sql`COMMIT`;
       console.log("committed");
       return Response.json({ message: 'Database seeded successfully' });

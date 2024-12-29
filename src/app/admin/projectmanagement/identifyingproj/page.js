@@ -6,7 +6,7 @@ import Button from '../../../components/button/button';
 import Heading from "../../../components/info-hub/heading"
 import Body from "../../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
-import { fetchProjects } from "../../../lib/data";
+import { fetchProjectsWithID } from "../../../lib/data";
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
@@ -19,7 +19,7 @@ export default function Identifying() {
     useEffect(() => {
         const text = async () => {
         try {
-            const result = await fetchProjects();
+            const result = await fetchProjectsWithID(sesh);
             setTextList(result);
         } catch (error) {
             console.error('Error fetching data:', error);

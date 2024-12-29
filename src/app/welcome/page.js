@@ -3,9 +3,8 @@
 
 import Bubble from "../components/bubble/bubble"
 import { useSearchParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Navbar from "../components/navbar/navbar";
-import Button from '../components/button/button';
 import Heading from "../components/info-hub/heading"
 import Link from "next/link"
 import styles from './page.css'
@@ -21,6 +20,8 @@ export default function Welcome() {
                     <Heading text="Welcome" buttonText = 'edit'/>
 
                     <div className="welcome-wrapper">
+                    <Suspense>
+
                         <div className="link-bubble-wrapper">
                             <Link href={"/guidelines?session="+sesh} >
                                 <Bubble className="welcome-bubble" heading="Guidelines" width={'20rem'} height={'20rem'}/>
@@ -31,9 +32,13 @@ export default function Welcome() {
                                 <Bubble className="welcome-bubble" heading="Project Management" width={'20rem'} height={'20rem'}/>
                             </Link>
                         </div>
+                        </Suspense>
+
                     </div>
 
                     <div className="welcome-wrapper">
+                    <Suspense>
+
                         <div className="link-bubble-wrapper">
 
                             <Link href={"/financial?session="+sesh} >
@@ -45,8 +50,13 @@ export default function Welcome() {
                                 <Bubble className="welcome-bubble" heading="Contact" width={'20rem'} height={'20rem'}/>
                             </Link>
                         </div>
+                        </Suspense>
+
                     </div>
+
                 </div>
+
               </div>
+
         );
   }

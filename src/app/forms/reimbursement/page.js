@@ -1,13 +1,13 @@
 "use client";
 
-import Bubble from "../../components/bubble/bubble";
 import React, { useState, useEffect } from 'react';
 import styles from "../page.css";
 import Button from "../../components/button/button";
 import {createUpdate} from "../../lib/actions";
-import { fetchProjects, getUserID } from "../../lib/data";
+import { fetchProjectsWithID } from "../../lib/data";
 import Link from "next/link";
 import { useSearchParams } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 
 export default function ReimbursementPage() {
@@ -17,7 +17,6 @@ export default function ReimbursementPage() {
   const [expenses, setExpenses] = useState("");
   const [projects, setProjects] = useState([]);
   const [projectID, setProjectID] = useState("");
-  const [user_id, setUserID] = useState("");
   const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
   const [isOtherPopupOpen, setIsOtherPopupOpen] = useState(false);
   const [isSecondPopupOpen, setIsSecondPopupOpen] = useState(false);
@@ -30,7 +29,7 @@ export default function ReimbursementPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const projectsResult = await fetchProjects(sesh);
+        const projectsResult = await fetchProjectsWithID(sesh);
         setProjects(projectsResult);
         console.log(projectsResult);
       } catch (error) {
@@ -65,6 +64,7 @@ export default function ReimbursementPage() {
     alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
     sendEmail("nishant.malpani@berkeley.edu", subject, body)
     await new Promise((resolve) => setTimeout(resolve, 1000));
+    redirect('/welcome?session=' + sesh)
   };
 
   const sendEmail = (to, subject, body) => {
@@ -112,14 +112,17 @@ export default function ReimbursementPage() {
         <hr className="formYellow-line" />
         <hr className="formBlue-line" />
         <div className="formLink-container">
-        <p className="formText">
-          Need to add a reimbursement? Please download either:
-          <Link href="/expensereisheet.xlsx" className="formLink" download="expensereisheet.xlsx"> expense reimbursement sheet</Link>,
-          <Link href="/formreq.pdf" className="formLink" download="formreq.pdf"> form request</Link>,
-          <Link href="/formconflict.pdf" className="formLink" download="formconflict.pdf"> form conflict</Link>,
-          <Link href="/financialreport.xlsx" className="formLink" download="financialreport.xlsx"> financial report</Link>,
-          <Link href="/timelinebudgets.xlsx" className="formLink" download="timelinebudgets.xlsx"> timeline budgets</Link>.
-        </p>
+        <Suspense>
+          <p className="formText">
+            Need to add a reimbursement? Please download either:
+            <Link href="/expensereisheet.xlsx" className="formLink" download="expensereisheet.xlsx"> expense reimbursement sheet</Link>,
+            <Link href="/formreq.pdf" className="formLink" download="formreq.pdf"> form request</Link>,
+            <Link href="/formconflict.pdf" className="formLink" download="formconflict.pdf"> form conflict</Link>,
+            <Link href="/financialreport.xlsx" className="formLink" download="financialreport.xlsx"> financial report</Link>,
+            <Link href="/timelinebudgets.xlsx" className="formLink" download="timelinebudgets.xlsx"> timeline budgets</Link>.
+          </p>
+        </Suspense>
+
       </div>
         <div className="form-container">
           <div className="form-fields">
@@ -170,14 +173,16 @@ export default function ReimbursementPage() {
                 {isSecondPopupOpen && (
                   <div className="formDropdown-list">
                     {reimbursements.map((reim, index) => (
-                      <div
-                        key={index}
-                        className="formDropdown-item"
-                        onClick={() => handleSelectReimbursement(reim)}
-                      >
-                        {reim}
-                      </div>
-                    ))}
+                          <div
+                            key={index}
+                            className="formDropdown-item"
+                            onClick={() => handleSelectReimbursement(reim)}
+                          >
+                            {reim}
+                          </div>
+                        )
+                      )
+                    }
                   </div>
                 )}
               </div>

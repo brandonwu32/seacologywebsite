@@ -4,7 +4,6 @@
 import styles from "./page.css"
 import Navbar from "../components/navbar/navbar";
 import Button from '../components/button/button';
-import Bubble from "../components/bubble/bubble";
 import Heading from "../components/info-hub/heading"
 import Body from "../components/info-hub/pages/project-management/body";
 import Link from "next/link";
@@ -41,13 +40,16 @@ export default function Guidelines() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href={"/welcome?session="+sesh}>
-                        <Button color="blue" size="small" text="back"/>
-                    </Link>
+                    <Suspense>
 
-                    <Link href="/projectmanagement/pm-overview">
-                        <Button color="blue" size="small" text="next"/>
-                    </Link>
+                        <Link href={"/welcome?session="+sesh}>
+                            <Button color="blue" size="small" text="back"/>
+                        </Link>
+
+                        <Link href="/projectmanagement/pm-overview">
+                            <Button color="blue" size="small" text="next"/>
+                        </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>

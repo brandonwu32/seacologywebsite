@@ -40,13 +40,15 @@ export default function Step2() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href={"/projectmanagement/step1?session="+sesh}>
-                        <Button color="blue" size="small" text="back"/>
-                    </Link>
+                    <Suspense>
+                        <Link href={"/projectmanagement/step1?session="+sesh}>
+                            <Button color="blue" size="small" text="back"/>
+                        </Link>
 
-                    <Link href={"/projectmanagement/step3?session="+sesh}>
-                        <Button color="blue" size="small" text="next"/>
-                    </Link>
+                        <Link href={"/projectmanagement/step3?session="+sesh}>
+                            <Button color="blue" size="small" text="next"/>
+                        </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>

@@ -5,10 +5,10 @@ import { useState, useEffect } from "react";
 import AddPopUp from "../../../components/whitepagepopup/adminpopup/addpopup/addpopup";
 import EditPageBubble from "../../../components/whitepagebubbles/editbubble/editpagebubble";
 import Button from "../../../components/button/button";
-import seacology_Logo from "../../../../../assets/logo-blue-web-transparent.png";
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import styles from './page.css'
+import { Suspense } from "react";
 
 export default function Whitepages() {
  const [addPopUp, setButtonPopUp] = useState(false);
@@ -67,7 +67,7 @@ export default function Whitepages() {
    return (
      <EditPageBubble
        key={item.email}
-       src={seacology_Logo}
+       image={item.image}
        alt="CeoPic"
        name={item.name}
        position={item.position}
@@ -91,10 +91,12 @@ export default function Whitepages() {
        <p className="EWPtitle">Team</p>
        <div className="top-left">
          <div className="btz">
-           <Link href={"/admin/whitepages?session="+sesh}>
-             <Button color="red" size="large" text="Editing" />
-           </Link>
-           <Button color="blue" size="large" text="Add Member" onClick={toggleAddPopUp} />
+            <Suspense>
+              <Link href={"/admin/whitepages?session="+sesh}>
+                <Button color="red" size="large" text="Editing" />
+              </Link>
+            </Suspense>
+            <Button color="blue" size="large" text="Add Member" onClick={toggleAddPopUp} />
          </div>
        </div>
      </div>
@@ -109,7 +111,7 @@ export default function Whitepages() {
           return (
             <div className = "EWPbubble-wrapper" key={member.email}>
               <EditPageBubble
-                src={seacology_Logo}
+                image={member.image}
                 alt="CeoPic"
                 name={member.name}
                 position={member.position}

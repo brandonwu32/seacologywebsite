@@ -41,9 +41,13 @@ export default function Step6() {
                 </div>
 
                 <div className="button-wrapper">
+                <Suspense>
+
                     <Link href={"/projectmanagement/step5?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
+                    </Suspense>
+
                 </div>
 
             </div>

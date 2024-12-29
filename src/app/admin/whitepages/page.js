@@ -3,13 +3,8 @@
 import styles from "./page.css";
 import { useState, useEffect } from "react";
 import { fetchMembers } from "../../lib/data";
-import WhitePopUp from "../../components/whitepagepopup/infopopup/infopopup"
 import Button from "../../components/button/button";
 import Link from 'next/link'
-import WhitepagesRenderer from "./whitepagesRender";
-import ProfileSkeletons from '../../components/skeletons/whitepages/profileSkeletons';
-import { Suspense } from 'react';
-import seacology_Logo from "../../../../assets/logo-blue-web-transparent.png";
 import InfoPageBubble from "../../components/whitepagebubbles/infobubble/infobubble";
 import { useSearchParams } from 'next/navigation';
 
@@ -37,7 +32,7 @@ export default function Whitepages() {
     console.log(item.name)
     return (
       <InfoPageBubble
-                src={seacology_Logo}
+                image={item.image}
                 alt="CeoPic"
                 name={item.name}
                 position={item.position}
@@ -51,9 +46,11 @@ export default function Whitepages() {
       <div className='top'>
         <p className = 'AWPtitle'> Team</p>
         <div className = 'btzz'>
-        <Link href={"/admin/whitepages/editview?session="+sesh}>
-          <Button color="blue" size="large" text="Edit View"/>
-        </Link>
+          <Suspense>
+            <Link href={"/admin/whitepages/editview?session="+sesh}>
+              <Button color="blue" size="large" text="Edit View"/>
+            </Link>
+          </Suspense>
         </div>
       </div>
       <hr className="AWPblueline" />

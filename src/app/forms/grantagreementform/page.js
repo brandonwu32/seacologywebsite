@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Bubble from "../../components/bubble/bubble";
-import Button from "../../components/button/button";
 import styles from "../page.css";
 import { createUpdate } from '../../lib/actions';
-import { fetchProjects, getUserID } from "../../lib/data";
+import { fetchProjectsWithID, getUserID } from "../../lib/data";
 import { useSearchParams } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 export default function GrantAgreementPage() {
   const [lastName, setLastName] = useState("");
@@ -25,7 +24,7 @@ export default function GrantAgreementPage() {
   useEffect(() => {
     const projects = async () => {
       try {
-        const result = await fetchProjects(sesh);
+        const result = await fetchProjectsWithID(sesh);
         setProjects(result);
         console.log(result);
       } catch (error) {
@@ -64,6 +63,7 @@ export default function GrantAgreementPage() {
     alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
     sendEmail("nishant.malpani@berkeley.edu", subject, body)
     await new Promise((resolve) => setTimeout(resolve, 1000));
+    redirect('/welcome?session=' + sesh)
   };
 
   const sendEmail = (to, subject, body) => {

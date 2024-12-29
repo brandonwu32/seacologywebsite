@@ -3,8 +3,7 @@ import Table from '../../table/table';
 import Button from '../../button/button';
 import WhitePageBubble from '../../whitepagebubbles/popupbubble';
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { fetchProjects } from '@/app/lib/data';
+import { fetchProjectsWithName } from '@/app/lib/data';
 
 export default function WhitePagePopUp(props) {
     const [ projects, setProjects ] = useState([]);
@@ -12,7 +11,7 @@ export default function WhitePagePopUp(props) {
     useEffect(() => {
         const members = async () => {
             try {
-            const result = await fetchProjects(props.name);
+            const result = await fetchProjectsWithName(props.name);
             setProjects(result);
             } catch (error) {
             console.error('Error fetching data:', error);
@@ -29,7 +28,7 @@ export default function WhitePagePopUp(props) {
                     <hr className="ipyellowline" />
                     <div className="ipbubs">
                         <WhitePageBubble
-                            src="https://www.seacology.org/wp-content/uploads/2020/01/duane_snorkel_tonga-scaled-e1579722582118-478x549.jpg"
+                            image={props.image}
                             alt="CeoPic"
                             className="picturr"
                         />

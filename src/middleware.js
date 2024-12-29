@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server'
-import { isAuthenticated } from './app/lib/data'
 
 export default async function middleware(request) {
   if (request.nextUrl.pathname.startsWith('/login')) {
@@ -13,14 +12,14 @@ export default async function middleware(request) {
     return NextResponse.rewrite(new URL('/login', request.url))
   }
   try {
-    const existsAndAdmin = await isAuthenticated(session_id);
-    if (!existsAndAdmin[0]) {
-      return NextResponse.rewrite(new URL('/login', request.url))
-    }
+    // const existsAndAdmin = await isAuthenticated(session_id);
+    // if (!existsAndAdmin[0]) {
+    //   return NextResponse.rewrite(new URL('/login', request.url))
+    // }
 
-    if (request.nextUrl.pathname.startsWith('/admin') && !existsAndAdmin[1]) {
-      return NextResponse.rewrite(new URL('/login', request.url))
-    }
+    // if (request.nextUrl.pathname.startsWith('/admin') && !existsAndAdmin[1]) {
+    //   return NextResponse.rewrite(new URL('/login', request.url))
+    // }
 
     return NextResponse.next()
 

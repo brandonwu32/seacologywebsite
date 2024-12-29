@@ -16,7 +16,7 @@ export default function InfoPageBubble(props) {
     return (
         <div className="individual-bubble">
             <button onClick={togglePopUp} className="bubble">
-                <Image src={props.src} alt="none" className="bubble-image" width={250} height={250} />
+                <Image src={props.image} alt="none" className="bubble-image" width={250} height={250} />
             </button>
             <div className="ibdescription">
                 <p className='ibprop'>{props.name}</p>
@@ -27,6 +27,7 @@ export default function InfoPageBubble(props) {
                 trigger={buttonPopUp}
                 close={togglePopUp}
                 name={props.name}
+                image={props.image}
             />
         </div>
     );
