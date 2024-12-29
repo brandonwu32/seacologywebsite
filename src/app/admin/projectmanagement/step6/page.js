@@ -9,6 +9,7 @@ import Link from "next/link"
 import { fetchStep6 } from "../../../lib/data"
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Step6() {
 

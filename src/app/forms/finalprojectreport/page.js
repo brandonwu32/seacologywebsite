@@ -9,6 +9,7 @@ import { fetchProjectsWithID, getUserID } from "../../lib/data";
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+import { Suspense } from "react";
 
 
 export default function FinalProjectPage() {

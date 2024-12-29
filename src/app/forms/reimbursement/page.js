@@ -8,6 +8,7 @@ import { fetchProjectsWithID } from "../../lib/data";
 import Link from "next/link";
 import { useSearchParams } from 'next/navigation';
 import { redirect } from 'next/navigation';
+import { Suspense } from "react";
 
 
 export default function ReimbursementPage() {

@@ -7,6 +7,7 @@ import Bubble from "../../components/bubble/bubble";
 import Heading from "../../components/info-hub/heading"
 import Link from "next/link"
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Welcome() {
     const searchParams = useSearchParams();

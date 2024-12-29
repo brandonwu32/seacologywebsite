@@ -9,6 +9,7 @@ import { useSearchParams } from 'next/navigation';
 import { isAuthenticated } from '../../lib/data'
 import NavBarPopUp from '../navbarpopup/navbarpopup';
 import Link from "next/link"
+import { Suspense } from "react";
 
 
 export default function Navbar() {

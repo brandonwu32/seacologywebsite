@@ -8,6 +8,7 @@ import Navbar from "../components/navbar/navbar";
 import Heading from "../components/info-hub/heading"
 import Link from "next/link"
 import styles from './page.css'
+import { Suspense } from "react";
 
 export default function Welcome() {
     const [authentication, setAuthentication] = useState((false, false));

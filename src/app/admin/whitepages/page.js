@@ -7,6 +7,7 @@ import Button from "../../components/button/button";
 import Link from 'next/link'
 import InfoPageBubble from "../../components/whitepagebubbles/infobubble/infobubble";
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 
 

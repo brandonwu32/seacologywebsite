@@ -9,6 +9,7 @@ import Link from "next/link"
 import { fetchNewprojproposal } from "../../lib/data";
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Identifying() {
 

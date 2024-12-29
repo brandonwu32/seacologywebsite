@@ -4,6 +4,7 @@
 import './searchitem.css';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 
 export default function SearchItem(props) {
