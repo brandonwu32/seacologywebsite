@@ -42,9 +42,9 @@ return (
 
             <div className="button-wrapper">
                 <Suspense>
-                <Link href={"/admin/finances?session="+sesh}>
-                    <Button color="blue" size="small" text="back"/>
-                </Link>
+                    <Link href={"/admin/finances?session="+sesh}>
+                        <Button color="blue" size="small" text="back"/>
+                    </Link>
                 </Suspense>
             </div>
 
