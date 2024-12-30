@@ -4,6 +4,7 @@
 import './searchitem.css';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 
 export default function SearchItem(props) {
@@ -20,18 +21,20 @@ export default function SearchItem(props) {
     }
     return (
         <div className = 'item-container'>
-            <Link href = {props.item.page + "?session=" + sesh + '#' + props.item.position}>
-            <div className = 'item-header-container'>
-                <div className = 'item-header'>
-                    <p className = 'page-url'>Page: {props.item.page}</p>
-                    <p className = 'position-number'>Line: {props.item.position}</p>
-                </div>
+            <Suspense>
+                <Link href = {props.item.page + "?session=" + sesh + '#' + props.item.position}>
+                    <div className = 'item-header-container'>
+                        <div className = 'item-header'>
+                            <p className = 'page-url'>Page: {props.item.page}</p>
+                            <p className = 'position-number'>Line: {props.item.position}</p>
+                        </div>
 
-            </div>
-            <div className = 'item-content'>
-                {truncateString(props.item.content)}
-            </div>
-            </Link>
+                    </div>
+                    <div className = 'item-content'>
+                        {truncateString(props.item.content)}
+                    </div>
+                </Link>
+            </Suspense>
         </div>
     )
 }

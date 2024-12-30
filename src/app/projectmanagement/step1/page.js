@@ -10,6 +10,7 @@ import Link from "next/link"
 import { fetchStep1 } from "../../lib/data";
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Step1() {
 
@@ -37,6 +38,7 @@ export default function Step1() {
                 <div>
                     <Body textList={textList} title="Step 1: Find a New Project"/>
                 </div>
+                <Suspense>
                 <div className="step1-row1-wrapper">
                     <div className="link-bubble-wrapper">
                         <Link href={"/projectmanagement/identifyingproj?session="+sesh}>
@@ -55,6 +57,7 @@ export default function Step1() {
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
+                </Suspense>
             </div>
         </div>
     );

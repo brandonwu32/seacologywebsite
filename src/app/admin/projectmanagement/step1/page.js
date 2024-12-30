@@ -10,6 +10,7 @@ import Link from "next/link"
 import {fetchStep1} from "../../../lib/data";
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Step1() {
     const [textList, setTextList] = useState([])
@@ -38,6 +39,7 @@ export default function Step1() {
                     <Body textList={textList} title="Step 1: Find a New Project"/>
                 </div>
                 <div className="step1-row1-wrapper">
+                <Suspense>
                     <div className="link-bubble-wrapper">
                         <Link href={"/admin/projectmanagement/identifyingproj?session="+sesh}>
                             <Bubble midtext="Identifying Good Seacology Projects" width={'16rem'} height={'16rem'}/>
@@ -48,9 +50,11 @@ export default function Step1() {
                             <Bubble midtext="New Project Proposal Conversation" width={'16rem'} height={'16rem'}/>
                         </Link>
                     </div>
+                    </Suspense>
                 </div>
 
                 <div className="button-wrapper">
+                <Suspense>
                     <Link href={"/admin/projectmanagement/pm-overview?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
@@ -58,6 +62,7 @@ export default function Step1() {
                     <Link href={"/admin/projectmanagement/step2?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>

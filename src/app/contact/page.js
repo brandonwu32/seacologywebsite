@@ -9,6 +9,7 @@ import Link from "next/link"
 import { fetchContact } from "../lib/data";
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 
 export default function Contacts() {
@@ -41,9 +42,11 @@ return (
             </div>
 
             <div className="button-wrapper">
-                <Link href={"/finances?session="+sesh}>
-                <Button color="blue" size="small" text="back"/>
-                </Link>
+                <Suspense>
+                    <Link href={"/finances?session="+sesh}>
+                    <Button color="blue" size="small" text="back"/>
+                    </Link>
+                </Suspense>
             </div>
 
         </div>

@@ -1,14 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Bubble from "../../components/bubble/bubble";
-import Button from "../../components/button/button";
-import styles from "../page.css";
-import {createUpdate, createProject} from "../../lib/actions"
-import { fetchProjects, getUserID } from "../../lib/data";
+import { createProject } from "../../lib/actions"
+import { redirect } from 'next/navigation';
 
-import { NextResponse } from "next/server";
-import path from "path";
 
 export default function ProjectProposalPage() {
   const [timeProtected, setTimeProtected] = useState("");
@@ -78,6 +73,7 @@ export default function ProjectProposalPage() {
     alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
     sendEmail("nishant.malpani@berkeley.edu", subject, body)
     await new Promise((resolve) => setTimeout(resolve, 1000));
+    redirect('/welcome?session=' + sesh)
   };
 
 

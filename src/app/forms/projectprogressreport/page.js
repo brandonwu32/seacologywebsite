@@ -1,13 +1,12 @@
 "use client";
 
-import Bubble from "../../components/bubble/bubble";
 import React, { useState, useEffect } from 'react';
 import styles from "../page.css";
 import Button from "../../components/button/button";
 import {createUpdate} from "../../lib/actions"
-import { fetchProjects, getUserID } from "../../lib/data";
+import { fetchProjectsWithID, getUserID } from "../../lib/data";
 import { useSearchParams } from 'next/navigation';
-import Link from 'next/link'
+import { redirect } from 'next/navigation';
 
 export default function ProjectProgressPage() {
 
@@ -26,7 +25,7 @@ export default function ProjectProgressPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const projectsResult = await fetchProjects(sesh);
+        const projectsResult = await fetchProjectsWithID(sesh);
         setProjects(projectsResult);
         console.log(projectsResult);
       } catch (error) {
@@ -63,7 +62,9 @@ export default function ProjectProgressPage() {
     const update = await createUpdate("project-progress-report", projectID, currentDate, sesh);
     alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
     sendEmail("nishant.malpani@berkeley.edu", subject, body)
-    await new Promise((resolve) => setTimeout(resolve, 1000));  };
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    redirect('/welcome?session=' + sesh)
+  };
 
   const openFirstPopup = () => {
     setIsFirstPopupOpen(!isFirstPopupOpen);

@@ -1,16 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Bubble from "../../components/bubble/bubble";
 import Button from "../../components/button/button";
 import "../page.css";
 import { createUpdate } from '../../lib/actions';
-import { useActionState } from "react";
-import { fetchProjects, getUserID } from "../../lib/data";
-import { create } from "domain";
+import { fetchProjectsWithID, getUserID } from "../../lib/data";
 import { useSearchParams } from 'next/navigation';
-import { redirect } from 'next/navigation'
-import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation';
+
 
 export default function ConservationAgreementPage() {
 
@@ -29,7 +26,7 @@ export default function ConservationAgreementPage() {
   useEffect(() => {
     const projects = async () => {
       try {
-        const result = await fetchProjects(sesh);
+        const result = await fetchProjectsWithID(sesh);
         setProjects(result);
         console.log(result);
       } catch (error) {

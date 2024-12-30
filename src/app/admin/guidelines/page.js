@@ -9,6 +9,7 @@ import Link from "next/link"
 import { fetchGuidelinesPage } from "../../lib/data";
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Suspense } from "react";
 
 export default function Guidelines() {
 
@@ -40,6 +41,7 @@ export default function Guidelines() {
                 </div>
 
                 <div className="button-wrapper">
+                <Suspense>
                     <Link href={"/admin/welcome?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
@@ -47,6 +49,7 @@ export default function Guidelines() {
                     <Link href={"/admin/projectmanagement/pm-overview?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>

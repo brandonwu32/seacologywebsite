@@ -856,7 +856,8 @@
       email: 'bro@nextmail.com',
       position: 'dev',
       admin: false,
-      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa'
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
     },
     {
       id: '7624f240-e674-4860-9232-b45591f9a4dc',
@@ -864,7 +865,8 @@
       email: 'bruh@nextmail.com',
       position: 'dev',
       admin: false,
-      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa'
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
     },
     {
       id: '451df1f9-8485-4aef-a7c1-51d773fe5a55',
@@ -872,7 +874,8 @@
       email: 'ayo@nextmail.com',
       position: 'PM',
       admin: true,
-      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa'
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
     },
     {
       id: '7059921c-9c8d-433e-b255-671de1664ef0',
@@ -880,7 +883,8 @@
       email: 'baller@nextmail.com',
       position: 'dev',
       admin: false,
-      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa'
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
     },
     {
       id: 'bd6bfb89-e788-4708-a2f8-666937e555fe',
@@ -888,7 +892,8 @@
       email: 'Buss@nextmail.com',
       position: 'PM',
       admin: true,
-      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa'
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
     },
     {
       id: 'a1ae76e5-6aa6-41e9-8714-b0636a5af493',
@@ -896,7 +901,8 @@
       email: 'quiet@nextmail.com',
       position: 'dev',
       admin: false,
-      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa'
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
     },
   ];
 

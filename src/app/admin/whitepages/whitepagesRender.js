@@ -2,7 +2,6 @@
 import InfoPageBubble from "../../components/whitepagebubbles/infobubble/infobubble";
 import "./page.css";
 import { fetchMembers } from "../../lib/data";
-import seacology_Logo from "../../../../assets/logo-blue-web-transparent.png";
 
 
 export default async function WhitepagesRenderer() {
@@ -12,7 +11,7 @@ export default async function WhitepagesRenderer() {
     console.log(item.name)
     return (
       <InfoPageBubble
-                src={seacology_Logo}
+                image={item.image}
                 alt="CeoPic"
                 name={item.name}
                 position={item.position}

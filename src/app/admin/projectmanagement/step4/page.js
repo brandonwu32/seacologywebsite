@@ -3,13 +3,13 @@
 import styles from "../../page.css"
 import Navbar from "../../../components/navbar/navbar";
 import Button from '../../../components/button/button';
-import Bubble from "../../../components/bubble/bubble";
 import Heading from "../../../components/info-hub/heading"
 import Body from "../../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
 import { fetchStep4 } from "../../../lib/data";
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Step4() {
 
@@ -44,13 +44,15 @@ export default function Step4() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href={"/admin/projectmanagement/step3?session="+sesh}>
-                        <Button color="blue" size="small" text="back"/>
-                    </Link>
+                    <Suspense>
+                        <Link href={"/admin/projectmanagement/step3?session="+sesh}>
+                            <Button color="blue" size="small" text="back"/>
+                        </Link>
 
-                    <Link href={"/admin/projectmanagement/step5?session="+sesh}>
-                        <Button color="blue" size="small" text="next"/>
-                    </Link>
+                        <Link href={"/admin/projectmanagement/step5?session="+sesh}>
+                            <Button color="blue" size="small" text="next"/>
+                        </Link>
+                    </Suspense>
                 </div>
 
             </div>

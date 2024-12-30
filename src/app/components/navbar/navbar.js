@@ -9,6 +9,7 @@ import { useSearchParams } from 'next/navigation';
 import { isAuthenticated } from '../../lib/data'
 import NavBarPopUp from '../navbarpopup/navbarpopup';
 import Link from "next/link"
+import { Suspense } from "react";
 
 
 export default function Navbar() {
@@ -52,9 +53,11 @@ export default function Navbar() {
             <NavBarPopUp trigger={popupTrigger} close={togglePopUp} name={"Search for Keywords in Guidelines"}/>
             <div id="navbar-wrapper">
                 <div className="img-with-text">
-                    <Link href={`${adminView && '/admin' || ''}`+"/welcome?session="+sesh}>
-                        <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
-                    </Link>
+                    <Suspense>
+                        <Link href={`${adminView && '/admin' || ''}`+"/welcome?session="+sesh}>
+                            <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
+                        </Link>
+                    </Suspense>
                 </div>
                 <div className="navbar">
                     <div className="navbar-link">
@@ -66,44 +69,51 @@ export default function Navbar() {
                     {authentication[1] && <Button onClick={toggleAdminView} color='blue' size='small' text={`${adminView && 'Admin View' || 'Normal View'}`}></Button>}
 
                     <div className="navbar-link">
-                        <Link href={`${adminView && '/admin' || ''}`+"/guidelines?session="+sesh} className="navbar-link">Guidelines</Link>
+                        <Suspense>
+                            <Link href={`${adminView && '/admin' || ''}`+"/guidelines?session="+sesh} className="navbar-link">Guidelines</Link>
+                        </Suspense>
                     </div>
 
                     <div className="navbar-link">
-                        <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/pm-overview?session="+sesh} className="navbar-link">Project Management</Link>
-                        <div className="dropdown">
-                            <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/pm-overview?session="+sesh}>Overview</Link>
-                            <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step1?session="+sesh}>Step 1</Link>
-                            <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step2?session="+sesh}>Step 2</Link>
-                            <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step3?session="+sesh}>Step 3</Link>
-                            <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step4?session="+sesh}>Step 4</Link>
-                            <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step5?session="+sesh}>Step 5</Link>
-                            <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step6?session="+sesh}>Step 6</Link>
-                        </div>
+                        <Suspense>
+                            <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/pm-overview?session="+sesh} className="navbar-link">Project Management</Link>
+                            <div className="dropdown">
+                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/pm-overview?session="+sesh}>Overview</Link>
+                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step1?session="+sesh}>Step 1</Link>
+                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step2?session="+sesh}>Step 2</Link>
+                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step3?session="+sesh}>Step 3</Link>
+                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step4?session="+sesh}>Step 4</Link>
+                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step5?session="+sesh}>Step 5</Link>
+                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step6?session="+sesh}>Step 6</Link>
+                            </div>
+                        </Suspense>
                     </div>
 
                     <div className="navbar-link">
                         <a className="navbar-link">Status Updates</a>
-                            <div className="dropdown">
-                                <Link href={"/forms/conservationagreement?session="+sesh}>Conservation Agreement</Link>
-                                <Link href={"/forms/finalprojectreport?session="+sesh}>Final Project Report</Link>
-                                <Link href={"/forms/grantagreementform?session="+sesh}>Grant Agreement</Link>
-                                <Link href={"/forms/projectprogressreport?session="+sesh}>Project Progress Report</Link>
-                                <Link href={"/forms/projectproposalform?session="+sesh}>Project Proposal Form</Link>
-                                <Link href={"/forms/reimbursement?session="+sesh}>Reimbursement Form</Link>
-                            </div>
+                            <Suspense>
+                                <div className="dropdown">
+                                    <Link href={"/forms/conservationagreement?session="+sesh}>Conservation Agreement</Link>
+                                    <Link href={"/forms/finalprojectreport?session="+sesh}>Final Project Report</Link>
+                                    <Link href={"/forms/grantagreementform?session="+sesh}>Grant Agreement</Link>
+                                    <Link href={"/forms/projectprogressreport?session="+sesh}>Project Progress Report</Link>
+                                    <Link href={"/forms/projectproposalform?session="+sesh}>Project Proposal Form</Link>
+                                    <Link href={"/forms/reimbursement?session="+sesh}>Reimbursement Form</Link>
+                                </div>
+                            </Suspense>
                     </div>
+                    <Suspense>
+                        <div className="navbar-link">
+                            <Link href={`${adminView && '/admin' || ''}`+"/finances?session="+sesh} className="navbar-link">Finances</Link>
+                        </div>
 
-                    <div className="navbar-link">
-                        <Link href={`${adminView && '/admin' || ''}`+"/finances?session="+sesh} className="navbar-link">Finances</Link>
-                    </div>
-
-                    <div className="navbar-link">
-                        <Link href={`${adminView && '/admin' || ''}`+"/contact?session="+sesh} className="navbar-link">Contact</Link>
-                    </div>
-                    <div className="navbar-link">
-                        <Link href={`${adminView && '/admin' || ''}`+"/whitepages?session="+sesh} className="navbar-link">Whitepages</Link>
-                    </div>
+                        <div className="navbar-link">
+                            <Link href={`${adminView && '/admin' || ''}`+"/contact?session="+sesh} className="navbar-link">Contact</Link>
+                        </div>
+                        <div className="navbar-link">
+                            <Link href={`${adminView && '/admin' || ''}`+"/whitepages?session="+sesh} className="navbar-link">Whitepages</Link>
+                        </div>
+                    </Suspense>
                 </div>
             </div>
         </div>

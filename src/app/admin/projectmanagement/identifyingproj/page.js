@@ -6,9 +6,10 @@ import Button from '../../../components/button/button';
 import Heading from "../../../components/info-hub/heading"
 import Body from "../../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
-import { fetchProjects } from "../../../lib/data";
+import { fetchProjectsWithID } from "../../../lib/data";
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Identifying() {
 
@@ -19,7 +20,7 @@ export default function Identifying() {
     useEffect(() => {
         const text = async () => {
         try {
-            const result = await fetchProjects();
+            const result = await fetchProjectsWithID(sesh);
             setTextList(result);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -40,6 +41,7 @@ export default function Identifying() {
                 </div>
 
                 <div className="button-wrapper">
+                <Suspense>
                     <Link href={"/admin/projectmanagement/step1?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
@@ -47,6 +49,7 @@ export default function Identifying() {
                     <Link href={"/admin/projectmanagement/newprojproposal?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>

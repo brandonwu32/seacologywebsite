@@ -9,6 +9,7 @@ import Link from "next/link"
 import { fetchFinances } from "../lib/data";
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 
 export default function Finances() {
@@ -41,13 +42,16 @@ export default function Finances() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href={"/projectmanagement/step6?session="+sesh}>
-                        <Button color="blue" size="small" text="back"/>
-                    </Link>
+                    <Suspense>
 
-                    <Link href={"/contact?session="+sesh}>
-                        <Button color="blue" size="small" text="next"/>
-                    </Link>
+                        <Link href={"/projectmanagement/step6?session="+sesh}>
+                            <Button color="blue" size="small" text="back"/>
+                        </Link>
+
+                        <Link href={"/contact?session="+sesh}>
+                            <Button color="blue" size="small" text="next"/>
+                        </Link>
+                    </Suspense>
                 </div>
 
             </div>

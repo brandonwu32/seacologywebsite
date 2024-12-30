@@ -4,7 +4,6 @@ import { signIn } from './auth';
 import { AuthError } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { getUser } from './auth';
-import bcrypt from 'bcrypt';
 
 export async function authenticate(
     prevState,

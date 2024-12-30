@@ -9,6 +9,7 @@ import Link from "next/link"
 import { fetchStep6 } from "../../../lib/data"
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
 export default function Step6() {
 
@@ -40,13 +41,15 @@ export default function Step6() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href={"/admin/projectmanagement/step5?session="+sesh}>
-                        <Button color="blue" size="small" text="back"/>
-                    </Link>
+                    <Suspense>
+                        <Link href={"/admin/projectmanagement/step5?session="+sesh}>
+                            <Button color="blue" size="small" text="back"/>
+                        </Link>
 
-                    <Link href={"/admin/finances?session="+sesh}>
-                        <Button color="blue" size="small" text="next"/>
-                    </Link>
+                        <Link href={"/admin/finances?session="+sesh}>
+                            <Button color="blue" size="small" text="next"/>
+                        </Link>
+                    </Suspense>
                 </div>
 
             </div>
