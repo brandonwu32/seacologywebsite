@@ -7,6 +7,8 @@ import { updateMember } from '../../../lib/actions';
 
 export default function EditPagePopUp(props) {
 
+    console.log(props)
+
 
       const [formData, setFormData] = useState({
         name: '',

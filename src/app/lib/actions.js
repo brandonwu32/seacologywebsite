@@ -124,7 +124,7 @@ export async function deleteMember(
 
         console.log(parsedFormData)
         if (!parsedFormData.user_id) {
-            throw new Error("Missing required field: email");
+            throw new Error("Missing required field: user_id");
         }
 
         const result = await sql`
@@ -141,7 +141,6 @@ export async function deleteMember(
         return result.rows[0];
     } catch (error) {
         console.error("Error deleting member:", error);
-        throw new Error("Error deleting member");
     }
 }
 
