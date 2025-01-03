@@ -144,3 +144,38 @@ export async function deleteMember(
         throw new Error("Error deleting member");
     }
 }
+
+
+
+export async function updateMember(userId, name, position, email, region) {
+    console.log(userId)
+    try {
+        if (!userId) {
+            throw new Error("User ID is required for updating member information.");
+        }
+
+        console.log("checked userID");
+
+        const updateResult = await sql`
+            UPDATE users
+            SET 
+                name = ${name || null},
+                position = ${position || null},
+                email = ${email || null},
+                region = ${region || null}
+            WHERE id = ${userId};
+        `;
+
+        console.log("ran SQL command");
+
+
+        if (updateResult.rowCount === 0) {
+            throw new Error(`No user found with ID: ${userId}`);
+        }
+
+        return { success: true, data: updateResult.rows[0] };
+    } catch (error) {
+        console.log("Error updating member:", error);
+    }
+}
+

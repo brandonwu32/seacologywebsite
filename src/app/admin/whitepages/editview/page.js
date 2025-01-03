@@ -116,6 +116,7 @@ export default function Whitepages() {
                 name={member.name}
                 position={member.position}
                 email={member.email}
+                user_id={member.id}
               />
             </div>
           )
