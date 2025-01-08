@@ -64,10 +64,18 @@ export default function Whitepages() {
 
  // Render member bubbles
  function bubbleMember(item) {
+  console.log("INSIDE BUBBLEMEMBER");
+  console.log(item.image);
+  // if item.image is null, set image = url i sent u
+  // else set it to the item's image
+  if (item.image == null) {
+    item.image = "https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1"
+  }
    return (
      <EditPageBubble
        key={item.email}
        image={item.image}
+       src="slay"
        alt="CeoPic"
        name={item.name}
        position={item.position}
@@ -107,20 +115,9 @@ export default function Whitepages() {
       <AddPopUp trigger={addPopUp} close = {toggleAddPopUp}/>
 
       <div className="EWPbubble-container">
-        {whiteList.map(function (member){
-          return (
-            <div className = "EWPbubble-wrapper" key={member.email}>
-              <EditPageBubble
-                image={member.image}
-                alt="CeoPic"
-                name={member.name}
-                position={member.position}
-                email={member.email}
-                user_id={member.id}
-              />
-            </div>
-          )
-        })}
+      {whiteList.map((item) =>
+            bubbleMember(item)
+        )}
       </div>
     </div>
   );

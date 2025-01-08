@@ -96,7 +96,7 @@ async function seedUsers() {
       password TEXT NOT NULL,
       position TEXT NOT NULL,
       admin BOOLEAN NOT NULL,
-      image TEXT NOT NULL
+      image TEXT
     );
   `;
 

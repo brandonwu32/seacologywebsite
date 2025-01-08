@@ -11,12 +11,13 @@ export default function AddPopUp(props) {
     email: '',
     admin: '',
     position: '',
-    image: null,
+    image: '',
   });
 
   const add = async () => {
     try {
-      const result = await addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin);
+      console.log("Inside async function");
+      const result = await addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin, newMember.image);
     } catch (error) {
       console.error("Error adding member:", error);
     }
@@ -37,14 +38,7 @@ export default function AddPopUp(props) {
     // Call the onAdd callback to update parent state
     add();
 
-    // Clear the form after submission
-    setNewMember({
-      name: '',
-      password: '',
-      email: '',
-      admin: '',
-      image: null,
-    });
+    // window.location.reload();
   }
 
   function renderInput(placeholder, field) {
@@ -83,13 +77,7 @@ export default function AddPopUp(props) {
           <hr className="apyellowline" />
           <div className="addcontainer">
             <div className="apadd-fields">
-              <form
-                className="AddMemberForm"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  handleSubmit();
-                }}
-              >
+              
                 {renderInput('Name', 'name')}
                 {renderInput('Password', 'password')}
                 {renderInput('Email', 'email')}
@@ -97,20 +85,11 @@ export default function AddPopUp(props) {
                 <label>Admin:</label>
                 {renderDropdown('admin')}
                 <label>Image:</label>
-                <input
-                  id="image-upload"
-                  type="file"
-                  onChange={(e) =>
-                    setNewMember({
-                      ...newMember,
-                      image: e.target.files[0],
-                    })
-                  }
-                />
-                <button color="blue" size="large" type="submit">
+                {renderInput('Image', 'image')}
+              
+                <button color="blue" size="large" onClick={handleSubmit}>
                   Add Member
                 </button>
-              </form>
             </div>
           </div>
         </div>

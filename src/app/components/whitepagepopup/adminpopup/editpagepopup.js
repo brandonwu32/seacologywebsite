@@ -2,10 +2,18 @@
 
 import './editpagepopup.css'
 import Button from '../../button/button';
-import { useEffect, useState } from 'react';
+import { deleteMember } from '../../../lib/actions';
+
+import { useEffect, useState, useActionState } from 'react';
 import { updateMember } from '../../../lib/actions';
 
 export default function EditPagePopUp(props) {
+
+   const [errorMessage, formAction, isPending] = useActionState(
+    deleteMember,
+    undefined,
+  );
+
 
     console.log(props)
 
@@ -16,6 +24,7 @@ export default function EditPagePopUp(props) {
         email: '',
         admin: '',
         position: '',
+        image: '',
     });
 
     const handleInputChange = (e) => {
@@ -30,10 +39,11 @@ export default function EditPagePopUp(props) {
                 formData.name,
                 formData.position,
                 formData.email,
-                formData.region
+                formData.image
             );
             console.log("after updateMember");
             console.log(result);
+            window.location.reload();
         } catch (error) {
           console.error("Error adding member:", error);
         }
@@ -48,9 +58,9 @@ export default function EditPagePopUp(props) {
             console.log(formData.name);
             console.log(formData.position);
             console.log(formData.email);
-            console.log(formData.region);
+            
 
-            updateMember();
+            update();
 
             // console.log("Member updated successfully:", result.data);
             // window.location.reload();
@@ -61,7 +71,8 @@ export default function EditPagePopUp(props) {
 
 
     return props.trigger ? (
-        <div>
+
+        <form action={formAction}>
             <input id = "name" name="user_id" type="hidden" value={props.user_id}/>
             <div className="eppopupOverlay">
                 <div className="eppopup">
@@ -98,18 +109,13 @@ export default function EditPagePopUp(props) {
                                         onChange={handleInputChange}
                                     />
                                 </label>
-                                <label>
-                                    Region:
-                                    <input
-                                        name="region"
-                                        type="text"
-                                        value={formData.region}
-                                        onChange={handleInputChange}
-                                    />
-                                </label>
+                                
+                                
                                 <label>
                                     Image:
-                                    <input name="image" type="file" />
+                                    <input name="image" type="text" 
+                                    value={formData.image}
+                                    onChange={handleInputChange}/>
                                 </label>
                             </div>
                         </div>
@@ -121,6 +127,6 @@ export default function EditPagePopUp(props) {
                     </div>
                 </div>
             </div>
-        </div>
+            </form>
 ) : null;
 }
