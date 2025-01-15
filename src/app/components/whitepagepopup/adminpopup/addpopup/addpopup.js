@@ -16,7 +16,8 @@ export default function AddPopUp(props) {
 
   const add = async () => {
     try {
-      const result = await addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin);
+      const image = 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
+      const result = await addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin, image);
     } catch (error) {
       console.error("Error adding member:", error);
     }

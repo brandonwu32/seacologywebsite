@@ -93,7 +93,29 @@ export async function deleteContent(content) {
     }
   }
 
-export async function addMember(name, email, position, password, admin) {
+export async function addMember(name, email, position, password, admin, image) {
+    console.log(name, email, position, password, admin, image)
+    try {
+        if (!name || !email || !position) {
+            throw new Error("Missing fields: name, email, or position");
+        }
+
+        const hashPassword = await bcrypt.hash(password, 10);
+
+        const data = await sql`
+            INSERT INTO users (name, email, position, admin, password, image)
+            VALUES (${name}, ${email}, ${position}, ${admin}, ${hashPassword}, ${image})
+            RETURNING *;
+        `;
+        console.log("Added member successfully:", data.rows[0]);
+        return data.rows[0];
+    } catch (error) {
+        console.error("Error adding member:", error);
+        throw new Error("Error adding member");
+    }
+}
+
+export async function updateMember(name, email, position, password, admin) {
     console.log(name, email, position, password, admin)
     try {
         if (!name || !email || !position) {
@@ -124,7 +146,7 @@ export async function deleteMember(
 
         console.log(parsedFormData)
         if (!parsedFormData.user_id) {
-            throw new Error("Missing required field: email");
+            throw new Error("Missing required field: id");
         }
 
         const result = await sql`
