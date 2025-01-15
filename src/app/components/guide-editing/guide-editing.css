@@ -1,0 +1,9 @@
+.gebigdiv{
+    display: flex;
+    transform: scale(0.6);
+    gap: 8rem;  
+    margin-left: 7%;
+}
+.thepopups {
+    margin-left:0%;
+}

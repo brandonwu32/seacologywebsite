@@ -1,14 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Bubble from "../../components/bubble/bubble";
-import Button from "../../components/button/button";
-import styles from "../page.css";
-import {createUpdate, createProject} from "../../lib/actions"
-import { fetchProjects, getUserID } from "../../lib/data";
+import { createProject } from "../../lib/actions"
+import { redirect } from 'next/navigation';
 
-import { NextResponse } from "next/server";
-import path from "path";
 
 export default function ProjectProposalPage() {
   const [timeProtected, setTimeProtected] = useState("");
@@ -28,7 +23,7 @@ export default function ProjectProposalPage() {
     window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const fields = [projectName, timeProtected, ownershipConfirmation, fiscalAdmin, fundingSources, threatenedSpecies,
       protectionDetails, address, communitySize, projectCost, areaSizeType, conflicts];
 
@@ -38,10 +33,10 @@ export default function ProjectProposalPage() {
       }
     }
 
-    
+
     const subject = `Project Progress Report: ${projectName}`
-    const body = `Hello! 
-    
+    const body = `Hello!
+
                   A new project proposal was submitted. Here are the responses:
 
                   ***Note: Please attach any files you may want to share (images, videos, etc.).
@@ -69,18 +64,20 @@ export default function ProjectProposalPage() {
                   Any conflicts of interest: ${conflicts}
 
                   Project Name: ${projectName}
-                  
+
                   Thanks!`
-    sendEmail("nishant.malpani@berkeley.edu", subject, body)
     const now = new Date()
     const currentDate = now.toDateString()
     console.log("Current date: ", currentDate)
-    createProject("project created", projectName, currentDate)
+    const update = await createProject("project created", projectName, currentDate, sesh)
+    alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
+    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    redirect('/welcome?session=' + sesh)
   };
 
 
   return (
-    <form>
       <div className="proposalpage">
       <h1 className="proposalheading">New Project Proposal</h1>
       <hr className= "formYellow-line"></hr>
@@ -143,6 +140,5 @@ export default function ProjectProposalPage() {
         <button className="formEnter-button" onClick={handleSubmit}>enter</button>
       </div>
     </div>
-    </form>
   );
 }

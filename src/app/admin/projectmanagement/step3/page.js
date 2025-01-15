@@ -1,15 +1,33 @@
-'use server'
+'use client'
 
 import styles from "../../page.css"
 import Navbar from "../../../components/navbar/navbar";
 import Button from '../../../components/button/button';
 import Heading from "../../../components/info-hub/heading"
-import Body from "../../../components/info-hub/pages/project-management/body";
+import Body from "../../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
-import { fetchGuidelinesPage } from "../../../lib/data"
+import { fetchStep3 } from "../../../lib/data";
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
-export default async function Step3() { 
-    var textList = await fetchGuidelinesPage();
+export default function Step3() {
+    const [textList, setTextList] = useState([])
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
+
+    useEffect(() => {
+        const text = async () => {
+        try {
+            const result = await fetchStep3();
+            setTextList(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        text()
+    }, []);
 
     return (
         <div>
@@ -22,13 +40,15 @@ export default async function Step3() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/admin/projectmanagement/step2">
+                <Suspense>
+                    <Link href={"/admin/projectmanagement/step2?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/admin/projectmanagement/step4">
+                    <Link href={"/admin/projectmanagement/step4?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>

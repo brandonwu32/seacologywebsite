@@ -1,14 +1,43 @@
+'use client'
+
+
 import styles from "./page.css";
 import InfoPageBubble from "../components/whitepagebubbles/infobubble/infobubble";
 import { fetchMembers } from "../lib/data";
-import seacology_Logo from "../../../assets/seacology_logo.png";
-import WhitepagesRenderer from "./whitepagesRender";
-import ProfileSkeletons from '../components/skeletons/whitepages/profileSkeletons';
-import { Suspense } from 'react';
+import { useState, useEffect } from "react";
 
 
 export default function Whitepages() {
-  return (
+  const [whiteList, setWhiteList] = useState([]);
+
+
+  useEffect(() => {
+    const members = async () => {
+      try {
+        const result = await fetchMembers();
+        setWhiteList(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    members()
+  }, []);
+
+  function bubbleMember(item) {
+    console.log(item.name)
+    return (
+      <InfoPageBubble
+                image={item.image}
+                alt="CeoPic"
+                name={item.name}
+                position={item.position}
+                email={item.email}
+            />
+    )
+  }
+
+    return (
           <div className={styles.page}>
         <div className='top'>
           <p className = 'WPtitle'> Team</p>
@@ -17,9 +46,11 @@ export default function Whitepages() {
         </div>
         <hr className="WPblueline" />
         <hr className="WPyellowline" />
-        <Suspense fallback={<ProfileSkeletons/>}>
-          <WhitepagesRenderer/>
-        </Suspense>
+        <div className = "WPbubble-container">
+        {whiteList.map((item) =>
+            <div key={item.id}>{bubbleMember(item)}</div>
+        )}
       </div>
-  );
+      </div>
+  )
 }

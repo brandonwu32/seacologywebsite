@@ -1,16 +1,34 @@
-"use server"
+"use client"
 
 import styles from "../../page.css"
 import Navbar from "../../../components/navbar/navbar";
 import Button from '../../../components/button/button';
 import Heading from "../../../components/info-hub/heading"
-import Body from "../../../components/info-hub/pages/project-management/body";
+import Body from "../../../components/info-hub/pages/project-management/bodyAdmin";
 import Link from "next/link"
-import { fetchGuidelinesPage } from "../../../lib/data"
+import { fetchProjectsWithID } from "../../../lib/data";
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from "react";
 
-export default async function Identifying() {
-    
-    var textList = await fetchGuidelinesPage();
+export default function Identifying() {
+
+    const [textList, setTextList] = useState([])
+    const searchParams = useSearchParams();
+    let sesh = searchParams.get("session");
+
+    useEffect(() => {
+        const text = async () => {
+        try {
+            const result = await fetchProjectsWithID(sesh);
+            setTextList(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        };
+
+        text()
+    }, []);
 
     return (
         <div>
@@ -23,13 +41,15 @@ export default async function Identifying() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/admin/projectmanagement/step1">
+                <Suspense>
+                    <Link href={"/admin/projectmanagement/step1?session="+sesh}>
                         <Button color="blue" size="small" text="back"/>
                     </Link>
 
-                    <Link href="/admin/projectmanagement/newprojproposal">
+                    <Link href={"/admin/projectmanagement/newprojproposal?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
+                    </Suspense>
                 </div>
             </div>
         </div>

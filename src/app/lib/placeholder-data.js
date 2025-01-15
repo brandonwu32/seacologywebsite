@@ -1,6 +1,11 @@
 // This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
 // https://nextjs.org/learn/dashboard-app/fetching-data
-  const guidelinestable = [
+
+
+
+  // Don't worry about anything below here
+
+ const guidelines = [
     {
       type: 'paragraph',
       content: 'Here is some information to help you work with Seacology smoothly and efficiently.',
@@ -844,92 +849,119 @@
 
   ]
 
-const users = [
-  {
-    name: 'Sophia',
-    email: 'bro@nextmail.com',
-    position: 'dev',
-    admin: false
-  },
-  {
-    name: 'Renata',
-    email: 'bruh@nextmail.com',
-    position: 'dev',
-    admin: false
-  },
-  {
-    name: 'Tanya',
-    email: 'ayo@nextmail.com',
-    position: 'PM',
-    admin: true
-  },
-  {
-    name: 'Habeeb',
-    email: 'baller@nextmail.com',
-    position: 'dev',
-    admin: false
-  },
-  {
-    name: 'Bussy',
-    email: 'Buss@nextmail.com',
-    position: 'PM',
-    admin: true
-  },
-  {
-    name: 'Camila',
-    email: 'quiet@nextmail.com',
-    position: 'dev',
-    admin: false
-  },
-];
+  const users = [
+    {
+      id: 'f97c9daa-36cf-4c1e-893c-3eca13e62fb5',
+      name: 'Sophia',
+      email: 'bro@nextmail.com',
+      position: 'dev',
+      admin: false,
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
+    },
+    {
+      id: '7624f240-e674-4860-9232-b45591f9a4dc',
+      name: 'Renata',
+      email: 'bruh@nextmail.com',
+      position: 'dev',
+      admin: false,
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
+    },
+    {
+      id: '451df1f9-8485-4aef-a7c1-51d773fe5a55',
+      name: 'Tanya',
+      email: 'ayo@nextmail.com',
+      position: 'PM',
+      admin: true,
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
+    },
+    {
+      id: '7059921c-9c8d-433e-b255-671de1664ef0',
+      name: 'Habeeb',
+      email: 'baller@nextmail.com',
+      position: 'dev',
+      admin: false,
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
+    },
+    {
+      id: 'bd6bfb89-e788-4708-a2f8-666937e555fe',
+      name: 'Bussy',
+      email: 'Buss@nextmail.com',
+      position: 'PM',
+      admin: true,
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
+    },
+    {
+      id: 'a1ae76e5-6aa6-41e9-8714-b0636a5af493',
+      name: 'Camila',
+      email: 'quiet@nextmail.com',
+      position: 'dev',
+      admin: false,
+      password: '$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQF1ui6894vyAg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682477070552?e=1740614400&v=beta&t=GHHFP5uKz-QxtCyqCRWWc0mrAxLsQZK-K9zXFjXSJwE'
+    },
+  ];
 
-const updates = [
-  {
-    type: 'status_change',
-    time: new Date().toISOString(),
-    project_id: '123e4567-e89b-12d3-a456-426614174000', // Replace with valid UUID
-    field_rep_id: '234e5678-e89b-12d3-a456-426614174001', // Replace with valid UUID
-  },
-  {
-    type: 'note_added',
-    time: new Date().toISOString(),
-    project_id: '123e4567-e89b-12d3-a456-426614174002', // Replace with valid UUID
-    field_rep_id: '234e5678-e89b-12d3-a456-426614174003', // Replace with valid UUID
-  },
-  {
-    type: 'status_update',
-    time: new Date().toISOString(),
-    project_id: '123e4567-e89b-12d3-a456-426614174004', // Replace with valid UUID
-    field_rep_id: '234e5678-e89b-12d3-a456-426614174005', // Replace with valid UUID
-  },
-  {
-    type: 'task_completed',
-    time: new Date().toISOString(),
-    project_id: '123e4567-e89b-12d3-a456-426614174006', // Replace with valid UUID
-    field_rep_id: '234e5678-e89b-12d3-a456-426614174007', // Replace with valid UUID
-  },
-];
+  const updates = [
+    {
+      type: 'status_change',
+      time: new Date().toISOString(),
+      project_id: '123e4567-e89b-12d3-a456-426614174000', // Replace with valid UUID
+      field_rep_id: 'bd6bfb89-e788-4708-a2f8-666937e555fe', // Replace with valid UUID
+    },
+    {
+      type: 'note_added',
+      time: new Date().toISOString(),
+      project_id: '123e4567-e89b-12d3-a456-426614174002', // Replace with valid UUID
+      field_rep_id: 'bd6bfb89-e788-4708-a2f8-666937e555fe', // Replace with valid UUID
+    },
+    {
+      type: 'status_update',
+      time: new Date().toISOString(),
+      project_id: '123e4567-e89b-12d3-a456-426614174004', // Replace with valid UUID
+      field_rep_id: '7624f240-e674-4860-9232-b45591f9a4dc', // Replace with valid UUID
+    },
+    {
+      type: 'task_completed',
+      time: new Date().toISOString(),
+      project_id: '123e4567-e89b-12d3-a456-426614174006', // Replace with valid UUID
+      field_rep_id: 'f97c9daa-36cf-4c1e-893c-3eca13e62fb5', // Replace with valid UUID
+    },
+  ];
 
-const projects = [
-  {
-    field_rep_id: "97fe71f8-de46-4d42-8f39-9fdceba174ee",
-    time: new Date().toISOString(),
-    status: "ongoing",
-    project_name: "Project 1",
-  },
-  {
-    field_rep_id: "97fe71f8-de46-4d42-8f39-9fdceba174ee",
-    time: new Date().toISOString(),
-    status: "ongoing",
-    project_name: "Project 2"
-  },
-  {
-    field_rep_id: "97fe71f8-de46-4d42-8f39-9fdceba174ee",
-    time: new Date().toISOString(),
-    status: "finished",
-    project_name: "Project 3",
-  }
-]
+  const projects = [
+    {
+      project_id: '123e4567-e89b-12d3-a456-426614174000',
+      field_rep_id: "bd6bfb89-e788-4708-a2f8-666937e555fe",
+      time: new Date().toISOString(),
+      status: "ongoing",
+      project_name: "Project 1",
+    },
+    {
+      project_id: '123e4567-e89b-12d3-a456-426614174002',
+      field_rep_id: "bd6bfb89-e788-4708-a2f8-666937e555fe",
+      time: new Date().toISOString(),
+      status: "ongoing",
+      project_name: "Project 2"
+    },
+    {
+      project_id: '123e4567-e89b-12d3-a456-426614174006',
+      field_rep_id: "f97c9daa-36cf-4c1e-893c-3eca13e62fb5",
+      time: new Date().toISOString(),
+      status: "finished",
+      project_name: "Project 3",
+    },
+    {
+      project_id: '123e4567-e89b-12d3-a456-426614174004',
+      field_rep_id: "7624f240-e674-4860-9232-b45591f9a4dc",
+      time: new Date().toISOString(),
+      status: "finished",
+      project_name: "Project 4",
+    }
+  ]
 
-export { users, updates, projects, guidelinestable };
-
+  export { guidelines, users, updates, projects };
