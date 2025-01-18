@@ -16,7 +16,6 @@ export default function AddPopUp(props) {
 
   const add = async () => {
     try {
-      console.log("Inside async function");
       const result = await addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin, newMember.image);
     } catch (error) {
       console.error("Error adding member:", error);
@@ -33,12 +32,11 @@ export default function AddPopUp(props) {
       image: newMember.image,
     };
 
-    console.log('Adding Member:', member);
 
     // Call the onAdd callback to update parent state
     add();
 
-    // window.location.reload();
+    window.location.reload();
   }
 
   function renderInput(placeholder, field) {

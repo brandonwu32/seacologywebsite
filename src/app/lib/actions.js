@@ -5,8 +5,7 @@ import { getUserID } from './data';
 import bcrypt from 'bcrypt';
 
 export async function createUpdate(type, project_id, date, field_rep_id) {
-    console.log("Type: ", type)
-    console.log("Project id: ", project_id)
+ 
     try {
 
         await sql`
@@ -14,14 +13,12 @@ export async function createUpdate(type, project_id, date, field_rep_id) {
         VALUES (${type}, ${date}, ${project_id}, ${field_rep_id})
         `;
     } catch(error) {
-        console.log('Error: ', error)
         throw new Error('An error occured')
     }
 }
 
 export async function createProject(status, project_name, date) {
-    console.log("Status: ", status)
-    console.log("Project name: ", project_name)
+  
 
     try {
         const field_rep_id = await getUserID();
@@ -31,7 +28,6 @@ export async function createProject(status, project_name, date) {
         VALUES (${status}, ${project_name}, ${field_rep_id}, ${date})
         `;
     } catch(error) {
-        console.log("Error: ", error)
         throw new Error("An error occured")
     }
 }
@@ -94,23 +90,19 @@ export async function deleteContent(content) {
   }
 
 export async function addMember(name, email, position, password, admin, image) {
-    console.log(name, email, position, password, admin, image);
     try {
         if (!name || !email || !position) {
             throw new Error("Missing fields: name, email, or position");
         }
 
         const hashPassword = await bcrypt.hash(password, 10);
-        console.log(hashPassword);
         const data = await sql`
             INSERT INTO users (name, email, position, admin, password, image)
             VALUES (${name}, ${email}, ${position}, ${admin}, ${hashPassword}, ${image})
             RETURNING *;
         `;
-        console.log("Added member successfully:", data.rows[0]);
         return data.rows[0];
     } catch (error) {
-        console.log(error);
     }
 }
 
@@ -121,7 +113,6 @@ export async function deleteMember(
     try {
         const parsedFormData = Object.fromEntries(formData.entries());
 
-        console.log(parsedFormData)
         if (!parsedFormData.user_id) {
             throw new Error("Missing required field: user_id");
         }
@@ -136,7 +127,6 @@ export async function deleteMember(
             throw new Error(`No member found with id: ${parsedFormData.user_id}`);
         }
 
-        console.log("Deleted member successfully:", result.rows[0]);
         return result.rows[0];
     } catch (error) {
         console.error("Error deleting member:", error);
@@ -146,13 +136,11 @@ export async function deleteMember(
 
 
 export async function updateMember(userId, name, position, email, image) {
-    console.log(userId)
     try {
         if (!userId) {
             throw new Error("User ID is required for updating member information.");
         }
 
-        console.log("checked userID");
 
         const updateResult = await sql`
             UPDATE users
@@ -164,7 +152,6 @@ export async function updateMember(userId, name, position, email, image) {
             WHERE id = ${userId};
         `;
 
-        console.log("ran SQL command");
 
 
         if (updateResult.rowCount === 0) {
@@ -173,7 +160,6 @@ export async function updateMember(userId, name, position, email, image) {
 
         return { success: true, data: updateResult.rows[0] };
     } catch (error) {
-        console.log("Error updating member:", error);
     }
 }
 

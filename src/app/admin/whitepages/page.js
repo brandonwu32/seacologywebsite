@@ -30,7 +30,6 @@ export default function Whitepages() {
   }, []);
 
   function bubbleMember(item) {
-    console.log(item.src)
     return (
       <InfoPageBubble
                 image={item.image}

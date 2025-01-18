@@ -34,7 +34,6 @@ export default function Whitepages() {
  // Add a new member
  function addMemberTwo(newMember) {
    setWhiteList((prevList) => [...prevList, newMember]);
-   console.log(newMember);
    addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin);
  }
 
@@ -55,7 +54,6 @@ export default function Whitepages() {
      // Update state to remove the deleted member
      setWhiteList((prevList) => prevList.filter((member) => member.email !== email));
      deleteMember(member.email);
-     console.log(`Member with email ${email} deleted successfully.`);
    } catch (error) {
      console.error("Error deleting member:", error);
    }
@@ -64,8 +62,7 @@ export default function Whitepages() {
 
  // Render member bubbles
  function bubbleMember(item) {
-  console.log("INSIDE BUBBLEMEMBER");
-  console.log(item.image);
+
   // if item.image is null, set image = url i sent u
   // else set it to the item's image
   if (item.image == null) {

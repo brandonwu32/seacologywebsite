@@ -12,7 +12,6 @@ export default function EditPageBubble(props) {
         }
         setButtonPopUp(!buttonPopUp);
       }
-    console.log(props)
     return (
         <div className = "individual-bubble">
             <button onClick={togglePopUp} className="bubble"> 

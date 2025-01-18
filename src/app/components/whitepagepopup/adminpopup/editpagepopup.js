@@ -15,7 +15,6 @@ export default function EditPagePopUp(props) {
   );
 
 
-    console.log(props)
 
 
       const [formData, setFormData] = useState({
@@ -41,8 +40,6 @@ export default function EditPagePopUp(props) {
                 formData.email,
                 formData.image
             );
-            console.log("after updateMember");
-            console.log(result);
             window.location.reload();
         } catch (error) {
           console.error("Error adding member:", error);
@@ -53,16 +50,11 @@ export default function EditPagePopUp(props) {
 
     async function handleSubmit() {
         try {
-            console.log("BEFORE UPDATEMEMBER");
-            console.log(props.user_id);
-            console.log(formData.name);
-            console.log(formData.position);
-            console.log(formData.email);
+        
             
 
             update();
 
-            // console.log("Member updated successfully:", result.data);
             // window.location.reload();
         } catch (error) {
             console.error("Error updating member:", error);
