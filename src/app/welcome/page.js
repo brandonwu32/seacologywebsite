@@ -15,15 +15,16 @@ export default function Welcome() {
     const searchParams = useSearchParams();
     let sesh = searchParams.get("session");
         return (
-            <div>
-                <Navbar/>
+            <div className='page'>
+                <div className="navbar-div">
+                    <Navbar/>
+                </div>
                 <div className="page-wrapper">
                     <Heading text="Welcome" buttonText = 'edit'/>
 
                     <div className="welcome-wrapper">
                     <Suspense>
-
-                        <div className="link-bubble-wrapper">
+                        <div className="link-bubble-wrapper-first">
                             <Link href={"/guidelines?session="+sesh} >
                                 <Bubble className="welcome-bubble" heading="Guidelines" width={'20rem'} height={'20rem'}/>
                             </Link>
@@ -42,7 +43,7 @@ export default function Welcome() {
 
                         <div className="link-bubble-wrapper">
 
-                            <Link href={"/financial?session="+sesh} >
+                            <Link href={"/finances?session="+sesh} >
                                 <Bubble className="welcome-bubble" heading="Financial" width={'20rem'} height={'20rem'}/>
                             </Link>
                         </div>

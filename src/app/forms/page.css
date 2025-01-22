@@ -1,32 +1,12 @@
-@media (max-width: 500px) {
-  .form-fields {
-    margin: auto;
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-  .agree-button-container {
-    flex-direction: column;
-  }
-  .agreement-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .agreement-page {
-    width: 100%;
-  }
-  .agreement-text-box {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
-    margin: auto;
-  }
-  .form-fields {
-    margin: auto;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    height: 200%;
-  }
+/* General Styles */
+
+.agree-button-container {
+  display: flex;
+  justify-content: center; /* Center the button */
+}
+
+.agree-button {
+  padding: 10px 20px;
 }
 
 .formPage {
@@ -46,94 +26,76 @@
 }
 
 .formBlue-line {
-  border: None;
+  border: none;
   border-top: 0.1rem solid #72C7F2;
   width: 100%;
 }
 
 .formYellow-line {
-  border: None;
+  border: none;
   border-top: 0.1rem solid #FDCD3B;
   width: 100%;
 }
 
+/* Form Container and Fields */
 .form-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 2%;
 }
 
 .form-fields {
-  width: 80%;
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .form-fields label {
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #333;
-}
-
-.form-fields input {
   width: 100%;
-  padding: 8%;
-  border: 1px solid #72C7F2;
-  border-radius: 10px;
-  font-size: 1rem;
-  margin-top: 5%;
 }
 
 .form-fields input,
 .form-fields textarea {
-  width: 80%;
-  padding: 3%;
-  border: 2% solid #ccc;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #72C7F2;
   border-radius: 10px;
   font-size: 1rem;
-  margin-top: 0.5%;
-  min-height: 40%;
-  border-color: #72C7F2;
+  margin-top: 0.5rem;
   resize: vertical;
-  height: 100%;
   font-family: Arial, sans-serif;
 }
 
-.form-fields input[type="number"] {
-  height: 50%;
-  padding: 10%;
-  font-size: 1rem;
-}
-
+/* Buttons */
 .formButton-container {
   display: flex;
-  justify-content: center;
-  gap: 2%;
-  margin-top: -4%;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
 }
 
-.formClose-button, .formEnter-button {
-  padding: 1% 4%;
+.formClose-button, 
+.formEnter-button {
+  padding: 0.8rem 2rem;
   font-size: 1rem;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  background: blue;
-}
-
-.formClose-button {
-  background: #FDCD3B;
-  color: white;
-  margin-left: 80%;
-}
-
-.formEnter-button {
   background-color: #72C7F2;
   color: white;
 }
+
+.formClose-button {
+  background-color: #FDCD3B;
+}
+
 
 .formDropdown-container {
   position: relative;
@@ -476,3 +438,69 @@ border: 1px solid #72C7F2;
   text-decoration: underline;
 }
 
+/* Media Query for Mobile */
+@media (max-width: 500px) {
+
+  .agreement-container {
+    flex-direction: column; /* Stack the elements vertically */
+  }
+
+  .agreement-text-box {
+    margin-top: 20px; /* Add some spacing between form fields and text box */
+    margin-left: 0;
+  }
+
+  .formPage {
+    padding: 1rem;
+  }
+
+  .formHeading {
+    font-size: 2rem;
+  }
+
+  .form-fields {
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box; /* This ensures padding doesn't affect the width */
+    margin: 0; /* Optional, to remove any default margin */
+  }
+
+  .form-fields label {
+    font-size: 1rem;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .form-fields input,
+  .form-fields textarea {
+    width: 100% !important; /* Override any other width settings */
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  /* Mobile-friendly dropdown input */
+  .formDropdown-container input {
+    width: 100% !important; /* Ensures dropdown spans the full width */
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .formClose-button, 
+  .formEnter-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .agreement-text-box {
+    width: 100%;
+  }
+  
+}

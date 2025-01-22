@@ -8,12 +8,17 @@ export default function Home() {
   return (
     <div className="page">
       <div className="image-container">
-      <Image src={logo} alt="Seacology Logo" />
+      <Image src={logo} alt="Seacology Logo" className="seacology-logo"/>
+      <div className = "login-area-mobile"> 
+        <Button color = "blue" size = "large" text = "Log in" className="login-button"/>
+      </div>
+
       </div>
       <div className="main-content">
         <div className="top-bar">
-          <div className = "login-area"></div>
-          <Button color = "blue" size = "large" text = "Log in"/>
+          <div className = "login-area">
+            <Button color = "blue" size = "large" text = "Log in"/>
+          </div>
         </div>
         <div className = "bottom-bar"> </div>
       <div className="button-bar">

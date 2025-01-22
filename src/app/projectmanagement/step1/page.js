@@ -32,7 +32,9 @@ export default function Step1() {
     }, []);
     return (
         <div>
-            <Navbar/>
+            <div className="navbar-div">
+                <Navbar/>
+            </div>
             <div className="page-wrapper">
                 <Heading text="Step 1" buttonText="edit"/>
                 <div>

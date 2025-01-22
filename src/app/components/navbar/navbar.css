@@ -1,3 +1,6 @@
+@media (max-width: 500px) {
+    
+}
 
 /* Main wrapper styling */
 #wrapper {
@@ -13,6 +16,8 @@
     align-items: center; /* Centers items horizontally within the sidebar */
     padding-top: 1rem;
 }
+
+
 
 #seacology-logo {
     display: block;
@@ -162,4 +167,8 @@
 /* Rotate the arrow when hovering over the link */
 .navbar-link:hover > a::before {
     transform: rotate(225deg);
+}
+
+.auth-logo {
+    display: none;
 }

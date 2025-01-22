@@ -32,7 +32,9 @@ export default function Identifying() {
 
     return (
         <div>
-            <Navbar/>
+            <div className="navbar-div">
+                <Navbar/>
+            </div>
             <div className="page-wrapper">
                 <Heading text="New Project Proposal" buttonText="edit"/>
 

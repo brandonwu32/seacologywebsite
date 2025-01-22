@@ -32,7 +32,9 @@ export default function Contact() {
 
 return (
     <div>
-        <Navbar/>
+        <div className="navbar-div">
+            <Navbar/>
+        </div>
         <div className="page-wrapper">
             <Heading text="Contacts" buttonText="Editing" edit ={true}/>
 

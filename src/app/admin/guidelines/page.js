@@ -32,7 +32,9 @@ export default function Guidelines() {
 
     return (
         <div>
-            <Navbar/>
+            <div className="navbar-div">
+                <Navbar/>
+            </div>
             <div className="page-wrapper">
                 <Heading text="Guidelines" buttonText = 'Editing' edit ={true}/>
 

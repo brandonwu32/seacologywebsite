@@ -32,7 +32,9 @@ export default function PM_Overview() {
 
     return (
         <div>
-            <Navbar/>
+            <div className="navbar-div">
+                <Navbar/>
+            </div>
             <div className="page-wrapper">
                 <Heading text="Project Management" buttonText = 'Editing' edit ={true}/>
 
