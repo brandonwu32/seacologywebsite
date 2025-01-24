@@ -8,6 +8,7 @@ import Button from '../button/button'
 import { useSearchParams } from 'next/navigation';
 import { isAuthenticated } from '../../lib/data'
 import NavBarPopUp from '../navbarpopup/navbarpopup';
+import Logo from '../../../../assets/logo-blue-web-transparent.png'
 import Link from "next/link"
 import { Suspense } from "react";
 
@@ -66,7 +67,7 @@ export default function Navbar() {
                             <button id="search-bar" onClick={() => togglePopUp()}></button>
                         </div>
                     </div>
-                    {authentication[1] && <Button onClick={toggleAdminView} color='blue' size='small' text={`${adminView && 'Admin View' || 'Normal View'}`}></Button>}
+                    {authentication[1] && <Button onClick={toggleAdminView} color={`${adminView && 'red' || 'blue'}`} size='adminToggle' text={`${adminView && 'Admin View' || 'Normal View'}`}></Button>}
 
                     <div className="navbar-link">
                         <Suspense>

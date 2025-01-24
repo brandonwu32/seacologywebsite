@@ -138,11 +138,12 @@ export default function ConservationAgreementPage() {
               members understand and agree with the agreement.
             </p>
           </div>
-        </div>
+        </div>  
 
         <div className="agree-button-container">
           <button className="agree-button" onClick={handleSubmit}>Agree</button>
         </div>
+
       </div>
       {isOtherPopupOpen && (
         <div className="formPopupOverlay">

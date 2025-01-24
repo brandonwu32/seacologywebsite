@@ -33,7 +33,9 @@ export default function Finances() {
 
     return (
         <div>
-            <Navbar/>
+            <div className="navbar-div">
+                <Navbar/>
+            </div>
             <div className="page-wrapper">
                 <Heading text="Finances Info" buttonText="edit"/>
 

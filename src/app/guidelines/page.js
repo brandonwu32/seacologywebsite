@@ -3,6 +3,7 @@
 
 import styles from "./page.css"
 import Navbar from "../components/navbar/navbar";
+import MobileNav from "../components/mobile-navbar/navbar"
 import Button from '../components/button/button';
 import Heading from "../components/info-hub/heading"
 import Body from "../components/info-hub/pages/project-management/body";
@@ -33,7 +34,14 @@ export default function Guidelines() {
 
     return (
         <div>
-            <Navbar/>
+            <div className="navbar-div">
+                <Navbar/>
+            </div>
+
+            <div className="mobile-navbar-div">
+                <MobileNav/>
+            </div>
+
             <div className="page-wrapper">
                 <Heading text="Guidelines" buttonText = 'edit'/>
                 <div>
@@ -47,7 +55,7 @@ export default function Guidelines() {
                             <Button color="blue" size="small" text="back"/>
                         </Link>
 
-                        <Link href="/projectmanagement/pm-overview">
+                        <Link href={"/projectmanagement/pm-overview?session="+sesh}>
                             <Button color="blue" size="small" text="next"/>
                         </Link>
                     </Suspense>

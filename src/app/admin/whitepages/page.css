@@ -16,6 +16,7 @@
   width: 100%;
   overflow-y: scroll;
   justify-content: center;
+  gap: 3rem;
 }
 
 .AWPbubble-wrapper {
@@ -109,4 +110,13 @@ align-items: center;
   align-items: center;
   text-align: center;
   object-fit: cover;
+}
+
+@media (max-width: 550px) {
+  .WPbubble-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+  }
 }

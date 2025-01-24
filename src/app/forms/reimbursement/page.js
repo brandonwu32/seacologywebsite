@@ -222,7 +222,7 @@ export default function ReimbursementPage() {
               <Button color="blue" size="small" text="Close" onClick={closeOtherPopup}/>
             </div>
           </div>
-        )}
+        )}  
 
         {isSecondOtherPopupOpen && (
           <div className="formPopupOverlay">

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { createProject } from "../../lib/actions"
 import { redirect } from 'next/navigation';
+import styles from '../page.css'
 
 
 export default function ProjectProposalPage() {

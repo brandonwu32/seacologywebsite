@@ -34,7 +34,9 @@ export default function Step2() {
 
     return (
         <div>
-            <Navbar/>
+            <div className="navbar-div">
+                <Navbar/>
+            </div>
             <div className="page-wrapper">
                 <Heading text="Step 2" buttonText="Editing" edit ={true}/>
 

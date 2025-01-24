@@ -1,4 +1,9 @@
 
+.page {
+    overflow: hidden;
+    display: flex;
+}
+
 .welcome-wrapper {
     display: flex;
     flex-direction: row;
@@ -20,7 +25,6 @@
 
 .page-wrapper {
     height: 100%;
-    width: 60%;
     margin-left: 24%;
     margin-top: 12%;
     display: flex;
@@ -35,19 +39,13 @@
 .button-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 60%;
     width: 100%;
-}
-
-.link-bubble-wrapper {
-    width: 90vw;
 }
 
 .lists{
     display: flex;
     padding-left: 25%;
     flex-wrap: wrap;
-    padding-left: 30%;
 }
 
 .step1-row1-wrapper {
@@ -58,3 +56,21 @@
 }
 
 
+@media (max-width: 500px) {
+    .page-wrapper {
+        width: 100%;
+    }
+
+    .welcome-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .navbar-div {
+        display: none;
+    }
+
+    .link-bubble-wrapper-first {
+        margin-top: 12vh;
+    }
+}
