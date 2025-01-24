@@ -115,6 +115,7 @@ export default function Whitepages() {
       {whiteList.map((item) =>
             bubbleMember(item)
         )}
+
       </div>
     </div>
   );

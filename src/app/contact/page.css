@@ -22,3 +22,43 @@
     display: flex;
     flex-direction: row;
 }
+
+@media (max-width: 500px) {
+    .navbar-div {
+        display: none;
+    }
+
+    .page-wrapper {
+        margin: 2rem auto 0 auto; /* Center the page with auto margins on sides */
+        width: 90%; /* Adjust the width to fit smaller screens */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align all items to the left */
+        gap: 1.5rem; /* Consistent gap between elements */
+        margin-top: 10rem;
+    }
+
+    .heading {
+        margin-left: 1rem; /* Add a consistent left margin to the heading */
+    }
+
+    .button-wrapper,
+    .welcome-wrapper,
+    .link-bubble-wrapper,
+    .lists,
+    .step1-row1-wrapper {
+        margin-left: 1rem; /* Align all child elements with the heading */
+        width: 100%; /* Ensure full width for responsiveness */
+        flex-direction: column; /* Stack elements vertically */
+        gap: 1rem; /* Add spacing between elements */
+    }
+
+    .link-bubble-wrapper {
+        width: auto; /* Allow bubbles to size naturally */
+    }
+
+    .button-wrapper {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: flex-start; /* Align buttons to the left */
+    }
+}

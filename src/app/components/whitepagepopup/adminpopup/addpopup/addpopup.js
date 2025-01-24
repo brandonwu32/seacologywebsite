@@ -17,6 +17,7 @@ export default function AddPopUp(props) {
   const add = async () => {
     try {
       const result = await addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin, newMember.image);
+
     } catch (error) {
       console.error("Error adding member:", error);
     }

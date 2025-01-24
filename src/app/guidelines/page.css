@@ -54,3 +54,21 @@
     text-align: center;
     object-fit: cover;
 }
+
+.mobile-navbar-div {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .navbar-div {
+        display: none;
+    }
+
+    .page-wrapper {
+        margin-top: 10rem;
+    }
+
+    .mobile-navbar-div {
+        display: contents;
+    }
+}

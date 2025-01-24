@@ -90,6 +90,7 @@ export async function deleteContent(content) {
   }
 
 export async function addMember(name, email, position, password, admin, image) {
+
     try {
         if (!name || !email || !position) {
             throw new Error("Missing fields: name, email, or position");
@@ -115,6 +116,7 @@ export async function deleteMember(
 
         if (!parsedFormData.user_id) {
             throw new Error("Missing required field: user_id");
+
         }
 
         const result = await sql`

@@ -56,7 +56,7 @@ export default function Whitepages() {
       <hr className="AWPblueline" />
       <hr className="AWPyellowline" />
 
-      <div className = "WPbubble-container">
+      <div className = "AWPbubble-container">
         {whiteList.map((item) =>
             bubbleMember(item)
         )}

@@ -33,7 +33,9 @@ export default function Step6() {
 
     return (
         <div>
-            <Navbar/>
+            <div className="navbar-div">
+                <Navbar/>
+            </div>
             <div className="page-wrapper">
                 <Heading text="Step 6" buttonText="edit"/>
 
