@@ -14,7 +14,7 @@ export default function EditPageBubble(props) {
       }
     return (
         <div className = "individual-bubble">
-            <button onClick={togglePopUp} className="bubble">
+            <button onClick={togglePopUp} className="bubble"> 
                 <Image src={props.image} alt="none" className="bubble-image" width={250} height={250} />
             </button>
             <div className="ebdescription">

@@ -34,7 +34,6 @@ export default function Whitepages() {
  // Add a new member
  function addMemberTwo(newMember) {
    setWhiteList((prevList) => [...prevList, newMember]);
-   console.log(newMember);
    addMember(newMember.name, newMember.email, newMember.position, newMember.password, newMember.admin);
  }
 
@@ -55,7 +54,6 @@ export default function Whitepages() {
      // Update state to remove the deleted member
      setWhiteList((prevList) => prevList.filter((member) => member.email !== email));
      deleteMember(member.email);
-     console.log(`Member with email ${email} deleted successfully.`);
    } catch (error) {
      console.error("Error deleting member:", error);
    }
@@ -64,10 +62,17 @@ export default function Whitepages() {
 
  // Render member bubbles
  function bubbleMember(item) {
+
+  // if item.image is null, set image = url i sent u
+  // else set it to the item's image
+  if (item.image == null) {
+    item.image = "https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1"
+  }
    return (
      <EditPageBubble
        key={item.email}
        image={item.image}
+       src="slay"
        alt="CeoPic"
        name={item.name}
        position={item.position}
@@ -107,20 +112,10 @@ export default function Whitepages() {
       <AddPopUp trigger={addPopUp} close = {toggleAddPopUp}/>
 
       <div className="EWPbubble-container">
-        {whiteList.map(function (member){
-          return (
-            <div className = "EWPbubble-wrapper" key={member.email}>
-              <EditPageBubble
-                image={member.image}
-                alt="CeoPic"
-                name={member.name}
-                position={member.position}
-                email={member.email}
-                id={member.id}
-              />
-            </div>
-          )
-        })}
+      {whiteList.map((item) =>
+            bubbleMember(item)
+        )}
+
       </div>
     </div>
   );

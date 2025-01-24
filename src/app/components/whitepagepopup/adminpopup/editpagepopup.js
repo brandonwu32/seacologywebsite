@@ -3,17 +3,67 @@
 import './editpagepopup.css'
 import Button from '../../button/button';
 import { deleteMember } from '../../../lib/actions';
+
 import { useEffect, useState, useActionState } from 'react';
+import { updateMember } from '../../../lib/actions';
 
 export default function EditPagePopUp(props) {
 
-    const [errorMessage, formAction, isPending] = useActionState(
-        deleteMember,
-        undefined,
-      );
+   const [errorMessage, formAction, isPending] = useActionState(
+    deleteMember,
+    undefined,
+  );
+
+
+
+
+      const [formData, setFormData] = useState({
+        name: '',
+        password: '',
+        email: '',
+        admin: '',
+        position: '',
+        image: '',
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+    };
+
+    const update = async () => {
+        try {
+            const result = await updateMember(
+                props.user_id,
+                formData.name,
+                formData.position,
+                formData.email,
+                formData.image
+            );
+            window.location.reload();
+        } catch (error) {
+          console.error("Error adding member:", error);
+        }
+      };
+
+   
+
+    async function handleSubmit() {
+        try {
+        
+            
+
+            update();
+
+            // window.location.reload();
+        } catch (error) {
+            console.error("Error updating member:", error);
+        }
+    };
 
 
     return props.trigger ? (
+
         <form action={formAction}>
             <input id = "name" name="user_id" type="hidden" value={props.user_id}/>
             <div className="eppopupOverlay">
@@ -23,23 +73,52 @@ export default function EditPagePopUp(props) {
                         <hr className="epyellowline" />
                         <div className = 'epaddcontainer'>
                             <div className = "epadd-fields">
-                                {/* figure out how to make thse prefilled */}
 
-                                <label>Full Name:<input name = "name" type="text"/></label>
-                                <label>Position:<input name = "position" type="text"/></label>
-                                <label>Email:<input name = "email" type="text"/></label>
-                                <label>Region:<input name = "region" type="text"/></label>
-                                <label>Image:<input name = "image-upload" type="file"/></label>
+                            <label>
+                                    Full Name:
+                                    <input
+                                        name="name"
+                                        type="text"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                    />
+                                </label>
+                                <label>
+                                    Position:
+                                    <input
+                                        name="position"
+                                        type="text"
+                                        value={formData.position}
+                                        onChange={handleInputChange}
+                                    />
+                                </label>
+                                <label>
+                                    Email:
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                    />
+                                </label>
+                                
+                                
+                                <label>
+                                    Image:
+                                    <input name="image" type="text" 
+                                    value={formData.image}
+                                    onChange={handleInputChange}/>
+                                </label>
                             </div>
                         </div>
                     </div>
                         <div className = 'epbuttonz'>
                             <Button color="red" size="large" text="Remove"/>
-                            <Button color="blue" size="large" text="Submit" onClick={props.close}/>
+                            <Button color="blue" size="large" text="Submit" onClick = {handleSubmit}/>
                             <Button color="blue" size="large" text="Close" onClick={props.close}/>
                     </div>
                 </div>
             </div>
-        </form>
+            </form>
 ) : null;
 }
