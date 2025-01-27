@@ -61,7 +61,7 @@ export default function Navbar() {
             <div id="navbar-wrapper">
                 <div className="img-with-text">
                     <Suspense>
-                        <Link href={`${adminView && '/admin' || ''}`+"/welcome?session="+sesh}>
+                        <Link href={`${inEditMode && '/admin' || ''}`+"/welcome?session="+sesh}>
                             <Image src={SeacologyLogo} id='seacology-logo' alt=''/>
                         </Link>
                     </Suspense>
@@ -73,25 +73,25 @@ export default function Navbar() {
                             <button id="search-bar" onClick={() => togglePopUp()}></button>
                         </div>
                     </div>
-                    {authentication[1] && !inEditMode && <Link href={editViewPathname}><Button color={'red'} size='adminToggle' text={"Edit"}></Button></Link>}
-                    {authentication[1] && inEditMode && <Link href={normalViewPathname}><Button color={"red"} size='adminToggle' text={"Save"}></Button></Link>}
+                    {authentication[1] && !inEditMode && <Link href={editViewPathname}><Button onClick={() => toggleAdminView()} color={'red'} size='adminToggle' text={"Edit"}></Button></Link>}
+                    {authentication[1] && inEditMode && <Link href={normalViewPathname}><Button onClick={() => toggleAdminView()} color={"red"} size='adminToggle' text={"Save"}></Button></Link>}
                     <div className="navbar-link">
                         <Suspense>
-                            <Link href={`${adminView && '/admin' || ''}`+"/guidelines?session="+sesh} className="navbar-link">Guidelines</Link>
+                            <Link href={`${inEditMode && '/admin' || ''}`+"/guidelines?session="+sesh} className="navbar-link">Guidelines</Link>
                         </Suspense>
                     </div>
 
                     <div className="navbar-link">
                         <Suspense>
-                            <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/pm-overview?session="+sesh} className="navbar-link">Project Management</Link>
+                            <Link href={`${inEditMode && '/admin' || ''}`+"/projectmanagement/pm-overview?session="+sesh} className="navbar-link">Project Management</Link>
                             <div className="dropdown">
-                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/pm-overview?session="+sesh}>Overview</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step1?session="+sesh}>Step 1</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step2?session="+sesh}>Step 2</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step3?session="+sesh}>Step 3</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step4?session="+sesh}>Step 4</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step5?session="+sesh}>Step 5</Link>
-                                <Link href={`${adminView && '/admin' || ''}`+"/projectmanagement/step6?session="+sesh}>Step 6</Link>
+                                <Link href={`${inEditMode && '/admin' || ''}`+"/projectmanagement/pm-overview?session="+sesh}>Overview</Link>
+                                <Link href={`${inEditMode && '/admin' || ''}`+"/projectmanagement/step1?session="+sesh}>Step 1</Link>
+                                <Link href={`${inEditMode && '/admin' || ''}`+"/projectmanagement/step2?session="+sesh}>Step 2</Link>
+                                <Link href={`${inEditMode && '/admin' || ''}`+"/projectmanagement/step3?session="+sesh}>Step 3</Link>
+                                <Link href={`${inEditMode && '/admin' || ''}`+"/projectmanagement/step4?session="+sesh}>Step 4</Link>
+                                <Link href={`${inEditMode && '/admin' || ''}`+"/projectmanagement/step5?session="+sesh}>Step 5</Link>
+                                <Link href={`${inEditMode && '/admin' || ''}`+"/projectmanagement/step6?session="+sesh}>Step 6</Link>
                             </div>
                         </Suspense>
                     </div>
@@ -111,14 +111,14 @@ export default function Navbar() {
                     </div>
                     <Suspense>
                         <div className="navbar-link">
-                            <Link href={`${adminView && '/admin' || ''}`+"/finances?session="+sesh} className="navbar-link">Finances</Link>
+                            <Link href={`${inEditMode && '/admin' || ''}`+"/finances?session="+sesh} className="navbar-link">Finances</Link>
                         </div>
 
                         <div className="navbar-link">
-                            <Link href={`${adminView && '/admin' || ''}`+"/contact?session="+sesh} className="navbar-link">Contact</Link>
+                            <Link href={`${inEditMode && '/admin' || ''}`+"/contact?session="+sesh} className="navbar-link">Contact</Link>
                         </div>
                         <div className="navbar-link">
-                            <Link href={`${adminView && '/admin' || ''}`+"/whitepages?session="+sesh} className="navbar-link">Whitepages</Link>
+                            <Link href={`${inEditMode && '/admin' || ''}`+"/whitepages?session="+sesh} className="navbar-link">Whitepages</Link>
                         </div>
                     </Suspense>
                 </div>
