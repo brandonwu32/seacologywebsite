@@ -23,6 +23,7 @@ export default function BodyAdmin(props) {
         setPositionadd(posish)
         setPage2put(payge)
         setAddPopUp(!addTextPopUp);
+        console.log(posish);
     }
 
     function etogglePopup(guideline, id, type){
