@@ -5,7 +5,7 @@ import Button from '../../button/button';
 import { deleteMember } from '../../../lib/actions';
 
 import { useEffect, useState, useActionState } from 'react';
-import { updateMember } from '../../../lib/actions';
+import { updateMember } from '../../../lib/actions'; 
 
 export default function EditPagePopUp(props) {
 
@@ -46,20 +46,26 @@ export default function EditPagePopUp(props) {
         }
       };
 
-   
-
-    async function handleSubmit() {
+      async function deleteMem() {
         try {
-        
-            
-
-            update();
-
-            // window.location.reload();
+            deleteMember(props.user_id);
+            window.location.reload();
         } catch (error) {
             console.error("Error updating member:", error);
         }
     };
+
+    async function handleSubmit() {
+        try {
+            update();
+            window.location.reload();
+        } catch (error) {
+            console.error("Error updating member:", error);
+        }
+    };
+
+    
+    
 
 
     return props.trigger ? (
@@ -79,6 +85,7 @@ export default function EditPagePopUp(props) {
                                     <input
                                         name="name"
                                         type="text"
+                                        defaultValue={props.name}
                                         value={formData.name}
                                         onChange={handleInputChange}
                                     />
@@ -88,6 +95,7 @@ export default function EditPagePopUp(props) {
                                     <input
                                         name="position"
                                         type="text"
+                                        defaultValue={props.position}
                                         value={formData.position}
                                         onChange={handleInputChange}
                                     />
@@ -97,6 +105,7 @@ export default function EditPagePopUp(props) {
                                     <input
                                         name="email"
                                         type="email"
+                                        defaultValue={props.email}
                                         value={formData.email}
                                         onChange={handleInputChange}
                                     />
@@ -107,16 +116,17 @@ export default function EditPagePopUp(props) {
                                     Image:
                                     <input name="image" type="text" 
                                     value={formData.image}
+                                    defaultValue={props.image}
                                     onChange={handleInputChange}/>
                                 </label>
                             </div>
                         </div>
                     </div>
                         <div className = 'epbuttonz'>
-                            <Button color="red" size="large" text="Remove"/>
+                            <Button color="red" size="large" text="Remove" onClick = {deleteMem}/>
                             <Button color="blue" size="large" text="Submit" onClick = {handleSubmit}/>
                             <Button color="blue" size="large" text="Close" onClick={props.close}/>
-                    </div>
+                    </div>x
                 </div>
             </div>
             </form>

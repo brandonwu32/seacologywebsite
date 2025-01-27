@@ -14,6 +14,8 @@ export async function authenticate(
     const result = await signIn('credentials', { ...parsedFormData, redirect: false });
     if (!result.error) {
       const user = await getUser(formData.get('email'))
+      console.log(formData)
+      console.log(user)
       return redirect('/welcome?session=' + user.id);
     } else {
       // Handle errors or return a message

@@ -22,7 +22,7 @@ export default function EditPageBubble(props) {
                 <p className='ebprop'>{props.position}</p>
                 <p className='ebprop'>{props.email}</p>
             </div>
-            <EditPagePopUp trigger={buttonPopUp} close = {togglePopUp} user_id = {props.id}/>
+            <EditPagePopUp trigger={buttonPopUp} close = {togglePopUp} user_id = {props.user_id} image = {props.image} name = {props.name} position = {props.position} email = {props.email}/>
         </div>
     )
 }
