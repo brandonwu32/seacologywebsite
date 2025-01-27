@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { createProject } from "../../lib/actions"
+import { useSearchParams } from 'next/navigation';
 import { redirect } from 'next/navigation';
 import styles from '../page.css'
 
@@ -19,6 +20,8 @@ export default function ProjectProposalPage() {
   const [conflicts, setConflicts] = useState("");
   const [protectionDetails, setProtectionDetails] = useState("");
   const [projectName, setProjectName] = useState("");
+  const searchParams = useSearchParams();
+  let sesh = searchParams.get("session");
 
   const sendEmail = (to, subject, body) => {
     window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
