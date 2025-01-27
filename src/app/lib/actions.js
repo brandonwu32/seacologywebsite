@@ -107,26 +107,17 @@ export async function addMember(name, email, position, password, admin, image) {
     }
 }
 
-export async function deleteMember(
-    prevState,
-    formData
-) {
+export async function deleteMember(userId) {
     try {
-        const parsedFormData = Object.fromEntries(formData.entries());
-
-        if (!parsedFormData.user_id) {
-            throw new Error("Missing required field: user_id");
-
-        }
 
         const result = await sql`
             DELETE FROM users
-            WHERE id = ${parsedFormData.user_id}
+            WHERE id = ${userId}
             RETURNING *;
         `;
 
         if (result.rowCount === 0) {
-            throw new Error(`No member found with id: ${parsedFormData.user_id}`);
+            throw new Error(`No member found with id: ${userId}`);
         }
 
         return result.rows[0];
@@ -142,8 +133,6 @@ export async function updateMember(userId, name, position, email, image) {
         if (!userId) {
             throw new Error("User ID is required for updating member information.");
         }
-
-
         const updateResult = await sql`
             UPDATE users
             SET 
