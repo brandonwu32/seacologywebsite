@@ -17,14 +17,26 @@ export default function EditPagePopUp(props) {
 
 
 
-      const [formData, setFormData] = useState({
-        name: '',
-        password: '',
-        email: '',
-        admin: '',
-        position: '',
-        image: '',
+  const [formData, setFormData] = useState({
+    name: '',
+    password: '',
+    email: '',
+    admin: '',
+    position: '',
+    image: '',
+});
+
+useEffect(() => {
+    setFormData({
+        name: props.name || '',
+        password: props.password || '',
+        email: props.email || '',
+        admin: props.admin || '',
+        position: props.position || '',
+        image: props.image || '',
     });
+}, [props]);
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -85,7 +97,6 @@ export default function EditPagePopUp(props) {
                                     <input
                                         name="name"
                                         type="text"
-                                        defaultValue={props.name}
                                         value={formData.name}
                                         onChange={handleInputChange}
                                     />
@@ -95,8 +106,7 @@ export default function EditPagePopUp(props) {
                                     <input
                                         name="position"
                                         type="text"
-                                        defaultValue={props.position}
-                                        value={formData.position}
+                                        value={props.position}
                                         onChange={handleInputChange}
                                     />
                                 </label>
@@ -105,8 +115,7 @@ export default function EditPagePopUp(props) {
                                     <input
                                         name="email"
                                         type="email"
-                                        defaultValue={props.email}
-                                        value={formData.email}
+                                        value={props.email}
                                         onChange={handleInputChange}
                                     />
                                 </label>
@@ -115,8 +124,7 @@ export default function EditPagePopUp(props) {
                                 <label>
                                     Image:
                                     <input name="image" type="text" 
-                                    value={formData.image}
-                                    defaultValue={props.image}
+                                    value={props.image}
                                     onChange={handleInputChange}/>
                                 </label>
                             </div>
