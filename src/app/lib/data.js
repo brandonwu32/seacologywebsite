@@ -30,7 +30,7 @@ export async function fetchGuidelinesPage() {
 export async function fetchOverview() {
     try {
         const page = '/projectmanagement/pm-overview';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page}`;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         console.log("Fetched data successfully")
         return data.rows;
     } catch(error) {
@@ -43,7 +43,7 @@ export async function fetchStep1() {
     try {
         const page = '/projectmanagement/step1';
         await new Promise((resolve) => setTimeout(resolve, 1000));
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} `;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         console.log("Fetched data successfully")
         return data.rows;
     } catch(error) {
@@ -66,7 +66,7 @@ export async function fetchMembers() {
 export async function fetchIdentifyingproj() {
     try {
         const page = '/projectmanagement/identifyingproj';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page}`;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC `;
         console.log("Fetched data successfully")
         return data.rows;
     } catch(error) {
@@ -78,7 +78,7 @@ export async function fetchIdentifyingproj() {
 export async function fetchNewprojproposal() {
     try {
         const page = '/projectmanagement/newprojproposal';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} `;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         console.log("Fetched data successfully")
         return data.rows;
     } catch(error) {
@@ -90,7 +90,7 @@ export async function fetchNewprojproposal() {
 export async function fetchStep2() {
     try {
         const page = '/projectmanagement/step2';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} `;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         console.log("Fetched data successfully")
         return data.rows;
     } catch(error) {
@@ -101,7 +101,7 @@ export async function fetchStep2() {
 export async function fetchStep3() {
     try {
         const page = '/projectmanagement/step3';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page}`;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         return data.rows;
     } catch(error) {
         console.log("An error occurred", error)
@@ -111,7 +111,7 @@ export async function fetchStep3() {
 export async function fetchStep4() {
     try {
         const page = '/projectmanagement/step4';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} `;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         return data.rows;
     } catch(error) {
         console.log("An error occurred", error)
@@ -121,7 +121,7 @@ export async function fetchStep4() {
 export async function fetchStep5() {
     try {
         const page = '/projectmanagement/step5';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page}`;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page}ORDER BY position ASC`;
         return data.rows;
     } catch(error) {
         console.log("An error occurred", error)
@@ -131,7 +131,7 @@ export async function fetchStep5() {
 export async function fetchStep6() {
     try {
         const page = '/projectmanagement/step6';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} `;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         return data.rows;
     } catch(error) {
         console.log("An error occurred", error)
@@ -141,7 +141,7 @@ export async function fetchStep6() {
 export async function fetchFinances() {
     try {
         const page = '/finances';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page}`;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         return data.rows;
     } catch(error) {
         console.log("An error occurred", error)
@@ -151,7 +151,7 @@ export async function fetchFinances() {
 export async function fetchContact() {
     try {
         const page = '/contact';
-        const data = await sql`SELECT * FROM guidelines WHERE page = ${page}`;
+        const data = await sql`SELECT * FROM guidelines WHERE page = ${page} ORDER BY position ASC`;
         return data.rows;
     } catch(error) {
         console.log("An error occurred", error)
