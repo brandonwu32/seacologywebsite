@@ -8,8 +8,8 @@ import Button from '../button/button'
 import { useSearchParams } from 'next/navigation';
 import { isAuthenticated } from '../../lib/data'
 import NavBarPopUp from '../navbarpopup/navbarpopup';
-import Logo from '../../../../assets/logo-blue-web-transparent.png'
-import Link from "next/link"
+import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 import { Suspense } from "react";
 
 
@@ -20,6 +20,10 @@ export default function Navbar() {
 
     const [authentication, setAuthentication] = useState((false, false));
     const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const inEditMode = pathname.startsWith('/admin')
+    const [editViewPathname, setEditViewPathname] = useState(null)
+    const [normalViewPathname, setNormalViewPathname] = useState(null)
     let sesh = searchParams.get("session");
     const [adminView, setAdminView] = useState(false)
 
@@ -37,6 +41,8 @@ export default function Navbar() {
         const checkAdmin = async () => {
         try {
             const result = await isAuthenticated(sesh);
+            setEditViewPathname("/admin"+pathname+"?session="+sesh)
+            setNormalViewPathname(pathname.substring(6)+"?session="+sesh)
             setAuthentication(result);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -67,8 +73,8 @@ export default function Navbar() {
                             <button id="search-bar" onClick={() => togglePopUp()}></button>
                         </div>
                     </div>
-                    {authentication[1] && <Button onClick={toggleAdminView} color={`${adminView && 'red' || 'blue'}`} size='adminToggle' text={`${adminView && 'Admin View' || 'Normal View'}`}></Button>}
-
+                    {authentication[1] && !inEditMode && <Link href={editViewPathname}><Button color={'red'} size='adminToggle' text={"Edit"}></Button></Link>}
+                    {authentication[1] && inEditMode && <Link href={normalViewPathname}><Button color={"red"} size='adminToggle' text={"Save"}></Button></Link>}
                     <div className="navbar-link">
                         <Suspense>
                             <Link href={`${adminView && '/admin' || ''}`+"/guidelines?session="+sesh} className="navbar-link">Guidelines</Link>

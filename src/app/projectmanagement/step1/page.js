@@ -55,7 +55,7 @@ export default function Step1() {
                 </div>
 
                 <div className="button-wrapper">
-                    <Link href="/projectmanagement/step2">
+                    <Link href={"/projectmanagement/step2?session="+sesh}>
                         <Button color="blue" size="small" text="next"/>
                     </Link>
                 </div>
