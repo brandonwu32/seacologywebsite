@@ -106,7 +106,7 @@ useEffect(() => {
                                     <input
                                         name="position"
                                         type="text"
-                                        value={props.position}
+                                        value={formData.position}
                                         onChange={handleInputChange}
                                     />
                                 </label>
@@ -115,7 +115,7 @@ useEffect(() => {
                                     <input
                                         name="email"
                                         type="email"
-                                        value={props.email}
+                                        value={formData.email}
                                         onChange={handleInputChange}
                                     />
                                 </label>
@@ -124,7 +124,7 @@ useEffect(() => {
                                 <label>
                                     Image:
                                     <input name="image" type="text" 
-                                    value={props.image}
+                                    value={formData.image}
                                     onChange={handleInputChange}/>
                                 </label>
                             </div>
