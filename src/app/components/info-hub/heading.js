@@ -8,7 +8,6 @@ export default function Heading(props) {
         <div className='heading-wrapper'>
             <div className='header-component-wrapper'>
                 <h1 id='welcome-header'>{props.text}</h1>
-                {props.edit && <Button color="red" size="large" text= {props.buttonText}/>}
             </div>
             <hr className='header-divider'/>
         </div>

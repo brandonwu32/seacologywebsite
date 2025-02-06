@@ -35,7 +35,7 @@ export default function Identifying() {
                 <Navbar/>
             </div>
             <div className="page-wrapper">
-                <Heading text="New Project Proposal" buttonText="editing" edit ={true}/>
+                <Heading text="New Project Proposal" buttonText="Save" edit ={true}/>
 
                 <div>
                     <Body textList={textList} title="New Project Proposal Conversation"/>

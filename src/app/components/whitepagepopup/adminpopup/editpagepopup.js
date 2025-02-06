@@ -17,14 +17,27 @@ export default function EditPagePopUp(props) {
 
 
 
-      const [formData, setFormData] = useState({
-        name: '',
-        password: '',
-        email: '',
-        admin: '',
-        position: '',
-        image: 'https://media.licdn.com/dms/image/v2/C560BAQFGLEe_yK2JRw/company-logo_200_200/company-logo_200_200/0/1630601534327/seacology_logo?e=1746662400&v=beta&t=pG41ZFN10ckgCxb3Cu5RQiVv0Rbo9SGrcVF1rTf5PFo',
+
+  const [formData, setFormData] = useState({
+    name: '',
+    password: '',
+    email: '',
+    admin: '',
+    position: '',
+    image: 'https://media.licdn.com/dms/image/v2/C560BAQFGLEe_yK2JRw/company-logo_200_200/company-logo_200_200/0/1630601534327/seacology_logo?e=1746662400&v=beta&t=pG41ZFN10ckgCxb3Cu5RQiVv0Rbo9SGrcVF1rTf5PFo',
+});
+
+useEffect(() => {
+    setFormData({
+        name: props.name || '',
+        password: props.password || '',
+        email: props.email || '',
+        admin: props.admin || '',
+        position: props.position || '',
+        image: props.image || 'https://media.licdn.com/dms/image/v2/C560BAQFGLEe_yK2JRw/company-logo_200_200/company-logo_200_200/0/1630601534327/seacology_logo?e=1746662400&v=beta&t=pG41ZFN10ckgCxb3Cu5RQiVv0Rbo9SGrcVF1rTf5PFo',
     });
+}, [props]);
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -46,20 +59,26 @@ export default function EditPagePopUp(props) {
         }
       };
 
-
-
-    async function handleSubmit() {
+      async function deleteMem() {
         try {
-
-
-
-            update();
-
-            // window.location.reload();
+            deleteMember(props.user_id);
+            window.location.reload();
         } catch (error) {
             console.error("Error updating member:", error);
         }
     };
+
+    async function handleSubmit() {
+        try {
+            update();
+            window.location.reload();
+        } catch (error) {
+            console.error("Error updating member:", error);
+        }
+    };
+
+
+
 
 
     return props.trigger ? (
@@ -113,10 +132,10 @@ export default function EditPagePopUp(props) {
                         </div>
                     </div>
                         <div className = 'epbuttonz'>
-                            <Button color="red" size="large" text="Remove"/>
+                            <Button color="red" size="large" text="Remove" onClick = {deleteMem}/>
                             <Button color="blue" size="large" text="Submit" onClick = {handleSubmit}/>
                             <Button color="blue" size="large" text="Close" onClick={props.close}/>
-                    </div>
+                    </div>x
                 </div>
             </div>
             </form>

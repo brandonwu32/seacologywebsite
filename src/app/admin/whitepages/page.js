@@ -48,7 +48,7 @@ export default function Whitepages() {
         <div className = 'btzz'>
           <Suspense>
             <Link href={"/admin/whitepages/editview?session="+sesh}>
-              <Button color="blue" size="large" text="Edit View"/>
+              <Button color="blue" size="large" text="Edit"/>
             </Link>
           </Suspense>
         </div>
@@ -58,7 +58,7 @@ export default function Whitepages() {
 
       <div className = "AWPbubble-container">
         {whiteList.map((item) =>
-            bubbleMember(item)
+            <div key={item.email}>{bubbleMember(item)}</div>
         )}
       </div>
 

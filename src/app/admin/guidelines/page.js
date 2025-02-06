@@ -36,7 +36,7 @@ export default function Guidelines() {
                 <Navbar/>
             </div>
             <div className="page-wrapper">
-                <Heading text="Guidelines" buttonText = 'Editing' edit ={true}/>
+                <Heading text="Guidelines" buttonText = 'Save' edit ={true}/>
 
                 <div className = "zinx">
                     <Body textList={textList} title="Guidelines for Working With Seacology"/>

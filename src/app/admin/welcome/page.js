@@ -18,7 +18,7 @@ export default function Welcome() {
                 <Navbar/>
             </div>
             <div className="page-wrapper">
-                <Heading text="Welcome" buttonText = 'Editing' edit ={true}/>
+                <Heading text="Welcome" buttonText = 'Save' edit ={true}/>
 
                 <div className="welcome-wrapper">
                     <Suspense>

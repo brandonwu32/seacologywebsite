@@ -72,7 +72,7 @@ export default function Whitepages() {
      <EditPageBubble
        key={item.email}
        image={item.image}
-       src="slay"
+       src="https://media.licdn.com/dms/image/v2/C560BAQFGLEe_yK2JRw/company-logo_200_200/company-logo_200_200/0/1630601534327/seacology_logo?e=1746662400&v=beta&t=pG41ZFN10ckgCxb3Cu5RQiVv0Rbo9SGrcVF1rTf5PFo"
        alt="https://media.licdn.com/dms/image/v2/C560BAQFGLEe_yK2JRw/company-logo_200_200/company-logo_200_200/0/1630601534327/seacology_logo?e=1746662400&v=beta&t=pG41ZFN10ckgCxb3Cu5RQiVv0Rbo9SGrcVF1rTf5PFo"
        name={item.name}
        position={item.position}
@@ -98,7 +98,7 @@ export default function Whitepages() {
          <div className="btz">
             <Suspense>
               <Link href={"/admin/whitepages?session="+sesh}>
-                <Button color="red" size="large" text="Editing" />
+                <Button color="red" size="large" text="Save" />
               </Link>
             </Suspense>
             <Button color="blue" size="large" text="Add Member" onClick={toggleAddPopUp} />

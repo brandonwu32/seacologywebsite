@@ -39,7 +39,7 @@ export default function Step4() {
                 <Navbar/>
             </div>
             <div className="page-wrapper">
-                <Heading text="Step 4" buttonText="Editing" edit ={true}/>
+                <Heading text="Step 4" buttonText="Save" edit ={true}/>
 
                 <div>
                     <Body textList={textList} title="After Approval Get Conservation and Grant Agreements Signed"/>

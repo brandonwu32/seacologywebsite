@@ -4,8 +4,20 @@ import { sql } from '@vercel/postgres';
 import { getUserID } from './data';
 import bcrypt from 'bcrypt';
 
+
+
+
+const isValidUrl = urlString=> {
+    try {
+        return Boolean(new URL(urlString));
+    }
+    catch(e){
+        return false;
+    }
+}
+
 export async function createUpdate(type, project_id, date, field_rep_id) {
- 
+
     try {
 
         await sql`
@@ -18,7 +30,7 @@ export async function createUpdate(type, project_id, date, field_rep_id) {
 }
 
 export async function createProject(status, project_name, date) {
-  
+
 
     try {
         const field_rep_id = await getUserID();
@@ -92,14 +104,20 @@ export async function deleteContent(content) {
 export async function addMember(name, email, position, password, admin, image) {
 
     try {
+        let tempImage = image;
+
         if (!name || !email || !position) {
             throw new Error("Missing fields: name, email, or position");
+        }
+
+        if (!isValidUrl(image)) {
+            tempImage = 'https://media.licdn.com/dms/image/v2/C560BAQFGLEe_yK2JRw/company-logo_200_200/company-logo_200_200/0/1630601534327/seacology_logo?e=1746662400&v=beta&t=pG41ZFN10ckgCxb3Cu5RQiVv0Rbo9SGrcVF1rTf5PFo'
         }
 
         const hashPassword = await bcrypt.hash(password, 10);
         const data = await sql`
             INSERT INTO users (name, email, position, admin, password, image)
-            VALUES (${name}, ${email}, ${position}, ${admin}, ${hashPassword}, ${image})
+            VALUES (${name}, ${email}, ${position}, ${admin}, ${hashPassword}, ${tempImage})
             RETURNING *;
         `;
         return data.rows[0];
@@ -107,26 +125,17 @@ export async function addMember(name, email, position, password, admin, image) {
     }
 }
 
-export async function deleteMember(
-    prevState,
-    formData
-) {
+export async function deleteMember(userId) {
     try {
-        const parsedFormData = Object.fromEntries(formData.entries());
-
-        if (!parsedFormData.user_id) {
-            throw new Error("Missing required field: user_id");
-
-        }
 
         const result = await sql`
             DELETE FROM users
-            WHERE id = ${parsedFormData.user_id}
+            WHERE id = ${userId}
             RETURNING *;
         `;
 
         if (result.rowCount === 0) {
-            throw new Error(`No member found with id: ${parsedFormData.user_id}`);
+            throw new Error(`No member found with id: ${userId}`);
         }
 
         return result.rows[0];
@@ -139,18 +148,24 @@ export async function deleteMember(
 
 export async function updateMember(userId, name, position, email, image) {
     try {
+
+        let tempImage = image;
+
         if (!userId) {
             throw new Error("User ID is required for updating member information.");
         }
 
+        if (!isValidUrl(image)) {
+            tempImage = 'https://media.licdn.com/dms/image/v2/C560BAQFGLEe_yK2JRw/company-logo_200_200/company-logo_200_200/0/1630601534327/seacology_logo?e=1746662400&v=beta&t=pG41ZFN10ckgCxb3Cu5RQiVv0Rbo9SGrcVF1rTf5PFo'
+        }
 
         const updateResult = await sql`
             UPDATE users
-            SET 
+            SET
                 name = ${name || null},
                 position = ${position || null},
                 email = ${email || null},
-                image = ${image || null}
+                image = ${tempImage || null}
             WHERE id = ${userId};
         `;
 
