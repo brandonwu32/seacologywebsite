@@ -63,7 +63,7 @@ export default function ReimbursementPage() {
     console.log("Current time: ", currentDate);
     const update = await createUpdate("reimbursement", projectID, currentDate, sesh);
     alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
-    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    sendEmail("islands@seacology.org", subject, body)
     await new Promise((resolve) => setTimeout(resolve, 1000));
     redirect('/welcome?session=' + sesh)
   };
@@ -222,7 +222,7 @@ export default function ReimbursementPage() {
               <Button color="blue" size="small" text="Close" onClick={closeOtherPopup}/>
             </div>
           </div>
-        )}  
+        )}
 
         {isSecondOtherPopupOpen && (
           <div className="formPopupOverlay">

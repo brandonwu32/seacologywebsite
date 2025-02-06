@@ -56,7 +56,7 @@ export default function ConservationAgreementPage() {
     console.log("Current date: ", currentDate)
     const update = await createUpdate("conservation-agreement", projectID, date, sesh);
     alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
-    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    sendEmail("islands@seacology.org", subject, body)
     await new Promise((resolve) => setTimeout(resolve, 1000));
     redirect('/welcome?session=' + sesh)
   };
@@ -138,7 +138,7 @@ export default function ConservationAgreementPage() {
               members understand and agree with the agreement.
             </p>
           </div>
-        </div>  
+        </div>
 
         <div className="agree-button-container">
           <button className="agree-button" onClick={handleSubmit}>Agree</button>

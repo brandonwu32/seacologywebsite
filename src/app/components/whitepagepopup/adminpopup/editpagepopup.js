@@ -23,7 +23,7 @@ export default function EditPagePopUp(props) {
         email: '',
         admin: '',
         position: '',
-        image: '',
+        image: 'https://media.licdn.com/dms/image/v2/C560BAQFGLEe_yK2JRw/company-logo_200_200/company-logo_200_200/0/1630601534327/seacology_logo?e=1746662400&v=beta&t=pG41ZFN10ckgCxb3Cu5RQiVv0Rbo9SGrcVF1rTf5PFo',
     });
 
     const handleInputChange = (e) => {
@@ -46,12 +46,12 @@ export default function EditPagePopUp(props) {
         }
       };
 
-   
+
 
     async function handleSubmit() {
         try {
-        
-            
+
+
 
             update();
 
@@ -101,11 +101,11 @@ export default function EditPagePopUp(props) {
                                         onChange={handleInputChange}
                                     />
                                 </label>
-                                
-                                
+
+
                                 <label>
                                     Image:
-                                    <input name="image" type="text" 
+                                    <input name="image" type="text"
                                     value={formData.image}
                                     onChange={handleInputChange}/>
                                 </label>

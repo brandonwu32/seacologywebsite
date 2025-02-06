@@ -61,7 +61,7 @@ export default function ProjectProgressPage() {
     console.log("Current time: ", currentDate)
     const update = await createUpdate("project-progress-report", projectID, currentDate, sesh);
     alert(`Successfully Updated ${project}: Redirecting to Welcome Page`)
-    sendEmail("nishant.malpani@berkeley.edu", subject, body)
+    sendEmail("islands@seacology.org", subject, body)
     await new Promise((resolve) => setTimeout(resolve, 1000));
     redirect('/welcome?session=' + sesh)
   };
